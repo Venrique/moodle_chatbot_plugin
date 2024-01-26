@@ -13,7 +13,7 @@ use gradereport_user\external\user as user_external;
 use stdClass;
 
 defined('MOODLE_INTERNAL') || die;
-global $CFG;
+//global $CFG;
 require_once($CFG->libdir . "/externallib.php");
 require_once($CFG->dirroot . '/local/botmanager/lib.php');
 require_once($CFG->dirroot . "/course/externallib.php");
@@ -44,7 +44,7 @@ class get_activities extends \external_api
      * Get Activities.
      *
      * @param int $courseid
-     * @param int $userid
+     * @param int $useridg
      * @param int $courseactivityid
      * @param int $activityid
      * @return DB object
@@ -53,7 +53,6 @@ class get_activities extends \external_api
     public static function execute($courseid, $userid, $courseactivityid = 0, $activityid = 0)
     {
         global $DB;
-
         $transaction = $DB->start_delegated_transaction();
 
         $params = array('courseid' => $courseid, 'userid' => $userid);
@@ -167,7 +166,7 @@ class get_activities extends \external_api
             $data = new stdClass();
 
             $gradeItem = getGradeItem($userGrades, $activity['id']);
-            $gradeItem2 = getGradeItem2($userGradesDB, $activity['id']);
+            $gradeItem2 = getGradeItem2($userGradesDB, $activity['name']);
 
 
             $data->courseactivityid = $courseactivityid;
@@ -253,7 +252,7 @@ class get_activities extends \external_api
     /**
      * Returns description of method result value
      *
-     * @return external_description
+     * @return external_multiple_structure
      */
     public
     static function execute_returns()

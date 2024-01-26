@@ -161,7 +161,6 @@ class get_user extends \external_api {
                 'middlename' => new external_value(PARAM_TEXT, 'Standard Moodle primary key.'),
                 'alternatename' => new external_value(PARAM_TEXT, 'Standard Moodle primary key.'),
                 'verified' => new external_value(PARAM_INT, 'Standard Moodle primary key.')
-
             )
             
             // array(

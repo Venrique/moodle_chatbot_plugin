@@ -109,7 +109,7 @@ function local_botmanager_get_next_question($quiz, $questionusageid, $userid)
             $next_question['answers'][$question->answerid]['answerid'] = $question->answerid;
             $next_question['answers'][$question->answerid]['answer'] = strip_tags($question->answer);
             $next_question['answers'][$question->answerid]['iscorrectanswer'] = intval($question->fraction);
-            $next_question['answers'][$question->answerid]['feedback'] = $question->feedback;
+            $next_question['answers'][$question->answerid]['feedback'] = strip_tags($question->feedback);
 
             $slot = $question->slot;
         }
@@ -137,14 +137,15 @@ function local_botmanager_islastquestion($quiz, $questionid)
     global $DB;
 
     // Get next question.
-    $sql_next_question = "SELECT slot.id, q.id as questionid
+    $sql_next_question = "SELECT slot.id, slot.slot, q.id as questionid
                 FROM mdl_quiz_slots slot
                 LEFT JOIN mdl_question_references qr ON qr.component = 'mod_quiz'
                             AND qr.questionarea = 'slot' AND qr.itemid = slot.id
                 LEFT JOIN mdl_question_bank_entries qbe ON qbe.id = qr.questionbankentryid
                 LEFT JOIN mdl_question_versions qv ON qv.questionbankentryid = qbe.id
                 LEFT JOIN mdl_question q ON q.id = qv.questionid
-                WHERE slot.quizid = :quizid";
+                WHERE slot.quizid = :quizid
+                ORDER BY slot.slot";
 
     $questions = $DB->get_records_sql($sql_next_question,
         array('quizid' => $quiz));
@@ -206,17 +207,17 @@ function getGradeItem($userGrades, $activityIDToSearch)
 {
     foreach ($userGrades['usergrades'] as $userGrade) {
         foreach ($userGrade['gradeitems'] as $gradeitem) {
-            if ($gradeitem['id'] == $activityIDToSearch) {
+            if ($gradeitem['cmid'] == $activityIDToSearch) {
                 return $gradeitem;
             }
         }
     }
 }
 
-function getGradeItem2($userGrades, $activityIDToSearch)
+function getGradeItem2($userGradesDB, $activityNameToSearch)
 {
-    foreach ($userGrades as $userGrade) {
-        if ($userGrade->id == $activityIDToSearch) {
+    foreach ($userGradesDB as $userGrade) {
+        if ($userGrade->itemname == $activityNameToSearch) {
             return $userGrade;
         }
     }
@@ -440,7 +441,6 @@ function filter_questions_with_latest_versions($arrayOfObjects)
 
 // Convert the associative array back to a simple array containing only the unique objects
     $uniqueObjects = array_values($uniqueSlots);
-
 
     return $uniqueObjects;
 }

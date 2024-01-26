@@ -1050,14 +1050,21 @@ class mod_feedback_external extends external_api {
         $params = self::validate_parameters(self::get_finished_responses_parameters(), $params);
         $warnings = $itemsdata = array();
 
-        list($feedback, $course, $cm, $context, $completioncourse) = self::validate_feedback($params['feedbackid'],
-            $params['courseid']);
+        list($feedback, $course, $cm, $context, $completioncourse) = self::validate_feedback($params['feedbackid'], $params['courseid']);
         $feedbackcompletion = new mod_feedback_completion($feedback, $cm, $completioncourse->id);
+
 
         $responses = array();
         // Load and get the responses from the last completed feedback.
         $feedbackcompletion->find_last_completed();
+
+        print_r($feedbackcompletion);
+        print_r('----------------------------------------------------------------------');
+
         $unfinished = $feedbackcompletion->get_finished_responses();
+
+        print_r($unfinished);
+
         foreach ($unfinished as $u) {
             $exporter = new feedback_value_exporter($u);
             $responses[] = $exporter->export($PAGE->get_renderer('core'));
