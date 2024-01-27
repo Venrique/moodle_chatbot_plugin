@@ -242,6 +242,8 @@ class data_field_multimenu extends data_field_base {
                         }
                         break;
                 }
+            }else{
+                $str .= $option . '</option>';
             }
 
             //$str .= $option . '</option>';

@@ -53,7 +53,7 @@ class data_field_menu extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT;
+        global $DB, $OUTPUT, $SESSION;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
@@ -71,7 +71,29 @@ class data_field_menu extends data_field_base {
         foreach ($rawoptions as $option) {
             $option = trim($option);
             if (strlen($option) > 0) {
-                $options['test'] = $option;
+
+                if ($this->field->name === "Category"){
+                    switch ($option){
+                        case "General tool":
+                            if ($SESSION->lang === 'en'){
+                                $options[$option] = "General tool";
+                            }
+                            if ($SESSION->lang === 'es'){
+                                $options[$option] = "Herramienta general";
+                            }
+                            if ($SESSION->lang === 'pt'){
+                                $options[$option] = "Ferramenta geral";
+                            }
+                            if ($SESSION->lang === 'fr'){
+                                $options[$option] = "Outil général";
+                            }
+                            break;
+                    }
+                }else{
+                    $options[$option] = $option;
+                }
+
+                //$options[$option] = $option;
             }
         }
 
