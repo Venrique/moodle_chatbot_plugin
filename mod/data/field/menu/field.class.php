@@ -71,7 +71,7 @@ class data_field_menu extends data_field_base {
         foreach ($rawoptions as $option) {
             $option = trim($option);
             if (strlen($option) > 0) {
-                $options[$option] = $option;
+                $options['test'] = $option;
             }
         }
 
