@@ -54,7 +54,7 @@ class data_field_multimenu extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT;
+        global $DB, $OUTPUT, $USER;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
@@ -90,7 +90,7 @@ class data_field_multimenu extends data_field_base {
 
         foreach (explode("\n", $this->field->param1) as $option) {
             $option = trim($option);
-            $str .= '<option value="' . s($option) . '"';
+            $str .= '<option value="' . $USER->lang /*s($option)*/ . '"';
 
             if (in_array($option, $content)) {
                 // Selected by user.
