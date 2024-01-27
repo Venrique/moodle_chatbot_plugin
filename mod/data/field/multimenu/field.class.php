@@ -105,10 +105,116 @@ class data_field_multimenu extends data_field_base {
                         if ($SESSION->lang === 'es'){
                             $str .= "Educación integral en sexualidad" . '</option>';
                         }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Educação sexual abrangente" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Éducation sexuelle complète" . '</option>';
+                        }
+                        break;
+                    case "Community outreach channels":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Canales de alcance comunitario" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Canais de alcance comunitário" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Canaux d'information communautaires" . '</option>';
+                        }
+                        break;
+                    case "Humanitarian Responses":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Respuestas Humanitarias" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Respostas humanitárias" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Réponses humanitaires" . '</option>';
+                        }
+                        break;
+                    case "General SRH services":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Servicios generales de SSR" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Serviços gerais de SSR" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Services généraux de santé sexuelle et reproductive" . '</option>';
+                        }
+                        break;
+                    case "Safe and/or legal abortion":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Aborto seguro y/o legal" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Aborto seguro e/ou legal" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Avortement sûr et/ou légal" . '</option>';
+                        }
+                        break;
+                    case "Contraception":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Anticoncepción" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Contracepção" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Contraception" . '</option>';
+                        }
+                        break;
+                    case "Sexual and gender-based violence":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Violencia sexual y de género" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Violência sexual e baseada em gênero" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Violence sexuelle et sexiste" . '</option>';
+                        }
+                        break;
+                    case "Intersectional Feminism and Gender Equity":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Feminismo interseccional y equidad de género" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Feminismo interseccional e equidade de gênero" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Féminisme intersectionnel et équité entre les sexes" . '</option>';
+                        }
+                        break;
+                    case "Sexual and reproductive rights":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Derechos sexuales y reproductivos" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Direitos sexuais e reprodutivos" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Droits sexuels et génésiques" . '</option>';
+                        }
+                        break;
+                    case "Health channels":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Canales de salud" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Canais de saúde" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Canaux de santé" . '</option>';
+                        }
+                        break;
                 }
             }
 
-            $str .= $option . '</option>';
+            //$str .= $option . '</option>';
         }
         $str .= '</select>';
         $str .= '</div>';
