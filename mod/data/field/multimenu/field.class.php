@@ -90,7 +90,7 @@ class data_field_multimenu extends data_field_base {
 
         foreach (explode("\n", $this->field->param1) as $option) {
             $option = trim($option);
-            $str .= '<option value="' . $SESSION->lang /*s($option)*/ . '"';
+            $str .= '<option value="' . s($option) . '"';
 
             if (in_array($option, $content)) {
                 // Selected by user.
