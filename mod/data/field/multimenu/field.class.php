@@ -98,6 +98,16 @@ class data_field_multimenu extends data_field_base {
             }
 
             $str .= '>';
+
+            if ($this->field->name === "Needs"){
+                switch ($option){
+                    case "Comprehensive sexuality education":
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Educación integral en sexualidad" . '</option>';
+                        }
+                }
+            }
+
             $str .= $option . '</option>';
         }
         $str .= '</select>';
