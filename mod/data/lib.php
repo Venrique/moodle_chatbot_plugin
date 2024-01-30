@@ -1902,9 +1902,9 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                             echo '<option value="' . $field->id . '">' . "Date de téléchargement" . '</option>';
                         }
                         break;
-                    case "Year of completion":
+                    case "Year of Completion":
                         if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Year of completion" . '</option>';
+                            echo '<option value="' . $field->id . '">' . "Year of Completion" . '</option>';
                         }
                         if ($SESSION->lang === 'es') {
                             echo '<option value="' . $field->id . '">' . "Año de finalización" . '</option>';
