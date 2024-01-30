@@ -1724,7 +1724,7 @@ function mod_data_rating_can_see_item_ratings($params) {
  * @return void
  */
 function data_print_preference_form($data, $perpage, $search, $sort='', $order='ASC', $search_array = '', $advanced = 0, $mode= ''){
-    global $DB, $PAGE, $OUTPUT;
+    global $DB, $PAGE, $OUTPUT, $SESSION;
 
     $cm = get_coursemodule_from_instance('data', $data->id);
     $context = context_module::instance($cm->id);
@@ -1761,7 +1761,26 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
             if ($field->id == $sort) {
                 echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
             } else {
-                echo '<option value="'.$field->id.'">'.$field->name.'</option>';
+                switch ($field->name) {
+                    case "Author":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Author" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Nombre del autor" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Nome do autor" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Nom de l'auteur" . '</option>';
+                        }
+                        break;
+                    default:
+                        echo '<option value="' . $field->id . '">' . $field->name . '</option>';
+                        break;
+                }
+                // echo '<option value="'.$field->id.'">'.$field->name.'</option>';
             }
         }
         echo '</optgroup>';
