@@ -1776,6 +1776,146 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                             echo '<option value="' . $field->id . '">' . "Nom de l'auteur" . '</option>';
                         }
                         break;
+                    case "Category":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Category" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Categoría" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Categoria" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Catégorie" . '</option>';
+                        }
+                        break;
+                    case "Comments":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Comments" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Comentarios" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Comentários" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Comments" . '</option>';
+                        }
+                        break;
+                    case "Description":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Description" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Descripción" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Descrição" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Description" . '</option>';
+                        }
+                        break;
+                    case "File":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "File" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Archivo" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Arquivo" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Fichier" . '</option>';
+                        }
+                        break;
+                    case "Link":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Link" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Enlace" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Link" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Lien" . '</option>';
+                        }
+                        break;
+                    case "Needs":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Needs" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Necesidad" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Necessidade" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Nécessité" . '</option>';
+                        }
+                        break;
+                    case "Organization":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Organization" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Organización" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Organização" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Organisation" . '</option>';
+                        }
+                        break;
+                    case "Title":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Title" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Título" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Titúlo" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Titre" . '</option>';
+                        }
+                        break;
+                    case "Upload Date":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Upload Date" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Fecha de subida" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Data do upload" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Date de téléchargement" . '</option>';
+                        }
+                        break;
+                    case "Year of completion":
+                        if ($SESSION->lang === 'en') {
+                            echo '<option value="' . $field->id . '">' . "Year of completion" . '</option>';
+                        }
+                        if ($SESSION->lang === 'es') {
+                            echo '<option value="' . $field->id . '">' . "Año de finalización" . '</option>';
+                        }
+                        if ($SESSION->lang === 'pt') {
+                            echo '<option value="' . $field->id . '">' . "Ano de conclusão" . '</option>';
+                        }
+                        if ($SESSION->lang === 'fr') {
+                            echo '<option value="' . $field->id . '">' . "Année d'achèvement" . '</option>';
+                        }
+                        break;
                     default:
                         echo '<option value="' . $field->id . '">' . $field->name . '</option>';
                         break;
