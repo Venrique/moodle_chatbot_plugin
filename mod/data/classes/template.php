@@ -356,11 +356,7 @@ class template {
             $pattern = '[[' . $field->field->name . '#id]]';
             $result[$pattern] = $field->field->id;
             $pattern = '[[' . $field->field->name . '#name]]';
-            if($field->field->name === "Category"){
-                $result[$pattern] = "test";
-            }else{
-                $result[$pattern] = $field->field->name;
-            }
+            $result[$pattern] = $field->field->name;
             $pattern = '[[' . $field->field->name . '#description]]';
             $result[$pattern] = $field->field->description;
         }

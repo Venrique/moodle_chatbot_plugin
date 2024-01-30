@@ -508,6 +508,9 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             $options->filter = false;
         }
         $options->para = false;
+        if ($this->field->name === "Category"){
+            $content->content = "test";
+        }
         $str = format_text($content->content, $content->content1, $options);
         return $str;
     }
