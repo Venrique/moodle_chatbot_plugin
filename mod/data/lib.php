@@ -508,6 +508,9 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             $options->filter = false;
         }
         $options->para = false;
+        if (!$SESSION->lang){
+            $SESSION->lang = "en";
+        }
         if ($this->field->name === "Category"){
             switch ($content->content) {
                 case "General tool":
@@ -522,6 +525,20 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                     }
                     if ($SESSION->lang === 'fr') {
                         $content->content = "Outil général";
+                    }
+                    break;
+                case "Quality of care tool":
+                    if ($SESSION->lang === 'en') {
+                        $content->content = "General tool";
+                    }
+                    if ($SESSION->lang === 'es') {
+                        $content->content = "Herramienta de calidad del cuidado";
+                    }
+                    if ($SESSION->lang === 'pt') {
+                        $content->content = "Ferramenta de qualidade do atendimento";
+                    }
+                    if ($SESSION->lang === 'fr') {
+                        $content->content = "Outil de qualité des soins";
                     }
                     break;
             }
