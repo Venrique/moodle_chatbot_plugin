@@ -433,7 +433,7 @@ class data_field_multimenu extends data_field_base {
                 // Hmm, looks like somebody edited the field definition.
                 continue;
             }
-            $str .= $line . "<br />\n";
+            $str .= $line . "ttteest<br />\n";
         }
         return $str;
     }
