@@ -719,7 +719,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             }
         }
 
-        $str = format_text($content->content, $content->content1, $options);
+        $str = format_text($this->field->name, $content->content1, $options);
         return $str;
     }
 
