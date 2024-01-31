@@ -508,7 +508,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             $options->filter = false;
         }
         $options->para = false;
-        if (!$SESSION->lang){
+        if (!property_exists($SESSION,'lang')){
             $SESSION->lang = "en";
         }
         if ($this->field->name === "Category"){
