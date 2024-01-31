@@ -511,7 +511,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         if (!property_exists($SESSION,'lang')){
             $SESSION->lang = "en";
         }
-        /*
+
         //KTT CUSTOMIZATION
         if ($this->field->name === "Category"){
             switch ($content->content) {
@@ -520,7 +520,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                         $content->content = "General tool";
                     }
                     if ($SESSION->lang === 'es') {
-                        $content->content = "Herramienta general";
+                        $content->content = $this->field->name;
                     }
                     if ($SESSION->lang === 'pt') {
                         $content->content = "Ferramenta geral";
@@ -572,7 +572,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                     }
                     break;
             }
-        }*/
+        }
 
         if ($this->field->name === "Needs"){
             switch ($content->content) {
