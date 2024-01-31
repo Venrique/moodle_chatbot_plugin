@@ -513,8 +513,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         }
 
         //KTT CUSTOMIZATION
-        if ($this->field->name === "Needs"){
-            switch ($content->content) {
+            switch ($this->field->name) {
                 case "Comprehensive sexuality education":
                     if ($SESSION->lang === 'en') {
                         $content->content = "Comprehensive sexuality education";
@@ -656,7 +655,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                     }
                     break;
             }
-        }
+
 
         if ($this->field->name === "Category"){
             switch ($content->content) {
@@ -719,7 +718,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             }
         }
 
-        $str = format_text($this->field->name, $content->content1, $options);
+        $str = format_text($content->content, $content->content1, $options);
         return $str;
     }
 
