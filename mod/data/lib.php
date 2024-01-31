@@ -511,6 +511,8 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         if (!property_exists($SESSION,'lang')){
             $SESSION->lang = "en";
         }
+
+        //KTT CUSTOMIZATION
         if ($this->field->name === "Category"){
             switch ($content->content) {
                 case "General tool":
@@ -541,8 +543,182 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                         $content->content = "Outil de qualité des soins";
                     }
                     break;
+                case "Research":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Research";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Investigación";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Pesquisa";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Recherche";
+                    }
+                    break;
+                case "Narrative":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Narrative";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Narrativa";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Narrativa";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Narratif";
+                    }
+                    break;
             }
         }
+
+        if ($this->field->name === "Needs"){
+            switch ($content->content) {
+                case "Comprehensive sexuality education":
+                    if ($SESSION->lang === 'en') {
+                        $content->content = "Comprehensive sexuality education";
+                    }
+                    if ($SESSION->lang === 'es') {
+                        $content->content = "Educación integral en sexualidad";
+                    }
+                    if ($SESSION->lang === 'pt') {
+                        $content->content = "Educação sexual abrangente";
+                    }
+                    if ($SESSION->lang === 'fr') {
+                        $content->content = "Éducation sexuelle complète";
+                    }
+                    break;
+                case "Community outreach channels":
+                    if ($SESSION->lang === 'en') {
+                        $content->content = "Community outreach channels";
+                    }
+                    if ($SESSION->lang === 'es') {
+                        $content->content = "Canales de alcance comunitario";
+                    }
+                    if ($SESSION->lang === 'pt') {
+                        $content->content = "Canais de alcance comunitário";
+                    }
+                    if ($SESSION->lang === 'fr') {
+                        $content->content = "Canaux d'information communautaires";
+                    }
+                    break;
+                case "Humanitarian Responses":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Humanitarian Responses";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Respuestas Humanitarias";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Respostas humanitárias";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Réponses humanitaires";
+                    }
+                    break;
+                case "General SRH services":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "General SRH services";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Servicios generales de SSR";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Serviços gerais de SSR";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Services généraux de santé sexuelle et reproductive";
+                    }
+                    break;
+                case "Safe and/or legal abortion":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Safe and/or legal abortion";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Aborto seguro y/o legal";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Aborto seguro e/ou legal";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Avortement sûr et/ou légal";
+                    }
+                    break;
+                case "Contraception":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Contraception";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Anticoncepción";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Contracepção";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Contraception";
+                    }
+                    break;
+                case "Sexual and gender-based violence":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Sexual and gender-based violence";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Violencia sexual y de género";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Violência sexual e baseada em gênero";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Violence sexuelle et sexiste";
+                    }
+                    break;
+                case "Intersectional Feminism and Gender Equity":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Intersectional Feminism and Gender Equity";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Feminismo interseccional y equidad de género";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Feminismo interseccional e equidade de gênero";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Féminisme intersectionnel et équité entre les sexes";
+                    }
+                    break;
+                case "Sexual and reproductive rights":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Sexual and reproductive rights";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Derechos sexuales y reproductivos";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Direitos sexuais e reprodutivos";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Droits sexuels et génésiques";
+                    }
+                    break;
+                case "Health channels":
+                    if ($SESSION->lang === 'en'){
+                        $content->content = "Health channels";
+                    }
+                    if ($SESSION->lang === 'es'){
+                        $content->content = "Canales de salud";
+                    }
+                    if ($SESSION->lang === 'pt'){
+                        $content->content = "Canais de saúde";
+                    }
+                    if ($SESSION->lang === 'fr'){
+                        $content->content = "Canaux de santé";
+                    }
+                    break;
+            }
+        }
+
         $str = format_text($content->content, $content->content1, $options);
         return $str;
     }
