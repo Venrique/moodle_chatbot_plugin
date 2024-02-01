@@ -933,7 +933,7 @@ class template {
 
         $manager = $this->manager;
         $renderer = $manager->get_renderer();
-        $templatecontent = $this->templatecontent;
+        $templatecontent = format_text($this->templatecontent, FORMAT_HTML, ['allowid'=>true, 'noclean'=>true, 'trusted'=>true, 'para'=>false]);
 
         if (!$processeddata) {
             $processeddata = (object)[
