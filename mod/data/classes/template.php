@@ -929,14 +929,14 @@ class template {
         ?int $entryid = null,
         ?stdClass $entrydata = null
     ): string {
-        global $OUTPUT, $SESSION;
+        global $OUTPUT, $SESSION, $USER;
 
         $manager = $this->manager;
         $renderer = $manager->get_renderer();
         //KTT CHANGE
         $templatecontent = format_text($this->templatecontent, FORMAT_HTML, ['allowid'=>true, 'noclean'=>true, 'trusted'=>true, 'para'=>false]);
         if (!property_exists($SESSION,'lang')){
-            $SESSION->lang = "en";
+            $SESSION->lang = $USER->lang;
         }
 
         if (!$processeddata) {
