@@ -369,7 +369,7 @@ class data_field_checkbox extends data_field_base {
                         break;
                 }
             }else{
-                $str .= $line . "<br />\n";
+                //$str .= $line . "<br />\n";
             }
 
             //$str .= $line . "<br />\n";
