@@ -53,7 +53,7 @@ class data_field_checkbox extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT;
+        global $DB, $OUTPUT, $SESSION;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
@@ -91,7 +91,156 @@ class data_field_checkbox extends data_field_base {
             } else {
                 $str .= '/>';
             }
-            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
+
+            //KTT CODE
+            if ($this->field->name === "Needs"){
+                switch ($checkbox){
+                    case "Comprehensive sexuality education":
+                        if ($SESSION->lang === 'en'){
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Comprehensive sexuality education".'</label><br />';
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Educación integral en sexualidad".'</label><br />';
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Educação sexual abrangente".'</label><br />';
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Éducation sexuelle complète".'</label><br />';
+                        }
+                        break;/*
+                    case "Community outreach channels":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Community outreach channels" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Canales de alcance comunitario" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Canais de alcance comunitário" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Canaux d'information communautaires" . "<br />\n";
+                        }
+                        break;
+                    case "Humanitarian Responses":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Humanitarian Responses" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Respuestas Humanitarias" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Respostas humanitárias" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Réponses humanitaires" . "<br />\n";
+                        }
+                        break;
+                    case "General SRH services":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "General SRH services" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Servicios generales de SSR" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Serviços gerais de SSR" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Services généraux de santé sexuelle et reproductive" . "<br />\n";
+                        }
+                        break;
+                    case "Safe and/or legal abortion":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Safe and/or legal abortion" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Aborto seguro y/o legal" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Aborto seguro e/ou legal" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Avortement sûr et/ou légal" . "<br />\n";
+                        }
+                        break;
+                    case "Contraception":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Contraception" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Anticoncepción" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Contracepção" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Contraception" . "<br />\n";
+                        }
+                        break;
+                    case "Sexual and gender-based violence":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Sexual and gender-based violence" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Violencia sexual y de género" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Violência sexual e baseada em gênero" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Violence sexuelle et sexiste" . "<br />\n";
+                        }
+                        break;
+                    case "Intersectional Feminism and Gender Equity":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Intersectional Feminism and Gender Equity" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Feminismo interseccional y equidad de género" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Feminismo interseccional e equidade de gênero" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Féminisme intersectionnel et équité entre les sexes" . "<br />\n";
+                        }
+                        break;
+                    case "Sexual and reproductive rights":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Sexual and reproductive rights" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Derechos sexuales y reproductivos" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Direitos sexuais e reprodutivos" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Droits sexuels et génésiques" . "<br />\n";
+                        }
+                        break;
+                    case "Health channels":
+                        if ($SESSION->lang === 'en'){
+                            $str .= "Health channels" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'es'){
+                            $str .= "Canales de salud" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'pt'){
+                            $str .= "Canais de saúde" . "<br />\n";
+                        }
+                        if ($SESSION->lang === 'fr'){
+                            $str .= "Canaux de santé" . "<br />\n";
+                        }
+                        break;*/
+                }
+            }else{
+                $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
+            }
+
+            //$str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
             $i++;
         }
         $str .= '</fieldset>';
@@ -369,7 +518,7 @@ class data_field_checkbox extends data_field_base {
                         break;
                 }
             }else{
-                //$str .= $line . "<br />\n";
+                $str .= $line . "<br />\n";
             }
 
             //$str .= $line . "<br />\n";
