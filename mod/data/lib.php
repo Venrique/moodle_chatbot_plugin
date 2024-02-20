@@ -531,7 +531,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
                     break;
                 case "Quality of care tool":
                     if ($SESSION->lang === 'en') {
-                        $content->content = "General tool";
+                        $content->content = "Quality of care tool";
                     }
                     if ($SESSION->lang === 'es') {
                         $content->content = "Herramienta de calidad del cuidado";
