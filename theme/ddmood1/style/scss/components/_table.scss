@@ -1,0 +1,25 @@
+.generaltable {
+    thead {
+        tr{
+            th{
+                background-color: $body-bg;
+                border: none;
+            }
+            td{
+                border: none;
+            }
+        }
+    }
+    tbody{
+        background-color: $body-bg;
+        tr{
+            th{
+                border: none;
+            }
+            td{
+                
+                border: none;
+            }
+        }
+    }
+}
