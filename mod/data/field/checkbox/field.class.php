@@ -108,133 +108,133 @@ class data_field_checkbox extends data_field_base {
                         if ($SESSION->lang === 'fr'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Éducation sexuelle complète".'</label><br />';
                         }
-                        break;/*
+                        break;
                     case "Community outreach channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Community outreach channels" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Community outreach channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Canales de alcance comunitario" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de alcance comunitario".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de alcance comunitário" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de alcance comunitário".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux d'information communautaires" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux d'information communautaires".'</label><br />';
                         }
                         break;
                     case "Humanitarian Responses":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Humanitarian Responses" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Humanitarian Responses".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Respuestas Humanitarias" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Respuestas Humanitarias".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Respostas humanitárias" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Respostas humanitárias".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Réponses humanitaires" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Réponses humanitaires".'</label><br />';
                         }
                         break;
                     case "General SRH services":
                         if ($SESSION->lang === 'en'){
-                            $str .= "General SRH services" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."General SRH services".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Servicios generales de SSR" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Servicios generales de SSR".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Serviços gerais de SSR" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Serviços gerais de SSR".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Services généraux de santé sexuelle et reproductive" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Services généraux de santé sexuelle et reproductive".'</label><br />';
                         }
                         break;
                     case "Safe and/or legal abortion":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Safe and/or legal abortion" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Safe and/or legal abortion".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Aborto seguro y/o legal" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Aborto seguro y/o legal".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Aborto seguro e/ou legal" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Aborto seguro e/ou legal".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Avortement sûr et/ou légal" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Avortement sûr et/ou légal".'</label><br />';
                         }
                         break;
                     case "Contraception":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Contraception" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Contraception".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Anticoncepción" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Anticoncepción".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Contracepção" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Contracepção".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Contraception" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Contraception".'</label><br />';
                         }
                         break;
                     case "Sexual and gender-based violence":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and gender-based violence" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Sexual and gender-based violence".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Violencia sexual y de género" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Violencia sexual y de género".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Violência sexual e baseada em gênero" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Violência sexual e baseada em gênero".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Violence sexuelle et sexiste" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Violence sexuelle et sexiste".'</label><br />';
                         }
                         break;
                     case "Intersectional Feminism and Gender Equity":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Intersectional Feminism and Gender Equity" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Intersectional Feminism and Gender Equity".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Feminismo interseccional y equidad de género" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Feminismo interseccional y equidad de género".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Feminismo interseccional e equidade de gênero" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Feminismo interseccional e equidade de gênero".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Féminisme intersectionnel et équité entre les sexes" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Féminisme intersectionnel et équité entre les sexes".'</label><br />';
                         }
                         break;
                     case "Sexual and reproductive rights":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and reproductive rights" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Sexual and reproductive rights".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Derechos sexuales y reproductivos" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Derechos sexuales y reproductivos".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Direitos sexuais e reprodutivos" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Direitos sexuais e reprodutivos".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Droits sexuels et génésiques" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Droits sexuels et génésiques".'</label><br />';
                         }
                         break;
                     case "Health channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Health channels" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Health channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= "Canales de salud" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de salud".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de saúde" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de saúde".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux de santé" . "<br />\n";
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux de santé".'</label><br />';
                         }
-                        break;*/
+                        break;
                 }
             }else{
                 $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
