@@ -497,7 +497,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
      * @return bool|string
      */
     function display_browse_field($recordid, $template) {
-        global $DB, $SESSION;
+        global $DB, $SESSION, $USER;
         $content = $this->get_data_content($recordid);
         if (!$content || !isset($content->content)) {
             return '';
@@ -509,7 +509,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         }
         $options->para = false;
         if (!property_exists($SESSION,'lang')){
-            $SESSION->lang = "en";
+            $SESSION->lang = $USER->lang;
         }
 
         //KTT CUSTOMIZATION
