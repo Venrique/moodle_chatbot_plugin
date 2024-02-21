@@ -123,9 +123,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux d'information communautaires".'</label><br />';
                         }
                         break;
-                    case "Humanitarian Responses":
+                    case "Humanitarian responses":
                         if ($SESSION->lang === 'en'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Humanitarian Responses".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Humanitarian responses".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Respuestas Humanitarias".'</label><br />';
@@ -195,7 +195,7 @@ class data_field_checkbox extends data_field_base {
                         break;
                     case "Intersectional feminism and gender equity":
                         if ($SESSION->lang === 'en'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Intersectional Feminism and Gender Equity".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Intersectional feminism and gender equity".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Feminismo interseccional y equidad de género".'</label><br />';
@@ -390,9 +390,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= "Éducation sexuelle complète" . "<br />\n";
                         }
                         break;
-                    case "Community outreach channels":
+                    case "Community-based channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Community outreach channels" . "<br />\n";
+                            $str .= "Community-based channels" . "<br />\n";
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= "Canales de alcance comunitario" . "<br />\n";
@@ -404,9 +404,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= "Canaux d'information communautaires" . "<br />\n";
                         }
                         break;
-                    case "Humanitarian Responses":
+                    case "Humanitarian responses":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Humanitarian Responses" . "<br />\n";
+                            $str .= "Humanitarian responses" . "<br />\n";
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= "Respuestas Humanitarias" . "<br />\n";
@@ -474,9 +474,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= "Violence sexuelle et sexiste" . "<br />\n";
                         }
                         break;
-                    case "Intersectional Feminism and Gender Equity":
+                    case "Intersectional feminism and gender equity":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Intersectional Feminism and Gender Equity" . "<br />\n";
+                            $str .= "Intersectional feminism and gender equity" . "<br />\n";
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= "Feminismo interseccional y equidad de género" . "<br />\n";
@@ -502,9 +502,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= "Droits sexuels et génésiques" . "<br />\n";
                         }
                         break;
-                    case "Health channels":
+                    case "Digital health channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= "Health channels" . "<br />\n";
+                            $str .= "Digital health channels" . "<br />\n";
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= "Canales de salud" . "<br />\n";
