@@ -109,9 +109,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Éducation sexuelle complète".'</label><br />';
                         }
                         break;
-                    case "Community outreach channels":
+                    case "Community-based channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Community outreach channels".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Community-based channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de alcance comunitario".'</label><br />';
@@ -193,7 +193,7 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Violence sexuelle et sexiste".'</label><br />';
                         }
                         break;
-                    case "Intersectional Feminism and Gender Equity":
+                    case "Intersectional feminism and gender equity":
                         if ($SESSION->lang === 'en'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Intersectional Feminism and Gender Equity".'</label><br />';
                         }
@@ -221,9 +221,9 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Droits sexuels et génésiques".'</label><br />';
                         }
                         break;
-                    case "Health channels":
+                    case "Digital health channels":
                         if ($SESSION->lang === 'en'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Health channels".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Digital health channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de salud".'</label><br />';
