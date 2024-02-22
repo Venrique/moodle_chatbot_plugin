@@ -23,11 +23,6 @@ if (isloggedin() && !isguestuser()) {
 
     }
 
-
-    $testparameter->FosFeministaTeam = 'FosFeministaTeam';
-    $testparameter->OurFeministAlliance = 'OurFeministAlliance';
-    $testparameter->user =
-
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
 
