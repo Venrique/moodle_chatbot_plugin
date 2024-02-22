@@ -69,7 +69,8 @@ $headercontent = $header->export_for_template($renderer);
 
 // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
 if ($USER->id !== 0){
-    $userCohorts = cohort_get_cohorts();
+    $cohortids = array();
+    $userCohorts = cohort_get_cohorts($cohortids);
 }
 
 $testparameter = new stdClass();
