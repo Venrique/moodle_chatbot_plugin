@@ -6,7 +6,7 @@ if (isloggedin() && !isguestuser()) {
 
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
-require_once($CFG->dirroot . '/cohort/externallib.php');
+//require_once($CFG->dirroot . '/cohort/externallib.php');
 
 
 // Add block button in editing mode.
@@ -70,7 +70,7 @@ $headercontent = $header->export_for_template($renderer);
 // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
 if ($USER->id !== 0){
     $cohortids = array();
-    $userCohorts = cohort_get_cohorts($cohortids);
+    $userCohorts = core_cohort_external::get_cohorts($cohortids);
 }
 
 $testparameter = new stdClass();
