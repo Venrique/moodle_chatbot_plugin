@@ -69,7 +69,7 @@ $headercontent = $header->export_for_template($renderer);
 $testparameter = new stdClass();
 $testparameter->FosFeministaTeam = 'FosFeministaTeam';
 $testparameter->OurFeministAlliance = 'OurFeministAlliance';
-$testparameter->user = $USER;
+$testparameter->user = $USER->id;
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
