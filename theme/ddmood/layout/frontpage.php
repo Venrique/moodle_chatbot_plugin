@@ -6,7 +6,7 @@ if (isloggedin() && !isguestuser()) {
 
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
-//require_once($CFG->dirroot . '/cohort/externallib.php');
+require_once($CFG->dirroot . '/cohort/externallib.php');
 
 
 // Add block button in editing mode.
