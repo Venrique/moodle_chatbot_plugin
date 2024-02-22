@@ -67,7 +67,7 @@ $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
 $testparameter = new stdClass();
-$testparameter->FosFeministaTeam = 'FosFeministaTeam';
+//$testparameter->FosFeministaTeam = 'FosFeministaTeam';
 $testparameter->OurFeministAlliance = 'OurFeministAlliance';
 
 $templatecontext = [
