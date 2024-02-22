@@ -67,7 +67,7 @@ $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
 // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
-if ($USER->isloggedin()){
+if ($USER->id !== 0){
     $userCohorts = core_cohort_get_cohorts();
 }
 
