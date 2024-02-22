@@ -114,13 +114,13 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Community-based channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de alcance comunitario".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales comunitarios".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de alcance comunitário".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de base comunitária".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux d'information communautaires".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux communautaires".'</label><br />';
                         }
                         break;
                     case "Humanitarian responses":
@@ -226,13 +226,13 @@ class data_field_checkbox extends data_field_base {
                             $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Digital health channels".'</label><br />';
                         }
                         if ($SESSION->lang === 'es'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de salud".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canales de salud digital".'</label><br />';
                         }
                         if ($SESSION->lang === 'pt'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de saúde".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canais de saúde digitais".'</label><br />';
                         }
                         if ($SESSION->lang === 'fr'){
-                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux de santé".'</label><br />';
+                            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'."Canaux de santé numériques".'</label><br />';
                         }
                         break;
                 }
