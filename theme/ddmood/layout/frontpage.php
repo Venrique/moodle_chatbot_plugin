@@ -6,12 +6,12 @@ if (isloggedin() && !isguestuser()) {
 
     require_once($CFG->libdir . '/behat/lib.php');
     require_once($CFG->dirroot . '/course/lib.php');
-    require_once($CFG->dirroot . '/cohort/externallib.php');
+    //require_once($CFG->dirroot . '/cohort/externallib.php');
 
     // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
     if ($USER->id !== 0) {
         $cohortids = array();
-        $userCohorts = core_cohort_external::get_cohorts($cohortids);
+        $userCohorts = cohort_get_user_cohorts($USER->id);
     }
 
     $testparameter = new stdClass();
