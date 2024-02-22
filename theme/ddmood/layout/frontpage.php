@@ -66,6 +66,11 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+// KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
+if ($USER->isloggedin()){
+    $userCohorts = core_cohort_get_cohorts();
+}
+
 $testparameter = new stdClass();
 $testparameter->FosFeministaTeam = 'FosFeministaTeam';
 $testparameter->OurFeministAlliance = 'OurFeministAlliance';
