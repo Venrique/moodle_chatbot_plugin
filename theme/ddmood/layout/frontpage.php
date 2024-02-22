@@ -11,7 +11,7 @@ if (isloggedin() && !isguestuser()) {
     // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
     if ($USER->id !== 0) {
         $cohortids = array();
-        $userCohorts = core_cohort_external::get_cohorts($cohortids);
+        //$userCohorts = core_cohort_external::get_cohorts($cohortids);
     }
 
     $testparameter = new stdClass();
