@@ -10,7 +10,7 @@ if (isloggedin() && !isguestuser()) {
 
 
     // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
-    $testparameter = new stdClass();
+    $cohorts = new stdClass();
 
     if ($USER->id !== 0) {
         $cohortids = array();
@@ -18,7 +18,7 @@ if (isloggedin() && !isguestuser()) {
 
         foreach ($userCohorts as $cohort){
             $cohortIdentifier = $cohort->idnumber;
-            $testparameter->$cohortIdentifier = $cohortIdentifier;
+            $cohorts->$cohortIdentifier = $cohortIdentifier;
         }
 
     }
@@ -95,7 +95,7 @@ if (isloggedin() && !isguestuser()) {
             'mobileprimarynav' => $primarymenu['mobileprimarynav'],
             'usermenu' => $primarymenu['user'],
             'langmenu' => $primarymenu['lang'],
-            'testparameter' => $testparameter,
+            'testparameter' => $cohorts,
             'forceblockdraweropen' => $forceblockdraweropen,
             'regionmainsettingsmenu' => $regionmainsettingsmenu,
             'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
