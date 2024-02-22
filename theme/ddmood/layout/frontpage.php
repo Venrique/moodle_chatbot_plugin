@@ -95,7 +95,7 @@ if (isloggedin() && !isguestuser()) {
             'mobileprimarynav' => $primarymenu['mobileprimarynav'],
             'usermenu' => $primarymenu['user'],
             'langmenu' => $primarymenu['lang'],
-            'testparameter' => $cohorts,
+            'cohorts' => $cohorts,
             'forceblockdraweropen' => $forceblockdraweropen,
             'regionmainsettingsmenu' => $regionmainsettingsmenu,
             'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
