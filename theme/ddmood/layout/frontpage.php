@@ -8,16 +8,25 @@ if (isloggedin() && !isguestuser()) {
     require_once($CFG->dirroot . '/course/lib.php');
     require_once($CFG->dirroot . '/cohort/lib.php');
 
+
     // KTT CUSTOMIZATION, SEARCH FOR USER COHORTS
+    $testparameter = new stdClass();
+
     if ($USER->id !== 0) {
         $cohortids = array();
         $userCohorts = cohort_get_user_cohorts($USER->id);
+
+        foreach ($userCohorts as $cohort){
+            $cohortIdentifier = $cohort->idnumber;
+            $testparameter->$cohortIdentifier = $cohortIdentifier;
+        }
+
     }
 
-    $testparameter = new stdClass();
+
     $testparameter->FosFeministaTeam = 'FosFeministaTeam';
     $testparameter->OurFeministAlliance = 'OurFeministAlliance';
-    $testparameter->user = implode(", ", $userCohorts);
+    $testparameter->user =
 
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
