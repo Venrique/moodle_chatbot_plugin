@@ -66,6 +66,10 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+$testparameter = new stdClass();
+$testparameter->FosFeministaTeam = 'FosFeministaTeam';
+$testparameter->OurFeministAlliance = 'OurFeministAlliance';
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -80,7 +84,7 @@ $templatecontext = [
     'mobileprimarynav' => $primarymenu['mobileprimarynav'],
     'usermenu' => $primarymenu['user'],
     'langmenu' => $primarymenu['lang'],
-    'testparameter' => true,
+    'testparameter' => $testparameter,
     'forceblockdraweropen' => $forceblockdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
