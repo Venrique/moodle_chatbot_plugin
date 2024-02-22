@@ -17,7 +17,7 @@ if (isloggedin() && !isguestuser()) {
     $testparameter = new stdClass();
     $testparameter->FosFeministaTeam = 'FosFeministaTeam';
     $testparameter->OurFeministAlliance = 'OurFeministAlliance';
-    $testparameter->user = $USER->id;
+    $testparameter->user = implode(", ", $userCohorts);
 
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
