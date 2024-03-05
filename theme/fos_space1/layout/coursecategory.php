@@ -13,9 +13,10 @@ if (isloggedin() && !isguestuser()) {
 
     $course = $DB->get_record('course', array('shortname' => 'FF'));
         
-    $courseModules = get_fast_modinfo($course->id);
+    $courseModulesObject = get_fast_modinfo($course->id);
+    $courseModules = $courseModulesObject->get_cms();
 
-    echo $courseModules;
+    echo $courseModules[0]->name;
 
 
     // Add block button in editing mode.
