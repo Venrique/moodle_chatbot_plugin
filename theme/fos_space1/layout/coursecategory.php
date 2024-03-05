@@ -17,13 +17,13 @@ if (isloggedin() && !isguestuser()) {
     $courseModules = $courseModulesObject->get_cms();
 
     foreach ($courseModules as $module){
-        if ($module->modname == 'forum' || $module->modname == 'data'){
+        if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
             $moduleIdentifier = $module->modname;
             $modules->$moduleIdentifier = $module->id;
         }
     }
 
-    print_object($courseModulesObject);
+    //print_object($courseModulesObject);
     print_object($modules);
 
 
