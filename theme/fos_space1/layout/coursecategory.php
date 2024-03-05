@@ -9,14 +9,22 @@ if (isloggedin() && !isguestuser()) {
 
     require_once($CFG->dirroot . '/lib/modinfolib.php');
 
-    $courseModules = new stdClass();
+    $modules = new stdClass();
 
     $course = $DB->get_record('course', array('shortname' => 'FF'));
         
     $courseModulesObject = get_fast_modinfo($course->id);
     $courseModules = $courseModulesObject->get_cms();
 
-    echo $courseModules[1]->modname;
+    foreach ($courseModules as $module){
+        if ($module->modname == 'forum' || $module->modname == 'data'){
+            $moduleIdentifier = $module->modname;
+            $modules->$moduleIdentifier = $module->id;
+        }
+    }
+
+    print_object($courseModules);
+    print_object($modules);
 
 
     // Add block button in editing mode.
