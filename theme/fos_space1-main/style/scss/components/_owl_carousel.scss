@@ -1,0 +1,22 @@
+#owl-carousel_slider {
+  @include font-header("Isidora Sans Medium");
+  font-size: 1.2rem;
+
+  .item {
+    position: relative;
+      .title {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+      }
+  }
+}
+.slider_clour_text_white {
+  color: $white;
+}
+.slider_clour_text_orange {
+  color: $orange;
+}
+.slider_clour_text_green {
+  color: $green;
+}

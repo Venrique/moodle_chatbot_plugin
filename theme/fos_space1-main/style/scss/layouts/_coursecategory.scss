@@ -1,0 +1,90 @@
+.grid-category {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1281px;
+  margin: 0 auto 50px;
+  grid-template-rows: 230px 1fr;
+  grid-auto-columns: 1fr;
+  gap: 21px 0px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "img_header"
+    "cta-btns"
+    "content-category";
+  .img_header {
+    grid-area: img_header;
+    background-image: url('data:image/svg+xml,<svg width="1281" height="230" viewBox="0 0 1281 230" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1281" height="230" fill="%235C3873"/><path d="M257 115C257 51.4873 308.487 0 372 0H1281V230H372C308.487 230 257 178.513 257 115V115Z" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .grid-header_content {
+      display: grid;
+      grid-template-columns: 257px 1fr;
+      grid-template-rows: 230px;
+      grid-auto-columns: 1fr;
+      gap: 21px 0px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-items: stretch;
+      align-items: stretch;
+      grid-template-areas: "logos title";
+      .logos {
+        grid-area: logos;
+        .logo {
+          width: 93px;
+          height: 130px;
+          margin-top: 57px;
+          margin-left: 83px;
+          background-repeat: no-repeat;
+          background-image: url('data:image/svg+xml,<svg width="83" height="116" viewBox="0 0 83 116" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_337_593)"><path d="M56.6164 24.2793C48.8903 21.2958 42.2908 21.3612 39.0381 21.4266C33.6677 21.5318 29.2358 22.4903 26.1326 23.3891L6.51965 3.39715C9.15225 2.29928 12.8617 1.04499 17.432 0.407883C19.7269 0.0864868 25.4987 -0.533554 32.6518 0.936905C40.9869 2.65196 46.6784 6.28118 49.8702 8.35745C63.1356 16.9868 70.2555 29.3733 73.4805 36.0402C70.5379 32.7494 65.0208 27.5246 56.6164 24.2793Z" fill="%23F06043"/><path d="M41.4986 53.2396C52.5688 53.2396 61.5711 62.4179 61.5711 73.7009C61.5711 84.981 52.5688 94.1593 41.4986 94.1593C30.4312 94.1593 21.4261 84.981 21.4261 73.7009C21.4261 62.4179 30.4312 53.2396 41.4986 53.2396ZM41.4986 31.3989C18.5804 31.3989 0 50.3385 0 73.7009C0 97.0604 18.5804 116 41.4986 116C64.4196 116 83 97.0604 83 73.7009C83 50.3385 64.4196 31.3989 41.4986 31.3989Z" fill="%2360AD8F"/></g><defs><clipPath id="clip0_337_593"><rect width="83" height="116" fill="white"/></clipPath></defs></svg>');
+          background-size: cover;
+        }
+      }
+
+      .title {
+        justify-self: center;
+        align-self: center;
+        grid-area: title;
+        color: $primary;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .cta-btns {
+    grid-area: cta-btns;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+    gap: 0px 32px;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    margin: 10px 0;
+    grid-template-areas: "cta-left cta-right";
+    .cta-left {
+      justify-self: end;
+      align-self: center;
+      grid-area: cta-left;
+    }
+
+    .cta-right {
+      justify-self: start;
+      align-self: center;
+      grid-area: cta-right;
+    }
+  }
+
+  .content-category {
+    grid-area: content-category;
+  }
+}
+
+.collapsible-actions {
+  visibility: hidden;
+}
