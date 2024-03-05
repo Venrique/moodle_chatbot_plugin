@@ -1,11 +1,22 @@
 <?php
-global $USER;
+global $USER, $DB;
 
 if (isloggedin() && !isguestuser()) {
     defined('MOODLE_INTERNAL') || die();
 
     require_once($CFG->libdir . '/behat/lib.php');
     require_once($CFG->dirroot . '/course/lib.php');
+
+    require_once($CFG->dirroot . '/lib/modinfolib.php');
+
+    $courseModules = new stdClass();
+
+    $course = $DB->get_record('course', array('shortname' => 'FF'));
+        
+    $courseModules = get_fast_modinfo($course->id);
+
+    echo $courseModules;
+
 
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
