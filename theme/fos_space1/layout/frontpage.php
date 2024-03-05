@@ -1,5 +1,5 @@
 <?php
-global $USER;
+global $USER, $DB;
 
 if (isloggedin() && !isguestuser()) {
     defined('MOODLE_INTERNAL') || die();
@@ -11,6 +11,7 @@ if (isloggedin() && !isguestuser()) {
     require_once($CFG->dirroot . '/cohort/lib.php');
 
     $cohorts = new stdClass();
+    $categories = new stdClass();
 
     if ($USER->id !== 0) {
         $cohortids = array();
@@ -19,6 +20,13 @@ if (isloggedin() && !isguestuser()) {
         foreach ($userCohorts as $cohort){
             $cohortIdentifier = $cohort->idnumber;
             $cohorts->$cohortIdentifier = $cohortIdentifier;
+        }
+
+        $systemCategories = $DB->get_records('course_categories');
+        
+        foreach ($systemCategories as $category){
+            $categoryIdentifier = $category->idnumber;
+            $categories->$categoryIdentifier = $category->id;
         }
     }
 
@@ -95,6 +103,7 @@ if (isloggedin() && !isguestuser()) {
             'usermenu' => $primarymenu['user'],
             'langmenu' => $primarymenu['lang'],
             'cohorts' => $cohorts,
+            'categories' => $categories,
             'forceblockdraweropen' => $forceblockdraweropen,
             'regionmainsettingsmenu' => $regionmainsettingsmenu,
             'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
