@@ -90,7 +90,8 @@ if (isloggedin() && !isguestuser()) {
         'headercontent' => $headercontent,
         'addblockbutton' => $addblockbutton,
         'contentcategory' => $OUTPUT->main_content(),
-        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_space1')
+        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_space1'),
+        'modules' => $modules
 
     ];
     echo $OUTPUT->render_from_template('theme_fos_space1/coursecategory', $templatecontext);
