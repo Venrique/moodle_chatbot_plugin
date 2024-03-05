@@ -23,7 +23,7 @@ if (isloggedin() && !isguestuser()) {
         }
     }
 
-    print_object($courseModules);
+    print_object($courseModulesObject);
     print_object($modules);
 
 
