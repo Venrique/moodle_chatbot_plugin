@@ -67,7 +67,6 @@
 .block_calendar_month {
   .card-body {
     background-color: rgba ($white, 0.5);
-    //@include font-body("Isidora Sans Regular", 1rem);
   }
 }
 
@@ -135,7 +134,6 @@ table {
   background-color: $primary;
   border: 1px solid $primary;
   &:hover {
-    //background-color: $red;
     color: $white;
     border-color: $black;
   }
@@ -248,17 +246,15 @@ body {
 }
 
 .navbar-brand .logo {
-  display: none!important;  // Esto oculta el logo actual
+  display: none!important;
 }
 
 .navbar-brand::after {
   content: '';
   display: block!important;
-  //http://foselearning.knowtechture.com
-  //http://localhost
-  background-image: url('https://foselearning.knowtechture.com/moodle/theme/fos_space2/pix/two.png')!important;
+  background-image: url('fos_space2/pix/navbar-logo-space2.png')!important;
   background-size: contain!important;
   background-repeat: no-repeat!important;
-  width: 44px!important;  // Ajusta al tamaño de tu logo
-  height: 31px!important; // Ajusta al tamaño de tu logo
+  width: 44px!important;
+  height: 31px!important;
 }

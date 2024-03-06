@@ -65,11 +65,11 @@
   .our_feminist_alliance {
     background-image: url('data:image/svg+xml,<svg width="198" height="201" viewBox="0 0 198 201" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_d_317_464)"><path d="M182.5 2H11.5C6.2533 2 2 6.2533 2 11.5V140.561C2 143.991 3.84869 147.154 6.83684 148.838L86.1838 193.542C88.9139 195.081 92.2269 195.173 95.0389 193.791L186.692 148.723C189.941 147.125 192 143.819 192 140.198V11.5C192 6.25329 187.747 2 182.5 2Z" fill="%2360AD8F"/></g><defs><filter id="filter0_d_317_464" x="0" y="0" width="198" height="202" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dx="2" dy="2"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_464"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_464" result="shape"/></filter></defs></svg>');
     a {
-      font-weight: 600;
-      color: $FOS-Flint;
+      font-weight: 400;
+      color: $FOS-Sand;
       text-decoration: none !important;
       &:hover {
-        color: $FOS-Flint !important;
+        color: $FOS-Sand !important;
       }
     }
   }

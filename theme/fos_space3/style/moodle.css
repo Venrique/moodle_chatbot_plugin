@@ -4689,7 +4689,7 @@ body #page-wrapper #page #region-main {
 .navbar-brand::after {
   content: "";
   display: block;
-  background-image: url("https://foselearning.knowtechture.com/moodle/theme/fos_space3/pix/3.png") !important;
+  background-image: url("fos_space3/pix/navbar-logo-space3.png") !important;
   background-size: contain;
   background-repeat: no-repeat;
   width: 44px;

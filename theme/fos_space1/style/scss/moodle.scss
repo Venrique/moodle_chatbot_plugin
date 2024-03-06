@@ -23,8 +23,6 @@
 @import "components/moodle/drawer.scss";
 @import "components/moodle/filemanager";
 
-//@import "components/moodle/search";
-
 @import "layouts/layout.scss";
 
 .coursesearchbox {
@@ -256,10 +254,7 @@ body {
 .navbar-brand::after {
   content: "";
   display: block;
-  //http://foselearning.knowtechture.com
-  //http://localhost
-  background-image: url("http://localhost/theme/fos_space1/pix/FOSlogo.png") !important;
-  //background-image: url([[pix:moodle|i/course]]);
+  background-image: url("fos_space1/pix/navbar-logo-space1.png") !important;
   background-size: contain;
   background-repeat: no-repeat;
   width: 44px;

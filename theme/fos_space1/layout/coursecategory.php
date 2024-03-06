@@ -11,27 +11,27 @@ if (isloggedin() && !isguestuser()) {
 
     $modules = new stdClass();
 
-    $course = $DB->get_record('course', array('shortname' => 'FF'));
+    try{
+        $course = $DB->get_record('course', array('shortname' => 'FF'));
         
-    $courseModulesObject = get_fast_modinfo($course->id);
-    $courseModules = $courseModulesObject->get_cms();
-
-    foreach ($courseModules as $module){
-        if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
-            $moduleIdentifier = $module->modname;
-            $modules->$moduleIdentifier = $module->id;
+        $courseModulesObject = get_fast_modinfo($course->id);
+        $courseModules = $courseModulesObject->get_cms();
+    
+        foreach ($courseModules as $module){
+            if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
+                $moduleIdentifier = $module->modname;
+                $modules->$moduleIdentifier = $module->id;
+            }
         }
+    }catch(Exception $e){
+        echo $e->getMessage();
     }
-
-    //print_object($courseModulesObject);
-    print_object($modules);
-
 
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
 
-    user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-    user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
+    //user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
+    //user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
 
     if (defined('BEHAT_SITE_RUNNING')) {
         $blockdraweropen = true;

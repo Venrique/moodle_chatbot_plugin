@@ -10,6 +10,7 @@ if (isloggedin() && !isguestuser()) {
     require_once($CFG->dirroot . '/lib/modinfolib.php');
 
     $modules = new stdClass();
+
     try{
         $course = $DB->get_record('course', array('shortname' => 'CTN'));
         
