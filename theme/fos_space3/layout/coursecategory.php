@@ -7,6 +7,22 @@ if (isloggedin() && !isguestuser()) {
     require_once($CFG->libdir . '/behat/lib.php');
     require_once($CFG->dirroot . '/course/lib.php');
 
+    require_once($CFG->dirroot . '/lib/modinfolib.php');
+
+    $modules = new stdClass();
+
+    $course = $DB->get_record('course', array('shortname' => 'FF'));
+        
+    $courseModulesObject = get_fast_modinfo($course->id);
+    $courseModules = $courseModulesObject->get_cms();
+
+    foreach ($courseModules as $module){
+        if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
+            $moduleIdentifier = $module->modname;
+            $modules->$moduleIdentifier = $module->id;
+        }
+    }
+
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
 
@@ -70,7 +86,8 @@ if (isloggedin() && !isguestuser()) {
         'headercontent' => $headercontent,
         'addblockbutton' => $addblockbutton,
         'contentcategory' => $OUTPUT->main_content(),
-        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_space3')
+        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_space3'),
+        'modules' => $modules
 
     ];
     echo $OUTPUT->render_from_template('theme_fos_space3/coursecategory', $templatecontext);
