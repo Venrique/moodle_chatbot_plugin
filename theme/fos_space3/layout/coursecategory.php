@@ -1,5 +1,5 @@
 <?php
-global $USER;
+global $USER, $DB;
 
 if (isloggedin() && !isguestuser()) {
     defined('MOODLE_INTERNAL') || die();
