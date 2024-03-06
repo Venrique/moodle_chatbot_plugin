@@ -10,17 +10,20 @@ if (isloggedin() && !isguestuser()) {
     require_once($CFG->dirroot . '/lib/modinfolib.php');
 
     $modules = new stdClass();
-
-    $course = $DB->get_record('course', array('shortname' => 'CTN'));
+    try{
+        $course = $DB->get_record('course', array('shortname' => 'CTN'));
         
-    $courseModulesObject = get_fast_modinfo($course->id);
-    $courseModules = $courseModulesObject->get_cms();
-
-    foreach ($courseModules as $module){
-        if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
-            $moduleIdentifier = $module->modname;
-            $modules->$moduleIdentifier = $module->id;
+        $courseModulesObject = get_fast_modinfo($course->id);
+        $courseModules = $courseModulesObject->get_cms();
+    
+        foreach ($courseModules as $module){
+            if (($module->modname == 'forum' || $module->modname == 'data') && $module->deletioninprogress == 0){
+                $moduleIdentifier = $module->modname;
+                $modules->$moduleIdentifier = $module->id;
+            }
         }
+    }catch(Exception $e){
+        echo $e->getMessage();
     }
 
     // Add block button in editing mode.
