@@ -114,7 +114,7 @@ if (isloggedin() && !isguestuser()) {
             'slider1' => $OUTPUT->image_url('slider/slider1', 'theme_fos_space1'),
             'slider2' => $OUTPUT->image_url('slider/slider2', 'theme_fos_space1'),
             'slider3' => $OUTPUT->image_url('slider/slider3', 'theme_fos_space1'),
-            'i-our_FAT' => $OUTPUT->image_url('icons/fos_feminista_team', 'theme_fos_space1'),
+            'i-our_FAT' => $OUTPUT->image_url('icons/fos_feminista_team2', 'theme_fos_space1'),
             'i-our_FA' => $OUTPUT->image_url('icons/our_Feminist_Alliance', 'theme_fos_space1'),
             'i-ISEL' => $OUTPUT->image_url('icons/innovation_and_social_enterprise_lab', 'theme_fos_space1'),
             'i-CI' => $OUTPUT->image_url('icons/others', 'theme_fos_space1'),
