@@ -1,47 +1,50 @@
 .layout {
-    &.fullscreen {
-        background-color: $body-bg;
-    }
-    
+  &.fullscreen {
+    background-color: $body-bg;
+  }
 }
 
 #page.drawers {
-    .main-inner {
-        background-color: $body-bg;
-    }
+  .main-inner {
+    background-color: $body-bg;
+  }
 }
 
 .drawer-toggles {
-
-    .drawer-toggler {
-
-        .btn {
-            padding: 16px;
-            .icon {
-            }
-            &:focus {
-
-            }
-
-        }
+  .drawer-toggler {
+    .btn {
+      padding: 16px;
+      .icon {
+      }
+      &:focus {
+      }
     }
+  }
 
-    .drawer-left-toggle {
-
-        .btn {
-
-            &:hover {
-                padding-left: 20px;
-            }
-        }
+  .drawer-left-toggle {
+    .btn {
+      &:hover {
+        padding-left: 20px;
+      }
     }
+  }
 
-    .drawer-right-toggle {
-
-        .btn {
-
-            &:hover {
-            }
-        }
+  .drawer-right-toggle {
+    .btn {
+      &:hover {
+      }
     }
+  }
+}
+
+.custom-inner {
+  max-width: 1281px !important;
+}
+
+.footer-popover {
+  max-width: 1281px !important;
+  margin: 0 auto!important;
+}
+.pw-custom {
+    background-color: $body-bg!important;
 }

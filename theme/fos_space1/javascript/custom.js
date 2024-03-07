@@ -54,7 +54,7 @@ require(["jquery"], function ($) {
       ),
     ])
       .then(function () {
-        console.log("Todos los scripts han sido cargados");
+        console.log("All scripts have been loaded");
         var owl = $("#owl-carousel_slider");
         //owl.empty();
         owl.owlCarousel({
@@ -67,7 +67,7 @@ require(["jquery"], function ($) {
         });
       })
       .catch(function () {
-        console.log("Algo salió mal al cargar los scripts");
+        console.log("Something went wrong loading the scripts");
       });
 
     //$("#login").remove();

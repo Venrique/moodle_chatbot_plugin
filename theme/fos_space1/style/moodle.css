@@ -542,8 +542,30 @@ h5 {
 }
 
 #owl-carousel_slider {
-  font-family: "Isidora Sans Medium", sans-serif;
-  font-size: 1.2rem;
+  /*
+  @include font-header("Isidora Sans Medium");
+
+  @include respond-to("small-phone") {
+    font-size: 10px;
+  }
+
+  @include respond-to("phone") {
+    font-size: 11px;
+  }
+
+  @include respond-to("tablet") {
+    font-size: 1.2rem;
+  }
+
+  @include respond-to("other") {
+    font-size: 1.3rem;
+  }
+
+  @include respond-to("large-desktop") {
+    font-size: 2.2vw;
+  }
+  */
+  font-size: 2.2vw;
 }
 #owl-carousel_slider .item {
   position: relative;
@@ -2781,6 +2803,7 @@ h3.sectionname .inplaceeditable.inplaceeditingon .editinstructions {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  max-width: 1281px;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2) 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -4725,6 +4748,19 @@ a.ygtvspacer:hover {
 .drawer-toggles .drawer-left-toggle .btn:hover {
   padding-left: 20px;
 }
+.custom-inner {
+  max-width: 1281px !important;
+}
+
+.footer-popover {
+  max-width: 1281px !important;
+  margin: 0 auto !important;
+}
+
+.pw-custom {
+  background-color: #f3eff5 !important;
+}
+
 .coursesearchbox {
   padding: 0.5rem;
   border: 1px solid #5c3873;
@@ -4938,7 +4974,7 @@ body #page-wrapper #page #region-main {
 .navbar-brand::after {
   content: "";
   display: block;
-  background-image: url("fos_space1/pix/navbar-logo-space1.png") !important;
+  background-image: url("theme/fos_space1/pix/navbar-logo-space1.png") !important;
   background-size: contain;
   background-repeat: no-repeat;
   width: 44px;
@@ -4966,6 +5002,7 @@ body #page-wrapper #page #region-main {
 
 .custom-inner {
   padding: 0 0.5rem 1.5rem !important;
+  max-width: 1281px;
 }
 
 #page.drawers {

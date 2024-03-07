@@ -114,13 +114,13 @@ if (isloggedin() && !isguestuser()) {
             'slider1' => $OUTPUT->image_url('slider/slider1', 'theme_fos_space1'),
             'slider2' => $OUTPUT->image_url('slider/slider2', 'theme_fos_space1'),
             'slider3' => $OUTPUT->image_url('slider/slider3', 'theme_fos_space1'),
-            'i-our_FAT' => $OUTPUT->image_url('icons/fos_feminista_team2', 'theme_fos_space1'),
-            'i-our_FA' => $OUTPUT->image_url('icons/our_Feminist_Alliance', 'theme_fos_space1'),
-            'i-ISEL' => $OUTPUT->image_url('icons/innovation_and_social_enterprise_lab', 'theme_fos_space1'),
-            'i-CI' => $OUTPUT->image_url('icons/others', 'theme_fos_space1'),
-            'i-CLR' => $OUTPUT->image_url('icons/others', 'theme_fos_space1'),
-            'i-CTN' => $OUTPUT->image_url('icons/others', 'theme_fos_space1'),
-            'i-C-CSE' => $OUTPUT->image_url('icons/others', 'theme_fos_space1')
+            'i-FF' => $OUTPUT->image_url('icons/ff', 'theme_fos_space1'),
+            'i-FA' => $OUTPUT->image_url('icons/fa', 'theme_fos_space1'),
+            'i-SE' => $OUTPUT->image_url('icons/se', 'theme_fos_space1'),
+            'i-CEBA' => $OUTPUT->image_url('icons/ceba', 'theme_fos_space1'),
+            'i-CLR' => $OUTPUT->image_url('icons/clr', 'theme_fos_space1'),
+            'i-CTN' => $OUTPUT->image_url('icons/ctn', 'theme_fos_space1'),
+            'i-CCSE' => $OUTPUT->image_url('icons/ccse', 'theme_fos_space1')
 
     ];
 

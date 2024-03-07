@@ -254,7 +254,7 @@ body {
 .navbar-brand::after {
   content: "";
   display: block;
-  background-image: url("fos_space1/pix/navbar-logo-space1.png") !important;
+  background-image: url("theme/fos_space1/pix/navbar-logo-space1.png") !important;
   background-size: contain;
   background-repeat: no-repeat;
   width: 44px;
@@ -282,6 +282,7 @@ body {
 
 .custom-inner {
   padding: 0 0.5rem 1.5rem !important;
+  max-width: 1281px;
 }
 
 #page.drawers {

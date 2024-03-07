@@ -30,21 +30,11 @@ if (isloggedin() && !isguestuser()) {
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
 
-    //user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-    //user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
-
-    if (defined('BEHAT_SITE_RUNNING')) {
-        $blockdraweropen = true;
-    }
 
     $extraclasses = ['uses-drawers'];
-    if ($courseindexopen) {
-        $extraclasses[] = 'drawer-open-index';
-    }
 
     $blockshtml = $OUTPUT->blocks('side-pre');
     $bodyattributes = $OUTPUT->body_attributes($extraclasses);
-    $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 
     $secondarynavigation = false;
     $overflow = '';
@@ -72,18 +62,12 @@ if (isloggedin() && !isguestuser()) {
         'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
         'output' => $OUTPUT,
         'sidepreblocks' => $blockshtml,
-        'hasblocks' => $hasblocks,
         'bodyattributes' => $bodyattributes,
-        'courseindexopen' => $courseindexopen,
-        'blockdraweropen' => $blockdraweropen,
-        'courseindex' => $courseindex,
         'primarymoremenu' => $primarymenu['moremenu'],
         'secondarymoremenu' => $secondarynavigation ?: false,
         'mobileprimarynav' => $primarymenu['mobileprimarynav'],
         'usermenu' => $primarymenu['user'],
         'langmenu' => $primarymenu['lang'],
-        'cohorts' => $cohorts,
-        'forceblockdraweropen' => $forceblockdraweropen,
         'regionmainsettingsmenu' => $regionmainsettingsmenu,
         'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
         'overflow' => $overflow,
