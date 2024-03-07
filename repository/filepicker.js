@@ -1856,8 +1856,8 @@ M.core_filepicker.init = function(Y, options) {
             if (data.upload.label && content.one('.fp-file label')) {
                 content.one('.fp-file label').setContent(data.upload.label);
             }
-            //content.one('.fp-saveas input').set('name', 'title');
-            //content.one('.fp-setauthor input').setAttrs({name:'author', value:this.options.author});
+            content.one('.fp-saveas input').set('name', 'title');
+            content.one('.fp-setauthor input').setAttrs({name:'author', value:this.options.author});
             content.one('.fp-setlicense select').set('name', 'license');
             this.populateLicensesSelect(content.one('.fp-setlicense select'));
             // append hidden inputs to the upload form

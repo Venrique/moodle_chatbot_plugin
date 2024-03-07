@@ -32,15 +32,15 @@
                         <input  type="file"/>
                     </div>
                 </div>
-                <div class="fp-saveas form-group">
+                <div class="fp-saveas form-group" hidden>
                     <label>{{#str}}saveas, repository{{/str}}</label>
                     <input type="text" class="form-control"/>
                 </div>
-                <div class="fp-setauthor form-group">
+                <div class="fp-setauthor form-group" hidden>
                     <label>{{#str}}author, repository{{/str}}</label>
                     <input type="text" class="form-control"/>
                 </div>
-                <div class="fp-setlicense form-group">
+                <div class="fp-setlicense form-group" hidden>
                     {{>core/filemanager_chooselicense}}
                 </div>
             </div>
