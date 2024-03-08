@@ -4067,6 +4067,8 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }
     }
 
+    $OneUploadFieldNotEmpty = false;
+
     // Check all form fields which have the required are filled.
     foreach ($fields as $fieldrecord) {
         // Check whether the field has any data.
@@ -4091,6 +4093,18 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
         }
 
+        //KTT CUSTOMIZATION
+        if ($field->field->name === "File EN" && $fieldhascontent){
+            $OneUploadFieldNotEmpty = true;
+        }elseif ($field->field->name === "File ES" && $fieldhascontent){
+            $OneUploadFieldNotEmpty = true;
+        }elseif ($field->field->name === "File PT" && $fieldhascontent){
+            $OneUploadFieldNotEmpty = true;
+        }elseif ($field->field->name === "File FR" && $fieldhascontent){
+            $OneUploadFieldNotEmpty = true;
+        }
+        //----------
+
         // If the field is required, add a notification to that effect.
         if ($field->field->required && !$fieldhascontent) {
             if (!isset($result->fieldnotifications[$field->field->name])) {
@@ -4107,6 +4121,16 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
         }
     }
+
+    //KTT CUSTOMIZATION
+    if (!$OneUploadFieldNotEmpty){
+        if (!isset($result->fieldnotifications["File EN"])) {
+            $result->fieldnotifications["File EN"] = array();
+        }
+        $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');
+        $requiredfieldsfilled = false;
+    }
+    //------------------
 
     if ($emptyform) {
         // The form is empty.
