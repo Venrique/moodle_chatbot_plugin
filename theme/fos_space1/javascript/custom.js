@@ -1,17 +1,5 @@
 require(["jquery"], function ($) {
   $(document).ready(function () {
-    var userToken = "786b2d70191e8e690e6c3b4ac7045a45";
-
-    // URL para la API REST de Moodle
-    var moodleUrl = M.cfg.wwwroot + "/webservice/rest/server.php";
-
-    // Parámetros para la llamada a la API
-    var data = {
-      wstoken: userToken,
-      wsfunction: "core_course_get_courses",
-      moodlewsrestformat: "json",
-    };
-
     function loadStylesheet(href, integrity, crossorigin) {
       var link = document.createElement("link");
       link.rel = "stylesheet";
@@ -63,7 +51,7 @@ require(["jquery"], function ($) {
           stagePadding: 30,
           smartSpeed: 450,
           loop: true,
-          autoplay: true
+          autoplay: true,
         });
       })
       .catch(function () {
@@ -83,6 +71,20 @@ require(["jquery"], function ($) {
     $("#scroll").click(function () {
       $("html, body").animate({ scrollTop: 0 }, 600);
       return false;
+    });
+
+    // add entry
+    $(".cta").click(function () {
+      var description = $(this).parent().find(".description-cont");
+      var isVisible = description.is(":visible");
+
+      if (isVisible) {
+        description.hide();
+        $(this).find("div").removeClass("up").addClass("down");
+      } else {
+        description.show();
+        $(this).find("div").removeClass("down").addClass("up");
+      }
     });
   });
 });

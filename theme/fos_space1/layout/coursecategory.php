@@ -12,7 +12,7 @@ if (isloggedin() && !isguestuser()) {
     $modules = new stdClass();
 
     try{
-        $course = $DB->get_record('course', array('idnumber' => 'FF'));
+        $course = $DB->get_record('course', array('shortname' => 'FF'));
         
         $courseModulesObject = get_fast_modinfo($course->id);
         $courseModules = $courseModulesObject->get_cms();

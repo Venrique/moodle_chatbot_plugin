@@ -10,10 +10,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_fos_space1';
-$plugin->release = '0.7.1';
+$plugin->release = '0.7.2';
 $plugin->version = 2024030607;
 $plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->maturity = MATURITY_BETA;
 $plugin->dependencies = [
     'theme_boost' => 2022112800,
 ];
