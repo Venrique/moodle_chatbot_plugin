@@ -4138,7 +4138,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         $requiredfieldsfilled = false;
     }
 
-    if (!$OneUploadFieldNotEmpty){
+    if (!$OneNeedSelected){
         if (!isset($result->fieldnotifications["Needs1"])) {
             $result->fieldnotifications["Needs1"] = array();
         }
