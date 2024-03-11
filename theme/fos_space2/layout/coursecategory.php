@@ -12,7 +12,7 @@ if (isloggedin() && !isguestuser()) {
     $modules = new stdClass();
 
     try{
-        $course = $DB->get_record('course', array('shortname' => 'FA'));
+        $course = $DB->get_record('course', array('idnumber' => 'FA'));
         
         $courseModulesObject = get_fast_modinfo($course->id);
         $courseModules = $courseModulesObject->get_cms();
@@ -30,8 +30,8 @@ if (isloggedin() && !isguestuser()) {
     // Add block button in editing mode.
     $addblockbutton = $OUTPUT->addblockbutton();
 
-    user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-    user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
+    //user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
+    //user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
 
     if (defined('BEHAT_SITE_RUNNING')) {
         $blockdraweropen = true;
