@@ -4068,6 +4068,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
     }
 
     $OneUploadFieldNotEmpty = false;
+    $OneNeedSelected = false;
 
     // Check all form fields which have the required are filled.
     foreach ($fields as $fieldrecord) {
@@ -4103,6 +4104,12 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }elseif ($field->field->name === "File FR" && $fieldhascontent){
             $OneUploadFieldNotEmpty = true;
         }
+
+        if ($field->field->name === "Needs1" && $fieldhascontent){
+            $OneNeedSelected = true;
+        }elseif ($field->field->name === "Needs2" && $fieldhascontent){
+            $OneNeedSelected = true;
+        }
         //----------
 
         // If the field is required, add a notification to that effect.
@@ -4128,6 +4135,14 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             $result->fieldnotifications["File EN"] = array();
         }
         $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');
+        $requiredfieldsfilled = false;
+    }
+
+    if (!$OneUploadFieldNotEmpty){
+        if (!isset($result->fieldnotifications["Needs1"])) {
+            $result->fieldnotifications["Needs1"] = array();
+        }
+        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');
         $requiredfieldsfilled = false;
     }
     //------------------
