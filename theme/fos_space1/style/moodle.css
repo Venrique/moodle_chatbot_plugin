@@ -530,6 +530,12 @@ h5 {
 .custom_form .item_custom .cnt_row1 .col1 .value input {
   width: calc(100% - 24px) !important;
 }
+.custom_form .item_custom .cnt_row1 .col1 .value .alert {
+  position: absolute;
+  top: 3px;
+  left: 28px;
+  padding: 4px 8px;
+}
 .custom_form .item_custom .cnt_row1 .col1 .description-cont {
   grid-area: description-cont;
   display: none;
@@ -600,7 +606,7 @@ h5 {
 .custom_form .item_custom .cnt_row2 {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px auto auto;
+  grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -675,7 +681,7 @@ h5 {
 .custom_form .item_custom .cnt_row3 {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -729,18 +735,8 @@ h5 {
 }
 .custom_form .item_custom .cnt_row4 {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: auto auto 1fr;
-  gap: 0px 8px;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-item_customs: stretch;
-  align-item_customs: stretch;
-}
-.custom_form .item_custom .cnt_row4 .col1 {
-  display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -750,133 +746,41 @@ h5 {
   align-item_customs: stretch;
   grid-template-areas: "field cta" "value value" "description-cont description-cont";
 }
-.custom_form .item_custom .cnt_row4 .col1 .field {
+.custom_form .item_custom .cnt_row4 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row4 .col1 .field h6 {
+.custom_form .item_custom .cnt_row4 .field h6 {
   margin-left: 24px;
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row4 .col1 .cta {
+.custom_form .item_custom .cnt_row4 .cta {
   align-self: center;
   grid-area: cta;
 }
-.custom_form .item_custom .cnt_row4 .col1 .cta .i-arrow {
+.custom_form .item_custom .cnt_row4 .cta .i-arrow {
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
-.custom_form .item_custom .cnt_row4 .col1 .cta .down {
+.custom_form .item_custom .cnt_row4 .cta .down {
   background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
 }
-.custom_form .item_custom .cnt_row4 .col1 .cta .up {
+.custom_form .item_custom .cnt_row4 .cta .up {
   background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
 }
-.custom_form .item_custom .cnt_row4 .col1 .description {
-  grid-area: description;
-  display: none;
-}
-.custom_form .item_custom .cnt_row4 .col1 .value {
+.custom_form .item_custom .cnt_row4 .value {
   grid-area: value;
 }
-.custom_form .item_custom .cnt_row4 .col1 .value select {
+.custom_form .item_custom .cnt_row4 .value select {
   width: calc(100% - 24px) !important;
 }
-.custom_form .item_custom .cnt_row4 .col2 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
-  grid-auto-columns: 1fr;
-  gap: 4px 4px;
-  grid-auto-flow: row;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-item_customs: stretch;
-  align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
-}
-.custom_form .item_custom .cnt_row4 .col2 .field {
-  grid-area: field;
-}
-.custom_form .item_custom .cnt_row4 .col2 .field h6 {
-  margin-left: 24px;
-  font-size: 12px;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row4 .col2 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row4 .col2 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row4 .col2 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row4 .col2 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row4 .col2 .description {
-  grid-area: description;
-  display: none;
-}
-.custom_form .item_custom .cnt_row4 .col2 .value {
-  grid-area: value;
-}
-.custom_form .item_custom .cnt_row4 .col2 .value select {
-  width: calc(100% - 24px) !important;
-}
-.custom_form .item_custom .cnt_row4 .col3 {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
-  grid-auto-columns: 1fr;
-  gap: 4px 4px;
-  grid-auto-flow: row;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-item_customs: stretch;
-  align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
-}
-.custom_form .item_custom .cnt_row4 .col3 .field {
-  grid-area: field;
-}
-.custom_form .item_custom .cnt_row4 .col3 .field h6 {
-  margin-left: 24px;
-  font-size: 12px;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row4 .col3 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row4 .col3 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row4 .col3 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row4 .col3 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row4 .col3 .value {
-  grid-area: value;
-}
-.custom_form .item_custom .cnt_row4 .col3 .value input {
-  width: calc(100% - 24px) !important;
-}
-.custom_form .item_custom .cnt_row4 .col3 .description-cont {
+.custom_form .item_custom .cnt_row4 .description-cont {
   grid-area: description-cont;
   display: none;
   padding-left: 24px;
 }
-.custom_form .item_custom .cnt_row4 .col3 .description-cont .description {
+.custom_form .item_custom .cnt_row4 .description-cont .description {
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
@@ -886,8 +790,18 @@ h5 {
 }
 .custom_form .item_custom .cnt_row5 {
   display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 8px;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-item_customs: stretch;
+  align-item_customs: stretch;
+}
+.custom_form .item_custom .cnt_row5 .col1 {
+  display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px auto auto;
+  grid-template-rows: 18px 36.47px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -897,53 +811,96 @@ h5 {
   align-item_customs: stretch;
   grid-template-areas: "field cta" "value value" "description-cont description-cont";
 }
-.custom_form .item_custom .cnt_row5 .field {
+.custom_form .item_custom .cnt_row5 .col1 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row5 .field h6 {
+.custom_form .item_custom .cnt_row5 .col1 .field h6 {
   margin-left: 24px;
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row5 .cta {
+.custom_form .item_custom .cnt_row5 .col1 .cta {
   align-self: center;
   grid-area: cta;
 }
-.custom_form .item_custom .cnt_row5 .cta .i-arrow {
+.custom_form .item_custom .cnt_row5 .col1 .cta .i-arrow {
   width: 18px;
   height: 18px;
   cursor: pointer;
 }
-.custom_form .item_custom .cnt_row5 .cta .down {
+.custom_form .item_custom .cnt_row5 .col1 .cta .down {
   background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
 }
-.custom_form .item_custom .cnt_row5 .cta .up {
+.custom_form .item_custom .cnt_row5 .col1 .cta .up {
   background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
 }
-.custom_form .item_custom .cnt_row5 .value {
+.custom_form .item_custom .cnt_row5 .col1 .value {
   grid-area: value;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  justify-content: center;
-  justify-items: start;
 }
-.custom_form .item_custom .cnt_row5 .value > div:first-child .inline-req {
-  width: 24px;
-  float: left;
+.custom_form .item_custom .cnt_row5 .col1 .value select {
+  width: calc(100% - 24px) !important;
 }
-.custom_form .item_custom .cnt_row5 .value > div:first-child input[type=checkbox]:nth-of-type(n + 3) {
-  margin-left: 24px;
-}
-.custom_form .item_custom .cnt_row5 .value > div:nth-child(2) input[type=checkbox] {
-  margin-left: 0px;
-}
-.custom_form .item_custom .cnt_row5 .description-cont {
+.custom_form .item_custom .cnt_row5 .col1 .description-cont {
   grid-area: description-cont;
   display: none;
   padding-left: 24px;
 }
-.custom_form .item_custom .cnt_row5 .description-cont .description {
+.custom_form .item_custom .cnt_row5 .col1 .description-cont .description {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  padding: 4px 8px;
+  background-color: #DDD3E1;
+  color: #5c3873;
+}
+.custom_form .item_custom .cnt_row5 .col2 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 18px 36.47px auto;
+  grid-auto-columns: 1fr;
+  gap: 4px 4px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-item_customs: stretch;
+  align-item_customs: stretch;
+  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+}
+.custom_form .item_custom .cnt_row5 .col2 .field {
+  grid-area: field;
+}
+.custom_form .item_custom .cnt_row5 .col2 .field h6 {
+  margin-left: 24px;
+  font-size: 12px;
+  color: #5c3873;
+}
+.custom_form .item_custom .cnt_row5 .col2 .cta {
+  align-self: center;
+  grid-area: cta;
+}
+.custom_form .item_custom .cnt_row5 .col2 .cta .i-arrow {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.custom_form .item_custom .cnt_row5 .col2 .cta .down {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row5 .col2 .cta .up {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row5 .col2 .value {
+  grid-area: value;
+}
+.custom_form .item_custom .cnt_row5 .col2 .value input {
+  width: calc(100% - 24px) !important;
+}
+.custom_form .item_custom .cnt_row5 .col2 .description-cont {
+  grid-area: description-cont;
+  display: none;
+  padding-left: 24px;
+}
+.custom_form .item_custom .cnt_row5 .col2 .description-cont .description {
   width: 100%;
   height: 100%;
   border-radius: 0.25rem;
@@ -954,7 +911,7 @@ h5 {
 .custom_form .item_custom .cnt_row6 {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px auto auto;
+  grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -989,30 +946,21 @@ h5 {
 }
 .custom_form .item_custom .cnt_row6 .value {
   grid-area: value;
-  padding-left: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  justify-content: center;
+  justify-items: start;
 }
-.custom_form .item_custom .cnt_row6 .value div {
-  width: 100%;
+.custom_form .item_custom .cnt_row6 .value > div:first-child .inline-req {
+  width: 24px;
+  float: left;
 }
-.custom_form .item_custom .cnt_row6 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_toolbar {
-  visibility: hidden;
-  height: 0;
-  display: none !important;
+.custom_form .item_custom .cnt_row6 .value > div:first-child input[type=checkbox]:nth-of-type(n + 3) {
+  margin-left: 24px;
 }
-.custom_form .item_custom .cnt_row6 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_content_wrap {
-  width: 100% !important;
-  border-top: 1px solid #5c3873;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  resize: none !important;
-  overflow-x: hidden;
-}
-.custom_form .item_custom .cnt_row6 .value div .mod-data-input > div:nth-child(2) {
-  visibility: hidden;
-  height: 0;
-}
-.custom_form .item_custom .cnt_row6 .value input {
-  width: calc(100% - 24px) !important;
+.custom_form .item_custom .cnt_row6 .value > div:nth-child(2) input[type=checkbox] {
+  margin-left: 0px;
 }
 .custom_form .item_custom .cnt_row6 .description-cont {
   grid-area: description-cont;
@@ -1030,7 +978,7 @@ h5 {
 .custom_form .item_custom .cnt_row7 {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 18px auto auto;
+  grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -1065,26 +1013,30 @@ h5 {
 }
 .custom_form .item_custom .cnt_row7 .value {
   grid-area: value;
+  margin-left: 24px;
 }
-.custom_form .item_custom .cnt_row7 .value .form-inline table {
-  border-collapse: collapse;
-  margin: 0;
-  width: 100%;
-  table-layout: auto;
-}
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody {
-  border-collapse: collapse;
-}
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody th,
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody td {
-  border: none;
-}
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody th input,
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody td input {
+.custom_form .item_custom .cnt_row7 .value div {
   width: 100%;
 }
-.custom_form .item_custom .cnt_row7 .value .form-inline table tbody tr td:first-child {
-  width: 60px;
+.custom_form .item_custom .cnt_row7 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_toolbar {
+  visibility: hidden;
+  height: 0;
+  display: none !important;
+}
+.custom_form .item_custom .cnt_row7 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_content_wrap {
+  width: 100% !important;
+  border-top: 1px solid #5c3873;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  resize: none !important;
+  overflow-x: hidden;
+}
+.custom_form .item_custom .cnt_row7 .value div .mod-data-input > div:nth-child(2) {
+  visibility: hidden;
+  height: 0;
+}
+.custom_form .item_custom .cnt_row7 .value input {
+  width: calc(100% - 24px) !important;
 }
 .custom_form .item_custom .cnt_row7 .description-cont {
   grid-area: description-cont;
@@ -1101,6 +1053,115 @@ h5 {
 }
 .custom_form .item_custom .cnt_row8 {
   display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 18px repeat(2, auto);
+  grid-auto-columns: 1fr;
+  gap: 4px 4px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-item_customs: stretch;
+  align-item_customs: stretch;
+  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+}
+.custom_form .item_custom .cnt_row8 .field {
+  grid-area: field;
+}
+.custom_form .item_custom .cnt_row8 .field h6 {
+  margin-left: 24px;
+  font-size: 12px;
+  color: #5c3873;
+}
+.custom_form .item_custom .cnt_row8 .cta {
+  align-self: center;
+  grid-area: cta;
+}
+.custom_form .item_custom .cnt_row8 .cta .i-arrow {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.custom_form .item_custom .cnt_row8 .cta .down {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row8 .cta .up {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row8 .value {
+  grid-area: value;
+}
+.custom_form .item_custom .cnt_row8 .value .form-inline table {
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+  table-layout: auto;
+}
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody {
+  border-collapse: collapse;
+}
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody th,
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody td {
+  border: none;
+}
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody th input,
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody td input {
+  width: 100%;
+}
+.custom_form .item_custom .cnt_row8 .value .form-inline table tbody tr td:first-child {
+  width: 60px;
+}
+.custom_form .item_custom .cnt_row8 .description-cont {
+  grid-area: description-cont;
+  display: none;
+  padding-left: 24px;
+}
+.custom_form .item_custom .cnt_row8 .description-cont .description {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  padding: 4px 8px;
+  background-color: #DDD3E1;
+  color: #5c3873;
+}
+.custom_form .item_custom .cnt_row9 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 18px repeat(2, auto);
+  grid-auto-columns: 1fr;
+  gap: 4px 4px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-item_customs: stretch;
+  align-item_customs: stretch;
+  grid-template-areas: "field cta" "value-cont value-cont" "description-cont description-cont";
+}
+.custom_form .item_custom .cnt_row9 .field {
+  grid-area: field;
+}
+.custom_form .item_custom .cnt_row9 .field h6 {
+  margin-left: 24px;
+  font-size: 12px;
+  color: #5c3873;
+}
+.custom_form .item_custom .cnt_row9 .cta {
+  align-self: center;
+  grid-area: cta;
+}
+.custom_form .item_custom .cnt_row9 .cta .i-arrow {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.custom_form .item_custom .cnt_row9 .cta .down {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row9 .cta .up {
+  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+}
+.custom_form .item_custom .cnt_row9 .value-cont {
+  grid-area: value-cont;
+  display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0px 8px;
@@ -1109,10 +1170,10 @@ h5 {
   justify-item_customs: stretch;
   align-item_customs: stretch;
 }
-.custom_form .item_custom .cnt_row8 .col1 {
+.custom_form .item_custom .cnt_row9 .value-cont .col1 {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -1120,50 +1181,22 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field" "value";
 }
-.custom_form .item_custom .cnt_row8 .col1 .field {
+.custom_form .item_custom .cnt_row9 .value-cont .col1 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row8 .col1 .field h6 {
+.custom_form .item_custom .cnt_row9 .value-cont .col1 .field h6 {
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row8 .col1 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row8 .col1 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row8 .col1 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col1 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col1 .value {
+.custom_form .item_custom .cnt_row9 .value-cont .col1 .value {
   grid-area: value;
 }
-.custom_form .item_custom .cnt_row8 .col1 .description-cont {
-  grid-area: description-cont;
-  display: none;
-  padding-left: 24px;
-}
-.custom_form .item_custom .cnt_row8 .col1 .description-cont .description {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-  padding: 4px 8px;
-  background-color: #DDD3E1;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row8 .col2 {
+.custom_form .item_custom .cnt_row9 .value-cont .col2 {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -1171,50 +1204,22 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field" "value";
 }
-.custom_form .item_custom .cnt_row8 .col2 .field {
+.custom_form .item_custom .cnt_row9 .value-cont .col2 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row8 .col2 .field h6 {
+.custom_form .item_custom .cnt_row9 .value-cont .col2 .field h6 {
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row8 .col2 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row8 .col2 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row8 .col2 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col2 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col2 .value {
+.custom_form .item_custom .cnt_row9 .value-cont .col2 .value {
   grid-area: value;
 }
-.custom_form .item_custom .cnt_row8 .col2 .description-cont {
-  grid-area: description-cont;
-  display: none;
-  padding-left: 24px;
-}
-.custom_form .item_custom .cnt_row8 .col2 .description-cont .description {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-  padding: 4px 8px;
-  background-color: #DDD3E1;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row8 .col3 {
+.custom_form .item_custom .cnt_row9 .value-cont .col3 {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -1222,50 +1227,22 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field" "value";
 }
-.custom_form .item_custom .cnt_row8 .col3 .field {
+.custom_form .item_custom .cnt_row9 .value-cont .col3 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row8 .col3 .field h6 {
+.custom_form .item_custom .cnt_row9 .value-cont .col3 .field h6 {
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row8 .col3 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row8 .col3 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row8 .col3 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col3 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col3 .value {
+.custom_form .item_custom .cnt_row9 .value-cont .col3 .value {
   grid-area: value;
 }
-.custom_form .item_custom .cnt_row8 .col3 .description-cont {
-  grid-area: description-cont;
-  display: none;
-  padding-left: 24px;
-}
-.custom_form .item_custom .cnt_row8 .col3 .description-cont .description {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-  padding: 4px 8px;
-  background-color: #DDD3E1;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row8 .col4 {
+.custom_form .item_custom .cnt_row9 .value-cont .col4 {
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 18px 36.47px auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
   grid-auto-flow: row;
@@ -1273,58 +1250,58 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field" "value";
 }
-.custom_form .item_custom .cnt_row8 .col4 .field {
+.custom_form .item_custom .cnt_row9 .value-cont .col4 .field {
   grid-area: field;
 }
-.custom_form .item_custom .cnt_row8 .col4 .field h6 {
+.custom_form .item_custom .cnt_row9 .value-cont .col4 .field h6 {
   font-size: 12px;
   color: #5c3873;
 }
-.custom_form .item_custom .cnt_row8 .col4 .cta {
-  align-self: center;
-  grid-area: cta;
-}
-.custom_form .item_custom .cnt_row8 .col4 .cta .i-arrow {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-.custom_form .item_custom .cnt_row8 .col4 .cta .down {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col4 .cta .up {
-  background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
-}
-.custom_form .item_custom .cnt_row8 .col4 .value {
+.custom_form .item_custom .cnt_row9 .value-cont .col4 .value {
   grid-area: value;
+  border: none;
 }
-.custom_form .item_custom .cnt_row8 .col4 .description-cont {
-  grid-area: description-cont;
-  display: none;
-  padding-left: 24px;
-}
-.custom_form .item_custom .cnt_row8 .col4 .description-cont .description {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-  padding: 4px 8px;
-  background-color: #DDD3E1;
-  color: #5c3873;
-}
-.custom_form .item_custom .cnt_row8 .btn-group {
+.custom_form .item_custom .cnt_row9 .value-cont .btn-group {
   visibility: hidden;
 }
-.custom_form .item_custom .cnt_row8 .fm-empty-container {
+.custom_form .item_custom .cnt_row9 .value-cont .fm-empty-container {
   padding-top: 50px;
 }
-.custom_form .item_custom .cnt_row8 .fp-restrictions,
-.custom_form .item_custom .cnt_row8 .dndupload-message {
+.custom_form .item_custom .cnt_row9 .value-cont .fp-restrictions,
+.custom_form .item_custom .cnt_row9 .value-cont .dndupload-message {
   font-size: 12px;
 }
-.custom_form .item_custom .cnt_row8 .dndupload-arrow {
+.custom_form .item_custom .cnt_row9 .value-cont .dndupload-arrow {
   height: 50px;
+}
+.custom_form .item_custom .cnt_row9 .value-cont .fp-navbar {
+  border-top: 1px solid #5c3873 !important;
+  border-right: 1px solid #5c3873 !important;
+  border-left: 1px solid #5c3873 !important;
+}
+.custom_form .item_custom .cnt_row9 .value-cont .filemanager-container {
+  border-right: 1px solid #5c3873 !important;
+  border-left: 1px solid #5c3873 !important;
+  border-bottom: 1px solid #5c3873 !important;
+}
+.custom_form .item_custom .cnt_row9 .value-cont .bg-faded,
+.custom_form .item_custom .cnt_row9 .value-cont .filemanager-container {
+  background-color: #fff;
+}
+.custom_form .item_custom .cnt_row9 .description-cont {
+  grid-area: description-cont;
+  display: none;
+  padding-left: 24px;
+}
+.custom_form .item_custom .cnt_row9 .description-cont .description {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  padding: 4px 8px;
+  background-color: #DDD3E1;
+  color: #5c3873;
 }
 
 .navbar.fixed-top {
@@ -1427,7 +1404,7 @@ h5 {
     font-size: 2.2vw;
   }
   */
-  font-size: 2.2vw;
+  font-size: 2vw;
 }
 #owl-carousel_slider .item {
   position: relative;
