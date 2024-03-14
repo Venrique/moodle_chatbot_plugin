@@ -32,6 +32,10 @@
     @media (min-width: 1280px) and (max-width: 1653px) {
       @content;
     }
+  } @else if $breakpoint == "up to 4K" {
+    @media (min-width: 1654) and (max-width: 2560px) {
+      @content;
+    }
   } @else if $breakpoint == "custom" and $width != null {
     @media (min-width: $width) {
       @content;
@@ -301,6 +305,6 @@
 // Usando el mixin
 .owl-carousel_slider {
   @include font-size(1.8vw);
-  @include respond-to("large-desktop");
+  @include respond-to("up to 4K");
 }
 // -----------------------------------------------------
