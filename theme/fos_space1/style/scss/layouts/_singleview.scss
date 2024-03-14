@@ -1,0 +1,47 @@
+.sw-body {
+  .sw-table_cnt {
+    width: 100%;
+    padding-bottom: 20px;
+    overflow-x: auto;
+
+    .sw-table {
+      width: max-content;
+      border-collapse: collapse;
+
+      thead {
+        background-color: $primary;
+
+        tr{
+          th {
+            padding: 8px;
+            text-align: left;
+            color: $white;
+          }
+          td {
+            border: 2px solid $white;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          padding: 10px;
+          background-color: $body-bg;
+          color: $primary;
+
+          tr {
+            &:nth-child(odd) {
+              background-color: $navbar-bg;
+            }
+            tr:nth-child(even) {
+              background-color: $body-bg;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sw-cstm_frm {
+    background-color: red;
+  }
+}
