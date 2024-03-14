@@ -292,3 +292,15 @@
   @include rotate(180);
 }
 // -----------------------------------------------------
+
+// Mixin para Font size carrousel
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+// Usando el mixin
+.owl-carousel_slider {
+  @include font-size(1.8vw);
+  @include respond-to("large-desktop");
+}
+// -----------------------------------------------------

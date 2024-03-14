@@ -30,3 +30,8 @@ ENV LANG pt_PT.UTF-8
 ENV LANGUAGE pt_PTpt
 ENV LC_ALL pt_PT.UTF-8
 
+// TODO 
+Next week / March 18th - Sprint 5
+ - Diseño List and Single view , work on the same period , waiting for FOS team feedback, the priority will be defined according to FOS response 
+- Bugs fixing found by HL´s testing
+- Katrina´s feedback  fixing
