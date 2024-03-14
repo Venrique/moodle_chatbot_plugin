@@ -48,7 +48,7 @@ videojs.addLanguage('fr', {
   "captions settings": "Paramètres des sous-titres transcrits",
   "subtitles settings": "Paramètres des sous-titres",
   "descriptions settings": "Paramètres des descriptions",
-  "Text": "Texte",
+  "Text": "TexteTT",
   "White": "Blanc",
   "Black": "Noir",
   "Red": "Rouge",

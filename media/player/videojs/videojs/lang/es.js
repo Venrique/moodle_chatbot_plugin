@@ -48,7 +48,7 @@ videojs.addLanguage('es', {
   "captions settings": "configuración de leyendas",
   "subtitles settings": "configuración de subtítulos",
   "descriptions settings": "configuración de descripciones",
-  "Text": "TextoTEST",
+  "Text": "Texto",
   "White": "Blanco",
   "Black": "Negro",
   "Red": "Rojo",
