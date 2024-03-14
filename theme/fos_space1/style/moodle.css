@@ -596,6 +596,10 @@ h5 {
 .custom_form .item_custom .cnt_row1 .col2 .value .form-inline {
   gap: 8px;
 }
+.custom_form .item_custom .cnt_row1 .col2 .value .form-inline .custom-select {
+  background: none;
+  pointer-events: none;
+}
 .custom_form .item_custom .cnt_row1 .col2 .description-cont {
   grid-area: description-cont;
   display: none;
@@ -5858,7 +5862,7 @@ body #page-wrapper #page #region-main {
 .navbar-brand::after {
   content: "";
   display: block;
-  background-image: url("../pix/navbar-logo-space1.png") !important;
+  background-image: url([[pix:theme|navbar-logo-space1.png]]) !important;
   background-size: contain;
   background-repeat: no-repeat;
   width: 44px;

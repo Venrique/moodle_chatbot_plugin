@@ -146,6 +146,10 @@
           grid-area: value;
           .form-inline {
             gap: 8px;
+            .custom-select {
+              background: none;
+              pointer-events: none;
+          }
           }
         }
 
