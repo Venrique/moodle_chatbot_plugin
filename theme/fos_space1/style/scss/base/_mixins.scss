@@ -303,7 +303,7 @@
 }
 
 // Usando el mixin
-.owl-carousel_slider {
+#owl-carousel_slider {
   @include font-size(1.8vw);
   @include respond-to("up to 4K");
 }
