@@ -4103,6 +4103,8 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             $OneUploadFieldNotEmpty = true;
         }elseif ($field->field->name === "File FR" && $fieldhascontent){
             $OneUploadFieldNotEmpty = true;
+        }elseif ($field->field->name === "Link" && $fieldhascontent){
+            $OneUploadFieldNotEmpty = true;
         }
 
         if ($field->field->name === "Needs1" && $fieldhascontent){
