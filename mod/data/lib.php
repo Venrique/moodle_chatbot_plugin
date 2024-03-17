@@ -4121,7 +4121,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
             $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'data');*/
             if(count($result->generalnotifications)===0){
-                $result->generalnotifications[] = "This is a test notification";
+                $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
             }
             $requiredfieldsfilled = false;
         }
@@ -4141,7 +4141,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }
         $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');*/
         if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = "This is a test notification";
+            $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
         }
         $requiredfieldsfilled = false;
     }
@@ -4152,7 +4152,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }
         $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');*/
         if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = "This is a test notification";
+            $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
         }
         $requiredfieldsfilled = false;
     }
