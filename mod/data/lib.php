@@ -4154,6 +4154,8 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         $result->generalnotifications[] = get_string('emptyaddform', 'data');
     }
 
+    $result->generalnotifications[] = "This is a test notification";
+
     $result->validated = $requiredfieldsfilled && !$emptyform && $fieldsvalidated;
 
     return $result;
