@@ -157,6 +157,9 @@ $string['errorpresetexists'] = 'A preset with this name already exists.';
 $string['errorpresetexistsbutnotoverwrite'] = 'A preset with this name already exists. Choose a different name.';
 $string['errormustsupplyvalue'] = 'You must supply a value here.';
 $string['errorpresetnotfound'] = 'Preset with name {$a} not found.';
+//KTT
+$string['errormustsupplyvaluegeneral'] = 'Please check that all the mandatory form fields are completed.';
+//---
 $string['example'] = 'Database module example';
 $string['excel'] = 'Excel';
 $string['export'] = 'Export';
