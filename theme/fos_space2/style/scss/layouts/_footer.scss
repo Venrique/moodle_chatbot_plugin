@@ -34,7 +34,11 @@
 
         .menu_footer {
             grid-area: menu_footer;
-            align-self: center;
+            align-self: center;        
+            
+            a:hover {
+                color: #FFFF;
+              }
         }
     }
 
