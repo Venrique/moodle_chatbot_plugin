@@ -36,5 +36,7 @@ $THEME->layouts = [
 
 $THEME->haseditswitch = true;
 
+$THEME->javascripts_footer = array('custom');
+
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 

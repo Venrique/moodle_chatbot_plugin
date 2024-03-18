@@ -1,0 +1,1060 @@
+.custom_form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .item_custom {
+    padding: 4px 0px;
+    display: list-item;
+    list-style: none;
+
+    // Title & Upload date
+    .cnt_row1 {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr auto;
+      gap: 0px 8px;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+
+      // Title
+      .col1 {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 18px 36.47px auto;
+        grid-auto-columns: 1fr;
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-item_customs: stretch;
+        align-item_customs: stretch;
+        grid-template-areas:
+          "field cta"
+          "value value"
+          "description-cont description-cont";
+
+        .field {
+          grid-area: field;
+
+          h6 {
+            margin-left: 24px;
+            font-size: 12px;
+            color: $primary;
+          }
+        }
+
+        .cta {
+          align-self: center;
+          grid-area: cta;
+
+          .i-arrow {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+          }
+
+          .down {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+
+          .up {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+        }
+
+        .value {
+          grid-area: value;
+
+          input {
+            width: calc(100% - 24px) !important;
+          }
+          .alert {
+            position: absolute;
+            top: 3px;
+            left: 28px;
+            padding: 4px 8px;
+          }
+        }
+
+        .description-cont {
+          grid-area: description-cont;
+          display: none;
+          padding-left: 24px;
+          .description {
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            padding: 4px 8px;
+            background-color: $navbar-bg;
+            color: $primary;
+          }
+        }
+      }
+
+      // Upload date
+      .col2 {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 18px 36.47px auto;
+        grid-auto-columns: 1fr;
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-item_customs: stretch;
+        align-item_customs: stretch;
+        grid-template-areas:
+          "field cta"
+          "value value"
+          "description-cont description-cont";
+
+        .field {
+          grid-area: field;
+
+          h6 {
+            font-size: 12px;
+            color: $primary;
+          }
+        }
+
+        .cta {
+          align-self: center;
+          grid-area: cta;
+
+          .i-arrow {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+          }
+
+          .down {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+
+          .up {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+        }
+
+        .value {
+          grid-area: value;
+          .form-inline {
+            gap: 8px;
+            .custom-select {
+              background: none;
+              pointer-events: none;
+              padding: 8px 8px;
+          }
+          }
+        }
+
+        .description-cont {
+          grid-area: description-cont;
+          display: none;
+          padding-left: 24px;
+          .description {
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            padding: 4px 8px;
+            background-color: $navbar-bg;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    // Description
+    .cnt_row2 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+
+        div {
+          width: 100%;
+          .mod-data-input {
+            > div:first-child {
+              .editor_atto {
+                .editor_atto_toolbar {
+                  visibility: hidden;
+                  height: 0;
+                  display: none !important;
+                }
+                .editor_atto_content_wrap {
+                  width: 100% !important;
+                  border-top: 1px solid $primary;
+                  border-top-left-radius: 0.5rem;
+                  border-top-right-radius: 0.5rem;
+                  resize: none !important;
+                  overflow-x: hidden;
+                }
+              }
+            }
+
+            > div:nth-child(2) {
+              visibility: hidden;
+              height: 0;
+            }
+          }
+        }
+
+        input {
+          width: calc(100% - 24px) !important;
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Organization
+    .cnt_row3 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+
+        select {
+          width: calc(100% - 24px) !important;
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Category
+    .cnt_row4 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+
+        select {
+          width: calc(100% - 24px) !important;
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Year of completion & Author
+    .cnt_row5 {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 0px 8px;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+
+      // Year of completion
+      .col1 {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 18px 36.47px auto;
+        grid-auto-columns: 1fr;
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-item_customs: stretch;
+        align-item_customs: stretch;
+        grid-template-areas:
+          "field cta"
+          "value value"
+          "description-cont description-cont";
+
+        .field {
+          grid-area: field;
+
+          h6 {
+            margin-left: 24px;
+            font-size: 12px;
+            color: $primary;
+          }
+        }
+
+        .cta {
+          align-self: center;
+          grid-area: cta;
+
+          .i-arrow {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+          }
+
+          .down {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+
+          .up {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+        }
+
+        .value {
+          grid-area: value;
+
+          select {
+            width: calc(100% - 24px) !important;
+          }
+        }
+
+        .description-cont {
+          grid-area: description-cont;
+          display: none;
+          padding-left: 24px;
+          .description {
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            padding: 4px 8px;
+            background-color: $navbar-bg;
+            color: $primary;
+          }
+        }
+      }
+
+      // Author
+      .col2 {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 18px 36.47px auto;
+        grid-auto-columns: 1fr;
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-item_customs: stretch;
+        align-item_customs: stretch;
+        grid-template-areas:
+          "field cta"
+          "value value"
+          "description-cont description-cont";
+
+        .field {
+          grid-area: field;
+
+          h6 {
+            margin-left: 24px;
+            font-size: 12px;
+            color: $primary;
+          }
+        }
+
+        .cta {
+          align-self: center;
+          grid-area: cta;
+
+          .i-arrow {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+          }
+
+          .down {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+
+          .up {
+            background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+          }
+        }
+
+        .value {
+          grid-area: value;
+
+          input {
+            width: calc(100% - 24px) !important;
+          }
+        }
+
+        .description-cont {
+          grid-area: description-cont;
+          display: none;
+          padding-left: 24px;
+          .description {
+            width: 100%;
+            height: 100%;
+            border-radius: $border-radius;
+            padding: 4px 8px;
+            background-color: $navbar-bg;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    // Needs
+    .cnt_row6 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        justify-content: center;
+        justify-items: start;
+
+        > div:first-child {
+          //title
+          .inline-req {
+            width: 24px;
+            float: left;
+          }
+
+          input[type="checkbox"]:nth-of-type(n + 3) {
+            margin-left: 24px;
+          }
+        }
+        > div:nth-child(2) {
+          input[type="checkbox"] {
+            margin-left: 0px;
+          }
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Comments
+    .cnt_row7 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+        margin-left: 24px;
+
+        div {
+          width: 100%;
+          .mod-data-input {
+            > div:first-child {
+              .editor_atto {
+                .editor_atto_toolbar {
+                  visibility: hidden;
+                  height: 0;
+                  display: none !important;
+                }
+                .editor_atto_content_wrap {
+                  width: 100% !important;
+                  border-top: 1px solid $primary;
+                  border-top-left-radius: 0.5rem;
+                  border-top-right-radius: 0.5rem;
+                  resize: none !important;
+                  overflow-x: hidden;
+                }
+              }
+            }
+
+            > div:nth-child(2) {
+              visibility: hidden;
+              height: 0;
+            }
+          }
+        }
+
+        input {
+          width: calc(100% - 24px) !important;
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Links
+    .cnt_row8 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value value"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value {
+        grid-area: value;
+
+        .form-inline {
+          table {
+            border-collapse: collapse;
+            margin: 0;
+            width: 100%;
+            table-layout: auto;
+
+            tbody {
+              border-collapse: collapse;
+
+              th,
+              td {
+                border: none;
+
+                input {
+                  width: 100%;
+                }
+              }
+              tr {
+                td:first-child {
+                  width: 60px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+
+    // Files
+    .cnt_row9 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 18px repeat(2, auto);
+      grid-auto-columns: 1fr;
+      gap: 4px 4px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-item_customs: stretch;
+      align-item_customs: stretch;
+      grid-template-areas:
+        "field cta"
+        "value-cont value-cont"
+        "description-cont description-cont";
+
+      .field {
+        grid-area: field;
+
+        h6 {
+          margin-left: 24px;
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+
+      .cta {
+        align-self: center;
+        grid-area: cta;
+
+        .i-arrow {
+          width: 18px;
+          height: 18px;
+          cursor: pointer;
+        }
+
+        .down {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_472)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M12.4425 6.4425L9 9.8775L5.5575 6.4425L4.5 7.5L9 12L13.5 7.5L12.4425 6.4425Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_472"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+
+        .up {
+          background-image: url('data:image/svg+xml,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_402_489)"><rect width="18" height="18" rx="9" fill="%23383D47" fill-opacity="0.35"/><path d="M9 6L4.5 10.5L5.5575 11.5575L9 8.1225L12.4425 11.5575L13.5 10.5L9 6Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_402_489"><rect width="18" height="18" rx="9" fill="white"/></clipPath></defs></svg>');
+        }
+      }
+
+      .value-cont {
+        grid-area: value-cont;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0px 8px;
+        justify-content: stretch;
+        align-content: stretch;
+        justify-item_customs: stretch;
+        align-item_customs: stretch;
+
+        // EN
+        .col1 {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 18px auto;
+          grid-auto-columns: 1fr;
+          gap: 4px 4px;
+          grid-auto-flow: row;
+          justify-content: stretch;
+          align-content: stretch;
+          justify-item_customs: stretch;
+          align-item_customs: stretch;
+          grid-template-areas:
+            "field"
+            "value";
+
+          .field {
+            grid-area: field;
+
+            h6 {
+              font-size: 12px;
+              color: $primary;
+            }
+          }
+
+          .value {
+            grid-area: value;
+          }
+        }
+
+        // ES
+        .col2 {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 18px auto;
+          grid-auto-columns: 1fr;
+          gap: 4px 4px;
+          grid-auto-flow: row;
+          justify-content: stretch;
+          align-content: stretch;
+          justify-item_customs: stretch;
+          align-item_customs: stretch;
+          grid-template-areas:
+            "field"
+            "value";
+
+          .field {
+            grid-area: field;
+
+            h6 {
+              font-size: 12px;
+              color: $primary;
+            }
+          }
+
+          .value {
+            grid-area: value;
+          }
+        }
+
+        // FR
+        .col3 {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 18px auto;
+          grid-auto-columns: 1fr;
+          gap: 4px 4px;
+          grid-auto-flow: row;
+          justify-content: stretch;
+          align-content: stretch;
+          justify-item_customs: stretch;
+          align-item_customs: stretch;
+          grid-template-areas:
+            "field"
+            "value";
+
+          .field {
+            grid-area: field;
+
+            h6 {
+              font-size: 12px;
+              color: $primary;
+            }
+          }
+
+          .value {
+            grid-area: value;
+          }
+        }
+
+        // PT
+        .col4 {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 18px auto;
+          grid-auto-columns: 1fr;
+          gap: 4px 4px;
+          grid-auto-flow: row;
+          justify-content: stretch;
+          align-content: stretch;
+          justify-item_customs: stretch;
+          align-item_customs: stretch;
+          grid-template-areas:
+            "field"
+            "value";
+
+          .field {
+            grid-area: field;
+
+            h6 {
+              font-size: 12px;
+              color: $primary;
+            }
+          }
+
+          .value {
+            grid-area: value;
+            border: none;
+          }
+        }
+
+        .btn-group {
+          visibility: hidden;
+        }
+
+        .fm-empty-container {
+          padding-top: 50px;
+        }
+
+        .fp-restrictions,
+        .dndupload-message {
+          font-size: 12px;
+        }
+
+        .dndupload-arrow {
+          height: 50px;
+        }
+        .fp-navbar {
+          border-top: 1px solid $primary !important;
+          border-right: 1px solid $primary !important;
+          border-left: 1px solid $primary !important;
+        }
+        .filemanager-container {
+          border-right: 1px solid $primary !important;
+          border-left: 1px solid $primary !important;
+          border-bottom: 1px solid $primary !important;
+        }
+        .bg-faded,
+        .filemanager-container {
+          background-color: $white;
+        }
+      }
+
+      .description-cont {
+        grid-area: description-cont;
+        display: none;
+        padding-left: 24px;
+        .description {
+          width: 100%;
+          height: 100%;
+          border-radius: $border-radius;
+          padding: 4px 8px;
+          background-color: $navbar-bg;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
