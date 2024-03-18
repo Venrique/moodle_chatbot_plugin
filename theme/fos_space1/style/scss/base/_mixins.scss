@@ -322,8 +322,7 @@
       font-size: 12px;
       color: $primary;
     }
-  }
-
+  }_
   .data-cnt {
     grid-area: data-cnt;
     .data-item {
@@ -335,18 +334,3 @@
     }
   }
 }
-
-// Mixin para Font size carrousel
-/*
-@mixin font-size($font-size_owl) {
-  font-size: $font-size_owl;
-}
-*/
-// Usando el mixin
-/*
-#owl-carousel_slider {
-  @include font-size(1.8vw);
-  @include respond-to("up to 4K");
-}
-*/
-// -----------------------------------------------------

@@ -1,0 +1,36 @@
+.slst_body {
+  width: auto;
+  height: auto;
+
+  .grid-table-slst {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2px;
+    margin: 0 0 50px;
+
+    .header_item {
+      background-color: $primary;
+      padding: 8px;
+      color: $white;
+    }
+
+    .item-mxw {
+      width: max-content;
+    }
+    .item-hmxw {
+      background-color: transparent;
+      color: transparent;
+      width: max-content;
+
+    }
+    .data-item {
+      color: $primary;
+      background-color: $white;
+      padding: 8px;
+      border: 1px solid $white;
+      .menubar {
+        width: 24px;
+      }
+    }
+  }
+}
