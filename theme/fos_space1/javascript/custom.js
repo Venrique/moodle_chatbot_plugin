@@ -87,28 +87,7 @@ require(["jquery"], function ($) {
       }
     });
 
-    // May
     
-    console.log("DOM fully loaded and parsed");
-
-    var arrows = $(".cta");
-    console.log(arrows);
-
-    arrows.each(function () {
-        $(this).on('click', function () {
-            var description = $(this).parent().find('.description');
-
-            var isVisible = description.css('display') === 'block';
-            if (isVisible) {
-                description.css('display', 'none');
-                $(this).removeClass('up').addClass('down');
-            } else {
-                description.css('display', 'block');
-                $(this).removeClass('down').addClass('up');
-            }
-        });
-    });
-
     // Assign a limit of 100 characters to the title field
     var titleInput = $("#titleDiv").find(".basefieldinput");
     titleInput.on('input', function() {
