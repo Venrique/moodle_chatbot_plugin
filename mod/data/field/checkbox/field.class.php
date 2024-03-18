@@ -93,7 +93,7 @@ class data_field_checkbox extends data_field_base {
             }
 
             //KTT CODE
-            if ($this->field->name === "Needs1" || $this->field->name === "Needs2"){
+            if ($this->field->name === "Needs"){
                 switch ($checkbox){
                     case "Comprehensive sexuality education":
                         if ($SESSION->lang === 'en'){
