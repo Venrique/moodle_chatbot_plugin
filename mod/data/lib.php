@@ -4068,7 +4068,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
     }
 
     $OneUploadFieldNotEmpty = false;
-    $OneNeedSelected = false;
+    //$OneNeedSelected = false;
 
     // Check all form fields which have the required are filled.
     foreach ($fields as $fieldrecord) {
@@ -4107,11 +4107,11 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             $OneUploadFieldNotEmpty = true;
         }
 
-        if ($field->field->name === "Needs1" && $fieldhascontent){
+        /*if ($field->field->name === "Needs1" && $fieldhascontent){
             $OneNeedSelected = true;
         }elseif ($field->field->name === "Needs2" && $fieldhascontent){
             $OneNeedSelected = true;
-        }
+        }*/
         //----------
 
         // If the field is required, add a notification to that effect.
@@ -4121,7 +4121,7 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
             $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'data');*/
             if(count($result->generalnotifications)===0){
-                $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
+                $result->generalnotifications[] = "Please check that all the mandatory form fields are completed";
             }
             $requiredfieldsfilled = false;
         }
@@ -4141,21 +4141,22 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }
         $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');*/
         if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
+            $result->generalnotifications[] = "Please check that all the mandatory form fields are completed";
         }
         $requiredfieldsfilled = false;
     }
 
-    if (!$OneNeedSelected){
-        /*if (!isset($result->fieldnotifications["Needs1"])) {
+    /*if (!$OneNeedSelected){
+        if (!isset($result->fieldnotifications["Needs1"])) {
             $result->fieldnotifications["Needs1"] = array();
         }
-        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');*/
+        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');
         if(count($result->generalnotifications)===0){
             $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
         }
         $requiredfieldsfilled = false;
-    }
+    }*/
+
     //------------------
 
     if ($emptyform) {
