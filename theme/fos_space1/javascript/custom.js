@@ -104,6 +104,8 @@ require(["jquery"], function ($) {
 
         textareaDiv2.on('input', limitWordCount);
         textareaDiv8.on('input', limitWordCount);
+        textareaDiv2.on('focusout', limitword);
+        textareaDiv8.on('focusout', limitword);
     }
 
     function limitWordCount() {
@@ -124,5 +126,17 @@ require(["jquery"], function ($) {
             sel.addRange(range);
         }
     }
+    function limitword() {
+      var editorDiv = $(this).find('.editor_atto_content.form-control');
+      var content = editorDiv.text();
+      var words = content.split(/\s+/);
+      var wordCount = words.length;
+  
+      if (wordCount > 100) {
+          var newContent = words.slice(0, 100).join(" ");
+            editorDiv.text(newContent);
+      }
+  }
+
   });
 });
