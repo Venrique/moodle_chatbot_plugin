@@ -90,7 +90,7 @@ require(["jquery"], function ($) {
     
     // Assign a limit of 100 characters to the title field
     var titleInput = $("#titleDiv").find(".basefieldinput");
-    titleInput.on('input', function() {
+    titleInput.on('click', function() {
         console.log("Adding maxlength attribute to input text");
         $(this).attr('maxlength', '100');
     });
