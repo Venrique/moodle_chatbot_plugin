@@ -6,7 +6,7 @@
   font-family: $family, sans-serif;
 }
 
-// Mixin para media queries
+// Mixin for media queries
 @mixin respond-to($breakpoint, $width: null) {
   @if $breakpoint == "small-phone" {
     @media (max-width: 479px) {
@@ -43,6 +43,12 @@
   } @else {
     @warn "El breakpoint '#{$breakpoint}' no está definido.";
   }
+}
+
+// Mixin to apply opacity
+@mixin apply-opacity($color, $opacity) {
+  $opacity-percentage: $opacity * 1%; // Convertir el porcentaje a valor decimal para SCSS
+  background-color: rgba($color, $opacity-percentage);
 }
 
 // Mixin buttons
@@ -209,12 +215,12 @@
   }
 }
 
-// Mixin para sombras en cajas
+// Mixin for shadows in boxes
 @mixin box-shadow($x: 0, $y: 4px, $blur: 8px, $color: rgba(0, 0, 0, 0.3)) {
   box-shadow: $x $y $blur $color;
 }
 
-// Usando el mixin
+// Using the mixin
 .shadow-light {
   @include box-shadow();
 }
@@ -235,7 +241,7 @@
   text-overflow: ellipsis;
 }
 
-// Uso del mixin
+// Using the mixin
 .my-text-element {
   @include limit-lines(3); // Limita a 3 líneas
 }
@@ -244,27 +250,20 @@
   @include limit-lines(5); // Limita a 5 líneas
 }
 
-// ------------------------------------------------------------
-
-// Mixin para transiciones
+// Mixin for transitions
 @mixin transition($properties, $duration: 0.3s, $timing: ease) {
   transition-property: $properties;
   transition-duration: $duration;
   transition-timing-function: $timing;
 }
 
-// -----------------------------------------------------
-// -----------------------------------------------------
-
-// -----------------------------------------------------
-
-// Mixin para texto con efecto de trazo
+// Mixin for text with stroke effect
 @mixin text-stroke($stroke-width: 1px, $stroke-color: black) {
   -webkit-text-stroke: $stroke-width $stroke-color;
   text-stroke: $stroke-width $stroke-color;
 }
 
-// Usando el mixin
+// Using the mixin
 .text-with-stroke {
   @include text-stroke(2px, red);
   color: white;
@@ -276,14 +275,13 @@
   color: yellow;
   font-size: 30px;
 }
-// -----------------------------------------------------
 
-// Mixin para rotación
+// Mixin for rotation
 @mixin rotate($degrees: 0) {
   transform: rotate(#{$degrees}deg);
 }
 
-// Usando el mixin
+// Using the mixin
 .rotate-45 {
   @include rotate(45);
 }
@@ -295,7 +293,6 @@
 .rotate-180 {
   @include rotate(180);
 }
-// -----------------------------------------------------
 
 @mixin svw_field() {
   display: grid;
@@ -311,7 +308,7 @@
   grid-template-areas:
     "label"
     "data-cnt";
-  background-color: $white;
+  @include apply-opacity($primary, 10);
   border-radius: 6px;
   padding: 8px;
 
@@ -322,15 +319,9 @@
       font-size: 12px;
       color: $primary;
     }
-  }_
+  }
   .data-cnt {
     grid-area: data-cnt;
-    .data-item {
-      div {}
-      display: grid;
-      grid-auto-columns: 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap: 0px 8px;
-    }
+    color: $primary;
   }
 }

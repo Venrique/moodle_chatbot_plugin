@@ -291,3 +291,10 @@ body {
 #page.drawers {
   margin-top: 38px !important;
 }
+
+.dropdown {
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+}

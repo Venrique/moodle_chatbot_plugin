@@ -4,7 +4,7 @@
 
   .grid-table-slst {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr) auto;
     grid-gap: 2px;
     margin: 0 0 50px;
 
@@ -14,22 +14,26 @@
       color: $white;
     }
 
-    .item-mxw {
-      width: max-content;
-    }
     .item-hmxw {
       background-color: transparent;
-      color: transparent;
       width: max-content;
-
     }
     .data-item {
       color: $primary;
-      background-color: $white;
+      @include apply-opacity($primary, 10);
       padding: 8px;
-      border: 1px solid $white;
       .menubar {
         width: 24px;
+      }
+      .title {
+        float: left;
+        padding-right: 8px;
+      }
+      .upload_date {
+        clear: both;
+      }
+      .description {
+        clear: both;
       }
     }
   }
