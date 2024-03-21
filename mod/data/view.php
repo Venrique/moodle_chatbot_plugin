@@ -145,7 +145,7 @@ if (! $filter) {
     $search = '';
 }
 
-$SESSION->dataprefs[$data->id]['search'] = $search;   // Make it sticky
+//$SESSION->dataprefs[$data->id]['search'] = $search;   // Make it sticky
 
 $sort = optional_param('sort', $SESSION->dataprefs[$data->id]['sort'], PARAM_INT);
 $SESSION->dataprefs[$data->id]['sort'] = $sort;       // Make it sticky
