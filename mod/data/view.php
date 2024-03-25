@@ -147,8 +147,8 @@ if (! $filter) {
 
 $SESSION->dataprefs[$data->id]['search'] = $search;   // Make it sticky
 
-$sort = optional_param('sort', $SESSION->dataprefs[$data->id]['sort'], PARAM_INT);
-$SESSION->dataprefs[$data->id]['sort'] = $sort;       // Make it sticky
+//$sort = optional_param('sort', $SESSION->dataprefs[$data->id]['sort'], PARAM_INT);
+//$SESSION->dataprefs[$data->id]['sort'] = $sort;       // Make it sticky
 
 $order = (optional_param('order', $SESSION->dataprefs[$data->id]['order'], PARAM_ALPHA) == 'ASC') ? 'ASC': 'DESC';
 $SESSION->dataprefs[$data->id]['order'] = $order;     // Make it sticky
