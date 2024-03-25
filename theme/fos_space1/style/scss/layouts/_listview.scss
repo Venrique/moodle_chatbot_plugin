@@ -102,24 +102,8 @@
       }
 
       .title_year {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto;
-        grid-auto-columns: auto;
-        grid-auto-rows: auto;
-        gap: 0px 4px;
-        grid-auto-flow: row;
-        grid-template-areas: "title Year";
 
-        .title {
-          align-self: start;
-          grid-area: title;
-          font-weight: bold;
-        }
-
-        .Year {
-          align-self: end;
-          grid-area: Year;
+        span {
           font-weight: 300;
         }
       }

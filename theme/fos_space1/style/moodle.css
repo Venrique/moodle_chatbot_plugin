@@ -1731,24 +1731,7 @@ h5 {
 .slst_body .table-card-slst .data-item .menubar {
   width: 24px;
 }
-.slst_body .table-card-slst .data-item .title_year {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto;
-  grid-auto-columns: auto;
-  grid-auto-rows: auto;
-  gap: 0px 4px;
-  grid-auto-flow: row;
-  grid-template-areas: "title Year";
-}
-.slst_body .table-card-slst .data-item .title_year .title {
-  align-self: start;
-  grid-area: title;
-  font-weight: bold;
-}
-.slst_body .table-card-slst .data-item .title_year .Year {
-  align-self: end;
-  grid-area: Year;
+.slst_body .table-card-slst .data-item .title_year span {
   font-weight: 300;
 }
 .slst_body .table-card-slst .data-item .desription {
@@ -6025,10 +6008,11 @@ a.ygtvspacer:hover {
 .drawer-toggles .drawer-left-toggle .btn:hover {
   padding-left: 20px;
 }
+/*
 .custom-inner {
   max-width: 1281px !important;
 }
-
+*/
 .footer-popover {
   max-width: 1281px !important;
   margin: 0 auto !important;
@@ -6281,9 +6265,9 @@ body #page-wrapper #page #region-main {
   background-color: #eb66a2;
 }
 
-.custom-inner {
+.main-inner {
   padding: 0 0.5rem 1.5rem !important;
-  max-width: 1281px;
+  max-width: 1320px !important;
 }
 
 #page.drawers {

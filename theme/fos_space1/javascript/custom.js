@@ -156,7 +156,7 @@ require(["jquery"], function ($) {
 
   // - list view
     var maxChars = 100;
-    var maxWords = 100;
+    var maxWords = 30;
 
     $('.mx-chr').each(function() {
         var text = $(this).text();
