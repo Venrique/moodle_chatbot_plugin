@@ -1,49 +1,49 @@
-{{! Este es un archivo de plantilla Mustache para mostrar categorías de curso y sus cursos en Moodle }}
 {{> theme_boost/head }}
 <body {{{ bodyattributes }}}>
-    {{> core/local/toast/wrapper}}
-    <div id="page-wrapper" class="d-print-block">
-    {{{ output.standard_top_of_body_html }}}
+        {{> core/local/toast/wrapper}}
+        <div id="page-wrapper" class="d-print-block">
+        {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_boost/navbar }}
+        {{> theme_boost/navbar }}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller"class="drawers drag-container">
-        <div class="grid-category">
-            <div class="img_header">
-                <div class="grid-header_content">
-                    <div class="logos">
-                        <div class="logo"></div>
+        <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container">
+            <div class="grid-category">
+                <div class="img_header">
+                    <div class="grid-header_content">
+                        <div class="logos">
+                            <div class="logo"></div>
+                        </div>
+                        <div class="title">{{#str}}OurFeministAlliance, theme_fos_space2{{/str}}</div>
                     </div>
-                    <div class="title">{{#str}}OurFeministAlliance, theme_fos_space2{{/str}}</div>
                 </div>
-            </div>
-            <div class="cta-btns">
-                <div class="cta-left">
-                    <button class="btn_icon-fos">
-                        <div class="icon-blog"></div>
-                        <span><a href="{{{config.wwwroot}}}/mod/forum/view.php?id={{{modules.forum}}}">{{#str}}Community, theme_fos_space2{{/str}}</a></span>
-                    </button>
+                <div class="cta-btns">
+                    <div class="cta-left">
+                        <button class="btn_icon-fos">
+                            <div class="icon-blog"></div>
+                            <span><a href="{{{config.wwwroot}}}/mod/forum/view.php?id={{{modules.forum}}}">{{#str}}Community, theme_fos_space2{{/str}}</a></span>
+                        </button>
+                    </div>
+                    <div class="cta-right">
+                        <button class="btn_icon-fos">
+                            <div class="icon-lab"></div>
+                            <span><a href="{{{config.wwwroot}}}/mod/data/view.php?id={{{modules.data}}}">{{#str}}KnowledgeSharing, theme_fos_space2{{/str}}</a></span>
+                        </button>
+                    </div>
                 </div>
-                <div class="cta-right">
-                    <button class="btn_icon-fos">
-                        <div class="icon-lab"></div>
-                        <span><a href="{{{config.wwwroot}}}/mod/data/view.php?id={{{modules.data}}}">{{#str}}KnowledgeSharing, theme_fos_space2{{/str}}</a></span>
-                    </button>
+                <div class="content-category">
+                    {{#secondarymoremenu}}
+                    <div class="secondary-navigation d-print-none ktt-secondary-navigation">
+                        {{> core/moremenu}}
+                    </div>
+                    {{/secondarymoremenu}}
+                    {{{contentcategory}}}
                 </div>
-            </div>
-            <div class="content-category">
-                {{#secondarymoremenu}}
-                <div class="secondary-navigation d-print-none ktt-secondary-navigation">
-                    {{> core/moremenu}}
-                </div>
-                {{/secondarymoremenu}}
-                {{{contentcategory}}}
             </div>
         </div>
+        {{> theme_boost/footer }}
+        {{{ output.standard_after_main_region_html }}}
     </div>
-    {{> theme_boost/footer }}
-    {{{ output.standard_after_main_region_html }}}
-</div>
+</body>
 </html>
 {{#js}}
 M.util.js_pending('theme_boost/loader');

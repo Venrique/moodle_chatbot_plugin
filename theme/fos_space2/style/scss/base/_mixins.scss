@@ -41,6 +41,12 @@
   }
 }
 
+// Mixin to apply opacity
+@mixin apply-opacity($color, $opacity) {
+  $opacity-percentage: $opacity * 1%; // Convertir el porcentaje a valor decimal para SCSS
+  background-color: rgba($color, $opacity-percentage);
+}
+
 // Mixin buttons
 @mixin button-styles(
   $bg-color,
@@ -307,7 +313,7 @@
   grid-template-areas:
     "label"
     "data-cnt";
-  background-color: $white;
+  @include apply-opacity($primary, 10);
   border-radius: 6px;
   padding: 8px;
 
@@ -319,15 +325,8 @@
       color: $primary;
     }
   }
-
   .data-cnt {
     grid-area: data-cnt;
-    .data-item {
-      div {}
-      display: grid;
-      grid-auto-columns: 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap: 0px 8px;
-    }
+    color: $primary;
   }
 }
