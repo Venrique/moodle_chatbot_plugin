@@ -87,57 +87,93 @@ require(["jquery"], function ($) {
       }
     });
 
-    
+
     // Assign a limit of 100 characters to the title field
     var titleInput = $("#titleDiv").find(".basefieldinput");
 
-    titleInput.on('click', function() {
-        console.log("Adding maxlength attribute to input text");
-        $(this).attr('maxlength', '100');
+    titleInput.on('click', function () {
+      console.log("Adding maxlength attribute to input text");
+      $(this).attr('maxlength', '100');
     });
 
     // Assign a limit of 100 words to the description and comment field
     var textareaDivs = $(".value");
 
     if (textareaDivs.length >= 9) {
-        var textareaDiv2 = $(textareaDivs[2]);
-        var textareaDiv8 = $(textareaDivs[8]);
+      var textareaDiv2 = $(textareaDivs[2]);
+      var textareaDiv8 = $(textareaDivs[8]);
+      var linkfield = $(textareaDivs[9]);
 
-        textareaDiv2.on('input', limitWordCount);
-        textareaDiv8.on('input', limitWordCount);
-        textareaDiv2.on('focusout', limitword);
-        textareaDiv8.on('focusout', limitword);
+      textareaDiv2.on('input', limitWordCount);
+      textareaDiv8.on('input', limitWordCount);
+      textareaDiv2.on('focusout', limitword);
+      textareaDiv8.on('focusout', limitword);
+      textareaDiv8.on('focusout', limitword);
+      linkfield.on('focusout', removespace)
     }
 
     function limitWordCount() {
-        var editorDiv = $(this).find('.editor_atto_content.form-control');
-        var content = editorDiv.text();
-        var words = content.split(" ");
-        var wordCount = words.length;
+      var editorDiv = $(this).find('.editor_atto_content.form-control');
+      var content = editorDiv.text();
+      var words = content.split(" ");
+      var wordCount = words.length;
 
-        if (wordCount > 100) {
-            var newContent = words.slice(0, 100).join(" ");
-            editorDiv.text(newContent);
+      if (wordCount > 100) {
+        var newContent = words.slice(0, 100).join(" ");
+        editorDiv.text(newContent);
 
-            var range = document.createRange();
-            var sel = window.getSelection();
-            range.setStart(editorDiv[0].childNodes[0], newContent.length);
-            range.collapse(true);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
+        var range = document.createRange();
+        var sel = window.getSelection();
+        range.setStart(editorDiv[0].childNodes[0], newContent.length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
     }
     function limitword() {
       var editorDiv = $(this).find('.editor_atto_content.form-control');
       var content = editorDiv.text();
       var words = content.split(/\s+/);
       var wordCount = words.length;
-  
+
       if (wordCount > 100) {
-          var newContent = words.slice(0, 100).join(" ");
-            editorDiv.text(newContent);
+        var newContent = words.slice(0, 100).join(" ");
+        editorDiv.text(newContent);
+      }
+    }
+//remove space of link field
+    function removespace() {
+      var linkinputs = $(this).find('.form-inline table td input');
+      if (linkinputs.length > 0) { 
+          var valuelink = linkinputs.eq(0).val().trim();
+          console.log(valuelink);
+          linkinputs.eq(0).val(valuelink);
+      } else {
+          console.log("No se encontraron elementos que coincidan con el selector.");
       }
   }
+  
+
+  // - list view
+    var maxChars = 100;
+    var maxWords = 100;
+
+    $('.mx-chr').each(function() {
+        var text = $(this).text();
+        if (text.length > maxChars) {
+            var newText = text.substr(0, maxChars) + '...';
+            $(this).text(newText);
+        }
+    });
+  
+      $('.mx-wrd').each(function() {
+          var text = $(this).text();
+          var words = text.split(' ');
+          if (words.length > maxWords) {
+              var newText = words.slice(0, maxWords).join(' ') + '...';
+              $(this).text(newText);
+          }
+      });
 
   });
 });

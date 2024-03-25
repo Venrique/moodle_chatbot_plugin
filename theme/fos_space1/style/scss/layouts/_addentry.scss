@@ -816,9 +816,12 @@
                   th,
                   td {
                     border: none;
-
+//TODO
                     input {
                       width: 100%;
+                    }
+                    .icon {
+                      float: left;
                     }
                   }
                   tr {
