@@ -22,33 +22,31 @@
   font-style: normal;
 }
 
-$font_color: $FOS-Flint;
-
 
 h1 {
-  @include font-header('Isidora Sans Alt-Black');
-  color: $font_color!important;
+  @include font-header-Sans_Black('Isidora Sans Black');
+  color: $primary!important;
   font-size: 1.6rem!important;
 }
 
 h2 {
-  @include font-header('Isidora Sans Alt-Black');
-  color: $font_color!important;
+  @include font-header-Sans_Black('Isidora Sans Black');
+  color: $primary!important;
   font-size: 1.2rem!important;
 }
 
 h3 {
-  @include font-header('Isidora Sans Medium');
-  color: $font_color!important;
+  @include font-header-Sans_Black('Isidora Sans Medium');
+  color: $primary!important;
 }
 
 h4{
-  @include font-header('Isidora Sans Medium');
-  color: $font_color!important;
+  @include font-header-Sans_Black('Isidora Sans Medium');
+  color: $primary!important;
 }
 
 
 h5 {
-  @include font-header('Isidora Sans Medium');
-  color: $font_color!important;
+  @include font-header-Sans_Black('Isidora Sans Medium');
+  color: $primary!important;
 }

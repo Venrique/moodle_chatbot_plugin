@@ -13,6 +13,8 @@ $string['logintext_desc'] = 'Texto que se mostrará en la página de inicio de s
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Mostrar resumen";
 
+$string["OurFeministAlliance"] = "Nuestra Alianza Feminista";
+
 /* Footer */
 $string["PrivacyPolicy"] = "política de privacidad";
 $string["TermsofUse"] = "Condiciones de uso";

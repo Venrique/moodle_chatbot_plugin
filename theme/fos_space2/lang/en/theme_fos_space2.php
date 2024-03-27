@@ -13,6 +13,7 @@ $string['logintext_desc'] = 'Text to be displayed in the login page as additiona
 $string['available'] = 'Available';
 $string['displaysummary'] = "Display summary";
 
+$string["OurFeministAlliance"] = "Our Feminist Alliance";
 
 
 /* Footer */

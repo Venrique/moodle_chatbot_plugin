@@ -23,6 +23,7 @@
 @import "components/moodle/drawer.scss";
 @import "components/moodle/filemanager";
 
+
 //@import "components/moodle/search";
 
 @import "layouts/layout.scss";
@@ -69,7 +70,6 @@
 .block_calendar_month {
   .card-body {
     background-color: rgba ($white, 0.5);
-    //@include font-body("Isidora Sans Regular", 1rem);
   }
 }
 
@@ -112,7 +112,7 @@ a.hover {
 table {
   margin-top: 20px;
 }
-// todo
+
 .custom-select {
   border-color: $primary;
 }
@@ -137,7 +137,6 @@ table {
   background-color: $primary;
   border: 1px solid $primary;
   &:hover {
-    //background-color: $red;
     color: $white;
     border-color: $black;
   }
@@ -250,15 +249,31 @@ body {
 }
 
 .navbar-brand .logo {
-  display: none;
+  display: none!important;
 }
 
 .navbar-brand::after {
   content: '';
-  display: block;
+  display: block!important;
   background-image: url([[pix:theme|navbarlogospace3]]) !important;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 44px;
-  height: 31px;
+  background-size: contain!important;
+  background-repeat: no-repeat!important;
+  width: 44px!important;
+  height: 31px!important;
+}
+
+.main-inner {
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+}
+
+#page.drawers {
+  margin-top: 38px !important;
+}
+
+.dropdown {
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
 }

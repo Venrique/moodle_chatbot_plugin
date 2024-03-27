@@ -1,9 +1,9 @@
-@mixin font-header($family) {
-  font-family: $family, sans-serif;
+@mixin font-header-Sans_Black($family) {
+  font-family: "Isidora Sans Black", sans-serif;
 }
 
 @mixin font-body($family) {
-  font-family: $family, sans-serif;
+  font-family: "Isidora Sans Regular", sans-serif;
 }
 
 // Mixin para media queries
@@ -330,4 +330,3 @@
     color: $primary;
   }
 }
-

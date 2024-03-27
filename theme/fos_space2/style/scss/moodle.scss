@@ -112,7 +112,7 @@ a.hover {
 table {
   margin-top: 20px;
 }
-// todo
+
 .custom-select {
   border-color: $primary;
 }
@@ -260,4 +260,20 @@ body {
   background-repeat: no-repeat!important;
   width: 44px!important;
   height: 31px!important;
+}
+
+.main-inner {
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+}
+
+#page.drawers {
+  margin-top: 38px !important;
+}
+
+.dropdown {
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
 }

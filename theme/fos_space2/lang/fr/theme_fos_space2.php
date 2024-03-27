@@ -13,6 +13,8 @@ $string['logintext_desc'] = 'Texte à afficher sur la page de connexion comme te
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Afficher le résumé";
 
+$string["OurFeministAlliance"] = "Notre Alliance Féministe";
+
 /* Footer */
 $string["PrivacyPolicy"] = "Politique de confidentialité";
 $string["TermsofUse"] = "Conditions d'utilisation";
