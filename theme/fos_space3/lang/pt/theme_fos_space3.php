@@ -3,7 +3,7 @@
 /* settings */
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Nossa Aliança Feminista';
+$string['pluginname'] = 'Centro de Narrativas Transformativas';
 
 $string['showlogintext'] = 'Exibir texto de login';
 $string['showlogintext_desc'] = 'Mostrar ou ocultar o texto adicional da página de login';
