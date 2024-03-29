@@ -418,14 +418,12 @@ h5 {
 }
 .grid-category .img_header .grid-header_content .logos {
   grid-area: logos;
+  padding: 40px;
 }
 .grid-category .img_header .grid-header_content .logos .logo {
-  width: 93px;
-  height: 130px;
-  margin-top: 57px;
-  margin-left: 83px;
+  height: 150px;
   background-repeat: no-repeat;
-  background-image: url('data:image/svg+xml,<svg width="83" height="116" viewBox="0 0 83 116" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_337_593)"><path d="M56.6164 24.2793C48.8903 21.2958 42.2908 21.3612 39.0381 21.4266C33.6677 21.5318 29.2358 22.4903 26.1326 23.3891L6.51965 3.39715C9.15225 2.29928 12.8617 1.04499 17.432 0.407883C19.7269 0.0864868 25.4987 -0.533554 32.6518 0.936905C40.9869 2.65196 46.6784 6.28118 49.8702 8.35745C63.1356 16.9868 70.2555 29.3733 73.4805 36.0402C70.5379 32.7494 65.0208 27.5246 56.6164 24.2793Z" fill="%23F06043"/><path d="M41.4986 53.2396C52.5688 53.2396 61.5711 62.4179 61.5711 73.7009C61.5711 84.981 52.5688 94.1593 41.4986 94.1593C30.4312 94.1593 21.4261 84.981 21.4261 73.7009C21.4261 62.4179 30.4312 53.2396 41.4986 53.2396ZM41.4986 31.3989C18.5804 31.3989 0 50.3385 0 73.7009C0 97.0604 18.5804 116 41.4986 116C64.4196 116 83 97.0604 83 73.7009C83 50.3385 64.4196 31.3989 41.4986 31.3989Z" fill="%2360AD8F"/></g><defs><clipPath id="clip0_337_593"><rect width="83" height="116" fill="white"/></clipPath></defs></svg>');
+  background-image: url('data:image/svg+xml,<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_540_794)"><path d="M104.616 56.2792C96.8903 53.2956 90.2908 53.3611 87.0381 53.4265C81.6677 53.5317 77.2358 54.4902 74.1326 55.389L54.5197 35.397C57.1522 34.2992 60.8617 33.0449 65.432 32.4078C67.7269 32.0864 73.4987 31.4663 80.6518 32.9368C88.987 34.6518 94.6784 38.2811 97.8702 40.3573C111.136 48.9867 118.255 61.3732 121.48 68.04C118.538 64.7493 113.021 59.5245 104.616 56.2792Z" fill="%23F06043"/><path d="M89.4986 85.2396C100.569 85.2396 109.571 94.4179 109.571 105.701C109.571 116.981 100.569 126.159 89.4986 126.159C78.4312 126.159 69.4261 116.981 69.4261 105.701C69.4261 94.4179 78.4312 85.2396 89.4986 85.2396ZM89.4986 63.3989C66.5804 63.3989 48 82.3385 48 105.701C48 129.06 66.5804 148 89.4986 148C112.42 148 131 129.06 131 105.701C131 82.3385 112.42 63.3989 89.4986 63.3989Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_540_794"><rect width="83" height="116" fill="white" transform="translate(48 32)"/></clipPath></defs></svg>');
   background-size: cover;
 }
 .grid-category .img_header .grid-header_content .title {
@@ -1641,7 +1639,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr repeat(2, auto);
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -6324,6 +6322,53 @@ body #page-wrapper #page #region-main {
 .dropdown a {
   color: #5c3873;
   text-decoration: none;
+}
+
+#page-mod-wiki-view #region-main h3,
+#page-mod-wiki-edit #region-main h3 {
+  font-weight: 600;
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 3px;
+}
+
+#page-mod-wiki-view #region-main .wiki_headingtitle h3,
+#page-mod-wiki-edit #region-main .wiki_headingtitle h3 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#page-mod-wiki-view #region-main h4,
+#page-mod-wiki-edit #region-main h4 {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.35em;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 3px;
+}
+
+#page-mod-wiki-view #region-main h5,
+#page-mod-wiki-edit #region-main h5 {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.35em;
+}
+
+#page-mod-wiki-view #region-main img,
+#page-mod-wiki-edit #region-main img {
+  max-width: 100%;
+  height: auto;
+}
+
+#page-mod-wiki-view #region-main code,
+#page-mod-wiki-edit #region-main code {
+  font-size: 100%;
 }
 
 /*# sourceMappingURL=moodle.css.map */
