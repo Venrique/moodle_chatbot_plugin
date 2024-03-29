@@ -194,12 +194,10 @@ h5 {
 }
 .grid-category .img_header .grid-header_content .logos {
   grid-area: logos;
+  padding: 40px;
 }
 .grid-category .img_header .grid-header_content .logos .logo {
-  width: 93px;
-  height: 130px;
-  margin-top: 47px;
-  margin-left: 83px;
+  height: 150px;
   background-repeat: no-repeat;
   background-image: url('data:image/svg+xml,<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M98.8742 37.2673C93.4412 38.7432 89.3766 42.3059 86.8988 47.7644C85.3282 51.2251 84.8903 54.4667 85.5213 57.9655C85.9984 60.61 86.4523 61.6263 87.2046 61.7342C88.1523 61.8701 91.6483 60.347 94.0222 58.7646C95.2518 57.9447 97.0101 56.4683 97.9294 55.4835C100.927 52.2728 101.931 49.0279 101.905 42.6443C101.887 38.429 101.681 36.9022 101.118 36.8215C100.901 36.7906 99.8913 36.991 98.8742 37.2673ZM57.3131 38.6709C55.3227 41.9755 54.5863 44.5763 54.5863 48.3021C54.5863 49.8195 54.7677 51.7108 55.0089 52.7092C55.6027 55.167 57.5176 58.9988 58.9804 60.6567C60.2962 62.1475 62.8269 64.08 64.52 64.8866L65.5454 65.3752L66.1799 64.5796C67.4659 62.9673 68.646 58.7982 69.0829 54.325C69.4882 50.1739 67.6555 45.6866 63.9281 41.7026C62.3182 39.9822 59.0535 37.2721 58.5908 37.2721C58.3502 37.2721 57.779 37.8974 57.3131 38.6709ZM76.1551 54.4305C74.6228 55.2813 74.3314 57.5256 75.5722 58.917C76.2588 59.687 76.5064 59.7872 77.7213 59.7872C78.9363 59.7872 79.1839 59.687 79.8705 58.917C80.7212 57.9631 80.8858 56.7417 80.3287 55.5165C79.7325 54.2051 77.5727 53.6431 76.1551 54.4305ZM103.134 59.3732C102.121 60.0428 101.675 60.8786 101.663 62.132C101.65 63.5327 102.252 64.561 103.406 65.1096C105.27 65.9958 107.33 65.1386 108.018 63.1911C108.348 62.2527 108.347 61.9809 108.008 61.0878C107.256 59.108 104.829 58.2541 103.134 59.3732ZM73.5996 62.363C70.2769 64.2045 71.0483 68.9697 74.7422 69.4205C77.6299 69.7728 79.7966 66.286 78.2489 63.7771C77.3453 62.3124 74.9861 61.5946 73.5996 62.363ZM94.7894 63.1256C93.1415 63.4968 91.8148 65.2407 91.8156 67.0347C91.8172 71.2878 97.5153 72.7197 99.4776 68.9601C101.153 65.7501 98.3918 62.3143 94.7894 63.1256ZM118.556 63.6889C114.454 64.2159 109.882 66.4874 107.477 69.1927C105.966 70.8924 104.319 73.5143 104.316 74.2241C104.308 76.0429 110.428 78.0392 116.011 78.0392C120.344 78.0392 122.209 77.3219 126.192 74.1226C128.029 72.6475 132.235 68.0419 132.235 67.5055C132.235 67.0955 128.708 65.1131 126.822 64.4632C125.475 63.9988 121.476 63.319 120.674 63.4179C120.524 63.4365 119.571 63.5583 118.556 63.6889ZM50.5704 64.2591C49.2873 65.1227 48.7664 66.6843 49.2961 68.0789C50.5401 71.3539 55.1852 70.7957 55.5758 67.3243C55.7465 65.8056 55.1775 64.6654 53.9596 64.0864C52.6986 63.4866 51.6373 63.5407 50.5704 64.2591ZM83.7364 67.9705C81.3155 68.626 79.6721 71.6728 80.3598 74.2316C81.2645 77.5982 85.1684 79.077 88.0709 77.1524C90.043 75.8447 90.9248 72.7064 89.8824 70.7056C89.4295 69.8359 88.2605 68.6638 87.4274 68.2439C86.548 67.8008 84.8328 67.6737 83.7364 67.9705ZM69.7395 72.1383C68.2966 72.9076 67.5768 74.3699 67.6813 76.3187C67.7842 78.2385 68.4828 79.3903 70.0214 80.1769C71.3831 80.8729 72.8545 80.8428 74.275 80.09C77.4222 78.4226 77.3847 73.6731 74.2112 72.0187C73.1816 71.482 70.854 71.5441 69.7395 72.1383ZM55.3894 72.3776C52.7714 73.6955 52.4872 77.6821 54.8887 79.3983C56.21 80.3426 58.4033 80.3021 59.7024 79.3093C61.0197 78.3024 61.6893 76.5244 61.2739 75.1354C60.4578 72.4066 57.8032 71.1623 55.3894 72.3776ZM93.8095 77.8825C90.8618 79.195 90.3959 83.4159 92.9663 85.5216C95.054 87.2323 98.5936 86.5224 99.8009 84.1513C100.915 81.9629 100.183 79.1894 98.1961 78.0706C97.0385 77.4186 95.0431 77.3331 93.8095 77.8825ZM104.585 81.689C101.898 83.0831 101.786 86.5827 104.377 88.1656C107.327 89.9677 110.978 86.6618 109.495 83.5313C108.582 81.6032 106.358 80.7687 104.585 81.689ZM61.7244 81.7628C59.5032 82.4351 58.2613 83.9901 58.0941 86.3093C57.9499 88.3066 58.678 89.9256 60.1938 90.978C62.407 92.5149 65.3784 91.9684 67.1853 89.6924C68.261 88.3375 68.4647 86.1001 67.6568 84.5131C66.4801 82.2022 64.0281 81.0655 61.7244 81.7628ZM113.384 85.0724C112.524 85.5496 112.046 86.4902 112.034 87.7247C112.027 88.5429 112.208 88.9338 112.929 89.6564C113.67 90.399 114.035 90.5624 114.95 90.5624C115.866 90.5624 116.23 90.399 116.971 89.6564C117.712 88.9138 117.875 88.5488 117.875 87.6314C117.875 86.714 117.712 86.349 116.971 85.6064C116.25 84.8838 115.86 84.7023 115.043 84.7098C114.48 84.7151 113.734 84.8782 113.384 85.0724ZM97.0005 90.4025C93.4566 91.9676 92.8769 96.9015 95.9605 99.258C96.6857 99.8122 97.2999 100.019 98.4793 100.104C99.3374 100.166 100.34 100.142 100.709 100.049C101.649 99.8122 103.261 98.3268 103.688 97.3031C104.483 95.3958 103.924 92.5626 102.498 91.2698C101.255 90.1432 98.553 89.7172 97.0005 90.4025ZM111.28 95.7739C109.209 96.3324 108.834 96.5948 108.834 97.4867C108.834 98.2929 110.861 102.399 112.517 104.951C114.716 108.337 118.402 110.923 122.02 111.619C123.812 111.964 133.376 111.891 133.735 111.53C133.854 111.411 133.483 109.928 132.912 108.233C131.407 103.765 129.607 101.154 126.501 98.9338C124.476 97.4861 121.887 96.2826 119.668 95.7584C117.582 95.2655 113.134 95.2738 111.28 95.7739ZM87.6877 101.868C84.5845 103.732 84.7533 108.338 87.981 109.873C88.6786 110.204 89.3798 110.305 90.4001 110.22C91.9951 110.088 92.9442 109.523 93.876 108.151C94.7157 106.915 94.712 104.584 93.868 103.329C92.4982 101.292 89.734 100.639 87.6877 101.868ZM102.715 102.353C101.252 103.351 100.742 104.255 100.742 105.857C100.742 107.013 100.885 107.47 101.499 108.276C103.993 111.552 108.837 109.857 108.833 105.71C108.83 102.595 105.245 100.628 102.715 102.353ZM107.973 112.014C107.028 112.547 106.441 113.713 106.441 115.054C106.441 115.868 106.636 116.346 107.259 117.057C108.611 118.599 110.611 118.665 112.059 117.214C112.717 116.555 112.823 116.244 112.823 114.967C112.823 113.72 112.705 113.353 112.076 112.648C111.469 111.967 111.082 111.791 110.015 111.706C109.154 111.638 108.45 111.744 107.973 112.014ZM85.1081 112.998C82.7031 114.395 82.7464 118.076 85.1836 119.385C87.6947 120.735 90.4836 119.028 90.4836 116.142C90.4836 114.637 89.7792 113.442 88.5488 112.856C87.3008 112.263 86.3036 112.304 85.1081 112.998ZM95.0218 113.515C94.7423 113.976 94.0698 115.684 93.5271 117.312C92.6854 119.837 92.5216 120.722 92.4107 123.336C92.177 128.836 93.2125 131.516 97.2071 135.748C98.5561 137.177 100.368 138.937 101.234 139.66L102.809 140.974L103.291 140.349C104.247 139.108 105.872 135.69 106.313 133.994C106.946 131.557 106.891 127.523 106.188 124.817C105.276 121.303 103.963 118.971 101.53 116.538C99.6164 114.625 96.741 112.678 95.8291 112.678C95.6648 112.678 95.3013 113.055 95.0218 113.515ZM82.3483 122.91C81.6503 123.609 81.4442 124.037 81.4442 124.788C81.4442 126.742 82.5752 127.866 84.5414 127.866C85.9611 127.866 87.2944 126.446 87.2944 124.935C87.2944 124.017 87.1314 123.652 86.3903 122.91C85.6492 122.167 85.2849 122.004 84.3693 122.004C83.4538 122.004 83.0895 122.167 82.3483 122.91Z" fill="%23F9F2EA"/></svg>');
   background-size: cover;
@@ -208,7 +206,7 @@ h5 {
   justify-self: center;
   align-self: center;
   grid-area: title;
-  color: #00d4d9;
+  color: #00C9CE;
   font-size: 1.8rem;
 }
 .grid-category .cta-btns {
@@ -289,7 +287,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row1 .col1 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
@@ -328,8 +326,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -348,7 +346,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row1 .col2 .field h6 {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row1 .col2 .cta {
   align-self: center;
@@ -386,8 +384,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row2 {
   display: grid;
@@ -407,7 +405,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row2 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
@@ -437,7 +435,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row2 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_content_wrap {
   width: 100% !important;
-  border-top: 1px solid #00d4d9;
+  border-top: 1px solid #00C9CE;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   resize: none !important;
@@ -460,8 +458,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row3 {
   display: grid;
@@ -481,7 +479,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row3 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row3 .cta {
   align-self: center;
@@ -514,8 +512,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row4 {
   display: grid;
@@ -535,7 +533,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row4 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row4 .cta {
   align-self: center;
@@ -568,8 +566,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row5 {
   display: grid;
@@ -599,7 +597,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row5 .col1 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row5 .col1 .cta {
   align-self: center;
@@ -632,8 +630,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -653,7 +651,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row5 .col2 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row5 .col2 .cta {
   align-self: center;
@@ -686,8 +684,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row6 {
   display: grid;
@@ -707,7 +705,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row6 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row6 .cta {
   align-self: center;
@@ -768,8 +766,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row7 {
   display: grid;
@@ -789,7 +787,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row7 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row7 .cta {
   align-self: center;
@@ -820,7 +818,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row7 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_content_wrap {
   width: 100% !important;
-  border-top: 1px solid #00d4d9;
+  border-top: 1px solid #00C9CE;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   resize: none !important;
@@ -843,8 +841,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 {
   display: grid;
@@ -864,7 +862,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row8 .field h6 {
   margin-left: 24px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .cta {
   align-self: center;
@@ -919,7 +917,7 @@ h5 {
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-link .form-inline table tbody tr td:first-child {
   width: 140px;
   font-size: 14px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
   display: grid;
@@ -955,7 +953,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col1 .field h6 {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col1 .value {
   grid-area: value;
@@ -977,7 +975,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col2 .field h6 {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col2 .value {
   grid-area: value;
@@ -999,7 +997,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col3 .field h6 {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col3 .value {
   grid-area: value;
@@ -1021,7 +1019,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col4 .field h6 {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col4 .value {
   grid-area: value;
@@ -1041,14 +1039,14 @@ h5 {
   height: 50px;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .fp-navbar {
-  border-top: 1px solid #00d4d9 !important;
-  border-right: 1px solid #00d4d9 !important;
-  border-left: 1px solid #00d4d9 !important;
+  border-top: 1px solid #00C9CE !important;
+  border-right: 1px solid #00C9CE !important;
+  border-left: 1px solid #00C9CE !important;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .filemanager-container {
-  border-right: 1px solid #00d4d9 !important;
-  border-left: 1px solid #00d4d9 !important;
-  border-bottom: 1px solid #00d4d9 !important;
+  border-right: 1px solid #00C9CE !important;
+  border-left: 1px solid #00C9CE !important;
+  border-bottom: 1px solid #00C9CE !important;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .bg-faded,
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .filemanager-container {
@@ -1061,7 +1059,7 @@ h5 {
   width: 100%;
   padding: 8px 12px;
   text-align: center;
-  color: #00d4d9;
+  color: #00C9CE;
   background-color: #fff;
   border-radius: 6px;
 }
@@ -1075,13 +1073,13 @@ h5 {
   height: auto;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #ABFDFF;
-  color: #00d4d9;
+  background-color: #9AF3F5;
+  color: #00C9CE;
   margin: 0 0 4px;
 }
 
 .svw-body {
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
   display: grid;
@@ -1118,7 +1116,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1127,11 +1125,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -1145,7 +1143,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1154,11 +1152,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 {
   display: grid;
@@ -1172,7 +1170,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1181,11 +1179,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 {
   display: grid;
@@ -1199,7 +1197,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1208,11 +1206,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 {
   display: grid;
@@ -1226,7 +1224,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1235,11 +1233,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 {
   display: grid;
@@ -1261,7 +1259,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1270,11 +1268,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -1288,7 +1286,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1297,11 +1295,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 {
   display: grid;
@@ -1315,7 +1313,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1324,11 +1322,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 {
   display: grid;
@@ -1342,7 +1340,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1351,11 +1349,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 {
   display: grid;
@@ -1369,7 +1367,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1378,11 +1376,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 {
   display: grid;
@@ -1396,7 +1394,7 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas: "label" "data-cnt";
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   border-radius: 6px;
   padding: 8px;
 }
@@ -1405,11 +1403,11 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .label h6 {
   font-size: 12px;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .data-cnt {
   grid-area: data-cnt;
-  color: #00d4d9;
+  color: #00C9CE;
 }
 .slst_body {
   width: auto;
@@ -1417,7 +1415,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr repeat(2, auto);
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -1491,16 +1489,16 @@ h5 {
   margin: 0 0 50px;
 }
 .slst_body .table-card-slst .header_item {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
   padding: 8px;
   color: #fff;
   position: sticky;
   top: 61px;
 }
 .slst_body .table-card-slst .data-item {
-  color: #00d4d9;
+  color: #00C9CE;
   font-size: 13px;
-  background-color: rgba(0, 212, 217, 0.1);
+  background-color: rgba(0, 201, 206, 0.1);
   padding: 8px;
   white-space: normal;
 }
@@ -1525,7 +1523,7 @@ h5 {
   padding-bottom: 0;
   box-shadow: none;
   border-bottom: var(--fos-flint-70, rgba(56, 61, 71, 0.7)) 1px solid;
-  background-color: #ABFDFF !important;
+  background-color: #9AF3F5 !important;
   align-items: stretch;
   height: 61px;
 }
@@ -1534,13 +1532,13 @@ h5 {
   color: #383d47;
 }
 .moremenu .nav-link.active {
-  border-bottom-color: #00d4d9;
+  border-bottom-color: #00C9CE;
 }
 .moremenu .nav-link.active:hover {
-  border-bottom-color: #00d4d9;
+  border-bottom-color: #00C9CE;
 }
 .moremenu .nav-link:hover {
-  border-bottom-color: #00d4d9;
+  border-bottom-color: #00C9CE;
 }
 
 .secondary-navigation {
@@ -1557,9 +1555,9 @@ h5 {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px 6px 6px;
-  border: 1px solid #00d4d9;
+  border: 1px solid #00C9CE;
   border-radius: 0px 25px;
-  background-color: #00d4d9;
+  background-color: #00C9CE;
   cursor: pointer;
   text-decoration: none;
   color: #F9FFFF;
@@ -1570,8 +1568,8 @@ h5 {
   margin-right: 10px;
 }
 .btn_icon-fos:hover {
-  color: #00d4d9;
-  border: 1px solid #00d4d9;
+  color: #00C9CE;
+  border: 1px solid #00C9CE;
   background-color: #F9FFFF;
 }
 .btn_icon-fos a {
@@ -1628,7 +1626,7 @@ h5 {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  color: #00d4d9;
+  color: #00C9CE;
   background-color: #F9FFFF;
 }
 
@@ -1862,8 +1860,8 @@ a:not([class]):focus,
 .activityinstance > a:focus {
   outline: 0.2rem solid transparent;
   color: #212529;
-  background-color: #d9feff;
-  box-shadow: 0 -0.2rem #d9feff, 0 0.2rem #343a40;
+  background-color: #cefeff;
+  box-shadow: 0 -0.2rem #cefeff, 0 0.2rem #343a40;
 }
 .aalink:focus:hover, a.autolink:focus:hover,
 #page-footer a:not([class]):focus:hover,
@@ -4032,7 +4030,7 @@ input[disabled] {
 }
 
 .matchtext {
-  background-color: #a6fdff;
+  background-color: #9bfdff;
   color: #F9FFFF;
   height: 1.5rem;
 }
@@ -4077,7 +4075,7 @@ input[disabled] {
   border-bottom: 2px solid transparent;
 }
 .emoji-picker .category-button.selected {
-  border-bottom: 2px solid #00d4d9;
+  border-bottom: 2px solid #00C9CE;
 }
 .emoji-picker .emojis-container,
 .emoji-picker .search-results-container {
@@ -4199,7 +4197,7 @@ input[disabled] {
 
 .visual-scroll-x {
   scrollbar-width: thin;
-  scrollbar-color: #00d4d9 #a6fdff;
+  scrollbar-color: #00C9CE #9bfdff;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 .visual-scroll-x::-webkit-scrollbar {
@@ -4208,11 +4206,11 @@ input[disabled] {
   appearance: none;
 }
 .visual-scroll-x::-webkit-scrollbar-thumb {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
   border-right: 1px solid #fff;
 }
 .visual-scroll-x::-webkit-scrollbar-track {
-  background-color: #a6fdff;
+  background-color: #9bfdff;
   border-right: 1px solid #fff;
 }
 
@@ -4243,7 +4241,7 @@ body.dragging .dragging {
 }
 
 .overlay-preview {
-  border: 2px dashed #00d4d9;
+  border: 2px dashed #00C9CE;
   position: absolute;
   top: 0;
   left: 0;
@@ -4263,14 +4261,14 @@ body.dragging .dragging {
   margin: 0 auto;
   width: 100%;
   max-width: 600px;
-  background-color: #00d4d9;
+  background-color: #00C9CE;
   color: #fff;
   text-align: center;
   font-size: 1.25rem;
 }
 
 .overlay-preview-borders {
-  outline: 2px dashed #00d4d9;
+  outline: 2px dashed #00C9CE;
 }
 
 .waitstate {
@@ -5757,7 +5755,7 @@ a.ygtvspacer:hover {
 }
 .coursesearchbox {
   padding: 0.5rem;
-  border: 1px solid #00d4d9;
+  border: 1px solid #00C9CE;
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
 }
@@ -5799,13 +5797,13 @@ a.ygtvspacer:hover {
 }
 
 .btn-primary {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
   border: 1px solid #F9FFFF;
 }
 .btn-primary:hover {
   background-color: #F9FFFF;
-  color: #00d4d9;
-  border-color: #00d4d9;
+  color: #00C9CE;
+  border-color: #00C9CE;
 }
 
 a {
@@ -5813,29 +5811,29 @@ a {
 }
 
 a.hover {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 
 .calendartable {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 
 .form-control {
-  border-color: #00d4d9;
+  border-color: #00C9CE;
 }
 
 .search-icon {
-  border: 1px solid #00d4d9;
+  border: 1px solid #00C9CE;
 }
 
 .btn-outline-secondary {
   color: #F9FFFF;
-  background-color: #00d4d9;
-  border-color: #00d4d9;
+  background-color: #00C9CE;
+  border-color: #00C9CE;
 }
 
 .pair-key {
-  color: #00d4d9;
+  color: #00C9CE;
 }
 
 table {
@@ -5843,24 +5841,24 @@ table {
 }
 
 .custom-select {
-  border-color: #00d4d9;
+  border-color: #00C9CE;
 }
 
 .input-group-append .btn-submit {
-  border: 1px solid #00d4d9;
+  border: 1px solid #00C9CE;
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
 }
 .dropdown-menu .dropdown-item.active {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
 }
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  background-color: #00d4d9;
-  border: 1px solid #00d4d9;
+  background-color: #00C9CE;
+  border: 1px solid #00C9CE;
 }
 .btn-primary.disabled:hover,
 .btn-primary:disabled:hover {
@@ -5883,7 +5881,7 @@ table {
 
 .drawer-right {
   background-color: #F9FFFF;
-  border-left: 1px solid #00d4d9;
+  border-left: 1px solid #00C9CE;
 }
 .drawer-right .card-body {
   background-color: #F9FFFF;
@@ -5892,26 +5890,26 @@ table {
 
 .drawer-left {
   background-color: #F9FFFF;
-  border-right: 1px solid #00d4d9;
+  border-right: 1px solid #00C9CE;
 }
 
 .courseindex .courseindex-section .pageitem {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
 }
 .courseindex .courseindex-section .pageitem:hover {
   background-color: #F9FFFF;
 }
 .courseindex .courseindex-section .pageitem:hover a {
-  color: #00d4d9 !important;
+  color: #00C9CE !important;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem {
-  background-color: #00d4d9;
+  background-color: #00C9CE;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem:hover {
   background-color: #F9FFFF;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem:hover a {
-  color: #00d4d9 !important;
+  color: #00C9CE !important;
 }
 
 body {

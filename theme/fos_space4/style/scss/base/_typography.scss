@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Isidora Sans Regular';
+  src: url('fos_space4/fonts/isidora-sans/IsidoraSans-Regular.otf') format('opentype'),
+       url('fos_space4/fonts/isidora-sans/IsidoraSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Isidora Sans Medium';
+  src: url('fos_space4/fonts/isidora-sans/IsidoraSans-Medium.otf') format('opentype'),
+       url('fos_space4/fonts/isidora-sans/IsidoraSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Isidora Sans Alt-Black';
+  src: url('fos_space4/fonts/isidora-sans/IsidoraSansAlt-Black.otf') format('opentype'),
+       url('fos_space4/fonts/isidora-sans/IsidoraSansAlt-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font_color: $FOS-Flint;
+
+
+h1 {
+  @include font-header('Isidora Sans Alt-Black');
+  color: $font_color!important;
+  font-size: 1.6rem!important;
+}
+
+h2 {
+  @include font-header('Isidora Sans Alt-Black');
+  color: $font_color!important;
+  font-size: 1.2rem!important;
+}
+
+h3 {
+  @include font-header('Isidora Sans Medium');
+  color: $font_color!important;
+}
+
+h4{
+  @include font-header('Isidora Sans Medium');
+  color: $font_color!important;
+}
+
+
+h5 {
+  @include font-header('Isidora Sans Medium');
+  color: $font_color!important;
+}

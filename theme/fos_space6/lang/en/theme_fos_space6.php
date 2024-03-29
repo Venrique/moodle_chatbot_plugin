@@ -13,6 +13,8 @@ $string['logintext_desc'] = 'Text to be displayed in the login page as additiona
 $string['available'] = 'Available';
 $string['displaysummary'] = "Display summary";
 
+$string["CenterforTransformativeNarratives"] = "Center for Transformative Narratives";
+
 /* Footer */
 $string["PrivacyPolicy"] = "Privacy Policy";
 $string["TermsofUse"] = "Terms of Use";
