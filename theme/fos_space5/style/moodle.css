@@ -1129,7 +1129,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -1156,7 +1155,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 {
   display: grid;
@@ -1183,7 +1181,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 {
   display: grid;
@@ -1210,7 +1207,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 {
   display: grid;
@@ -1237,7 +1233,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 {
   display: grid;
@@ -1272,7 +1267,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -1299,7 +1293,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 {
   display: grid;
@@ -1326,7 +1319,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 {
   display: grid;
@@ -1353,7 +1345,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 {
   display: grid;
@@ -1380,7 +1371,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 {
   display: grid;
@@ -1407,7 +1397,6 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .data-cnt {
   grid-area: data-cnt;
-  color: #e8cd0a;
 }
 .slst_body {
   width: auto;
@@ -1496,7 +1485,6 @@ h5 {
   top: 61px;
 }
 .slst_body .table-card-slst .data-item {
-  color: #e8cd0a;
   font-size: 13px;
   background-color: rgba(232, 205, 10, 0.1);
   padding: 8px;
@@ -1516,6 +1504,53 @@ h5 {
 .slst_body .table-card-slst .item-hmxw {
   background-color: transparent !important;
   width: max-content;
+}
+
+#page-mod-wiki-view #region-main h3,
+#page-mod-wiki-edit #region-main h3 {
+  font-weight: 600;
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 3px;
+}
+
+#page-mod-wiki-view #region-main .wiki_headingtitle h3,
+#page-mod-wiki-edit #region-main .wiki_headingtitle h3 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#page-mod-wiki-view #region-main h4,
+#page-mod-wiki-edit #region-main h4 {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.35em;
+  border-bottom: 1px solid #b2b2b2;
+  padding-bottom: 3px;
+}
+
+#page-mod-wiki-view #region-main h5,
+#page-mod-wiki-edit #region-main h5 {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.35em;
+}
+
+#page-mod-wiki-view #region-main img,
+#page-mod-wiki-edit #region-main img {
+  max-width: 100%;
+  height: auto;
+}
+
+#page-mod-wiki-view #region-main code,
+#page-mod-wiki-edit #region-main code {
+  font-size: 100%;
 }
 
 .navbar.fixed-top {

@@ -142,17 +142,16 @@ require(["jquery"], function ($) {
       }
     }
 //remove space of link field
-    function removespace() {
-      var linkinputs = $(this).find('.form-inline table td input');
-      if (linkinputs.length > 0) { 
-          var valuelink = linkinputs.eq(0).val().trim();
-          console.log(valuelink);
-          linkinputs.eq(0).val(valuelink);
-      } else {
-          console.log("No se encontraron elementos que coincidan con el selector.");
-      }
+function removespace() {
+  var linkinputs = $(this).find('.form-inline table td input');
+  if (linkinputs.length > 0) { 
+      var valuelink = linkinputs.eq(0).val().replace(/\s+/g, '');
+      //console.log(valuelink);
+      linkinputs.eq(0).val(valuelink);
+  } else {
+      console.log("No items matching the selector were found.");
   }
-  
+}
 
   // - list view
     var maxChars = 100;

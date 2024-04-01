@@ -10,6 +10,7 @@
 @import "layouts/addentry";
 @import "layouts/singleview";
 @import "layouts/listview";
+@import "layouts/wiki";
 
 @import "components/navBar";
 @import "components/buttons";
@@ -200,6 +201,7 @@ body {
   @include font-body("Isidora Sans Regular");
   background-color: $body-bg;
   #page-wrapper #page {
+    margin-top: 38px !important;
     background-color: $body-bg;
     #page-content {
       background-color: $body-bg;
