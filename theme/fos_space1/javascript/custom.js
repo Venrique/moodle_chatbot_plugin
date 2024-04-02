@@ -117,14 +117,14 @@ require(["jquery"], function ($) {
       linkfield.on('input', wordlimit);
       linkfield.on('focusout', removespace);
 
-
-    }
-    
 //upload field
 var selectlist = uploadfield.find('div select');
 selectlist.each(function() {
   $(this).prop('readonly', true).attr('tabindex', '-1');
 });
+    }
+    
+
 
 
 //word limit to description and comments field
