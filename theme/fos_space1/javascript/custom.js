@@ -115,11 +115,6 @@ require(["jquery"], function ($) {
       linkfield.on('input', wordlimit);
       linkfield.on('focusout', removespace);
 
-//upload field
-var selectlist = $(textareaDivs[1]).find('select');
-selectlist.each(function() {
-  $(this).prop('readonly', true).attr('tabindex', '-1');
-});
 
 }
     
