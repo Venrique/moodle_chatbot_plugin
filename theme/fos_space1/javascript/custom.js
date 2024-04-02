@@ -92,7 +92,7 @@ require(["jquery"], function ($) {
     var titleInput = $("#titleDiv").find(".basefieldinput");
 
     titleInput.on('click', function () {
-      console.log("Adding maxlength attribute to input text");
+      //console.log("Adding maxlength attribute to input text");
       $(this).attr('maxlength', '100');
     });
 
@@ -114,7 +114,7 @@ require(["jquery"], function ($) {
       linkfield.on('focusout', removespace);
 
       var selectlist = $(textareaDivs[1]).find('div select');
-      selectlist.each(function() {
+      selectlist.each(function () {
         $(this).prop('readonly', true).attr('tabindex', '-1');
       });
     }
@@ -183,9 +183,9 @@ require(["jquery"], function ($) {
       }
 
     }
-//upload field
+    //upload field
 
-$('#miCampo').prop('readonly', true);
+    $('#miCampo').prop('readonly', true);
 
 
     // - list view
@@ -211,4 +211,3 @@ $('#miCampo').prop('readonly', true);
 
   });
 });
- 
