@@ -92,7 +92,7 @@ require(["jquery"], function ($) {
     var titleInput = $("#titleDiv").find(".basefieldinput");
 
     titleInput.on('click', function () {
-      console.log("Adding maxlength attribute to input text");
+      //console.log("Adding maxlength attribute to input text");
       $(this).attr('maxlength', '100');
     });
 
@@ -109,7 +109,14 @@ require(["jquery"], function ($) {
       textareaDiv2.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
-      linkfield.on('focusout', removespace)
+
+      linkfield.on('input', wordlimit);
+      linkfield.on('focusout', removespace);
+
+      var selectlist = $(textareaDivs[1]).find('div select');
+      selectlist.each(function () {
+        $(this).prop('readonly', true).attr('tabindex', '-1');
+      });
     }
 
     function limitWordCount() {
@@ -141,38 +148,66 @@ require(["jquery"], function ($) {
         editorDiv.text(newContent);
       }
     }
-//remove space of link field
-function removespace() {
-  var linkinputs = $(this).find('.form-inline table td input');
-  if (linkinputs.length > 0) { 
-      var valuelink = linkinputs.eq(0).val().replace(/\s+/g, '');
-      //console.log(valuelink);
-      linkinputs.eq(0).val(valuelink);
-  } else {
-      console.log("No items matching the selector were found.");
-  }
-}
 
-  // - list view
+    //remove space of link field
+    var tdList = $('.form-inline table tbody td input');
+
+    function removespace() {
+      if (tdList.length >= 2) {
+        var valuelink = tdList.eq(0).val().replace(/\s+/g, '');
+        tdList.eq(0).val(valuelink);
+        var value = tdList.eq(1).val();
+        var words = value.split(/\s+/);
+        var wordCount = words.length;
+
+        if (wordCount > 6) {
+          var newContent = words.slice(0, 100).join(" ");
+          tdList.eq(1).val(newContent);
+        }
+      } else {
+        console.log("Not enough items in tdList to access index 0.");
+      }
+    }
+
+    function wordlimit() {
+      if (tdList.length >= 2) {
+        var value = tdList.eq(1).val();
+        var words = value.split(" ");
+        var wordCount = words.length;
+        if (wordCount > 6) {
+          var newContent = words.slice(0, 6).join(" ");
+          tdList.eq(1).val(newContent);
+        }
+      } else {
+        console.log("Not enough items in tdList to access index 1.");
+      }
+
+    }
+    //upload field
+
+    $('#miCampo').prop('readonly', true);
+
+
+    // - list view
     var maxChars = 100;
     var maxWords = 30;
 
-    $('.mx-chr').each(function() {
-        var text = $(this).text();
-        if (text.length > maxChars) {
-            var newText = text.substr(0, maxChars) + '...';
-            $(this).text(newText);
-        }
+    $('.mx-chr').each(function () {
+      var text = $(this).text();
+      if (text.length > maxChars) {
+        var newText = text.substr(0, maxChars) + '...';
+        $(this).text(newText);
+      }
     });
-  
-      $('.mx-wrd').each(function() {
-          var text = $(this).text();
-          var words = text.split(' ');
-          if (words.length > maxWords) {
-              var newText = words.slice(0, maxWords).join(' ') + '...';
-              $(this).text(newText);
-          }
-      });
+
+    $('.mx-wrd').each(function () {
+      var text = $(this).text();
+      var words = text.split(' ');
+      if (words.length > maxWords) {
+        var newText = words.slice(0, maxWords).join(' ') + '...';
+        $(this).text(newText);
+      }
+    });
 
   });
 });
