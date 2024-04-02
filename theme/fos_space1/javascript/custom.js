@@ -111,7 +111,7 @@ require(["jquery"], function ($) {
       textareaDiv8.on('focusout', limitword);
       
       linkfield.on('focusout', removespace);
-      linkfield.on('click', wordlimit);
+      linkfield.on('input', wordlimit);
       
 
     }
@@ -153,13 +153,7 @@ function removespace() {
     if (tdList.length >= 2) {
         var valuelink = tdList.eq(0).val().replace(/\s+/g, '');
         tdList.eq(0).val(valuelink);
-    } else {
-        console.log("Not enough items in tdList to access index 0.");
-    }
-}
 
-function wordlimit() {
-    if (tdList.length >= 2) {
         var value = tdList.eq(1).val(); 
         var words = value.split(/\s+/);
         var wordCount = words.length;
@@ -168,6 +162,30 @@ function wordlimit() {
             var newContent = words.slice(0, 100).join(" ");
             tdList.eq(1).val(newContent);
         }
+
+    } else {
+        console.log("Not enough items in tdList to access index 0.");
+    }
+}
+
+function wordlimit() {
+    if (tdList.length >= 2) {
+
+      var value = tdList.eq(1).val(); 
+      var words = value.split(" ");
+      var wordCount = words.length;
+
+      if (wordCount > 6) {
+        var newContent = words.slice(0, 6).join(" ");
+        tdList.eq(1).val(newContent);
+
+        var range = document.createRange();
+        var sel = window.getSelection();
+        range.setStart(tdList.eq(1).val(newContent).length);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
     } else {
       console.log("Not enough items in tdList to access index 1.");
     }
