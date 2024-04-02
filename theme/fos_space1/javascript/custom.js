@@ -117,7 +117,8 @@ require(["jquery"], function ($) {
 
 
 //upload field
-uploadfield.prop('readonly', true);
+uploadfield.prop('readonly', true).attr('tabindex', '-1');
+
     }
     
 
