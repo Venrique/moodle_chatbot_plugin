@@ -181,7 +181,8 @@ function wordlimit() {
 
         var range = document.createRange();
         var sel = window.getSelection();
-        range.setStart(tdList.eq(1).val(newContent).length);
+        var node = tdList.eq(1)[0]; 
+        range.setStart(node, newContent.length); 
         range.collapse(true);
         sel.removeAllRanges();
         sel.addRange(range);
