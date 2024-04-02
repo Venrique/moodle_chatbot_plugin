@@ -113,7 +113,10 @@ require(["jquery"], function ($) {
       linkfield.on('input', wordlimit);
       linkfield.on('focusout', removespace);
 
-
+      var selectlist = $(textareaDivs[1]).find('div select');
+      selectlist.each(function() {
+        $(this).prop('readonly', true).attr('tabindex', '-1');
+      });
     }
 
     function limitWordCount() {
