@@ -179,15 +179,6 @@ function wordlimit() {
         var newContent = words.slice(0, 6).join(" ");
         tdList.eq(1).val(newContent);
 
-        tdList.eq(1).focus();
-        var node = tdList.eq(1)[0];
-        var range = document.createRange();
-        var sel = window.getSelection();
-
-        range.selectNodeContents(node);
-        range.collapse(false);
-        sel.removeAllRanges();
-        sel.addRange(range);
       }
     } else {
       console.log("Not enough items in tdList to access index 1.");
