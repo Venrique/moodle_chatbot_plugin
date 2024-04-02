@@ -184,7 +184,7 @@ class data_field_file extends data_field_base {
             ['width' => 16, 'height' => 16]
         );
 
-        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s($name) . '</a>';
+        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a>';
     }
 
 
