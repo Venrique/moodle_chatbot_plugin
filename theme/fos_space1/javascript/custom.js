@@ -1,3 +1,5 @@
+const { each } = require("async");
+
 require(["jquery"], function ($) {
   $(document).ready(function () {
     function loadStylesheet(href, integrity, crossorigin) {
@@ -116,12 +118,16 @@ require(["jquery"], function ($) {
       linkfield.on('focusout', removespace);
 
 
-//upload field
-uploadfield.prop('readonly', true).attr('tabindex', '-1');
-
     }
     
+//upload field
+var selectlist = uploadfield.find('div select');
+selectlist.each(function() {
+  $(this).prop('readonly', true).attr('tabindex', '-1');
+});
 
+
+//word limit to description and comments field
     function limitWordCount() {
       var editorDiv = $(this).find('.editor_atto_content.form-control');
       var content = editorDiv.text();
