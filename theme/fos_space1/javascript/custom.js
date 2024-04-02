@@ -1,5 +1,3 @@
-const { each } = require("async");
-
 require(["jquery"], function ($) {
   $(document).ready(function () {
     function loadStylesheet(href, integrity, crossorigin) {
@@ -116,12 +114,8 @@ require(["jquery"], function ($) {
       linkfield.on('focusout', removespace);
 
 
-}
-    
+    }
 
-
-
-//word limit to description and comments field
     function limitWordCount() {
       var editorDiv = $(this).find('.editor_atto_content.form-control');
       var content = editorDiv.text();
@@ -186,6 +180,9 @@ require(["jquery"], function ($) {
       }
 
     }
+//upload field
+
+$('#miCampo').prop('readonly', true);
 
 
     // - list view
