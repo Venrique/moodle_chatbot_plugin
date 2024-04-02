@@ -105,8 +105,6 @@ require(["jquery"], function ($) {
       var textareaDiv2 = $(textareaDivs[2]);
       var textareaDiv8 = $(textareaDivs[8]);
       var linkfield = $(textareaDivs[9]);
-      
-      var uploadfield = $(textareaDivs[1]);
 
       textareaDiv2.on('input', limitWordCount);
       textareaDiv8.on('input', limitWordCount);
@@ -118,11 +116,12 @@ require(["jquery"], function ($) {
       linkfield.on('focusout', removespace);
 
 //upload field
-var selectlist = uploadfield.find('div select');
+var selectlist = $(textareaDivs[1]).find('select');
 selectlist.each(function() {
   $(this).prop('readonly', true).attr('tabindex', '-1');
 });
-    }
+
+}
     
 
 
