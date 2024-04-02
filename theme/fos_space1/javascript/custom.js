@@ -103,18 +103,23 @@ require(["jquery"], function ($) {
       var textareaDiv2 = $(textareaDivs[2]);
       var textareaDiv8 = $(textareaDivs[8]);
       var linkfield = $(textareaDivs[9]);
+      
+      var uploadfield = $(textareaDivs[1]);
 
       textareaDiv2.on('input', limitWordCount);
       textareaDiv8.on('input', limitWordCount);
       textareaDiv2.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
-      
+
       linkfield.on('input', wordlimit);
       linkfield.on('focusout', removespace);
-      
 
+
+//upload field
+uploadfield.prop('readonly', true);
     }
+    
 
     function limitWordCount() {
       var editorDiv = $(this).find('.editor_atto_content.form-control');
@@ -146,66 +151,63 @@ require(["jquery"], function ($) {
       }
     }
 
-//remove space of link field
-var tdList = $('.form-inline table tbody td input');
+    //remove space of link field
+    var tdList = $('.form-inline table tbody td input');
 
-function removespace() {
-    if (tdList.length >= 2) {
+    function removespace() {
+      if (tdList.length >= 2) {
         var valuelink = tdList.eq(0).val().replace(/\s+/g, '');
         tdList.eq(0).val(valuelink);
-
-        var value = tdList.eq(1).val(); 
+        var value = tdList.eq(1).val();
         var words = value.split(/\s+/);
         var wordCount = words.length;
 
         if (wordCount > 6) {
-            var newContent = words.slice(0, 100).join(" ");
-            tdList.eq(1).val(newContent);
+          var newContent = words.slice(0, 100).join(" ");
+          tdList.eq(1).val(newContent);
         }
-
-    } else {
+      } else {
         console.log("Not enough items in tdList to access index 0.");
-    }
-}
-
-function wordlimit() {
-    if (tdList.length >= 2) {
-
-      var value = tdList.eq(1).val(); 
-      var words = value.split(" ");
-      var wordCount = words.length;
-
-      if (wordCount > 6) {
-        var newContent = words.slice(0, 6).join(" ");
-        tdList.eq(1).val(newContent);
-
       }
-    } else {
-      console.log("Not enough items in tdList to access index 1.");
     }
-    
-  }
 
-  // - list view
+    function wordlimit() {
+      if (tdList.length >= 2) {
+        var value = tdList.eq(1).val();
+        var words = value.split(" ");
+        var wordCount = words.length;
+        if (wordCount > 6) {
+          var newContent = words.slice(0, 6).join(" ");
+          tdList.eq(1).val(newContent);
+        }
+      } else {
+        console.log("Not enough items in tdList to access index 1.");
+      }
+
+    }
+
+
+    // - list view
     var maxChars = 100;
     var maxWords = 30;
 
-    $('.mx-chr').each(function() {
-        var text = $(this).text();
-        if (text.length > maxChars) {
-            var newText = text.substr(0, maxChars) + '...';
-            $(this).text(newText);
-        }
+    $('.mx-chr').each(function () {
+      var text = $(this).text();
+      if (text.length > maxChars) {
+        var newText = text.substr(0, maxChars) + '...';
+        $(this).text(newText);
+      }
     });
-  
-      $('.mx-wrd').each(function() {
-          var text = $(this).text();
-          var words = text.split(' ');
-          if (words.length > maxWords) {
-              var newText = words.slice(0, maxWords).join(' ') + '...';
-              $(this).text(newText);
-          }
-      });
 
+    $('.mx-wrd').each(function () {
+      var text = $(this).text();
+      var words = text.split(' ');
+      if (words.length > maxWords) {
+        var newText = words.slice(0, maxWords).join(' ') + '...';
+        $(this).text(newText);
+      }
     });
+
   });
+});
+ 
