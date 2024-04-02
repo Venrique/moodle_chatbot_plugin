@@ -109,7 +109,11 @@ require(["jquery"], function ($) {
       textareaDiv2.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
-      linkfield.on('focusout', removespace)
+      
+      linkfield.on('focusout', removespace);
+      linkfield.on('click', wordlimit);
+      
+
     }
 
     function limitWordCount() {
@@ -141,18 +145,32 @@ require(["jquery"], function ($) {
         editorDiv.text(newContent);
       }
     }
+
 //remove space of link field
+var tdList = $('.form-inline table tbody td input');
+
 function removespace() {
-  var linkinputs = $(this).find('.form-inline table td input');
-  if (linkinputs.length > 0) { 
-      var valuelink = linkinputs.eq(0).val().replace(/\s+/g, '');
-      //console.log(valuelink);
-      linkinputs.eq(0).val(valuelink);
-  } else {
-      console.log("No items matching the selector were found.");
-  }
+    if (tdList.length >= 2) {
+        var valuelink = tdList.eq(0).val().replace(/\s+/g, '');
+        tdList.eq(0).val(valuelink);
+    } else {
+        console.log("Not enough items in tdList to access index 0.");
+    }
 }
-  
+
+function wordlimit() {
+    if (tdList.length >= 2) {
+        var value = tdList.eq(1).val(); 
+        var words = value.split(/\s+/);
+        var wordCount = words.length;
+
+        if (wordCount > 6) {
+            var newContent = words.slice(0, 100).join(" ");
+            tdList.eq(1).val(newContent);
+        }
+    } else {
+      console.log("Not enough items in tdList to access index 1.");
+    }
 
   // - list view
     var maxChars = 100;
