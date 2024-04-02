@@ -110,8 +110,8 @@ require(["jquery"], function ($) {
       textareaDiv8.on('focusout', limitword);
       textareaDiv8.on('focusout', limitword);
       
-      linkfield.on('focusout', removespace);
       linkfield.on('input', wordlimit);
+      linkfield.on('focusout', removespace);
       
 
     }
