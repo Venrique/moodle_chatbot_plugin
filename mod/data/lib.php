@@ -1826,7 +1826,7 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
             if ($field->id == $sort) {
 
                 if ($field->name === "Category"){
-                    echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'aaaa</option>';
+                    echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'</option>';
                 }else{
                     echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
                 }
