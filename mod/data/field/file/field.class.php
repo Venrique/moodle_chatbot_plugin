@@ -188,7 +188,7 @@ class data_field_file extends data_field_base {
             return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("ES") . '</a>';
         }
 
-        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a>';
+        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . $this->context->id . '</a>';
 
     }
 
