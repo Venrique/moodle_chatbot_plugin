@@ -1855,62 +1855,6 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                             echo '<option value="' . $field->id . '">' . "Catégorie" . '</option>';
                         }
                         break;
-                    case "Comments":
-                        if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Comments" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es') {
-                            echo '<option value="' . $field->id . '">' . "Comentarios" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt') {
-                            echo '<option value="' . $field->id . '">' . "Comentários" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr') {
-                            echo '<option value="' . $field->id . '">' . "Comments" . '</option>';
-                        }
-                        break;
-                    case "Description":
-                        if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Description" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es') {
-                            echo '<option value="' . $field->id . '">' . "Descripción" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt') {
-                            echo '<option value="' . $field->id . '">' . "Descrição" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr') {
-                            echo '<option value="' . $field->id . '">' . "Description" . '</option>';
-                        }
-                        break;
-                    case "File":
-                        if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "File" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es') {
-                            echo '<option value="' . $field->id . '">' . "Archivo" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt') {
-                            echo '<option value="' . $field->id . '">' . "Arquivo" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr') {
-                            echo '<option value="' . $field->id . '">' . "Fichier" . '</option>';
-                        }
-                        break;
-                    case "Link":
-                        if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Link" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es') {
-                            echo '<option value="' . $field->id . '">' . "Enlace" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt') {
-                            echo '<option value="' . $field->id . '">' . "Link" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr') {
-                            echo '<option value="' . $field->id . '">' . "Lien" . '</option>';
-                        }
-                        break;
                     case "Needs":
                         if ($SESSION->lang === 'en') {
                             echo '<option value="' . $field->id . '">' . "Needs" . '</option>';
@@ -1937,20 +1881,6 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                         }
                         if ($SESSION->lang === 'fr') {
                             echo '<option value="' . $field->id . '">' . "Organisation" . '</option>';
-                        }
-                        break;
-                    case "Title":
-                        if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Title" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es') {
-                            echo '<option value="' . $field->id . '">' . "Título" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt') {
-                            echo '<option value="' . $field->id . '">' . "Titúlo" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr') {
-                            echo '<option value="' . $field->id . '">' . "Titre" . '</option>';
                         }
                         break;
                     case "Upload Date":
@@ -1982,7 +1912,7 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                         }
                         break;
                     default:
-                        echo '<option value="' . $field->id . '">' . $field->name . '</option>';
+                        //echo '<option value="' . $field->id . '">' . $field->name . '</option>';
                         break;
                 }
                 // echo '<option value="'.$field->id.'">'.$field->name.'</option>';
