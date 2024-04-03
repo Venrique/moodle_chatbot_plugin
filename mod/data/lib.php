@@ -1824,11 +1824,13 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
         echo '<optgroup label="'.get_string('fields', 'data').'">';
         foreach ($fields as $field) {
             if ($field->id == $sort) {
+                /*
                 if ($field->name === "Category"){
                     echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'</option>';
                 }else{
-                    //echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
-                }
+                    echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
+                }*/
+                echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'</option>';
             } else {
                 switch ($field->name) {
                     case "Author":
