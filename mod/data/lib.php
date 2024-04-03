@@ -1804,8 +1804,7 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
         echo '<input type="hidden" name="mode" value="list" />';
     }
     echo '<label for="pref_perpage">'.get_string('pagesize','data').'</label> ';
-    $pagesizes = array(2=>2,3=>3,4=>4,5=>5,6=>6,7=>7,8=>8,9=>9,10=>10,15=>15,
-                       20=>20,30=>30,40=>40,50=>50,100=>100,200=>200,300=>300,400=>400,500=>500,1000=>1000);
+    $pagesizes = array(10=>10,20=>20,30=>30,40=>40,50=>50,100=>100,200=>200,300=>300,400=>400,500=>500,1000=>1000);
     echo html_writer::select($pagesizes, 'perpage', $perpage, false, array('id' => 'pref_perpage', 'class' => 'custom-select'));
 
     if ($advanced) {
