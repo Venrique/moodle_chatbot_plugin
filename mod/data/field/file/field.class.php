@@ -186,19 +186,19 @@ class data_field_file extends data_field_base {
 
         if ($template==='listtemplate'){
             if ($this->field->name === "File EN") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '|</a>';
+                return '<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a>|';
             }
 
             if ($this->field->name === "File ES") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("ES") . '|</a>';
+                return '<a class="data-field-link" href="'.$url.'" >' . s("ES") . '</a>|';
             }
 
             if ($this->field->name === "File FR") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("FR") . '|</a>';
+                return '<a class="data-field-link" href="'.$url.'" >' . s("FR") . '</a>|';
             }
 
             if ($this->field->name === "File PT") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("PT") . '|</a>';
+                return '<a class="data-field-link" href="'.$url.'" >' . s("PT") . '</a>|';
             }
         }
 
