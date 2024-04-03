@@ -496,3 +496,7 @@ $string['completionentries'] = 'Require entries';
 //KTT MULTILINGUAL CUSTOMIZATIONS
 $string['categoryfield'] = 'Category';
 $string['authorfield'] = 'Author';
+$string['needsfield'] = 'Needs';
+$string['organizationfield'] = 'Organization';
+$string['uploaddatefield'] = 'Upload Date';
+$string['yearofcompletionfield'] = 'Year of Completion';
