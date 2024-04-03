@@ -202,7 +202,7 @@ class data_field_file extends data_field_base {
             }
         }
 
-        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s($name) . '</a>';
+        return $icon . '<a class="data-field-link" href="'.$url.'" >' . s($name) . '</a>';
 
     }
 
