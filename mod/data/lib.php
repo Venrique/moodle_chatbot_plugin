@@ -1829,7 +1829,7 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
                 switch ($field->name) {
                     case "Author":
                         if ($SESSION->lang === 'en') {
-                            echo '<option value="' . $field->id . '">' . "Author" . '</option>';
+                            echo '<option value="' . $field->id . '">' . get_string('authorfield', 'data'). '</option>';
                         }
                         if ($SESSION->lang === 'es') {
                             echo '<option value="' . $field->id . '">' . "Nombre del autor" . '</option>';
@@ -1923,8 +1923,8 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
     $options = array();
     $options[DATA_TIMEADDED]    = get_string('timeadded', 'data');
     $options[DATA_TIMEMODIFIED] = get_string('timemodified', 'data');
-    $options[DATA_FIRSTNAME]    = get_string('authorfirstname', 'data');
-    $options[DATA_LASTNAME]     = get_string('authorlastname', 'data');
+    //$options[DATA_FIRSTNAME]    = get_string('authorfirstname', 'data');
+    //$options[DATA_LASTNAME]     = get_string('authorlastname', 'data');
     if ($data->approval and has_capability('mod/data:approve', $context)) {
         $options[DATA_APPROVED] = get_string('approved', 'data');
     }

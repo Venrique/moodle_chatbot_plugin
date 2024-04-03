@@ -492,3 +492,7 @@ $string['fieldids'] = 'Field ids';
 
 // Deprecated since Moodle 4.3.
 $string['completionentries'] = 'Require entries';
+
+//KTT MULTILINGUAL CUSTOMIZATIONS
+$string['categoryfield'] = 'Category';
+$string['authorfield'] = 'Author';
