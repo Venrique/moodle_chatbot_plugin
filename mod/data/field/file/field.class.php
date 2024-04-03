@@ -184,11 +184,25 @@ class data_field_file extends data_field_base {
             ['width' => 16, 'height' => 16]
         );
 
-        if ($this->field->name === "File ES") {
-            return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("ES") . '</a>';
+        if ($template==='listtemplate'){
+            if ($this->field->name === "File EN") {
+                return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a>';
+            }
+
+            if ($this->field->name === "File ES") {
+                return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("ES") . '</a>';
+            }
+
+            if ($this->field->name === "File FR") {
+                return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("FR") . '</a>';
+            }
+
+            if ($this->field->name === "File PT") {
+                return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("PT") . '</a>';
+            }
         }
 
-        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s($template) . '</a>';
+        return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s($name) . '</a>';
 
     }
 
