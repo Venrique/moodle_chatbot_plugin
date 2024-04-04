@@ -75,60 +75,16 @@ class data_field_menu extends data_field_base {
                 if ($this->field->name === "Category"){
                     switch ($option) {
                         case "General tool":
-                            if ($SESSION->lang === 'en') {
-                                $options[$option] = "General tool";
-                            }
-                            if ($SESSION->lang === 'es') {
-                                $options[$option] = "Herramienta general";
-                            }
-                            if ($SESSION->lang === 'pt') {
-                                $options[$option] = "Ferramenta geral";
-                            }
-                            if ($SESSION->lang === 'fr') {
-                                $options[$option] = "Outil général";
-                            }
+                            $options[$option] = get_string('generaltoolcategory', 'data');
                             break;
                         case "Quality of care tool":
-                            if ($SESSION->lang === 'en') {
-                                $options[$option] = "Quality of care tool";
-                            }
-                            if ($SESSION->lang === 'es') {
-                                $options[$option] = "Herramienta de calidad del cuidado";
-                            }
-                            if ($SESSION->lang === 'pt') {
-                                $options[$option] = "Ferramenta de qualidade do atendimento";
-                            }
-                            if ($SESSION->lang === 'fr') {
-                                $options[$option] = "Outil de qualité des soins";
-                            }
+                            $options[$option] = get_string('qualityofcaretoolcategory', 'data');
                             break;
                         case "Research":
-                            if ($SESSION->lang === 'en'){
-                                $options[$option] = "Research";
-                            }
-                            if ($SESSION->lang === 'es'){
-                                $options[$option] = "Investigación";
-                            }
-                            if ($SESSION->lang === 'pt'){
-                                $options[$option] = "Pesquisa";
-                            }
-                            if ($SESSION->lang === 'fr'){
-                                $options[$option] = "Recherche";
-                            }
+                            $options[$option] = get_string('researchcategory', 'data');
                             break;
                         case "Narrative":
-                            if ($SESSION->lang === 'en'){
-                                $options[$option] = "Narrative";
-                            }
-                            if ($SESSION->lang === 'es'){
-                                $options[$option] = "Narrativa";
-                            }
-                            if ($SESSION->lang === 'pt'){
-                                $options[$option] = "Narrativa";
-                            }
-                            if ($SESSION->lang === 'fr'){
-                                $options[$option] = "Narratif";
-                            }
+                            $options[$option] = get_string('narrativecategory', 'data');
                             break;
                     }
                 }else{
