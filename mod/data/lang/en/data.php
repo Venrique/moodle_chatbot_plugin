@@ -500,3 +500,7 @@ $string['needsfield'] = 'Needs';
 $string['organizationfield'] = 'Organization';
 $string['uploaddatefield'] = 'Upload Date';
 $string['yearofcompletionfield'] = 'Year of Completion';
+$string['generaltoolcategory'] = 'General Tool';
+$string['qualityofcaretoolcategory'] = 'Quality of care tool';
+$string['researchcategory'] = 'Research';
+$string['narrativecategory'] = 'Narrative';

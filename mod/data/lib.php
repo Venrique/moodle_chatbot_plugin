@@ -516,60 +516,16 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         if ($this->field->name === "Category"){
             switch ($content->content) {
                 case "General tool":
-                    if ($SESSION->lang === 'en') {
-                        $content->content = "General tool";
-                    }
-                    if ($SESSION->lang === 'es') {
-                        $content->content = "Herramienta general";
-                    }
-                    if ($SESSION->lang === 'pt') {
-                        $content->content = "Ferramenta geral";
-                    }
-                    if ($SESSION->lang === 'fr') {
-                        $content->content = "Outil général";
-                    }
+                    $content->content = get_string('generaltoolcategory','data');
                     break;
                 case "Quality of care tool":
-                    if ($SESSION->lang === 'en') {
-                        $content->content = "Quality of care tool";
-                    }
-                    if ($SESSION->lang === 'es') {
-                        $content->content = "Herramienta de calidad del cuidado";
-                    }
-                    if ($SESSION->lang === 'pt') {
-                        $content->content = "Ferramenta de qualidade do atendimento";
-                    }
-                    if ($SESSION->lang === 'fr') {
-                        $content->content = "Outil de qualité des soins";
-                    }
+                    $content->content = get_string('qualityofcaretoolcategory','data');
                     break;
                 case "Research":
-                    if ($SESSION->lang === 'en'){
-                        $content->content = "Research";
-                    }
-                    if ($SESSION->lang === 'es'){
-                        $content->content = "Investigación";
-                    }
-                    if ($SESSION->lang === 'pt'){
-                        $content->content = "Pesquisa";
-                    }
-                    if ($SESSION->lang === 'fr'){
-                        $content->content = "Recherche";
-                    }
+                    $content->content = get_string('researchcategory','data');
                     break;
                 case "Narrative":
-                    if ($SESSION->lang === 'en'){
-                        $content->content = "Narrative";
-                    }
-                    if ($SESSION->lang === 'es'){
-                        $content->content = "Narrativa";
-                    }
-                    if ($SESSION->lang === 'pt'){
-                        $content->content = "Narrativa";
-                    }
-                    if ($SESSION->lang === 'fr'){
-                        $content->content = "Narratif";
-                    }
+                    $content->content = get_string('narrativecategory','data');
                     break;
             }
         }
