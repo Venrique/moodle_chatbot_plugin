@@ -96,15 +96,52 @@ require(["jquery"], function ($) {
       $(this).attr('maxlength', '100');
     });
 
-    // Assign a limit of 100 words to the description and comment field
+
     var descriptionEN = $("#descriptionEN");
     descriptionEN.on('focusout', test);
 
     function test(){
       let descEN = $(this).find('.editor_atto_content.form-control');
+      let descES = $("#descriptionES").find('.editor_atto_content.form-control');
+      translateText(descEN.text(),'EN','ES', function (error, translatedText) {
+        if (error){
+          console.error("Translation error:", error);
+        }else{
+          descES.text(translatedText);
+        }
+      });
       alert(descEN.text());
     }
 
+    function translateText(text, sourceLang, targetLang, callback) {
+      var authKey = 'bf185a4a-075b-9397-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
+      var apiUrl = 'https://api-free.deepl.com/v2/translate';
+
+      $.ajax({
+        url: apiUrl,
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded',
+        data: {
+          'auth_key': authKey,
+          'text': text,
+          'source_lang': sourceLang,
+          'target_lang': targetLang
+        },
+        success: function(response) {
+          if (response && response.translations && response.translations.length > 0) {
+            var translatedText = response.translations[0].text;
+            callback(null, translatedText);
+          } else {
+            callback("Translation failed");
+          }
+        },
+        error: function(xhr, status, error) {
+          callback("Error occurred: " + error);
+        }
+      });
+    }
+
+    // Assign a limit of 100 words to the description and comment field
     var textareaDivs = $(".value");
 
     if (textareaDivs.length >= 9) {
