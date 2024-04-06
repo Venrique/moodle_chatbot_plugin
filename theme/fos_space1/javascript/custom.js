@@ -101,7 +101,8 @@ require(["jquery"], function ($) {
     descriptionEN.on('focusout', test);
 
     function test(){
-      alert("hola");
+      let descEN = $(this).find('.editor_atto_content.form-control');
+      alert(descEN.text());
     }
 
     var textareaDivs = $(".value");
