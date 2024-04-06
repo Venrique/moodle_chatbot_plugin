@@ -516,7 +516,7 @@ $string['sexualandreproductiverightsneeds'] = 'Sexual and reproductive rights';
 $string['digitalhealthchannelsneeds'] = 'Digital health channels';
 
 /*
-SPANISH
+//KTT SPANISH
 $string['categoryfield'] = 'Categoría';
 $string['authorfield'] = 'Autor';
 $string['needsfield'] = 'Necesidad';
@@ -538,7 +538,7 @@ $string['intersectionalfeminismandgenderequityneeds'] = 'Feminismo intersecciona
 $string['sexualandreproductiverightsneeds'] = 'Derechos sexuales y reproductivos';
 $string['digitalhealthchannelsneeds'] = 'Canales de salud digital';
 
-PORTUGUESE
+//KTT PORTUGUESE
 $string['categoryfield'] = 'Categoria';
 $string['authorfield'] = 'Nome do autor';
 $string['needsfield'] = 'Necessidade';
@@ -560,13 +560,13 @@ $string['intersectionalfeminismandgenderequityneeds'] = 'Feminismo intersecciona
 $string['sexualandreproductiverightsneeds'] = 'Direitos sexuais e reprodutivos';
 $string['digitalhealthchannelsneeds'] = 'Canais de saúde digitais';
 
-FRENCH
+//KTT FRENCH
 $string['categoryfield'] = 'Catégorie';
-$string['authorfield'] = 'Nom de l'auteur';
+$string['authorfield'] = 'Nom de l\'auteur';
 $string['needsfield'] = 'Nécessité';
 $string['organizationfield'] = 'Organisation';
 $string['uploaddatefield'] = 'Date de téléchargement';
-$string['yearofcompletionfield'] = 'Année d'achèvement';
+$string['yearofcompletionfield'] = 'Année d\'achèvement';
 $string['generaltoolcategory'] = 'Outil général';
 $string['qualityofcaretoolcategory'] = 'Outil de qualité des soins';
 $string['researchcategory'] = 'Recherche';
