@@ -108,11 +108,11 @@ require(["jquery"], function ($) {
 
       let targetLanguages = [];
 
-      if (descEN.text() == ""){
+      if (descEN.text() === ""){
         targetLanguages.push("EN");
       }
 
-      if (descES.text() == ""){
+      if (descES.text() === ""){
         targetLanguages.push("ES");
       }
 
