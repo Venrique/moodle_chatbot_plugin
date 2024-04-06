@@ -109,15 +109,17 @@ require(["jquery"], function ($) {
       let targetLanguages = [];
 
       if (descEN.text() === ""){
+        console.log("Translation to english");
         targetLanguages.push("EN");
       }
 
       if (descES.text() === ""){
+        console.log("Translation to spanish");
         targetLanguages.push("ES");
       }
 
       targetLanguages.forEach(function (targetLang){
-        translateText(origin.text(),'EN','ES', function (error, translatedText) {
+        translateText(origin.text(),'',targetLang, function (error, translatedText) {
           if (error){
             console.error("Translation error:", error);
           }else{
