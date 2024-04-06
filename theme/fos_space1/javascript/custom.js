@@ -101,23 +101,36 @@ require(["jquery"], function ($) {
     descriptionEN.on('focusout', makeTranslations);
 
     function makeTranslations(){
-      let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
-      let origin = $(this).find('.editor_atto_content.form-control');
-      let descES = $("#descriptionES").find('.editor_atto_content.form-control');
 
-      if (descEN === origin){
-        alert("hola");
-      }
+      let origin = $(this).find('.editor_atto_content.form-control');
+      let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
+      let descES = $("#descriptionES").find('.editor_atto_content.form-control');
 
       let targetLanguages = [];
 
-      translateText(descEN.text(),'EN','ES', function (error, translatedText) {
-        if (error){
-          console.error("Translation error:", error);
-        }else{
-          descES.text(translatedText);
-        }
+      if (descEN.text() == ""){
+        targetLanguages.push("EN");
+      }
+
+      if (descES.text() == ""){
+        targetLanguages.push("ES");
+      }
+
+      targetLanguages.forEach(function (targetLang){
+        translateText(origin.text(),'EN','ES', function (error, translatedText) {
+          if (error){
+            console.error("Translation error:", error);
+          }else{
+            if(targetLang === "EN"){
+              descEN.text(translatedText);
+            }
+            if(targetLang === "ES"){
+              descES.text(translatedText);
+            }
+          }
+        });
       });
+
     }
 
     function translateText(text, sourceLang, targetLang, callback) {
