@@ -98,7 +98,9 @@ require(["jquery"], function ($) {
 
     //AUTOMATIC TRANSLATION OF TEXT
     let descriptionEN = $("#descriptionEN");
+    let descriptionES = $("#descriptionES");
     descriptionEN.on('focusout', makeTranslations);
+    descriptionES.on('focusout', makeTranslations);
 
     function makeTranslations(){
 
