@@ -96,13 +96,14 @@ require(["jquery"], function ($) {
       $(this).attr('maxlength', '100');
     });
 
-
+    //AUTOMATIC TRANSLATION OF TEXT
     var descriptionEN = $("#descriptionEN");
-    descriptionEN.on('focusout', test);
+    descriptionEN.on('focusout', makeTranslations);
 
-    function test(){
+    function makeTranslations(){
       let descEN = $(this).find('.editor_atto_content.form-control');
       let descES = $("#descriptionES").find('.editor_atto_content.form-control');
+
       translateText(descEN.text(),'EN','ES', function (error, translatedText) {
         if (error){
           console.error("Translation error:", error);
@@ -110,7 +111,6 @@ require(["jquery"], function ($) {
           descES.text(translatedText);
         }
       });
-      alert(descEN.text());
     }
 
     function translateText(text, sourceLang, targetLang, callback) {
