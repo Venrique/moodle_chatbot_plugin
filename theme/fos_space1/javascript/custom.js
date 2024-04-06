@@ -97,6 +97,13 @@ require(["jquery"], function ($) {
     });
 
     // Assign a limit of 100 words to the description and comment field
+    var descriptionEN = $("#descriptionEN");
+    descriptionEN.on('focusout', test);
+
+    function test(){
+      alert("hola");
+    }
+
     var textareaDivs = $(".value");
 
     if (textareaDivs.length >= 9) {
