@@ -135,7 +135,24 @@ class data_field_menu extends data_field_base {
             if (!isset($usedoptions[$option])) {
                 continue;
             }
-            $options[$option] = 'test';
+            if ($this->field->name === "Category"){
+                switch ($option) {
+                    case "General tool":
+                        $options[$option] = get_string('generaltoolcategory', 'data');
+                        break;
+                    case "Quality of care tool":
+                        $options[$option] = get_string('qualityofcaretoolcategory', 'data');
+                        break;
+                    case "Research":
+                        $options[$option] = get_string('researchcategory', 'data');
+                        break;
+                    case "Narrative":
+                        $options[$option] = get_string('narrativecategory', 'data');
+                        break;
+                }
+            }else{
+                $options[$option] = $option;
+            }
         }
         if (!$options) {
             // oh, nothing to search for
