@@ -23,6 +23,7 @@
 @import "components/moodle/blocks";
 @import "components/moodle/drawer.scss";
 @import "components/moodle/filemanager";
+@import "components/moodle/advancedsearch";
 
 //@import "components/moodle/search";
 
@@ -75,6 +76,7 @@
 }
 
 .btn-primary {
+  color: #333;
   background-color: $primary;
   border: 1px solid $body-bg;
   &:hover {
