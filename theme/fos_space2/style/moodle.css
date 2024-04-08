@@ -5789,7 +5789,7 @@ a.ygtvspacer:hover {
 
 .boxaligncenter {
   width: 83% !important;
-  display: inline;
+  display: inline-grid;
 }
 .boxaligncenter tbody {
   color: #60ad8f;
