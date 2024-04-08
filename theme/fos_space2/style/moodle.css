@@ -1415,7 +1415,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 128px auto;
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr repeat(2, auto);
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -5794,7 +5794,6 @@ a.ygtvspacer:hover {
 .boxaligncenter tbody {
   color: #60ad8f;
   font-size: 13px;
-  background-color: #60ad8f;
   background-color: rgba(96, 173, 143, 0.1);
   padding-bottom: 16px;
 }
@@ -5888,6 +5887,10 @@ a.ygtvspacer:hover {
   background-color: #fafffd;
 }
 .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
+  /*display: flex;
+  flex-flow: row wrap;
+  width: 60%;
+  align-items: center;*/
   gap: 5px 5px;
 }
 .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
