@@ -184,6 +184,7 @@ class data_field_file extends data_field_base {
             ['width' => 16, 'height' => 16]
         );
 
+        //KTT CUSTOMIZATION
         if ($template==='listtemplate'){
             if ($this->field->name === "File EN") {
                 return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a> |';
