@@ -1639,7 +1639,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px 140px;
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -1718,6 +1718,7 @@ h5 {
   color: #fff;
   position: sticky;
   top: 61px;
+  font-weight: 600;
 }
 .slst_body .table-card-slst .data-item {
   color: #5c3873;
@@ -6040,7 +6041,7 @@ a.ygtvspacer:hover {
 }
 
 .boxaligncenter {
-  width: 80% !important;
+  width: 83% !important;
   display: grid;
 }
 .boxaligncenter tbody {
