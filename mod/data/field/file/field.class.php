@@ -198,7 +198,7 @@ class data_field_file extends data_field_base {
             }
 
             if ($this->field->name === "File PT") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("PT") . '</a> |';
+                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("PT") . '</a>';
             }
         }
 

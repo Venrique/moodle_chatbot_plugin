@@ -96,6 +96,75 @@ require(["jquery"], function ($) {
       $(this).attr('maxlength', '100');
     });
 
+    //AUTOMATIC TRANSLATION OF TEXT
+    let descriptionEN = $("#descriptionEN");
+    let descriptionES = $("#descriptionES");
+    descriptionEN.on('focusout', makeTranslations);
+    descriptionES.on('focusout', makeTranslations);
+
+    function makeTranslations(){
+
+      let origin = $(this).find('.editor_atto_content.form-control');
+      let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
+      let descES = $("#descriptionES").find('.editor_atto_content.form-control');
+
+      let targetLanguages = [];
+
+      if (descEN.text() === ""){
+        console.log("Translation to english");
+        targetLanguages.push("EN");
+      }
+
+      if (descES.text() === ""){
+        console.log("Translation to spanish");
+        targetLanguages.push("ES");
+      }
+
+      targetLanguages.forEach(function (targetLang){
+        translateText(origin.text(),'',targetLang, function (error, translatedText) {
+          if (error){
+            console.error("Translation error:", error);
+          }else{
+            if(targetLang === "EN"){
+              descEN.text(translatedText);
+            }
+            if(targetLang === "ES"){
+              descES.text(translatedText);
+            }
+          }
+        });
+      });
+
+    }
+
+    function translateText(text, sourceLang, targetLang, callback) {
+      var authKey = 'bf185a4a-075b-9397-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
+      var apiUrl = 'https://api-free.deepl.com/v2/translate';
+
+      $.ajax({
+        url: apiUrl,
+        type: 'POST',
+        contentType: 'application/x-www-form-urlencoded',
+        data: {
+          'auth_key': authKey,
+          'text': text,
+          'source_lang': sourceLang,
+          'target_lang': targetLang
+        },
+        success: function(response) {
+          if (response && response.translations && response.translations.length > 0) {
+            var translatedText = response.translations[0].text;
+            callback(null, translatedText);
+          } else {
+            callback("Translation failed");
+          }
+        },
+        error: function(xhr, status, error) {
+          callback("Error occurred: " + error);
+        }
+      });
+    }
+
     // Assign a limit of 100 words to the description and comment field
     var textareaDivs = $(".value");
 
