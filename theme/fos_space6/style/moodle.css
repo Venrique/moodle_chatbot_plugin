@@ -918,6 +918,7 @@ h5 {
   width: 140px;
   font-size: 14px;
   color: #00C9CE;
+  padding: 7px;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
   display: grid;
@@ -1409,13 +1410,14 @@ h5 {
   grid-area: data-cnt;
   color: #00C9CE;
 }
+
 .slst_body {
   width: auto;
   height: auto;
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 128px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -1494,9 +1496,10 @@ h5 {
   color: #fff;
   position: sticky;
   top: 61px;
+  font-weight: 600;
 }
 .slst_body .table-card-slst .data-item {
-  color: #00C9CE;
+  color: #333;
   font-size: 13px;
   background-color: rgba(0, 201, 206, 0.1);
   padding: 8px;
@@ -5787,8 +5790,8 @@ a.ygtvspacer:hover {
 }
 
 .boxaligncenter {
-  width: 80% !important;
-  display: grid;
+  width: 83% !important;
+  display: inline-grid;
 }
 .boxaligncenter tbody {
   color: #00C9CE;
