@@ -656,6 +656,7 @@ h5 {
   visibility: hidden;
   height: 0;
   display: none !important;
+  padding: 7px;
 }
 .custom_form .item_custom .cnt_row2 .value div .mod-data-input > div:first-child .editor_atto .editor_atto_content_wrap {
   width: 100% !important;
