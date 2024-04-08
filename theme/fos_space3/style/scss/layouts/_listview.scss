@@ -5,10 +5,7 @@
   .table-card-slst {
     //todo
     display: grid;
-      grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr repeat(
-          2,
-          auto
-        );
+    grid-template-columns: repeat(2,auto) minmax(100px,390px) 1fr 128px auto;
 /*
     @include respond-to("small-phone") {
       display: grid;
@@ -88,6 +85,7 @@
       color: $white;
       position: sticky;
       top: 61px;
+      font-weight: 600;
     }
 
     .data-item {

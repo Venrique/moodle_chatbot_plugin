@@ -1415,7 +1415,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr repeat(2, auto);
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 128px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
