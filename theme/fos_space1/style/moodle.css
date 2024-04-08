@@ -6047,6 +6047,7 @@ a.ygtvspacer:hover {
   color: #5c3873;
   font-size: 13px;
   background-color: rgba(92, 56, 115, 0.1);
+  background-color: rgba(92, 56, 115, 0.1);
   padding-bottom: 16px;
 }
 .boxaligncenter tbody tr:first-child {
@@ -6139,10 +6140,10 @@ a.ygtvspacer:hover {
   background-color: #f3eff5;
 }
 .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
-  display: flex;
+  /*display: flex;
   flex-flow: row wrap;
   width: 60%;
-  align-items: center;
+  align-items: center;*/
   gap: 5px 5px;
 }
 .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
@@ -6152,7 +6153,7 @@ a.ygtvspacer:hover {
   margin: 0 8px;
   float: right;
 }
-.boxaligncenter tbody tr td .btn-primary .mr-1 {
+.boxaligncenter tbody tr td .btn-primary {
   margin-right: 36px !important;
 }
 
