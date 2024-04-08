@@ -3,7 +3,7 @@
   display: grid;
 
   tbody {
-    color: #333 !important;
+    color: $darkprimary;
     font-size: 13px;
     background-color: rgba(92,56,115,.1);
     @include apply-opacity($primary, 10);
