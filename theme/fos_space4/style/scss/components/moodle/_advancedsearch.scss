@@ -1,9 +1,9 @@
 .boxaligncenter {
   width: 83% !important;
-  display: inline-grid;
+  display: grid;
 
   tbody {
-    color: $darkprimary;
+    color: $primary;
     font-size: 13px;
     background-color: rgba(92,56,115,.1);
     @include apply-opacity($primary, 10);

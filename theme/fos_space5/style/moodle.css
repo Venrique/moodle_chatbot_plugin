@@ -918,6 +918,7 @@ h5 {
   width: 140px;
   font-size: 14px;
   color: #333;
+  padding: 7px;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
   display: grid;
@@ -1483,6 +1484,7 @@ h5 {
   color: #fff;
   position: sticky;
   top: 61px;
+  font-weight: 600;
 }
 .slst_body .table-card-slst .data-item {
   color: #333;
@@ -5777,7 +5779,7 @@ a.ygtvspacer:hover {
 
 .boxaligncenter {
   width: 83% !important;
-  display: grid;
+  display: inline-grid;
 }
 .boxaligncenter tbody {
   color: #333;
