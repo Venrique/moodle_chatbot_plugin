@@ -185,7 +185,7 @@ class data_field_url extends data_field_base {
 
             //KTT CUSTOMIZATION
             //$str = html_writer::link($url, $text, $attributes);
-            $str = html_writer::link($url, " Link", $attributes);
+            $str = html_writer::link($url, "&nbsp;Link", $attributes);
         } else {
             $str = $url;
         }
