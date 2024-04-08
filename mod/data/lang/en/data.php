@@ -420,7 +420,7 @@ $string['saveaspreset'] = 'Publish preset on this site';
 $string['saveaspreset_help'] = 'The save as preset feature publishes the templates and fields as a preset which others on the site can then use. (You may delete it from the list of presets at any time.)';
 $string['savedataaspreset'] = 'Save all fields and templates and publish as preset on this site';
 $string['saveaspresetmissingcapability'] = 'The user does not have permission to save the database as a preset.';
-$string['savesettings'] = 'Save settings';
+$string['savesettings'] = 'Apply filters';
 $string['savesuccess'] = 'Preset saved. <a href="{$a->url}">Preview preset</a>';
 $string['search'] = 'Search';
 $string['search:activity'] = 'Database - activity information';
