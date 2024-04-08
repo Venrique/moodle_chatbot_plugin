@@ -3,9 +3,10 @@
   display: grid;
 
   tbody {
-    color: $FOS-Aubergine;
+    color: $primary;
     font-size: 13px;
     background-color: rgba(92,56,115,.1);
+    @include apply-opacity($primary, 10);
     padding-bottom: 16px;
 
     tr {
@@ -76,10 +77,10 @@
             .item5 {
               .template-token {
                 .form-inline {
-                  display: flex;
+                  /*display: flex;
                   flex-flow: row wrap;
                   width: 60%;
-                  align-items: center;
+                  align-items: center;*/
                   gap: 5px 5px;
                   select {
                     margin-right: 4px;
@@ -89,11 +90,12 @@
             }
           }
         }
+ 
         .btn {
           margin: 0 8px;
           float: right;
         }
-          .btn-primary .mr-1{
+          .btn-primary{
             margin-right: 36px !important;
         }
       }
