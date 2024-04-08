@@ -917,7 +917,7 @@ h5 {
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-link .form-inline table tbody tr td:first-child {
   width: 140px;
   font-size: 14px;
-  color: #e8cd0a;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
   display: grid;
