@@ -225,7 +225,6 @@
                   visibility: hidden;
                   height: 0;
                   display: none !important;
-                  padding: 7px;
                 }
                 .editor_atto_content_wrap {
                   width: 100% !important;
@@ -830,6 +829,7 @@
                       width: 140px;
                       font-size: 14px;
                       color: $primary;
+                      padding: 7px;
                     }
                   }
                 }
