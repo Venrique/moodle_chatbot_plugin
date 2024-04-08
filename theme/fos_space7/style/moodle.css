@@ -1415,7 +1415,7 @@ h5 {
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 128px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
@@ -1494,6 +1494,7 @@ h5 {
   color: #fff;
   position: sticky;
   top: 61px;
+  font-weight: 600;
 }
 .slst_body .table-card-slst .data-item {
   color: #f06043;
@@ -5784,6 +5785,120 @@ a.ygtvspacer:hover {
 .fp-fileinfo .fp-value {
   display: inline-block;
   padding-left: 5px;
+}
+
+.boxaligncenter {
+  width: 83% !important;
+  display: inline-grid;
+}
+.boxaligncenter tbody {
+  color: #f06043;
+  font-size: 13px;
+  background-color: rgba(92, 56, 115, 0.1);
+  background-color: rgba(240, 96, 67, 0.1);
+  padding-bottom: 16px;
+}
+.boxaligncenter tbody tr:first-child {
+  height: 0px !important;
+  padding: 0px !important;
+  line-height: 0 !important;
+}
+.boxaligncenter tbody tr:first-child td {
+  border: none;
+  padding: 0;
+}
+.boxaligncenter tbody tr td {
+  border: none;
+}
+.boxaligncenter tbody tr td .advancesearch {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 0 20px;
+  width: auto;
+  padding: 8px 16px;
+}
+.boxaligncenter tbody tr td .advancesearch .col1 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 10px 0;
+}
+.boxaligncenter tbody tr td .advancesearch .col1 .item1 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 2px;
+}
+.boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
+  width: 100%;
+  border: 1px solid #f06043;
+  border-radius: 0;
+  align-content: left;
+  background-color: #FFFAF9;
+}
+.boxaligncenter tbody tr td .advancesearch .col1 .item2 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 2px;
+}
+.boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
+  width: 100%;
+  border: 1px solid #f06043;
+  border-radius: 0;
+  align-content: left;
+  background-color: #FFFAF9;
+  padding: 8px 10px;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 10px 0;
+  height: 65%;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item1,
+.boxaligncenter tbody tr td .advancesearch .col2 .item4 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
+.boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
+  width: 100%;
+  border: 1px solid #f06043;
+  border-radius: 0;
+  align-content: left;
+  background-color: #FFFAF9;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item2,
+.boxaligncenter tbody tr td .advancesearch .col2 .item3 {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
+.boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
+  width: 100%;
+  border: 1px solid #f06043;
+  border-radius: 0;
+  align-content: left;
+  background-color: #FFFAF9;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
+  gap: 5px 5px;
+}
+.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
+  margin-right: 4px;
+}
+.boxaligncenter tbody tr td .btn {
+  margin: 0 8px;
+  float: right;
+}
+.boxaligncenter tbody tr td .btn-primary {
+  margin-right: 36px !important;
 }
 
 .layout.fullscreen {
