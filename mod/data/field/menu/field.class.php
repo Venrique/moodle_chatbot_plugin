@@ -135,7 +135,7 @@ class data_field_menu extends data_field_base {
             if (!isset($usedoptions[$option])) {
                 continue;
             }
-            $options[$option] = $option;
+            $options[$option] = 'test';
         }
         if (!$options) {
             // oh, nothing to search for
