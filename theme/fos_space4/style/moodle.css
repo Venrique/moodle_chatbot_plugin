@@ -918,6 +918,7 @@ h5 {
   width: 140px;
   font-size: 14px;
   color: #c71585;
+  padding: 7px;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
   display: grid;

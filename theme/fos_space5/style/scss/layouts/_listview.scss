@@ -5,7 +5,7 @@
   .table-card-slst {
     //todo
     display: grid;
-    grid-template-columns: repeat(2,auto) minmax(100px,390px) 1fr 110px auto;
+    grid-template-columns: repeat(2,auto) minmax(100px,390px) 1fr 128px auto;
 /*
     @include respond-to("small-phone") {
       display: grid;

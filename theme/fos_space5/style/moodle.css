@@ -1399,13 +1399,14 @@ h5 {
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .data-cnt {
   grid-area: data-cnt;
 }
+
 .slst_body {
   width: auto;
   height: auto;
 }
 .slst_body .table-card-slst {
   display: grid;
-  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 110px auto;
+  grid-template-columns: repeat(2, auto) minmax(100px, 390px) 1fr 128px auto;
   /*
       @include respond-to("small-phone") {
         display: grid;
