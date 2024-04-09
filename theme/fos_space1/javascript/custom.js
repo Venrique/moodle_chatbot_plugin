@@ -105,7 +105,7 @@ require(["jquery"], function ($) {
             let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
             let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
 
-            let lockEN = $("#descriptionEN").find('#lockENTranslation');
+            let lockEN = $("#lockENTranslation");
 
             let targetLanguages = [];
 
