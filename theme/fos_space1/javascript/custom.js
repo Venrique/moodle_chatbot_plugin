@@ -106,6 +106,9 @@ require(["jquery"], function ($) {
             let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
 
             let lockEN = $("#lockENTranslation");
+            let lockES = $("#lockESTranslation");
+            let lockFR = $("#lockFRTranslation");
+            let lockPT = $("#lockPTTranslation");
 
             let targetLanguages = [];
 
@@ -113,15 +116,15 @@ require(["jquery"], function ($) {
                 console.log("Translation to english");
                 targetLanguages.push("EN");
             }
-            if (descES.text() === "") {
+            if (!lockES.is(':checked')) {
                 console.log("Translation to spanish");
                 targetLanguages.push("ES");
             }
-            if (descFR.text() === "") {
+            if (!lockFR.is(':checked')) {
                 console.log("Translation to french");
                 targetLanguages.push("FR");
             }
-            if (descPT.text() === "") {
+            if (!lockPT.is(':checked')) {
                 console.log("Translation to portuguese");
                 targetLanguages.push("PT");
             }
