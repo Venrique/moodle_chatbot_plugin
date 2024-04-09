@@ -109,7 +109,7 @@ require(["jquery"], function ($) {
 
             let targetLanguages = [];
 
-            if (lockEN.checked() === false) {
+            if (lockEN.is(':checked') === false) {
                 console.log("Translation to english");
                 targetLanguages.push("EN");
             }
