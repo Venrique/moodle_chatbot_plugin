@@ -105,9 +105,11 @@ require(["jquery"], function ($) {
             let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
             let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
 
+            let lockEN = $("#descriptionEN").find('#lockENTranslation');
+
             let targetLanguages = [];
 
-            if (descEN.text() === "") {
+            if (lockEN.checked() === false) {
                 console.log("Translation to english");
                 targetLanguages.push("EN");
             }
