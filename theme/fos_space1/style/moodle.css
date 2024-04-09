@@ -1354,7 +1354,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -1381,7 +1381,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 {
   display: grid;
@@ -1408,7 +1408,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 {
   display: grid;
@@ -1435,7 +1435,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 {
   display: grid;
@@ -1462,7 +1462,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 {
   display: grid;
@@ -1497,7 +1497,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -1524,7 +1524,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 {
   display: grid;
@@ -1551,7 +1551,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 {
   display: grid;
@@ -1578,7 +1578,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 {
   display: grid;
@@ -1605,7 +1605,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 {
   display: grid;
@@ -1632,7 +1632,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .data-cnt {
   grid-area: data-cnt;
-  color: #5c3873;
+  color: #333;
 }
 .slst_body {
   width: auto;
@@ -1722,7 +1722,7 @@ h5 {
   font-weight: 600;
 }
 .slst_body .table-card-slst .data-item {
-  color: #5c3873;
+  color: #333;
   font-size: 13px;
   background-color: rgba(92, 56, 115, 0.1);
   padding: 8px;
