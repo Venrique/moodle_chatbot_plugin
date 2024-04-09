@@ -90,15 +90,23 @@ require(["jquery"], function ($) {
         //AUTOMATIC TRANSLATION OF TEXT
         let descriptionEN = $("#descriptionEN");
         let descriptionES = $("#descriptionES");
+        let descriptionFR = $("#descriptionFR");
+        let descriptionPT = $("#descriptionPT");
         descriptionEN.on('focusout', makeTranslations);
         descriptionES.on('focusout', makeTranslations);
+        descriptionFR.on('focusout', makeTranslations);
+        descriptionPT.on('focusout', makeTranslations);
 
         function makeTranslations() {
 
             let origin = $(this).find('.editor_atto_content.form-control');
             let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
             let descES = $("#descriptionES").find('.editor_atto_content.form-control');
+            let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
+            let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
+
             let targetLanguages = [];
+
             if (descEN.text() === "") {
                 console.log("Translation to english");
                 targetLanguages.push("EN");
@@ -107,6 +115,15 @@ require(["jquery"], function ($) {
                 console.log("Translation to spanish");
                 targetLanguages.push("ES");
             }
+            if (descFR.text() === "") {
+                console.log("Translation to french");
+                targetLanguages.push("FR");
+            }
+            if (descPT.text() === "") {
+                console.log("Translation to portuguese");
+                targetLanguages.push("PT");
+            }
+
             targetLanguages.forEach(function (targetLang) {
                 translateText(origin.text(), '', targetLang, function (error, translatedText) {
                     if (error) {
@@ -117,6 +134,12 @@ require(["jquery"], function ($) {
                         }
                         if (targetLang === "ES") {
                             descES.text(translatedText);
+                        }
+                        if (targetLang === "FR") {
+                            descFR.text(translatedText);
+                        }
+                        if (targetLang === "PT") {
+                            descPT.text(translatedText);
                         }
                     }
                 });
