@@ -287,7 +287,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row1 .col1 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
@@ -346,7 +346,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row1 .col2 .field h6 {
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row1 .col2 .cta {
   align-self: center;
@@ -405,7 +405,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row2 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
@@ -479,7 +479,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row3 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row3 .cta {
   align-self: center;
@@ -533,7 +533,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row4 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row4 .cta {
   align-self: center;
@@ -597,7 +597,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row5 .col1 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row5 .col1 .cta {
   align-self: center;
@@ -651,7 +651,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row5 .col2 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row5 .col2 .cta {
   align-self: center;
@@ -705,7 +705,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row6 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row6 .cta {
   align-self: center;
@@ -787,7 +787,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row7 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row7 .cta {
   align-self: center;
@@ -862,7 +862,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row8 .field h6 {
   margin-left: 24px;
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row8 .cta {
   align-self: center;
@@ -917,7 +917,7 @@ h5 {
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-link .form-inline table tbody tr td:first-child {
   width: 140px;
   font-size: 14px;
-  color: #333;
+  color: #c4ae0f;
   padding: 7px;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files {
@@ -954,7 +954,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col1 .field h6 {
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col1 .value {
   grid-area: value;
@@ -976,7 +976,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col2 .field h6 {
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col2 .value {
   grid-area: value;
@@ -998,7 +998,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col3 .field h6 {
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col3 .value {
   grid-area: value;
@@ -1020,7 +1020,7 @@ h5 {
   grid-area: field;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col4 .field h6 {
-  color: #333;
+  color: #c4ae0f;
 }
 .custom_form .item_custom .cnt_row8 .value .value-rws .value-files .value-lang-file .col4 .value {
   grid-area: value;
@@ -1060,7 +1060,7 @@ h5 {
   width: 100%;
   padding: 8px 12px;
   text-align: center;
-  color: #333;
+  color: #c4ae0f;
   background-color: #fff;
   border-radius: 6px;
 }
@@ -1126,7 +1126,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 .data-cnt {
   grid-area: data-cnt;
@@ -1152,7 +1152,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col2 .data-cnt {
   grid-area: data-cnt;
@@ -1178,7 +1178,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row2 .data-cnt {
   grid-area: data-cnt;
@@ -1204,7 +1204,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row3 .data-cnt {
   grid-area: data-cnt;
@@ -1230,7 +1230,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row4 .data-cnt {
   grid-area: data-cnt;
@@ -1264,7 +1264,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col1 .data-cnt {
   grid-area: data-cnt;
@@ -1290,7 +1290,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 .col2 .data-cnt {
   grid-area: data-cnt;
@@ -1316,7 +1316,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row6 .data-cnt {
   grid-area: data-cnt;
@@ -1342,7 +1342,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row7 .data-cnt {
   grid-area: data-cnt;
@@ -1368,7 +1368,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row8 .data-cnt {
   grid-area: data-cnt;
@@ -1394,7 +1394,7 @@ h5 {
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .label h6 {
   font-size: 12px;
-  color: #e8cd0a;
+  color: #c4ae0f;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row9 .data-cnt {
   grid-area: data-cnt;
@@ -6078,6 +6078,11 @@ body #page-wrapper #page #page-content {
 }
 body #page-wrapper #page .main-inner {
   background-color: #FFFEF2;
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+}
+body #page-wrapper #page .main-inner .header-maxwidth {
+  max-width: auto;
 }
 body #page-wrapper #page #region-main {
   background-color: #FFFEF2;
