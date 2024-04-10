@@ -100,9 +100,6 @@ require(["jquery"], function ($) {
 
         function translateTitles(){
             let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
-
-            alert(origin.val());
-
             let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
             let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
             let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
@@ -138,16 +135,16 @@ require(["jquery"], function ($) {
                         console.error("Translation error:", error);
                     } else {
                         if (targetLang === "EN") {
-                            titleEN.text(translatedText);
+                            titleEN.val(translatedText);
                         }
                         if (targetLang === "ES") {
-                            titleES.text(translatedText);
+                            titleES.val(translatedText);
                         }
                         if (targetLang === "FR") {
-                            titleFR.text(translatedText);
+                            titleFR.val(translatedText);
                         }
                         if (targetLang === "PT") {
-                            titlePT.text(translatedText);
+                            titlePT.val(translatedText);
                         }
                     }
                 });
