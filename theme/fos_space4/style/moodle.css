@@ -5910,6 +5910,9 @@ a.ygtvspacer:hover {
   background-color: #fdf6fa;
   padding: 0;
 }
+#page.drawers .main-inner .header-maxwidth {
+  max-width: 0;
+}
 
 .drawer-toggles .drawer-toggler .btn {
   padding: 16px;
@@ -6088,6 +6091,8 @@ body #page-wrapper #page #page-content {
 }
 body #page-wrapper #page .main-inner {
   background-color: #fdf6fa;
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
 }
 body #page-wrapper #page #region-main {
   background-color: #fdf6fa;

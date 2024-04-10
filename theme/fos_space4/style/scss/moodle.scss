@@ -209,6 +209,8 @@ body {
 
     .main-inner {
       background-color: $body-bg;
+      padding: 0 .5rem 1.5rem !important;
+      max-width: 1320px !important;  
     }
 
     #region-main {
