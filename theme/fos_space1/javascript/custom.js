@@ -88,14 +88,10 @@ require(["jquery"], function ($) {
         });
 
         //AUTOMATIC TRANSLATION OF TEXT
-        let descriptionEN = $("#descriptionEN");
-        let descriptionES = $("#descriptionES");
-        let descriptionFR = $("#descriptionFR");
-        let descriptionPT = $("#descriptionPT");
-        descriptionEN.on('focusout', makeTranslations);
-        descriptionES.on('focusout', makeTranslations);
-        descriptionFR.on('focusout', makeTranslations);
-        descriptionPT.on('focusout', makeTranslations);
+        $("#descriptionEN").on('focusout', makeTranslations);
+        $("#descriptionES").on('focusout', makeTranslations);
+        $("#descriptionFR").on('focusout', makeTranslations);
+        $("#descriptionPT").on('focusout', makeTranslations);
 
         function makeTranslations() {
 
