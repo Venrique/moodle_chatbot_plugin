@@ -221,14 +221,12 @@ body {
       background-color: $body-bg;
     }
 
-    .footer-popover {
-      max-width: 1281px !important;
-      margin: 0 auto !important;
-  }
   }
 }
 
 .popover.footer {
+  max-width: 1281px !important;
+  margin: 0 auto !important;
   .popover-body {
     padding: 0;
     .footer-section {
