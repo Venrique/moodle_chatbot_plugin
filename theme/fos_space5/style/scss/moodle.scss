@@ -220,6 +220,11 @@ body {
     #region-main {
       background-color: $body-bg;
     }
+
+    .footer-popover {
+      max-width: 1281px !important;
+      margin: 0 auto !important;
+  }
   }
 }
 
