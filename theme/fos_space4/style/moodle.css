@@ -5911,7 +5911,7 @@ a.ygtvspacer:hover {
   padding: 0;
 }
 #page.drawers .main-inner .header-maxwidth {
-  max-width: 0;
+  max-width: 100%;
 }
 
 .drawer-toggles .drawer-toggler .btn {
