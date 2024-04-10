@@ -210,13 +210,34 @@ body {
 
     .main-inner {
       background-color: $body-bg;
+      padding: 0 .5rem 1.5rem !important;
+      max-width: 1320px !important;
+      .header-maxwidth {
+        max-width: 100%;
+    }
     }
 
     #region-main {
       background-color: $body-bg;
     }
+
+    div.grid-category {
+      padding: 0 .5rem 1.5rem !important;
+      max-width: 1320px !important;
+      width: 100%;
+  }
+   
   }
 }
+
+footer#page-footer.footer-popover.bg-white {    
+  max-width: 1320px !important;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: .5rem;
+
+}
+
 
 .popover.footer {
   .popover-body {
