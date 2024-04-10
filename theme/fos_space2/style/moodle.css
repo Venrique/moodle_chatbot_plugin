@@ -1102,7 +1102,7 @@ h5 {
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 {
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr minmax(130px, auto);
   gap: 0px 4px;
 }
 .svw-body .svw-cstm_frm .item_custom .cnt_row1 .col1 {
@@ -1243,7 +1243,7 @@ h5 {
 .svw-body .svw-cstm_frm .item_custom .cnt_row5 {
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr minmax(130px, auto);
   gap: 0px 4px;
   justify-content: stretch;
   align-content: stretch;
