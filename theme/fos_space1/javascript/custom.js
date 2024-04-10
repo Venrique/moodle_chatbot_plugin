@@ -130,7 +130,7 @@ require(["jquery"], function ($) {
             }
 
             targetLanguages.forEach(function (targetLang) {
-                translateText(origin.text(), '', targetLang, function (error, translatedText) {
+                translateText(origin.val(), '', targetLang, function (error, translatedText) {
                     if (error) {
                         console.error("Translation error:", error);
                     } else {
