@@ -6087,11 +6087,19 @@ body #page-wrapper #page .main-inner .header-maxwidth {
 body #page-wrapper #page #region-main {
   background-color: #FFFEF2;
 }
-
-.popover.footer {
-  max-width: 1281px !important;
-  margin: 0 auto !important;
+body #page-wrapper #page div.grid-category {
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+  width: 100%;
 }
+
+footer#page-footer.footer-popover.bg-white {
+  max-width: 1320px !important;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+
 .popover.footer .popover-body {
   padding: 0;
 }
