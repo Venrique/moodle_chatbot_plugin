@@ -88,12 +88,70 @@ require(["jquery"], function ($) {
         });
 
         //AUTOMATIC TRANSLATION OF TEXT
-        $("#descriptionEN").on('focusout', makeTranslations);
-        $("#descriptionES").on('focusout', makeTranslations);
-        $("#descriptionFR").on('focusout', makeTranslations);
-        $("#descriptionPT").on('focusout', makeTranslations);
+        $("#descriptionEN").on('focusout', translateDescriptions);
+        $("#descriptionES").on('focusout', translateDescriptions);
+        $("#descriptionFR").on('focusout', translateDescriptions);
+        $("#descriptionPT").on('focusout', translateDescriptions);
 
-        function makeTranslations() {
+        $("#titleDivEN").on('focusout', translateTitles);
+        $("#titleDivES").on('focusout', translateTitles);
+        $("#titleDivFR").on('focusout', translateTitles);
+        $("#titleDivPT").on('focusout', translateTitles);
+
+        function translateTitles(){
+            let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
+            let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
+            let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
+            let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
+            let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-data-input');
+
+            let lockEN = $("#TitlelockENTranslation");
+            let lockES = $("#TitlelockESTranslation");
+            let lockFR = $("#TitlelockFRTranslation");
+            let lockPT = $("#TitlelockPTTranslation");
+
+            let targetLanguages = [];
+
+            if (!lockEN.is(':checked')) {
+                console.log("Translation to english");
+                targetLanguages.push("EN");
+            }
+            if (!lockES.is(':checked')) {
+                console.log("Translation to spanish");
+                targetLanguages.push("ES");
+            }
+            if (!lockFR.is(':checked')) {
+                console.log("Translation to french");
+                targetLanguages.push("FR");
+            }
+            if (!lockPT.is(':checked')) {
+                console.log("Translation to portuguese");
+                targetLanguages.push("PT");
+            }
+
+            targetLanguages.forEach(function (targetLang) {
+                translateText(origin.text(), '', targetLang, function (error, translatedText) {
+                    if (error) {
+                        console.error("Translation error:", error);
+                    } else {
+                        if (targetLang === "EN") {
+                            titleEN.text(translatedText);
+                        }
+                        if (targetLang === "ES") {
+                            titleES.text(translatedText);
+                        }
+                        if (targetLang === "FR") {
+                            titleFR.text(translatedText);
+                        }
+                        if (targetLang === "PT") {
+                            titlePT.text(translatedText);
+                        }
+                    }
+                });
+            });
+        }
+
+        function translateDescriptions() {
 
             let origin = $(this).find('.editor_atto_content.form-control');
             let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
