@@ -5908,6 +5908,7 @@ a.ygtvspacer:hover {
 
 #page.drawers .main-inner {
   background-color: #fdf6fa;
+  padding: 0;
 }
 
 .drawer-toggles .drawer-toggler .btn {
