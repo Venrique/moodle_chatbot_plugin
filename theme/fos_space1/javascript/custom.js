@@ -101,7 +101,7 @@ require(["jquery"], function ($) {
         function translateTitles(){
             let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
 
-            alert(origin);
+            alert(origin.text());
 
             let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
             let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
