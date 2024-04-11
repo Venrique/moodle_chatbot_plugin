@@ -456,7 +456,7 @@ h5 {
 .grid-category .cta-btns .cta-middle {
   justify-self: center;
   align-self: center;
-  grid-area: cta-right;
+  grid-area: cta-middle;
 }
 .grid-category .cta-btns .cta-right {
   justify-self: start;
