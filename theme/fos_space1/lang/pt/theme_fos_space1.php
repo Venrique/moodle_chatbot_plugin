@@ -38,3 +38,4 @@ $string["textfooter"] = "Ao acessar este sistema de gerenciamento de aprendizage
 
 $string["Community"] = "Comunidade";
 $string["KnowledgeSharing"] = "Compartilhamento de conhecimento";
+$string["Documentation"] = "Documentação";
