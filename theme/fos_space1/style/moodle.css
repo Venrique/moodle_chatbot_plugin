@@ -436,7 +436,7 @@ h5 {
 .grid-category .cta-btns {
   grid-area: cta-btns;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-auto-columns: 1fr;
   gap: 0px 32px;
@@ -446,12 +446,17 @@ h5 {
   justify-items: stretch;
   align-items: stretch;
   margin: 10px 0;
-  grid-template-areas: "cta-left cta-right";
+  grid-template-areas: "cta-left cta-middle cta-right";
 }
 .grid-category .cta-btns .cta-left {
   justify-self: end;
   align-self: center;
   grid-area: cta-left;
+}
+.grid-category .cta-btns .cta-middle {
+  justify-self: center;
+  align-self: center;
+  grid-area: cta-right;
 }
 .grid-category .cta-btns .cta-right {
   justify-self: start;

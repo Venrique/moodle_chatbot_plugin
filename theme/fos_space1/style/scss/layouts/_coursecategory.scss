@@ -54,7 +54,7 @@
   .cta-btns {
     grid-area: cta-btns;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-auto-columns: 1fr;
     gap: 0px 32px;
@@ -64,11 +64,17 @@
     justify-items: stretch;
     align-items: stretch;
     margin: 10px 0;
-    grid-template-areas: "cta-left cta-right";
+    grid-template-areas: "cta-left cta-middle cta-right";
     .cta-left {
       justify-self: end;
       align-self: center;
       grid-area: cta-left;
+    }
+
+    .cta-middle {
+      justify-self: center;
+      align-self: center;
+      grid-area: cta-right;
     }
 
     .cta-right {
