@@ -38,4 +38,3 @@ $string["textfooter"] = "By accessing this learning management system, you are a
 
 $string["Community"] = "Community";
 $string["KnowledgeSharing"] = "Knowledge Sharing";
-$string["Documentation"] = "Documentation";
