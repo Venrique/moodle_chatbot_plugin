@@ -6092,7 +6092,13 @@ body #page-wrapper #page .main-inner {
 body #page-wrapper #page #region-main {
   background-color: #F9FFFF;
 }
-body #page-wrapper #page .footer-popover {
+body #page-wrapper #page div.grid-category {
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+  width: 100%;
+}
+
+footer#page-footer.footer-popover.bg-white {
   max-width: 1320px !important;
   width: 100%;
   margin: 0 auto;
