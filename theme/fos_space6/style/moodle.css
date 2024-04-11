@@ -6088,6 +6088,11 @@ body #page-wrapper #page #page-content {
 }
 body #page-wrapper #page .main-inner {
   background-color: #F9FFFF;
+  padding: 0 0.5rem 1.5rem !important;
+  max-width: 1320px !important;
+}
+body #page-wrapper #page .main-inner .header-maxwidth {
+  max-width: 100%;
 }
 body #page-wrapper #page #region-main {
   background-color: #F9FFFF;
