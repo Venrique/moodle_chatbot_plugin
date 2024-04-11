@@ -31,8 +31,8 @@
 @import "layouts/layout.scss";
 
 .coursesearchbox {
-  padding: 0.5rem;
-  border: 1px solid $primary;
+  padding      : 0.5rem;
+  border       : 1px solid $primary;
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
 }
@@ -40,23 +40,23 @@
 .adress span,
 .contact span,
 .social span {
-  color: #fff;
-  font-weight: 800;
+  color         : #fff;
+  font-weight   : 800;
   padding-bottom: 10px;
-  margin-bottom: 20px;
-  display: block;
+  margin-bottom : 20px;
+  display       : block;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size     : 16px;
   letter-spacing: 3px;
 }
 
 .adress li p,
 .contact li a,
 .social li a {
-  color: #fff;
-  letter-spacing: 2px;
+  color          : #fff;
+  letter-spacing : 2px;
   text-decoration: none;
-  font-size: 15px;
+  font-size      : 15px;
 }
 
 .social li {
@@ -77,20 +77,23 @@
 
 .btn-primary {
   background-color: $primary;
-  border: 1px solid $body-bg;
+  border          : 1px solid $body-bg;
+
   &:hover {
     background-color: $body-bg;
-    color: $primary;
-    border-color: $primary;
+    color           : $primary;
+    border-color    : $primary;
   }
 }
 
 a {
   color: $FOS-Caribbean-Green;
 }
+
 a.hover {
   color: $primary;
 }
+
 .calendartable {
   color: $primary;
 }
@@ -98,13 +101,15 @@ a.hover {
 .form-control {
   border-color: $primary;
 }
+
 .search-icon {
   border: 1px solid $primary;
 }
+
 .btn-outline-secondary {
-  color: $body-bg;
+  color           : $body-bg;
   background-color: $primary;
-  border-color: $primary;
+  border-color    : $primary;
 }
 
 .pair-key {
@@ -129,54 +134,60 @@ table {
   .dropdown-item:hover {
     background-color: $primary;
   }
+
   .dropdown-item.active {
     background-color: $primary;
   }
 }
+
 //------
 .btn-primary.disabled,
 .btn-primary:disabled {
   background-color: $primary;
-  border: 1px solid $primary;
+  border          : 1px solid $primary;
+
   &:hover {
-    color: $white;
+    color       : $white;
     border-color: $black;
   }
 }
 
 .alert-warning {
-  background-color: $body-bg!important;
+  background-color: $body-bg !important;
 }
 
 .alert-warning,
 .environmenttable .warn {
-  margin-top: 8px;
-  padding: 8px;
-  color: #7d5a29;
+  margin-top      : 8px;
+  padding         : 8px;
+  color           : #7d5a29;
   background-color: #fff;
-  border-color: #fff;
+  border-color    : #fff;
 }
 
 .drawer-right {
   background-color: $body-bg;
-  border-left: 1px solid $primary;
+  border-left     : 1px solid $primary;
+
   .card-body {
     background-color: $body-bg;
-    border: none;
+    border          : none;
   }
 }
 
 .drawer-left {
   background-color: $body-bg;
-  border-right: 1px solid $primary;
+  border-right    : 1px solid $primary;
 }
 
 .courseindex {
   .courseindex-section {
     .pageitem {
       background-color: $primary;
+
       &:hover {
         background-color: $body-bg;
+
         a {
           color: $primary !important;
         }
@@ -186,8 +197,10 @@ table {
     .courseindex-item-content {
       .pageitem {
         background-color: $primary;
+
         &:hover {
           background-color: $body-bg;
+
           a {
             color: $primary !important;
           }
@@ -200,14 +213,29 @@ table {
 body {
   @include font-body("Isidora Sans Regular");
   background-color: $body-bg;
+
   #page-wrapper #page {
     background-color: $body-bg;
+
     #page-content {
       background-color: $body-bg;
     }
 
     .main-inner {
       background-color: $body-bg;
+      padding         : 0 .5rem 1.5rem !important;
+      max-width       : 1320px !important;
+
+      .header-maxwidth {
+        max-width: 100%;
+      }
+
+    }
+
+    div.grid-category {
+      padding  : 0 .5rem 1.5rem !important;
+      max-width: 1320px !important;
+      width    : 100%;
     }
 
     #region-main {
@@ -216,16 +244,27 @@ body {
   }
 }
 
+footer#page-footer.footer-popover.bg-white {
+  max-width    : 1320px !important;
+  width        : 100%;
+  margin       : 0 auto;
+  border-radius: .5rem;
+
+}
+
 .popover.footer {
   .popover-body {
     padding: 0;
+
     .footer-section {
       a {
-        color: $FOS-Caribbean-Green;
+        color          : $FOS-Caribbean-Green;
         text-decoration: none;
+
         .icon {
           color: $FOS-Caribbean-Green;
         }
+
         &:focus {
           text-decoration: none;
         }
@@ -235,7 +274,7 @@ body {
 }
 
 .btn-link {
-  color: $FOS-Caribbean-Green;
+  color          : $FOS-Caribbean-Green;
   text-decoration: none;
 
   .icon {
@@ -246,32 +285,33 @@ body {
 .bnt-custom-exp {
   margin-bottom: 20px !important;
 }
+
 .btn-link {
-  color: $FOS-Coral!important;
+  color: $FOS-Coral !important;
 }
 
 .navbar-brand .logo {
-  display: none!important;
+  display: none !important;
 }
 
 .navbar-brand::after {
-  content: '';
-  display: block!important;
-  background-image: url([[pix:theme|navbarlogospace2]]) !important;
-  background-size: contain!important;
-  background-repeat: no-repeat!important;
-  width: 44px!important;
-  height: 31px!important;
+  content          : '';
+  display          : block !important;
+  background-image : url([[pix:theme|navbarlogospace2]]) !important;
+  background-size  : contain !important;
+  background-repeat: no-repeat !important;
+  width            : 44px !important;
+  height           : 31px !important;
 }
 
 .main-inner {
-  padding: 0 0.5rem 1.5rem !important;
+  padding  : 0 0.5rem 1.5rem !important;
   max-width: 1320px !important;
 }
 
 .dropdown {
   a {
-    color: $primary;
+    color          : $primary;
     text-decoration: none;
   }
 }
