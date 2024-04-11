@@ -90,7 +90,7 @@
             height: 100%;
             border-radius: $border-radius;
             padding: 4px 8px;
-            @include apply-opacity($primary, 10);;
+            @include apply-opacity($primary, 10);
             color: $primary;
           }
         }
@@ -161,7 +161,7 @@
             height: 100%;
             border-radius: $border-radius;
             padding: 4px 8px;
-            background-color: $navbar-bg;
+            @include apply-opacity($primary, 10);
             color: $primary;
           }
         }
@@ -258,7 +258,7 @@
           height: 100%;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
         }
       }
@@ -326,7 +326,7 @@
           height: 100%;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
         }
       }
@@ -394,7 +394,7 @@
           height: 100%;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
         }
       }
@@ -473,7 +473,7 @@
             height: 100%;
             border-radius: $border-radius;
             padding: 4px 8px;
-            background-color: $navbar-bg;
+            @include apply-opacity($primary, 10);
             color: $primary;
           }
         }
@@ -541,7 +541,7 @@
             height: 100%;
             border-radius: $border-radius;
             padding: 4px 8px;
-            background-color: $navbar-bg;
+            @include apply-opacity($primary, 10);
             color: $primary;
           }
         }
@@ -640,7 +640,7 @@
           height: 100%;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
         }
       }
@@ -737,7 +737,7 @@
           height: 100%;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
         }
       }
@@ -1029,7 +1029,7 @@
           height: auto;
           border-radius: $border-radius;
           padding: 4px 8px;
-          background-color: $navbar-bg;
+          @include apply-opacity($primary, 10);
           color: $primary;
           margin: 0 0 4px;
         }
