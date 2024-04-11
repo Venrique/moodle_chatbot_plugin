@@ -326,7 +326,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: rgba(56, 61, 71, 0.1);
   color: #383d47;
 }
 .custom_form .item_custom .cnt_row1 .col2 {

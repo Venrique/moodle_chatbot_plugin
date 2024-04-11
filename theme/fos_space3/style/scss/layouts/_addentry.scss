@@ -90,7 +90,7 @@
             height: 100%;
             border-radius: $border-radius;
             padding: 4px 8px;
-            background-color: $navbar-bg;
+            @include apply-opacity($primary, 10);;
             color: $primary;
           }
         }
