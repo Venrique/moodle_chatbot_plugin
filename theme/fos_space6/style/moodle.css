@@ -6092,6 +6092,12 @@ body #page-wrapper #page .main-inner {
 body #page-wrapper #page #region-main {
   background-color: #F9FFFF;
 }
+body #page-wrapper #page .footer-popover {
+  max-width: 1320px !important;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
 
 .popover.footer .popover-body {
   padding: 0;
