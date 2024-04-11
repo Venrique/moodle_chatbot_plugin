@@ -63,8 +63,9 @@
     align-content: stretch;
     justify-items: stretch;
     align-items: stretch;
-    margin: 10px 0;
+    margin: 10px auto;
     grid-template-areas: "cta-left cta-middle cta-right";
+    width: fit-content;
     .cta-left {
       justify-self: end;
       align-self: center;
