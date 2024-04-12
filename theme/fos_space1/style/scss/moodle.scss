@@ -205,7 +205,9 @@ table {
 body {
   @include font-body("Isidora Sans Regular");
   background-color: $FOS-Aubergine-bk;
-  #page-wrapper #page {
+  #page-wrapper {
+  min-height: auto;
+  #page {
     background-color: $FOS-Aubergine-bk;
     min-height: 86vh;
     #page-content {
@@ -237,7 +239,7 @@ body {
       background-color: $body-bg;
     }
   }
-}
+}}
 
 .popover.footer {
   .popover-body {
