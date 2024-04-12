@@ -6360,7 +6360,7 @@ body {
 }
 body #page-wrapper #page {
   background-color: #f3eff5;
-  min-height: 86vh;
+  min-height: auto;
 }
 body #page-wrapper #page #page-content {
   background-color: #f3eff5;
