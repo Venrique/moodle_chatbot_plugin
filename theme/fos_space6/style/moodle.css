@@ -6082,6 +6082,7 @@ body {
 }
 body #page-wrapper #page {
   background-color: #F9FFFF;
+  min-height: fit-content;
 }
 body #page-wrapper #page #page-content {
   background-color: #F9FFFF;
@@ -6090,9 +6091,13 @@ body #page-wrapper #page .main-inner {
   background-color: #F9FFFF;
   padding: 0 0.5rem 1.5rem !important;
   max-width: 1320px !important;
+  margin-top: 0;
+  min-height: 86vh;
+  margin-bottom: 0;
 }
 body #page-wrapper #page .main-inner .header-maxwidth {
   max-width: 100%;
+  margin-top: 1.5rem;
 }
 body #page-wrapper #page #region-main {
   background-color: #F9FFFF;
@@ -6101,13 +6106,6 @@ body #page-wrapper #page div.grid-category {
   padding: 0 0.5rem 1.5rem !important;
   max-width: 1320px !important;
   width: 100%;
-}
-
-footer#page-footer.footer-popover.bg-white {
-  max-width: 1320px !important;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 0.5rem;
 }
 
 .popover.footer .popover-body {
