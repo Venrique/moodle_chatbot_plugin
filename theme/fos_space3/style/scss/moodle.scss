@@ -202,6 +202,7 @@ body {
   background-color: $body-bg;
   #page-wrapper #page {
     background-color: $body-bg;
+    min-height: auto;
     #page-content {
       background-color: $body-bg;
     }
