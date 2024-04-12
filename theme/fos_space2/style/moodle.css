@@ -6092,6 +6092,7 @@ body {
 }
 body #page-wrapper #page {
   background-color: #fafffd;
+  min-height: auto;
 }
 body #page-wrapper #page #page-content {
   background-color: #fafffd;
