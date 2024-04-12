@@ -4263,9 +4263,6 @@ body.h5p-embed .h5pmessages {
   vertical-align: middle;
 }
 
-#page.drawers {
-  min-height: 86vh;
-}
 #page.drawers form#h5peditor,
 #page.drawers form#coolh5peditor,
 #page.drawers .core_contentbank_viewcontent {
