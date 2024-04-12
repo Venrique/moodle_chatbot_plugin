@@ -23,6 +23,9 @@ if (isloggedin() && !isguestuser()) {
                 $modules->$moduleIdentifier = $module->id;
             }
         }
+
+        $supportCourse = $course = $DB->get_record('course', array('shortname' => 'SD'));
+        $modules->support = $supportCourse->id;
     }catch(Exception $e){
         echo $e->getMessage();
     }
