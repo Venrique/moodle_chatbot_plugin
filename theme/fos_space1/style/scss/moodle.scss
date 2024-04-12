@@ -209,7 +209,7 @@ body {
   min-height: auto;
   #page {
     background-color: $FOS-Aubergine-bk;
-    min-height: 86vh;
+    min-height: fit-content;
     #page-content {
       background-color: $body-bg;
     }
