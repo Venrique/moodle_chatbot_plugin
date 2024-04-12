@@ -210,6 +210,7 @@ body {
       background-color: $body-bg;
       padding: 0 .5rem 1.5rem !important;
       max-width: 1320px !important;  
+      min-height: 86vh;
 
       .header-maxwidth {
         max-width: 100%;
@@ -228,14 +229,6 @@ body {
       background-color: $body-bg;
     }
   }
-}
-
-footer#page-footer.footer-popover.bg-white {    
-  max-width: 1320px !important;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: .5rem;
-
 }
 
 
