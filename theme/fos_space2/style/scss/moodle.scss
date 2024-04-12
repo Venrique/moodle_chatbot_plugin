@@ -212,34 +212,32 @@ table {
 
 body {
   @include font-body("Isidora Sans Regular");
-  background-color: $FOS-Aubergine-bk;
+  background-color: $body-bg;
+
   #page-wrapper #page {
-    background-color: $FOS-Aubergine-bk;
-    min-height: auto;
+    background-color: $body-bg;
+
     #page-content {
       background-color: $body-bg;
     }
 
     .main-inner {
-      background-color: $body-bg;    
-      padding: 0 0.5rem 1.5rem !important;
-      max-width: 1320px !important;
-      margin-top: 0;
+      background-color: $body-bg;
+      padding         : 0 0.5rem 1.5rem !important;
+      max-width       : 1320px !important;
       min-height: 86vh;
-      margin-bottom: 0;
+
       .header-maxwidth {
         max-width: 100%;
-        margin-top: 1.5rem;
-    }
+      }
 
     }
 
     div.grid-category {
-      padding: 0 .5rem 1.5rem !important;
+      padding  : 0 .5rem 1.5rem !important;
       max-width: 1320px !important;
-      width: 100%;
-  }
-
+      width    : 100%;
+    }
 
     #region-main {
       background-color: $body-bg;
@@ -247,23 +245,20 @@ body {
   }
 }
 
-footer#page-footer.footer-popover.bg-white {
-  width        : 100%;
-  border-radius: .5rem;
-
-}
-
 
 .popover.footer {
   .popover-body {
     padding: 0;
+
     .footer-section {
       a {
-        color: $FOS-Caribbean-Green;
+        color          : $FOS-Caribbean-Green;
         text-decoration: none;
+
         .icon {
           color: $FOS-Caribbean-Green;
         }
+
         &:focus {
           text-decoration: none;
         }
@@ -271,6 +266,7 @@ footer#page-footer.footer-popover.bg-white {
     }
   }
 }
+
 .btn-link {
   color          : $FOS-Caribbean-Green;
   text-decoration: none;

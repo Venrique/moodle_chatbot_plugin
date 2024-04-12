@@ -1719,9 +1719,9 @@ h5 {
 
 .card-deck {
   background-color: #fafffd;
-  /* .card {
-     background-color: $white;
-   }*/
+}
+.card-deck .card {
+  background-color: #fff;
 }
 
 .card-group {
@@ -5919,11 +5919,6 @@ a.ygtvspacer:hover {
 .drawer-toggles .drawer-left-toggle .btn:hover {
   padding-left: 20px;
 }
-.footer-popover {
-  max-width: 1281px !important;
-  margin: 0 auto !important;
-}
-
 .pw-custom {
   background-color: #fafffd !important;
 }
@@ -6093,11 +6088,10 @@ table {
 
 body {
   font-family: "Isidora Sans Regular", sans-serif;
-  background-color: #f3eff5;
+  background-color: #fafffd;
 }
 body #page-wrapper #page {
-  background-color: #f3eff5;
-  min-height: auto;
+  background-color: #fafffd;
 }
 body #page-wrapper #page #page-content {
   background-color: #fafffd;
@@ -6106,13 +6100,10 @@ body #page-wrapper #page .main-inner {
   background-color: #fafffd;
   padding: 0 0.5rem 1.5rem !important;
   max-width: 1320px !important;
-  margin-top: 0;
   min-height: 86vh;
-  margin-bottom: 0;
 }
 body #page-wrapper #page .main-inner .header-maxwidth {
   max-width: 100%;
-  margin-top: 1.5rem;
 }
 body #page-wrapper #page div.grid-category {
   padding: 0 0.5rem 1.5rem !important;
@@ -6121,11 +6112,6 @@ body #page-wrapper #page div.grid-category {
 }
 body #page-wrapper #page #region-main {
   background-color: #fafffd;
-}
-
-footer#page-footer.footer-popover.bg-white {
-  width: 100%;
-  border-radius: 0.5rem;
 }
 
 .popover.footer .popover-body {
