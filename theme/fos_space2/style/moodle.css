@@ -1719,9 +1719,9 @@ h5 {
 
 .card-deck {
   background-color: #fafffd;
-}
-.card-deck .card {
-  background-color: #fff;
+  /* .card {
+     background-color: $white;
+   }*/
 }
 
 .card-group {
@@ -6124,9 +6124,7 @@ body #page-wrapper #page #region-main {
 }
 
 footer#page-footer.footer-popover.bg-white {
-  max-width: 1320px !important;
   width: 100%;
-  margin: 0 auto;
   border-radius: 0.5rem;
 }
 
@@ -6172,11 +6170,6 @@ footer#page-footer.footer-popover.bg-white {
   background-repeat: no-repeat !important;
   width: 44px !important;
   height: 31px !important;
-}
-
-.main-inner {
-  padding: 0 0.5rem 1.5rem !important;
-  max-width: 1320px !important;
 }
 
 .dropdown a {
