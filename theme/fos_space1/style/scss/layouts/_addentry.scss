@@ -16,8 +16,12 @@
       padding-bottom: 8px;
       padding-top: 8px;
       float: inline-end;
+      display: grid;
+      grid-auto-columns: auto;
+      grid-template-columns: auto auto;
+      align-items: baseline;
       h6 {
-        margin-left: 24px;
+        margin-left: 10px;
         color: $primary;
       }
     }

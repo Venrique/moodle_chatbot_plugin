@@ -494,9 +494,13 @@ h5 {
   padding-bottom: 8px;
   padding-top: 8px;
   float: inline-end;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: auto auto;
+  align-items: baseline;
 }
 .custom_form .item_custom .cnt_row0 h6 {
-  margin-left: 24px;
+  margin-left: 10px;
   color: #5c3873;
 }
 .custom_form .item_custom .cnt_row1 {
