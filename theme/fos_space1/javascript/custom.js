@@ -88,7 +88,8 @@ require(["jquery"], function ($) {
       });
 
       $("#expertmode").click(function() {
-          alert("hola");
+          $('[style*="display: none"]').remove();
+          $('[style*="visibility: hidden"]').remove();
       });
 
       //AUTOMATIC TRANSLATION OF TEXT
