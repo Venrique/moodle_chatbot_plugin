@@ -88,8 +88,15 @@ require(["jquery"], function ($) {
           }
       });
 
+      var hidden = true;
+
       $("#expertmode").click(function() {
-          $('[hidden]').removeAttr('hidden');
+          if(hidden){
+              $('[hidden]').removeAttr('hidden');
+          }else{
+              $(".lockTranslation").attr('hidden', true);
+          }
+
       });
 
       //AUTOMATIC TRANSLATION OF TEXT
