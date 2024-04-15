@@ -87,6 +87,10 @@ require(["jquery"], function ($) {
           }
       });
 
+      $("#expertmode").click(function() {
+          alert("hola");
+      });
+
       //AUTOMATIC TRANSLATION OF TEXT
       $("#descriptionEN").on('focusout', translateDescriptions);
       $("#descriptionES").on('focusout', translateDescriptions);

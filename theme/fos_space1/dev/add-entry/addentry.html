@@ -17,9 +17,9 @@
           </h6>
         </div>
         <div class="value" id="titleDivEN">[[Title EN]]</div>
-        <div class="lockTranslation">
+        <div class="lockTranslation" hidden>
           <input type="checkbox" id="TitlelockENTranslation"
-            name="TitlelockENTranslation">
+                 name="TitlelockENTranslation">
           <label for="TitlelockENTranslation">Lock translation</label>
         </div>
         <div class="cta">
@@ -48,7 +48,7 @@
     </div>
   </div>
   <!-- Title ES -->
-  <div class="item_custom">
+  <div class="item_custom" id="titleES" hidden>
     <div class="cnt_row1">
       <div class="col1">
         <div class="field">
@@ -60,7 +60,7 @@
         <div class="value" id="titleDivES">[[Title ES]]</div>
         <div class="lockTranslation">
           <input type="checkbox" id="TitlelockESTranslation"
-            name="TitlelockESTranslation">
+                 name="TitlelockESTranslation">
           <label for="TitlelockESTranslation">Lock translation</label>
         </div>
         <div class="cta">
@@ -80,7 +80,7 @@
     </div>
   </div>
   <!-- Title FR -->
-  <div class="item_custom">
+  <div class="item_custom" id="titleFR" hidden>
     <div class="cnt_row1">
       <div class="col1">
         <div class="field">
@@ -92,7 +92,7 @@
         <div class="value" id="titleDivFR">[[Title FR]]</div>
         <div class="lockTranslation">
           <input type="checkbox" id="TitlelockFRTranslation"
-            name="TitlelockFRTranslation">
+                 name="TitlelockFRTranslation">
           <label for="TitlelockFRTranslation">Lock translation</label>
         </div>
         <div class="cta">
@@ -112,7 +112,7 @@
     </div>
   </div>
   <!-- Title PT -->
-  <div class="item_custom">
+  <div class="item_custom" id="titlePT" hidden>
     <div class="cnt_row1">
       <div class="col1">
         <div class="field">
@@ -124,7 +124,7 @@
         <div class="value" id="titleDivPT">[[Title PT]]</div>
         <div class="lockTranslation">
           <input type="checkbox" id="TitlelockPTTranslation"
-            name="TitlelockPTTranslation">
+                 name="TitlelockPTTranslation">
           <label for="TitlelockPTTranslation">Lock translation</label>
         </div>
         <div class="cta">
@@ -153,7 +153,7 @@
         </h6>
       </div>
       <div class="value" id="descriptionEN">[[Description EN]]</div>
-      <div class="lockTranslation">
+      <div class="lockTranslation" hidden>
         <input type="checkbox" id="lockENTranslation" name="lockENTranslation">
         <label for="lockENTranslation">Lock translation</label>
       </div>
@@ -174,7 +174,7 @@
     </div>
   </div>
   <!-- Description ES-->
-  <div class="item_custom">
+  <div class="item_custom" id="descES" hidden>
     <div class="cnt_row2">
       <div class="field">
         <h6>
@@ -204,7 +204,7 @@
     </div>
   </div>
   <!-- Description FR-->
-  <div class="item_custom">
+  <div class="item_custom" id="descFR" hidden>
     <div class="cnt_row2">
       <div class="field">
         <h6>
@@ -234,7 +234,7 @@
     </div>
   </div>
   <!-- Description PT-->
-  <div class="item_custom">
+  <div class="item_custom" id="descPT" hidden>
     <div class="cnt_row2">
       <div class="field">
         <h6>
@@ -586,18 +586,18 @@
         <div class="description">
           {mlang en}If available through a web link, please insert the
           URL. For long URL addresses, please enter short text (<6 words) that
-            will be displayed for the link.{mlang} {mlang es}Si está disponible
-            a través de un enlace
-            web,
-            introduzca la URL. Para direcciones URL largas, ingrese un texto
-            breve (<6 palabras) que se mostrará para el enlace.{mlang} {mlang
-            pt}. Para endereços URL
-            longos, insira um texto curto (<6 palavras) que será exibido no
-            link.{mlang} {mlang fr}Si le document est
-            disponible par le biais d'un lien web, veuillez insérer l'URL. Pour
-            les adresses URL longues, veuillez saisir un texte court (<6 mots)
-            qui sera affiché pour le
-            lien.{mlang}
+          will be displayed for the link.{mlang} {mlang es}Si está disponible
+          a través de un enlace
+          web,
+          introduzca la URL. Para direcciones URL largas, ingrese un texto
+          breve (<6 palabras) que se mostrará para el enlace.{mlang} {mlang
+          pt}. Para endereços URL
+          longos, insira um texto curto (<6 palavras) que será exibido no
+          link.{mlang} {mlang fr}Si le document est
+          disponible par le biais d'un lien web, veuillez insérer l'URL. Pour
+          les adresses URL longues, veuillez saisir un texte court (<6 mots)
+          qui sera affiché pour le
+          lien.{mlang}
         </div>
         <div class="description">
           {mlang en}Upload at least one file, note that it has four controls to
