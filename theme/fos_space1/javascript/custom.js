@@ -88,8 +88,7 @@ require(["jquery"], function ($) {
       });
 
       $("#expertmode").click(function() {
-          $('[style*="display: none"]').remove();
-          $('[style*="visibility: hidden"]').remove();
+          $('[hidden]').removeAttr('hidden');
       });
 
       //AUTOMATIC TRANSLATION OF TEXT
