@@ -11,6 +11,17 @@
     display: list-item;
     list-style: none;
 
+    .cnt_row0 {
+      margin: auto auto;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      float: inline-end;
+      h6 {
+        margin-left: 24px;
+        color: $primary;
+      }
+    }
+
     // Title & Upload date
     .cnt_row1 {
       display: grid;
