@@ -489,20 +489,6 @@ h5 {
   display: list-item;
   list-style: none;
 }
-.custom_form .item_custom .cnt_row0 {
-  margin: auto auto;
-  padding-bottom: 8px;
-  padding-top: 8px;
-  float: inline-end;
-  display: grid;
-  grid-auto-columns: auto;
-  grid-template-columns: auto auto;
-  align-items: baseline;
-}
-.custom_form .item_custom .cnt_row0 h6 {
-  margin-left: 10px;
-  color: #5c3873;
-}
 .custom_form .item_custom .cnt_row1 {
   display: grid;
   grid-auto-columns: 1fr;
