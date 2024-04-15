@@ -521,7 +521,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row1 .col1 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px 36.47px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -530,7 +530,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row1 .col1 .field {
   grid-area: field;
@@ -539,14 +539,19 @@ h5 {
   margin-left: 24px;
   color: #5c3873;
 }
+.custom_form .item_custom .cnt_row1 .col1 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
+}
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
   grid-area: cta;
-  display: grid;
-  grid-auto-columns: auto;
-  grid-template-columns: auto auto;
-  gap: 0 8px;
-  align-items: stretch;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta .i-arrow {
   width: 18px;
@@ -644,7 +649,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row2 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -653,7 +658,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row2 .field {
   grid-area: field;
@@ -662,14 +667,19 @@ h5 {
   margin-left: 24px;
   color: #5c3873;
 }
+.custom_form .item_custom .cnt_row2 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
+}
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
   grid-area: cta;
-  display: grid;
-  grid-auto-columns: auto;
-  grid-template-columns: auto auto;
-  gap: 0 8px;
-  align-items: stretch;
 }
 .custom_form .item_custom .cnt_row2 .cta .i-arrow {
   width: 18px;

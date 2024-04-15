@@ -40,7 +40,7 @@
       // Title
       .col1 {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto auto;
         grid-template-rows: 18px 36.47px auto;
         grid-auto-columns: 1fr;
         gap: 4px 4px;
@@ -50,9 +50,9 @@
         justify-item_customs: stretch;
         align-item_customs: stretch;
         grid-template-areas:
-          "field cta"
-          "value value"
-          "description-cont description-cont";
+          "field lockTranslation cta"
+          "value value value"
+          "description-cont description-cont description-cont";
 
         .field {
           grid-area: field;
@@ -62,15 +62,21 @@
             color: $primary;
           }
         }
+        
+      .lockTranslation {
+        align-self: end;
+        display: grid;
+        grid-area: lockTranslation;
+        margin: auto;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        align-items: baseline;
+        padding: 0 4px;
+      }
 
         .cta {
           align-self: center;
           grid-area: cta;
-          display: grid;
-          grid-auto-columns: auto;
-          grid-template-columns: auto auto;
-          gap: 0 8px;
-          align-items: stretch;
 
           .i-arrow {
             width: 18px;
@@ -191,7 +197,7 @@
     // Description
     .cnt_row2 {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto auto;
       grid-template-rows: 18px repeat(2, auto);
       grid-auto-columns: 1fr;
       gap: 4px 4px;
@@ -201,9 +207,9 @@
       justify-item_customs: stretch;
       align-item_customs: stretch;
       grid-template-areas:
-        "field cta"
-        "value value"
-        "description-cont description-cont";
+        "field lockTranslation cta"
+        "value value value"
+        "description-cont description-cont description-cont";
 
       .field {
         grid-area: field;
@@ -214,14 +220,20 @@
         }
       }
 
+      .lockTranslation {
+        align-self: end;
+        display: grid;
+        grid-area: lockTranslation;
+        margin: auto;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        align-items: baseline;
+        padding: 0 4px;
+      }
+
       .cta {
         align-self: center;
         grid-area: cta;
-        display: grid;
-        grid-auto-columns: auto;
-        grid-template-columns: auto auto;
-        gap: 0 8px;
-        align-items: stretch;
 
         .i-arrow {
           width: 18px;
