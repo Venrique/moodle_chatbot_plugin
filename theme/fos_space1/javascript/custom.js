@@ -68,6 +68,7 @@ require(["jquery"], function ($) {
               $("#scroll").fadeOut();
           }
       });
+
       $("#scroll").click(function () {
           $("html, body").animate({scrollTop: 0}, 600);
           return false;
@@ -188,21 +189,21 @@ require(["jquery"], function ($) {
           }
 
           targetLanguages.forEach(function (targetLang) {
-              translateText(origin.text(), '', targetLang, function (error, translatedText) {
+              translateText(origin.val(), '', targetLang, function (error, translatedText) {
                   if (error) {
                       console.error("Translation error:", error);
                   } else {
                       if (targetLang === "EN") {
-                          descEN.text(translatedText);
+                          descEN.val(translatedText);
                       }
                       if (targetLang === "ES") {
-                          descES.text(translatedText);
+                          descES.val(translatedText);
                       }
                       if (targetLang === "FR") {
-                          descFR.text(translatedText);
+                          descFR.val(translatedText);
                       }
                       if (targetLang === "PT") {
-                          descPT.text(translatedText);
+                          descPT.val(translatedText);
                       }
                   }
               });
