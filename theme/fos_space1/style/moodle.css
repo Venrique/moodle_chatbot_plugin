@@ -542,6 +542,11 @@ h5 {
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
   grid-area: cta;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: auto auto;
+  gap: 0 8px;
+  align-items: stretch;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta .i-arrow {
   width: 18px;
@@ -660,6 +665,11 @@ h5 {
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
   grid-area: cta;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: auto auto;
+  gap: 0 8px;
+  align-items: stretch;
 }
 .custom_form .item_custom .cnt_row2 .cta .i-arrow {
   width: 18px;

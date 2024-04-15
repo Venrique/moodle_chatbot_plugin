@@ -66,6 +66,11 @@
         .cta {
           align-self: center;
           grid-area: cta;
+          display: grid;
+          grid-auto-columns: auto;
+          grid-template-columns: auto auto;
+          gap: 0 8px;
+          align-items: stretch;
 
           .i-arrow {
             width: 18px;
@@ -212,6 +217,11 @@
       .cta {
         align-self: center;
         grid-area: cta;
+        display: grid;
+        grid-auto-columns: auto;
+        grid-template-columns: auto auto;
+        gap: 0 8px;
+        align-items: stretch;
 
         .i-arrow {
           width: 18px;
