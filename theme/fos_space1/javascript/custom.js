@@ -93,8 +93,10 @@ require(["jquery"], function ($) {
       $("#expertmode").click(function() {
           if(hidden){
               $('[hidden]').removeAttr('hidden');
+              hidden=false;
           }else{
               $(".lockTranslation").attr('hidden', true);
+              hidden=true;
           }
 
       });
