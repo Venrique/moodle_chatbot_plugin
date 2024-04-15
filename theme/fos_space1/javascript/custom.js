@@ -189,21 +189,21 @@ require(["jquery"], function ($) {
           }
 
           targetLanguages.forEach(function (targetLang) {
-              translateText(origin.val(), '', targetLang, function (error, translatedText) {
+              translateText(origin.text(), '', targetLang, function (error, translatedText) {
                   if (error) {
                       console.error("Translation error:", error);
                   } else {
                       if (targetLang === "EN") {
-                          descEN.val(translatedText);
+                          descEN.text(translatedText);
                       }
                       if (targetLang === "ES") {
-                          descES.val(translatedText);
+                          descES.text(translatedText);
                       }
                       if (targetLang === "FR") {
-                          descFR.val(translatedText);
+                          descFR.text(translatedText);
                       }
                       if (targetLang === "PT") {
-                          descPT.val(translatedText);
+                          descPT.text(translatedText);
                       }
                   }
               });
