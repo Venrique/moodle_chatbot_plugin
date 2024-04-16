@@ -90,7 +90,7 @@ require(["jquery"], function ($) {
 
       var hidden = true;
 
-      $("#expertmode").click(function() {
+      $("#expertmode").find('mod-data-input mr-1').click(function() {
           if(hidden){
               $('[hidden]').removeAttr('hidden');
               hidden=false;
