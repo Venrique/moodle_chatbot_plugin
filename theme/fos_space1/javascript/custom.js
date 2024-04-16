@@ -110,6 +110,7 @@ require(["jquery"], function ($) {
       });
 
       //AUTOMATIC TRANSLATION OF TEXT
+      $("#description").on('focusout', translateDescriptions);
       $("#descriptionEN").on('focusout', translateDescriptions);
       $("#descriptionES").on('focusout', translateDescriptions);
       $("#descriptionFR").on('focusout', translateDescriptions);
