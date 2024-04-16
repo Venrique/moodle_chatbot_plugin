@@ -96,9 +96,11 @@ require(["jquery"], function ($) {
               hidden=false;
           }else{
               $(".lockTranslation").attr('hidden', true);
+              $("#titleEN").attr('hidden', true);
               $("#titleES").attr('hidden', true);
               $("#titleFR").attr('hidden', true);
               $("#titlePT").attr('hidden', true);
+              $("#descEN").attr('hidden', true);
               $("#descES").attr('hidden', true);
               $("#descFR").attr('hidden', true);
               $("#descPT").attr('hidden', true);
@@ -113,6 +115,7 @@ require(["jquery"], function ($) {
       $("#descriptionFR").on('focusout', translateDescriptions);
       $("#descriptionPT").on('focusout', translateDescriptions);
 
+      $("#titleDiv").on('focusout', translateTitles);
       $("#titleDivEN").on('focusout', translateTitles);
       $("#titleDivES").on('focusout', translateTitles);
       $("#titleDivFR").on('focusout', translateTitles);
