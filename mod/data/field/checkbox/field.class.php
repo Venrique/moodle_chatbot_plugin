@@ -85,7 +85,7 @@ class data_field_checkbox extends data_field_base {
 
             $categorycontext = context_coursecat::instance(2);
 
-            echo($SESSION);
+            echo(json_encode($SESSION));
 
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
