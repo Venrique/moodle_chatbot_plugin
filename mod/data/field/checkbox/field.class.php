@@ -84,7 +84,7 @@ class data_field_checkbox extends data_field_base {
             }
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
-            $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
+            $str .= 'value="' . s($this->context) . '" class="mod-data-input mr-1" ';
 
             if (array_search($checkbox, $content) !== false) {
                 $str .= 'checked />';
