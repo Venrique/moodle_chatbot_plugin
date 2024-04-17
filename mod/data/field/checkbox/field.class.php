@@ -83,9 +83,7 @@ class data_field_checkbox extends data_field_base {
                 continue; // skip empty lines
             }
 
-            $category = get_category( get_query_var( 'cat' ) );
-            $cat_id = $category->cat_ID;
-            $categorycontext = context_coursecat::instance($cat_id);
+            $categorycontext = context_coursecat::instance(2);
 
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
