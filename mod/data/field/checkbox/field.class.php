@@ -99,9 +99,9 @@ class data_field_checkbox extends data_field_base {
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
             if ($expertmodeEnabled){
-                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled';
-            }else{
                 $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
+            }else{
+                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled ';
             }
 
 
