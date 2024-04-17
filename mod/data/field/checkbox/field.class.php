@@ -76,7 +76,13 @@ class data_field_checkbox extends data_field_base {
             $str .= '</span></legend>';
         }
 
-        echo(json_encode($SESSION));
+        //echo(json_encode($SESSION));
+
+        if (has_capability('theme/fos_space1:usedatabaseexpertmode', $SESSION->context)) {
+            echo "TEST";
+        }else{
+            echo "FAILED";
+        }
 
         $i = 0;
         foreach (explode("\n", $this->field->param1) as $checkbox) {
