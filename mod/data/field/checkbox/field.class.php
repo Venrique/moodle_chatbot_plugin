@@ -76,16 +76,16 @@ class data_field_checkbox extends data_field_base {
             $str .= '</span></legend>';
         }
 
+        $categorycontext = context_coursecat::instance(2);
+
+        echo((string)has_capability('theme/fos_space1:usedatabaseexpertmode',$categorycontext));
+
         $i = 0;
         foreach (explode("\n", $this->field->param1) as $checkbox) {
             $checkbox = trim($checkbox);
             if ($checkbox === '') {
                 continue; // skip empty lines
             }
-
-            $categorycontext = context_coursecat::instance(2);
-
-            echo((string)has_capability('theme/fos_space1:usedatabaseexpertmode',$categorycontext));
 
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
