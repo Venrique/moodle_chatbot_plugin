@@ -13,6 +13,8 @@ $string['logintext_desc'] = 'Text to be displayed in the login page as additiona
 $string['available'] = 'Available';
 $string['displaysummary'] = "Display summary";
 
+$string['fos_space1:usedatabaseexpertmode'] = "Use the expert mode on the database activity";
+
 /* Landing page 
    - Slider component
 */
