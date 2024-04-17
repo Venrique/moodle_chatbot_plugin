@@ -73,6 +73,8 @@ comment::init();
 
 require_capability('mod/data:viewentry', $context);
 
+$SESSION->context = $context;
+
 /// Check further parameters that set browsing preferences
 if (!isset($SESSION->dataprefs)) {
     $SESSION->dataprefs = array();
