@@ -68,6 +68,7 @@ require(["jquery"], function ($) {
               $("#scroll").fadeOut();
           }
       });
+
       $("#scroll").click(function () {
           $("html, body").animate({scrollTop: 0}, 600);
           return false;
@@ -87,12 +88,35 @@ require(["jquery"], function ($) {
           }
       });
 
+      var hidden = true;
+
+      $("#expertmode").find('.mod-data-input.mr-1').click(function() {
+          if(hidden){
+              $('[hidden]').removeAttr('hidden');
+              hidden=false;
+          }else{
+              $(".lockTranslation").attr('hidden', true);
+              $("#titleEN").attr('hidden', true);
+              $("#titleES").attr('hidden', true);
+              $("#titleFR").attr('hidden', true);
+              $("#titlePT").attr('hidden', true);
+              $("#descEN").attr('hidden', true);
+              $("#descES").attr('hidden', true);
+              $("#descFR").attr('hidden', true);
+              $("#descPT").attr('hidden', true);
+              hidden=true;
+          }
+
+      });
+
       //AUTOMATIC TRANSLATION OF TEXT
+      $("#description").on('focusout', translateDescriptions);
       $("#descriptionEN").on('focusout', translateDescriptions);
       $("#descriptionES").on('focusout', translateDescriptions);
       $("#descriptionFR").on('focusout', translateDescriptions);
       $("#descriptionPT").on('focusout', translateDescriptions);
 
+      $("#titleDiv").on('focusout', translateTitles);
       $("#titleDivEN").on('focusout', translateTitles);
       $("#titleDivES").on('focusout', translateTitles);
       $("#titleDivFR").on('focusout', translateTitles);

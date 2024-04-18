@@ -13,13 +13,15 @@ $string['logintext_desc'] = 'Texto que se mostrará en la página de inicio de s
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Mostrar resumen";
 
+$string['fos_space1:usedatabaseexpertmode'] = "Usar el modo experto en la actividad base de datos";
+
 /* Landing page 
    - Slider component
 */
 
 $string['slider1text'] = "<span class='slider_clour_text_white'>Bienvenido a <br/>la comunidad<br/>Fòs Feminista</span> <br/><span class='slider_clour_text_orange'>de aprendizaje virtual</span>";
 $string['slider2text'] = "<span class='slider_clour_text_white'>Esta es una herramienta para </span><span class='slider_clour_text_green'>aprendizaje <br/>mutuo, </span><span class='slider_clour_text_white'>colaboración y <br/ >intercambiar para que podamos aprender <br/>unas de otras y seguir</span><br/><span class='slider_clour_text_orange'>cultivar la solidaridad feminista</span><span class='slider_clour_text_white'>.</span>";
-$string['slider2text'] = "<span class='slider_clour_text_white'>Juntos, aprovechamos nuestro </span><span class='slider_clour_text_green'>conocimiento <br/>colectivo </span><span class='slider_clour_text_white'>y </span><span class='slider_clour_text_green'>experiencia</span><span class='slider_clour_text_white'>, somos un <br/>movimiento fuerte comprometido con</span><br/><span class='slider_clour_text_orange'>crear un mundo mejor </span><span class='slider_clour_text_white'>para mujeres, <br>niñas y personas de género diverso.</span>";
+$string['slider3text'] = "<span class='slider_clour_text_white'>Juntos, aprovechamos nuestro </span><span class='slider_clour_text_green'>conocimiento <br/>colectivo </span><span class='slider_clour_text_white'>y </span><span class='slider_clour_text_green'>experiencia</span><span class='slider_clour_text_white'>, somos un <br/>movimiento fuerte comprometido con</span><br/><span class='slider_clour_text_orange'>crear un mundo mejor </span><span class='slider_clour_text_white'>para mujeres, <br>niñas y personas de género diverso.</span>";
 
 
 /* Landing page 

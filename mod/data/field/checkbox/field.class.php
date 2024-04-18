@@ -76,15 +76,34 @@ class data_field_checkbox extends data_field_base {
             $str .= '</span></legend>';
         }
 
+        //echo(json_encode($SESSION));
+        $expertmodeEnabled = false;
+
+        if($this->field->name === "ExpertMode"){
+            if (has_capability('theme/fos_space1:usedatabaseexpertmode', $SESSION->context)) {
+                $expertmodeEnabled = true;
+            }
+        }
+
+
         $i = 0;
         foreach (explode("\n", $this->field->param1) as $checkbox) {
             $checkbox = trim($checkbox);
             if ($checkbox === '') {
                 continue; // skip empty lines
             }
+
+            //$categorycontext = context_coursecat::instance(2);
+
+
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
-            $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
+            if ($expertmodeEnabled){
+                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
+            }else{
+                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
+            }
+
 
             if (array_search($checkbox, $content) !== false) {
                 $str .= 'checked />';
