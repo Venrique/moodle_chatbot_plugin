@@ -13,14 +13,14 @@ $string['logintext_desc'] = 'Texte à afficher sur la page de connexion comme te
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Afficher le résumé";
 
-$string['fos_space1:usedatabaseexpertmode'] = "Utilizar o modo especialista na atividade da base de dados";
+$string['fos_space1:usedatabaseexpertmode'] = "Utiliser le mode expert sur l'activité de la base de données";
 
 /* Landing page 
    - Slider component
 */
 $string['slider1text'] = "<span class='slider_clour_text_white'>Bienvenue dans <br/>la <br/>Fòs Feminista</span> <br/><span class='slider_clour_text_orange'>apprentissage virtuel <br/>communauté</span>";
 $string['slider2text'] = "<span class='slider_clour_text_white'>Il s'agit d'un outil d'</span><span class='slider_clour_text_green'>d'apprentissage mutuel <br/>, </span><span class='slider_clour_text_white'>de collaboration et <br/ >échanger afin que nous puissions <br/>apprendre les uns des autres et aller plus loin</span><br/><span class='slider_clour_text_orange'>cultiver la solidarité féministe</span><span class='slider_clour_text_white'>.</span>";
-$string['slider2text'] = "<span class='slider_clour_text_white'>Ensemble, tirons parti de nos </span><span class='slider_clour_text_green'>connaissances <br/>collectives </span><span class='slider_clour_text_white'>et </span><span class='slider_clour_text_green'>expertise</span><span class='slider_clour_text_white'>, nous sommes un <br/>mouvement fort engagé à</span><br/><span class='slider_clour_text_orange'>créer un meilleur monde </span><span class='slider_clour_text_white'>pour les femmes, <br>filles et les personnes de divers genres.</span>";
+$string['slider3text'] = "<span class='slider_clour_text_white'>Ensemble, tirons parti de nos </span><span class='slider_clour_text_green'>connaissances <br/>collectives </span><span class='slider_clour_text_white'>et </span><span class='slider_clour_text_green'>expertise</span><span class='slider_clour_text_white'>, nous sommes un <br/>mouvement fort engagé à</span><br/><span class='slider_clour_text_orange'>créer un meilleur monde </span><span class='slider_clour_text_white'>pour les femmes, <br>filles et les personnes de divers genres.</span>";
 
 /* Landing page 
    - Categories component
