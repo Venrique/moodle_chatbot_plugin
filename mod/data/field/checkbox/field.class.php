@@ -101,8 +101,7 @@ class data_field_checkbox extends data_field_base {
             if ($expertmodeEnabled){
                 $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
             }else{
-                //$str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
-                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled style="visibility:hidden;" ';
+                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
             }
 
 
