@@ -13,8 +13,6 @@ $string['logintext_desc'] = 'Texte à afficher sur la page de connexion comme te
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Afficher le résumé";
 
-$string['fos_space1:usedatabaseexpertmode'] = "Utiliser le mode expert sur l'activité de la base de données";
-
 /* Landing page 
    - Slider component
 */

@@ -244,7 +244,6 @@ h5 {
   background-image: url('data:image/svg+xml,<svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" width="38" height="38" rx="19" fill="white"/><g clip-path="url(%23clip0_325_1122)"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4617 8.5H23.4617V10.5H21.4617V16.5H20.4617V10.5H18.4617V16.5H17.4617V10.5H15.4617V8.5Z" fill="%235C3873"/><path d="M10.4616 26.5L17.4616 16.5L18.4616 10.5H20.4616L21.4616 16.5L28.4616 26.5C29.0227 28.2677 28.9146 28.9976 27.4616 29.5H11.4616C10.1663 28.7584 9.99196 28.0854 10.4616 26.5Z" fill="%235C3873"/><path d="M14.1389 22.5L18.4618 16.5V10.5H20.4618V16.5L24.4507 22.4214C23.0841 22.563 22.5076 22.0153 21.0546 22.5176C19.6514 22.8851 18.865 22.8428 17.4618 22.5176C16.1665 21.776 15.6027 22.4824 14.1389 22.5Z" fill="white"/></g><defs><clipPath id="clip0_325_1122"><rect width="18.5518" height="21" fill="white" transform="translate(10.2241 8.5)"/></clipPath></defs></svg>');
 }
 
-
 .icon-blog {
   width: 38px;
   height: 38px;
@@ -6200,6 +6199,9 @@ a.ygtvspacer:hover {
   background-color: #f3eff5;
 }
 
+#page.drawers {
+  margin-bottom: 0;
+}
 #page.drawers .main-inner {
   background-color: #f3eff5;
 }
@@ -6483,6 +6485,10 @@ body #page-wrapper #page #region-main {
 .dropdown a {
   color: #5c3873;
   text-decoration: none;
+}
+
+div#sticky-footer {
+  position: static;
 }
 
 /*# sourceMappingURL=moodle.css.map */

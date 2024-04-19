@@ -13,8 +13,6 @@ $string['logintext_desc'] = 'Texto que se mostrará en la página de inicio de s
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Mostrar resumen";
 
-$string['fos_space1:usedatabaseexpertmode'] = "Usar el modo experto en la actividad base de datos";
-
 /* Landing page 
    - Slider component
 */

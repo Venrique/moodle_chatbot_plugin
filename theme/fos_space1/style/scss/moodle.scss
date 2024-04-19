@@ -238,6 +238,7 @@ body {
     #region-main {
       background-color: $body-bg;
     }
+
   }
 }}
 
@@ -312,4 +313,9 @@ body {
     color: $primary;
     text-decoration: none;
   }
+}
+
+
+div#sticky-footer {
+  position: static;
 }
