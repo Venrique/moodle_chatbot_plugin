@@ -13,14 +13,12 @@ $string['logintext_desc'] = 'Texto a ser exibido na página de login como texto 
 $string['available'] = 'Disponível';
 $string['displaysummary'] = "Exibir resumo";
 
-$string['fos_space1:usedatabaseexpertmode'] = "Utilizar o modo especialista na atividade da base de dados";
-
 /* Landing page 
    - Slider component
 */
 $string['slider1text'] = "<span class='slider_clour_text_white'>Bem-vindo à <br/>comunidade Fòs Feminista</span> <br/><span class='slider_clour_text_orange'>comunidade <br/>de aprendizagem virtual</span>";
 $string['slider2text'] = "<span class='slider_clour_text_white'>Esta é uma ferramenta para </span><span class='slider_clour_text_green'>aprendizado <br/>mútuo, </span><span class='slider_clour_text_white'>colaboração e <br/ >trocar para que possamos aprender <br/>umas com as outras e</span><br/><span class='slider_clour_text_orange'>cultivar a solidariedade feminista</span><span class='slider_clour_text_white'>.</span>";
-$string['slider3text'] = "<span class='slider_clour_text_white'>Juntos, aproveitamos nosso </span><span class='slider_clour_text_green'>conhecimento <br/>coletivo </span><span class='slider_clour_text_white'>e </span><span class='slider_clour_text_green'>especialização</span><span class='slider_clour_text_white'>, somos um <br/>movimento forte comprometido em</span><br/><span class='slider_clour_text_orange'>criar um mundo melhor mundo </span><span class='slider_clour_text_white'>para mulheres, <br>meninas e pessoas com diversidade de gênero.</span>";
+$string['slider2text'] = "<span class='slider_clour_text_white'>Juntos, aproveitamos nosso </span><span class='slider_clour_text_green'>conhecimento <br/>coletivo </span><span class='slider_clour_text_white'>e </span><span class='slider_clour_text_green'>especialização</span><span class='slider_clour_text_white'>, somos um <br/>movimento forte comprometido em</span><br/><span class='slider_clour_text_orange'>criar um mundo melhor mundo </span><span class='slider_clour_text_white'>para mulheres, <br>meninas e pessoas com diversidade de gênero.</span>";
 
 /* Landing page 
    - Categories component

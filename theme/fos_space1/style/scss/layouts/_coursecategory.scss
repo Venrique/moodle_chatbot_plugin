@@ -53,35 +53,25 @@
 
   .cta-btns {
     grid-area: cta-btns;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-auto-columns: 1fr;
-    gap: 0px 32px;
-    grid-auto-flow: row;
-    justify-content: stretch;
-    align-content: stretch;
-    justify-items: stretch;
-    align-items: stretch;
-    margin: 10px auto;
-    grid-template-areas: "cta-left cta-middle cta-right";
-    width: fit-content;
-    .cta-left {
-      justify-self: end;
-      align-self: center;
-      grid-area: cta-left;
-    }
 
-    .cta-middle {
-      justify-self: center;
-      align-self: center;
-      grid-area: cta-middle;
-    }
+    .cta-btns-cont {
+      width: max-content;
+      height: auto;
+      margin: 0 auto;
+      .cta-left {
+        margin: 8px 4px;
+        float: left;
+      }
 
-    .cta-right {
-      justify-self: start;
-      align-self: center;
-      grid-area: cta-right;
+      .cta-center {
+        margin: 8px 4px;
+        float: left;
+      }
+
+      .cta-right {
+        margin: 8px 4px;
+        float: left;
+      }
     }
   }
 
@@ -94,6 +84,6 @@
   visibility: hidden;
 }
 
-.course_category_tree{
+.course_category_tree {
   display: none;
 }
