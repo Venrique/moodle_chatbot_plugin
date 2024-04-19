@@ -6199,6 +6199,9 @@ a.ygtvspacer:hover {
   background-color: #f3eff5;
 }
 
+#page.drawers {
+  margin-bottom: 0;
+}
 #page.drawers .main-inner {
   background-color: #f3eff5;
 }
@@ -6419,12 +6422,6 @@ body #page-wrapper #page div.grid-category {
 body #page-wrapper #page #region-main {
   background-color: #f3eff5;
 }
-body #page-wrapper #page .drawers .hasstickyfooter {
-  margin-bottom: 0;
-}
-body #page-wrapper #page #sticky-footer {
-  position: static;
-}
 
 .popover.footer .popover-body {
   padding: 0;
@@ -6488,6 +6485,10 @@ body #page-wrapper #page #sticky-footer {
 .dropdown a {
   color: #5c3873;
   text-decoration: none;
+}
+
+div#sticky-footer {
+  position: static;
 }
 
 /*# sourceMappingURL=moodle.css.map */
