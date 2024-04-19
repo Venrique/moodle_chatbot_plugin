@@ -238,6 +238,14 @@ body {
     #region-main {
       background-color: $body-bg;
     }
+
+    .drawers .hasstickyfooter {
+      margin-bottom: 0;
+    }
+
+    #sticky-footer {
+      position: static;
+    }
   }
 }}
 
