@@ -1,0 +1,321 @@
+// -------------------------------
+// Custom
+@import "base/mixins";
+@import "base/variables";
+@import "base/typography";
+@import "base/categories";
+@import "base/images";
+
+@import "layouts/footer";
+@import "layouts/login";
+@import "layouts/coursecategory";
+@import "layouts/addentry";
+@import "layouts/singleview";
+@import "layouts/listview";
+@import "layouts/wiki";
+
+@import "components/navBar";
+@import "components/buttons";
+@import "components/table";
+@import "components/owl_carousel.scss";
+
+@import "components/bootstrap/card";
+
+@import "components/moodle/core";
+@import "components/moodle/variables";
+@import "components/moodle/blocks";
+@import "components/moodle/drawer.scss";
+@import "components/moodle/filemanager";
+@import "components/moodle/advancedsearch";
+
+@import "layouts/layout.scss";
+
+.coursesearchbox {
+  padding: 0.5rem;
+  border: 1px solid $primary;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.adress span,
+.contact span,
+.social span {
+  color: #fff;
+  font-weight: 800;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.adress li p,
+.contact li a,
+.social li a {
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.social li {
+  float: left;
+}
+
+.adress,
+.contact,
+.social {
+  list-style: none;
+}
+
+.block_calendar_month {
+  .card-body {
+    background-color: rgba ($white, 0.5);
+    //@include font-body("Isidora Sans Regular", 1rem);
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  border: 1px solid $FOS-Aubergine-bk;
+  &:hover {
+    background-color: $FOS-Aubergine-bk;
+    color: $primary;
+    border-color: $primary;
+  }
+}
+
+a {
+  color: $FOS-Caribbean-Green;
+}
+a.hover {
+  color: $primary;
+}
+.calendartable {
+  color: $primary;
+}
+
+.form-control {
+  border-color: $primary;
+}
+.search-icon {
+  border: 1px solid $primary;
+}
+.btn-outline-secondary {
+  color: $FOS-Aubergine-bk;
+  background-color: $primary;
+}
+
+.pair-key {
+  color: $primary;
+}
+
+table {
+  margin-top: 20px;
+}
+
+.custom-select {
+  border-color: $primary;
+}
+// todo
+.custom-select.singleselect {
+  color: $primary;
+}
+
+.input-group-append {
+  .btn-submit {
+    border: 1px solid $primary;
+  }
+}
+
+.dropdown-menu {
+  .dropdown-item:hover {
+    background-color: $primary;
+  }
+  .dropdown-item.active {
+    background-color: $primary;
+  }
+}
+//------
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    background-color: $red;
+    color: $white;
+    border-color: $black;
+  }
+}
+
+.alert-warning {
+  background-color: #ddd3e1 !important;
+}
+
+.alert-warning,
+.environmenttable .warn {
+  margin-top: 8px;
+  padding: 8px;
+  color: #7d5a29;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.drawer-right {
+  background-color: #f3eff5;
+  border-left: 1px solid #ddd3e1;
+  .card-body {
+    background-color: #f3eff5;
+    border: none;
+  }
+}
+
+.drawer-left {
+  background-color: #f3eff5;
+  border-right: 1px solid #ddd3e1;
+}
+
+.courseindex {
+  .courseindex-section {
+    .pageitem {
+      background-color: #5c3873;
+      &:hover {
+        background-color: #ddd3e1;
+        a {
+          color: #5c3873 !important;
+        }
+      }
+    }
+
+    .courseindex-item-content {
+      .pageitem {
+        background-color: #5c3873;
+        &:hover {
+          background-color: #ddd3e1;
+          a {
+            color: #5c3873 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  @include font-body("Isidora Sans Regular");
+  background-color: $FOS-Aubergine-bk;
+  #page-wrapper {
+  min-height: auto;
+  #page {
+    background-color: $FOS-Aubergine-bk;
+    min-height: fit-content;
+    #page-content {
+      background-color: $body-bg;
+    }
+
+    .main-inner {
+      background-color: $body-bg;    
+      padding: 0 0.5rem 1.5rem !important;
+      max-width: 1320px !important;
+      margin-top: 0;
+      min-height: 86vh;
+      margin-bottom: 0;
+      .header-maxwidth {
+        max-width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    }
+
+    div.grid-category {
+      padding: 0 .5rem 1.5rem !important;
+      max-width: 1320px !important;
+      width: 100%;
+  }
+
+
+    #region-main {
+      background-color: $body-bg;
+    }
+
+  }
+}}
+
+.popover.footer {
+  .popover-body {
+    padding: 0;
+    .footer-section {
+      a {
+        color: $FOS-Caribbean-Green;
+        text-decoration: none;
+        .icon {
+          color: $FOS-Caribbean-Green;
+        }
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.btn-link {
+  color: $FOS-Caribbean-Green !important;
+  text-decoration: none;
+
+  .icon {
+    color: $FOS-Caribbean-Green;
+  }
+}
+
+.bnt-custom-exp {
+  margin-bottom: 20px !important;
+}
+
+.navbar-brand .logo {
+  display: none;
+}
+
+.navbar-brand::after {
+  content: "";
+  display: block;
+  background-image: url([[pix:theme|navbarlogospace1]]) !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 31px;
+}
+
+#frontpage-category-names {
+  visibility: hidden;
+}
+
+.mycateg_content {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  padding: 50px 0;
+  background-color: $activity-icon-administration-bg;
+  .custom_cat {
+    float: left;
+    width: 190px;
+    height: 194px;
+    margin: 0 4px;
+    background-color: $activity-icon-assessment-bg;
+  }
+}
+
+
+
+.dropdown {
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+
+div#sticky-footer {
+  position: static;
+}
