@@ -1,0 +1,22 @@
+#owl-carousel_slider {
+
+  font-size: clamp(14px, 1.8vw, 30px);
+
+  .item {
+    position: relative;
+      .title {
+        position: absolute;
+        top: 20%;
+        left: 5%;
+      }
+  }
+}
+.slider_clour_text_white {
+  color: $white;
+}
+.slider_clour_text_orange {
+  color: $orange;
+}
+.slider_clour_text_green {
+  color: $green;
+}
