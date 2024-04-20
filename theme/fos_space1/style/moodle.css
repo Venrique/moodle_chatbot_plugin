@@ -6489,7 +6489,7 @@ body #page-wrapper #page #region-main {
 .path-grade-report-grader .gradeparent {
   overflow: auto;
 }
-.path-grade-report-grader .gradeparent .path-grade-report-grader .gradeparent th.header {
+.path-grade-report-grader .gradeparent th.header {
   position: relative;
 }
 
