@@ -6391,6 +6391,7 @@ body {
   background-color: #f3eff5;
 }
 body #page-wrapper {
+  display: inline;
   min-height: auto;
 }
 body #page-wrapper #page {
@@ -6495,6 +6496,12 @@ body #page-wrapper #page #region-main {
 
 table#user-grades {
   display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: relative;
+  bottom: 0;
+  height: auto;
 }
 
 /*# sourceMappingURL=moodle.css.map */
