@@ -305,11 +305,21 @@ body {
   }
 }
 
-
-
 .dropdown {
   a {
     color: $primary;
     text-decoration: none;
   }
+}
+
+/*Grade view table*/
+.path-grade-report-grader .gradeparent {
+  overflow: auto;
+  .path-grade-report-grader .gradeparent th.header {
+    position: relative;
+}
+}
+
+table#user-grades{
+  display: inline;
 }
