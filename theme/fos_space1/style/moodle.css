@@ -6509,16 +6509,16 @@ table#user-grades {
 table#outlinetable {
   display: block;
 }
-table#outlinetable td.activity.cell.c0 {
+table#outlinetable .c0 {
   padding: 0.75rem;
 }
-table#outlinetable td.activity.cell.c1 {
+table#outlinetable .c1 {
   padding: 0.75rem;
 }
-table#outlinetable td.activity.cell.c2 {
+table#outlinetable .c2 {
   padding: 0.75rem;
 }
-table#outlinetable td.activity.cell.c3 {
+table#outlinetable .c3 {
   padding: 0.75rem;
 }
 
