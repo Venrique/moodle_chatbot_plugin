@@ -6509,5 +6509,17 @@ table#user-grades {
 table#outlinetable {
   display: block;
 }
+table#outlinetable td.activity.cell.c0 {
+  padding: 0.75rem;
+}
+table#outlinetable td.activity.cell.c1 {
+  padding: 0.75rem;
+}
+table#outlinetable td.activity.cell.c2 {
+  padding: 0.75rem;
+}
+table#outlinetable td.activity.cell.c3 {
+  padding: 0.75rem;
+}
 
 /*# sourceMappingURL=moodle.css.map */
