@@ -6505,4 +6505,9 @@ table#user-grades {
   height: auto;
 }
 
+/*report view  table*/
+table#outlinetable {
+  display: block;
+}
+
 /*# sourceMappingURL=moodle.css.map */
