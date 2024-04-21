@@ -6397,6 +6397,7 @@ body #page-wrapper {
 body #page-wrapper #page {
   background-color: #f3eff5;
   min-height: fit-content;
+  margin-bottom: 0;
 }
 body #page-wrapper #page #page-content {
   background-color: #f3eff5;
@@ -6532,19 +6533,19 @@ table#outlinetable .c3 {
   display: inline-table;
   max-width: auto;
 }
-.boxaligncenter.boxwidthwide .cell .c0 {
+.boxaligncenter.boxwidthwide .c0 {
   padding: 0.75rem;
   vertical-align: middle;
 }
-.boxaligncenter.boxwidthwide .cell .c1 {
+.boxaligncenter.boxwidthwide .c1 {
   padding: 0.75rem;
   vertical-align: middle;
 }
-.boxaligncenter.boxwidthwide .cell .c2 {
+.boxaligncenter.boxwidthwide .c2 {
   padding: 0.75rem;
   vertical-align: middle;
 }
-.boxaligncenter.boxwidthwide .cell .c3 {
+.boxaligncenter.boxwidthwide .c3 {
   padding: 0.75rem;
   vertical-align: middle;
 }
