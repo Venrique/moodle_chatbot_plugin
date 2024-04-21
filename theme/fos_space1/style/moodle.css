@@ -6080,7 +6080,7 @@ a.ygtvspacer:hover {
 }
 
 .boxaligncenter {
-  width: 83% !important;
+  width: 83%;
   display: inline-grid;
 }
 .boxaligncenter tbody {
