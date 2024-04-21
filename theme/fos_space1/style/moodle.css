@@ -6503,6 +6503,7 @@ table#user-grades {
   position: relative;
   bottom: 0;
   height: auto;
+  margin-top: 1.5vh;
 }
 
 /*report view  table*/
