@@ -6090,9 +6090,9 @@ a.ygtvspacer:hover {
   padding-bottom: 16px;
 }
 .boxaligncenter tbody tr:first-child {
-  height: 0px !important;
-  padding: 0px !important;
-  line-height: 0 !important;
+  height: 0px;
+  padding: 0px;
+  line-height: 0;
 }
 .boxaligncenter tbody tr:first-child td {
   border: none;
@@ -6193,7 +6193,7 @@ a.ygtvspacer:hover {
   float: right;
 }
 .boxaligncenter tbody tr td .btn-primary {
-  margin-right: 36px !important;
+  margin-right: 36px;
 }
 
 .layout.fullscreen {
@@ -6512,15 +6512,41 @@ table#outlinetable {
 }
 table#outlinetable .c0 {
   padding: 0.75rem;
+  vertical-align: middle;
 }
 table#outlinetable .c1 {
   padding: 0.75rem;
+  vertical-align: middle;
 }
 table#outlinetable .c2 {
   padding: 0.75rem;
+  vertical-align: middle;
 }
 table#outlinetable .c3 {
   padding: 0.75rem;
+  vertical-align: middle;
+}
+
+/*h5p report*/
+.boxaligncenter.boxwidthwide {
+  display: inline-table;
+  max-width: auto;
+}
+.boxaligncenter.boxwidthwide .cell .c0 {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+.boxaligncenter.boxwidthwide .cell .c1 {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+.boxaligncenter.boxwidthwide .cell .c2 {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+.boxaligncenter.boxwidthwide .cell .c3 {
+  padding: 0.75rem;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=moodle.css.map */
