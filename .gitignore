@@ -56,4 +56,4 @@ moodle-plugin-ci.phar
 phpcs.xml
 jsconfig.json
 botmanager/
-/theme/fos_space1/javascript/custom.js
+
