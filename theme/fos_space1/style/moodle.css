@@ -6550,4 +6550,9 @@ table#outlinetable .c3 {
   vertical-align: middle;
 }
 
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
 /*# sourceMappingURL=moodle.css.map */
