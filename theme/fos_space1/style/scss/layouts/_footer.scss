@@ -4,7 +4,6 @@
   background-color: $FOS-Flint;
   padding: 30px 20px;
   font-size: medium;
-  height: 16.5vh;
 
   .grid-footer {
     display: grid;
@@ -14,7 +13,7 @@
     gap: 8px 0px;
     grid-auto-flow: row;
     align-items: center;
-    margin-bottom: 96px;
+    /*margin-bottom: 96px;*/
     grid-template-areas:
       "footer_top"
       "footer_bottom";
