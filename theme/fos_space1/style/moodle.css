@@ -6079,29 +6079,29 @@ a.ygtvspacer:hover {
   display: none;
 }
 
-.boxaligncenter {
+#data_adv_form .boxaligncenter {
   width: 83%;
   display: inline-grid;
 }
-.boxaligncenter tbody {
+#data_adv_form .boxaligncenter tbody {
   color: #5c3873;
   font-size: 13px;
   background-color: rgba(92, 56, 115, 0.1);
   padding-bottom: 16px;
 }
-.boxaligncenter tbody tr:first-child {
+#data_adv_form .boxaligncenter tbody tr:first-child {
   height: 0px;
   padding: 0px;
   line-height: 0;
 }
-.boxaligncenter tbody tr:first-child td {
+#data_adv_form .boxaligncenter tbody tr:first-child td {
   border: none;
   padding: 0;
 }
-.boxaligncenter tbody tr td {
+#data_adv_form .boxaligncenter tbody tr td {
   border: none;
 }
-.boxaligncenter tbody tr td .advancesearch {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr;
@@ -6110,32 +6110,32 @@ a.ygtvspacer:hover {
   width: auto;
   padding: 8px 16px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
   width: 100%;
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
   background-color: #f3eff5;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
   width: 100%;
   border: 1px solid #5c3873;
   border-radius: 0;
@@ -6143,56 +6143,56 @@ a.ygtvspacer:hover {
   background-color: #f3eff5;
   padding: 8px 10px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
   height: 65%;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
   width: 100%;
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
   background-color: #f3eff5;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
   width: 100%;
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
   background-color: #f3eff5;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
   /*display: flex;
   flex-flow: row wrap;
   width: 60%;
   align-items: center;*/
   gap: 5px 5px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
   margin-right: 4px;
 }
-.boxaligncenter tbody tr td .btn {
+#data_adv_form .boxaligncenter tbody tr td .btn {
   margin: 0 8px;
   float: right;
 }
-.boxaligncenter tbody tr td .btn-primary {
+#data_adv_form .boxaligncenter tbody tr td .btn-primary {
   margin-right: 36px;
 }
 
@@ -6487,19 +6487,18 @@ body #page-wrapper #page #region-main {
   text-decoration: none;
 }
 
-/*Grade view table*/
+/*Grade view table
 .path-grade-report-grader .gradeparent {
   overflow: auto;
   margin-bottom: 2vh;
+  th.header {
+    position: relative;
 }
-.path-grade-report-grader .gradeparent th.header {
-  position: relative;
 }
 
-table#user-grades {
+table#user-grades{
   display: inline;
-}
-
+}*/
 .hasstickyfooter .stickyfooter {
   position: static;
   bottom: 0;
@@ -6507,86 +6506,80 @@ table#user-grades {
   margin-top: 1.5vh;
 }
 
-/*report view  table*/
+/*report view  table
 table#outlinetable {
   display: block;
-}
-table#outlinetable .c0 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-table#outlinetable .c1 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-table#outlinetable .c2 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-table#outlinetable .c3 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-
-/*h5p report*/
+  .c0{
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+  }
+  .c1{
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+  }
+  .c2{
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+  }
+  .c3{
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+  }
+}*/
+/*h5p report
 .boxaligncenter.boxwidthwide {
   display: inline-table;
   max-width: auto;
-}
-.boxaligncenter.boxwidthwide .c0 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-.boxaligncenter.boxwidthwide .c1 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-.boxaligncenter.boxwidthwide .c2 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-.boxaligncenter.boxwidthwide .c3 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
 
+  .c0 {
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+}  .c1 {
+  padding: .75rem;
+  vertical-align: middle;
+  line-height: 2;
+}  .c2 {
+  padding: .75rem;
+  vertical-align: middle;
+  line-height: 2;
+}  .c3 {
+  padding: .75rem;
+  vertical-align: middle;
+  line-height: 2;
+}
+}*/
 /* add entry button*/
 div#sticky-footer {
   position: sticky;
 }
 
-/* sucription - foro*/
+/* sucription - foro
 table#subscribers-table {
   display: inline-table;
   max-width: auto;
-}
-table#subscribers-table .c0 {
-  padding: 0.75rem;
+
+  .c0 {
+    padding: .75rem;
+    vertical-align: middle;
+    line-height: 2;
+}  .c1 {
+  padding: .75rem;
+  vertical-align: middle;
+  line-height: 2;
+}  .c2 {
+  padding: .75rem;
+  vertical-align: middle;
+  line-height: 2;
+}  .c3 {
+  padding: .75rem;
   vertical-align: middle;
   line-height: 2;
 }
-table#subscribers-table .c1 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-table#subscribers-table .c2 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
-table#subscribers-table .c3 {
-  padding: 0.75rem;
-  vertical-align: middle;
-  line-height: 2;
-}
+}*/
 
 /*# sourceMappingURL=moodle.css.map */

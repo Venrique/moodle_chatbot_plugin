@@ -314,7 +314,7 @@ body {
   }
 }
 
-/*Grade view table*/
+/*Grade view table
 .path-grade-report-grader .gradeparent {
   overflow: auto;
   margin-bottom: 2vh;
@@ -325,7 +325,7 @@ body {
 
 table#user-grades{
   display: inline;
-}
+}*/
 
 .hasstickyfooter .stickyfooter {
   position: static;
@@ -334,7 +334,7 @@ table#user-grades{
   margin-top: 1.5vh;
 }
 
- /*report view  table*/
+ /*report view  table
 table#outlinetable {
   display: block;
   .c0{
@@ -357,9 +357,9 @@ table#outlinetable {
     vertical-align: middle;
     line-height: 2;
   }
-}
+}*/
 
-/*h5p report*/
+/*h5p report
 .boxaligncenter.boxwidthwide {
   display: inline-table;
   max-width: auto;
@@ -381,14 +381,14 @@ table#outlinetable {
   vertical-align: middle;
   line-height: 2;
 }
-}
+}*/
 
 /* add entry button*/
 div#sticky-footer {
   position: sticky;
 }
 
-/* sucription - foro*/
+/* sucription - foro
 table#subscribers-table {
   display: inline-table;
   max-width: auto;
@@ -410,4 +410,4 @@ table#subscribers-table {
   vertical-align: middle;
   line-height: 2;
 }
-}
+}*/
