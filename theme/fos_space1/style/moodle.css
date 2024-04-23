@@ -6501,7 +6501,7 @@ table#user-grades {
 }
 
 .hasstickyfooter .stickyfooter {
-  position: relative;
+  position: static;
   bottom: 0;
   height: auto;
   margin-top: 1.5vh;
