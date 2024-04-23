@@ -98,10 +98,14 @@ class data_field_checkbox extends data_field_base {
 
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
-            if ($expertmodeEnabled){
+            if ($this->field->name === "ExpertMode"){
+                if($expertmodeEnabled){
+                    $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
+                }else{
+                    $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
+                }
+            }else {
                 $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
-            }else{
-                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
             }
 
 

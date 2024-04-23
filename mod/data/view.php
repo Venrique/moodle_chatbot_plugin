@@ -73,6 +73,7 @@ comment::init();
 
 require_capability('mod/data:viewentry', $context);
 
+//KTT CHANGE
 $SESSION->context = $context;
 
 /// Check further parameters that set browsing preferences
