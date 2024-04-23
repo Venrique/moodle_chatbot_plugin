@@ -6487,18 +6487,19 @@ body #page-wrapper #page #region-main {
   text-decoration: none;
 }
 
-/*Grade view table
+/*Grade view table*/
 .path-grade-report-grader .gradeparent {
   overflow: auto;
   margin-bottom: 2vh;
-  th.header {
-    position: relative;
 }
+.path-grade-report-grader .gradeparent th.header {
+  position: relative;
 }
 
-table#user-grades{
+table#user-grades {
   display: inline;
-}*/
+}
+
 .hasstickyfooter .stickyfooter {
   position: static;
   bottom: 0;
