@@ -1,18 +1,27 @@
 <div class="custom_form">
-  <!-- Title & Upload date -->
+
+  <div class="item_custom">
+    <div class="cnt_row0">
+      <input type="checkbox" id="expertmode">
+      <h6>Expert Mode</h6>
+    </div>
+  </div>
+  <!-- Title EN & Upload date -->
   <div class="item_custom">
     <div class="cnt_row1">
       <div class="col1">
         <div class="field">
           <h6>
-            {mlang en}Title:{mlang}{mlang es}Titúlo:{mlang}{mlang
-            pt}Titúlo:{mlang}{mlang fr}Titre:{mlang}
+            {mlang en}Title EN:{mlang}{mlang es}Titúlo EN:{mlang}{mlang
+            pt}Titúlo EN:{mlang}{mlang fr}Titre EN:{mlang}
           </h6>
         </div>
-        <div class="value" id="titleDiv">[[Title EN]]</div>
-        <!-- <div class="value" id="titleDiv">[[Title ES]]</div>
-                <div class="value" id="titleDiv">[[Title PT]]</div>
-                <div class="value" id="titleDiv">[[Title FR]]</div> -->
+        <div class="value" id="titleDivEN">[[Title EN]]</div>
+        <div class="lockTranslation">
+          <input type="checkbox" id="TitlelockENTranslation"
+            name="TitlelockENTranslation">
+          <label for="TitlelockENTranslation">Lock translation</label>
+        </div>
         <div class="cta">
           <div class="i-arrow down"></div>
         </div>
@@ -38,19 +47,206 @@
       </div>
     </div>
   </div>
-  <!-- Description -->
+  <!-- Title ES -->
+  <div class="item_custom">
+    <div class="cnt_row1">
+      <div class="col1">
+        <div class="field">
+          <h6>
+            {mlang en}Title ES:{mlang}{mlang es}Titúlo ES:{mlang}{mlang
+            pt}Titúlo ES:{mlang}{mlang fr}Titre ES:{mlang}
+          </h6>
+        </div>
+        <div class="value" id="titleDivES">[[Title ES]]</div>
+        <div class="lockTranslation">
+          <input type="checkbox" id="TitlelockESTranslation"
+            name="TitlelockESTranslation">
+          <label for="TitlelockESTranslation">Lock translation</label>
+        </div>
+        <div class="cta">
+          <div class="i-arrow down"></div>
+        </div>
+        <div class="description-cont">
+          <div class="description">
+            {mlang en}Enter the title of the tool or resource in less than 100
+            characters{mlang} {mlang es}Ingrese el título de la herramienta o el
+            recurso, en menos de 100 caracteres{mlang} {mlang pt}Digite o título
+            da ferramenta ou do recurso com menos de 100 caracteres{mlang}
+            {mlang fr}Saisir le titre de l'outil ou de la ressource en moins de
+            100 caractères{mlang}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Title FR -->
+  <div class="item_custom">
+    <div class="cnt_row1">
+      <div class="col1">
+        <div class="field">
+          <h6>
+            {mlang en}Title FR:{mlang}{mlang es}Titúlo FR:{mlang}{mlang
+            pt}Titúlo FR:{mlang}{mlang fr}Titre FR:{mlang}
+          </h6>
+        </div>
+        <div class="value" id="titleDivFR">[[Title FR]]</div>
+        <div class="lockTranslation">
+          <input type="checkbox" id="TitlelockFRTranslation"
+            name="TitlelockFRTranslation">
+          <label for="TitlelockFRTranslation">Lock translation</label>
+        </div>
+        <div class="cta">
+          <div class="i-arrow down"></div>
+        </div>
+        <div class="description-cont">
+          <div class="description">
+            {mlang en}Enter the title of the tool or resource in less than 100
+            characters{mlang} {mlang es}Ingrese el título de la herramienta o el
+            recurso, en menos de 100 caracteres{mlang} {mlang pt}Digite o título
+            da ferramenta ou do recurso com menos de 100 caracteres{mlang}
+            {mlang fr}Saisir le titre de l'outil ou de la ressource en moins de
+            100 caractères{mlang}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Title PT -->
+  <div class="item_custom">
+    <div class="cnt_row1">
+      <div class="col1">
+        <div class="field">
+          <h6>
+            {mlang en}Title PT:{mlang}{mlang es}Titúlo PT:{mlang}{mlang
+            pt}Titúlo PT:{mlang}{mlang fr}Titre PT:{mlang}
+          </h6>
+        </div>
+        <div class="value" id="titleDivPT">[[Title PT]]</div>
+        <div class="lockTranslation">
+          <input type="checkbox" id="TitlelockPTTranslation"
+            name="TitlelockPTTranslation">
+          <label for="TitlelockPTTranslation">Lock translation</label>
+        </div>
+        <div class="cta">
+          <div class="i-arrow down"></div>
+        </div>
+        <div class="description-cont">
+          <div class="description">
+            {mlang en}Enter the title of the tool or resource in less than 100
+            characters{mlang} {mlang es}Ingrese el título de la herramienta o el
+            recurso, en menos de 100 caracteres{mlang} {mlang pt}Digite o título
+            da ferramenta ou do recurso com menos de 100 caracteres{mlang}
+            {mlang fr}Saisir le titre de l'outil ou de la ressource en moins de
+            100 caractères{mlang}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Description EN-->
   <div class="item_custom">
     <div class="cnt_row2">
       <div class="field">
         <h6>
-          {mlang en}Description:{mlang}{mlang es}Descripción:{mlang}{mlang
-          pt}Descrição:{mlang}{mlang fr}Description:{mlang}
+          {mlang en}Description EN:{mlang}{mlang es}Descripción EN:{mlang}{mlang
+          pt}Descrição EN:{mlang}{mlang fr}Description EN:{mlang}
         </h6>
       </div>
-      <div class="value">[[Description EN]]</div>
-      <!--  <div class="value">[[Description ES]]</div>
-            <div class="value">[[Description PT]]</div>
-            <div class="value">[[Description FR]]</div> -->
+      <div class="value" id="descriptionEN">[[Description EN]]</div>
+      <div class="lockTranslation">
+        <input type="checkbox" id="lockENTranslation" name="lockENTranslation">
+        <label for="lockENTranslation">Lock translation</label>
+      </div>
+      <div class="cta">
+        <div class="i-arrow down"></div>
+      </div>
+      <div class="description-cont">
+        <div class="description">
+          {mlang en}In less than 100 words, clearly and concisely describe the
+          content of this tool or resource{mlang} {mlang es}En menos de 100
+          palabras, describa el contenido de esta herramienta o recurso de forma
+          clara y concisa{mlang} {mlang pt}Em menos de 100 palavras, descreva de
+          forma clara e concisa o conteúdo dessa ferramenta ou recurso{mlang}
+          {mlang fr}En moins de 100 mots, décrivez de manière claire et concise
+          le contenu de cet outil ou de cette ressource{mlang}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Description ES-->
+  <div class="item_custom">
+    <div class="cnt_row2">
+      <div class="field">
+        <h6>
+          {mlang en}Description ES:{mlang}{mlang es}Descripción ES:{mlang}{mlang
+          pt}Descrição ES:{mlang}{mlang fr}Description ES:{mlang}
+        </h6>
+      </div>
+      <div class="value" id="descriptionES">[[Description ES]]</div>
+      <div class="lockTranslation">
+        <input type="checkbox" id="lockESTranslation" name="lockESTranslation">
+        <label for="lockESTranslation">Lock translation</label>
+      </div>
+      <div class="cta">
+        <div class="i-arrow down"></div>
+      </div>
+      <div class="description-cont">
+        <div class="description">
+          {mlang en}In less than 100 words, clearly and concisely describe the
+          content of this tool or resource{mlang} {mlang es}En menos de 100
+          palabras, describa el contenido de esta herramienta o recurso de forma
+          clara y concisa{mlang} {mlang pt}Em menos de 100 palavras, descreva de
+          forma clara e concisa o conteúdo dessa ferramenta ou recurso{mlang}
+          {mlang fr}En moins de 100 mots, décrivez de manière claire et concise
+          le contenu de cet outil ou de cette ressource{mlang}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Description FR-->
+  <div class="item_custom">
+    <div class="cnt_row2">
+      <div class="field">
+        <h6>
+          {mlang en}Description FR:{mlang}{mlang es}Descripción FR:{mlang}{mlang
+          pt}Descrição FR:{mlang}{mlang fr}Description FR:{mlang}
+        </h6>
+      </div>
+      <div class="value" id="descriptionFR">[[Description FR]]</div>
+      <div class="lockTranslation">
+        <input type="checkbox" id="lockFRTranslation" name="lockFRTranslation">
+        <label for="lockFRTranslation">Lock translation</label>
+      </div>
+      <div class="cta">
+        <div class="i-arrow down"></div>
+      </div>
+      <div class="description-cont">
+        <div class="description">
+          {mlang en}In less than 100 words, clearly and concisely describe the
+          content of this tool or resource{mlang} {mlang es}En menos de 100
+          palabras, describa el contenido de esta herramienta o recurso de forma
+          clara y concisa{mlang} {mlang pt}Em menos de 100 palavras, descreva de
+          forma clara e concisa o conteúdo dessa ferramenta ou recurso{mlang}
+          {mlang fr}En moins de 100 mots, décrivez de manière claire et concise
+          le contenu de cet outil ou de cette ressource{mlang}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Description PT-->
+  <div class="item_custom">
+    <div class="cnt_row2">
+      <div class="field">
+        <h6>
+          {mlang en}Description PT:{mlang}{mlang es}Descripción PT:{mlang}{mlang
+          pt}Descrição PT:{mlang}{mlang fr}Description PT:{mlang}
+        </h6>
+      </div>
+      <div class="value" id="descriptionPT">[[Description PT]]</div>
+      <div class="lockTranslation">
+        <input type="checkbox" id="lockPTTranslation" name="lockPTTranslation">
+        <label for="lockPTTranslation">Lock translation</label>
+      </div>
       <div class="cta">
         <div class="i-arrow down"></div>
       </div>
@@ -291,8 +487,8 @@
       </div>
       <div class="value">[[Comments EN]]</div>
       <!--  <div class="value">[[Comments ES]]</div>
-            <div class="value">[[Comments PT]]</div>
-            <div class="value">[[Comments FR]]</div>-->
+                  <div class="value">[[Comments PT]]</div>
+                  <div class="value">[[Comments FR]]</div>-->
       <div class="cta">
         <div class="i-arrow down"></div>
       </div>
@@ -370,15 +566,15 @@
               </div>
             </div>
             <div class="value-msg-files">
-              <div
-                >{mlang en}Maximum file size: unlimited, maximum number of files
+              <div>{mlang en}Maximum file size: unlimited, maximum number of
+                files
                 per language: 1{mlang}{mlang es}Tamaño máximo de archivo:
                 ilimitado, número máximo de archivos por idioma: 1{mlang}{mlang
                 pt}Tamanho máximo do arquivo: ilimitado, número máximo de
                 arquivos por idioma: 1{mlang}{mlang fr}Taille maximale des
                 fichiers : illimitée, nombre maximum de fichiers par langue :
-                1{mlang}</div
-              >
+                1{mlang}
+              </div>
             </div>
           </div>
         </div>
@@ -389,9 +585,19 @@
       <div class="description-cont">
         <div class="description">
           {mlang en}If available through a web link, please insert the
-          URL. For long URL addresses, please enter short text (<6 words) that will be displayed for the link.{mlang} {mlang es}Si está disponible a través de un enlace web,
-          introduzca la URL. Para direcciones URL largas, ingrese un texto breve (<6 palabras) que se mostrará para el enlace.{mlang} {mlang pt}. Para endereços URL longos, insira um texto curto (<6 palavras) que será exibido no link.{mlang} {mlang fr}Si le document est
-          disponible par le biais d'un lien web, veuillez insérer l'URL. Pour les adresses URL longues, veuillez saisir un texte court (<6 mots) qui sera affiché pour le lien.{mlang}
+          URL. For long URL addresses, please enter short text (<6 words) that
+            will be displayed for the link.{mlang} {mlang es}Si está disponible
+            a través de un enlace
+            web,
+            introduzca la URL. Para direcciones URL largas, ingrese un texto
+            breve (<6 palabras) que se mostrará para el enlace.{mlang} {mlang
+            pt}. Para endereços URL
+            longos, insira um texto curto (<6 palavras) que será exibido no
+            link.{mlang} {mlang fr}Si le document est
+            disponible par le biais d'un lien web, veuillez insérer l'URL. Pour
+            les adresses URL longues, veuillez saisir un texte court (<6 mots)
+            qui sera affiché pour le
+            lien.{mlang}
         </div>
         <div class="description">
           {mlang en}Upload at least one file, note that it has four controls to

@@ -1,5 +1,5 @@
-.boxaligncenter {
-  width: 83% !important;
+#data_adv_form .boxaligncenter {
+  width: 83% ;
   display: inline-grid;
 
   tbody {
@@ -10,9 +10,9 @@
 
     tr {
       &:first-child {
-        height: 0px !important;
-        padding: 0px !important;
-        line-height: 0 !important;
+        height: 0px ;
+        padding: 0px ;
+        line-height: 0 ;
         td {
           border: none;
           padding: 0;
@@ -95,7 +95,7 @@
           float: right;
         }
           .btn-primary{
-            margin-right: 36px !important;
+            margin-right: 36px ;
         }
       }
     }

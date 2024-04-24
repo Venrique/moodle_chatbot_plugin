@@ -123,7 +123,7 @@ h5 {
   color: #f9f2ea;
   background-color: #383d47;
   padding: 30px 20px;
-  font-size: small;
+  font-size: medium;
 }
 .fos_space3-footer .grid-footer {
   display: grid;
@@ -207,7 +207,7 @@ h5 {
   align-self: center;
   grid-area: title;
   color: #383d47;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
@@ -259,6 +259,20 @@ h5 {
   display: list-item;
   list-style: none;
 }
+.custom_form .item_custom .cnt_row0 {
+  margin: auto auto;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  float: inline-end;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+}
+.custom_form .item_custom .cnt_row0 h6 {
+  margin-left: 10px;
+  color: #383d47;
+}
 .custom_form .item_custom .cnt_row1 {
   display: grid;
   grid-auto-columns: 1fr;
@@ -271,7 +285,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row1 .col1 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px 36.47px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -280,7 +294,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row1 .col1 .field {
   grid-area: field;
@@ -288,6 +302,16 @@ h5 {
 .custom_form .item_custom .cnt_row1 .col1 .field h6 {
   margin-left: 24px;
   color: #383d47;
+}
+.custom_form .item_custom .cnt_row1 .col1 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
@@ -326,8 +350,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -384,12 +408,12 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row2 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -398,7 +422,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row2 .field {
   grid-area: field;
@@ -406,6 +430,16 @@ h5 {
 .custom_form .item_custom .cnt_row2 .field h6 {
   margin-left: 24px;
   color: #383d47;
+}
+.custom_form .item_custom .cnt_row2 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
 }
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
@@ -458,8 +492,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row3 {
   display: grid;
@@ -512,8 +546,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row4 {
   display: grid;
@@ -566,8 +600,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row5 {
   display: grid;
@@ -630,8 +664,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -684,8 +718,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row6 {
   display: grid;
@@ -766,8 +800,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row7 {
   display: grid;
@@ -841,8 +875,8 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row8 {
   display: grid;
@@ -1074,8 +1108,8 @@ h5 {
   height: auto;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: rgba(56, 61, 71, 0.1);
-  color: #383d47;
+  background-color: #dbfcef;
+  color: #333;
   margin: 0 0 4px;
 }
 
@@ -5788,29 +5822,29 @@ a.ygtvspacer:hover {
   padding-left: 5px;
 }
 
-.boxaligncenter {
-  width: 83% !important;
+#data_adv_form .boxaligncenter {
+  width: 83%;
   display: inline-grid;
 }
-.boxaligncenter tbody {
+#data_adv_form .boxaligncenter tbody {
   color: #383d47;
   font-size: 13px;
   background-color: rgba(56, 61, 71, 0.1);
   padding-bottom: 16px;
 }
-.boxaligncenter tbody tr:first-child {
-  height: 0px !important;
-  padding: 0px !important;
-  line-height: 0 !important;
+#data_adv_form .boxaligncenter tbody tr:first-child {
+  height: 0px;
+  padding: 0px;
+  line-height: 0;
 }
-.boxaligncenter tbody tr:first-child td {
+#data_adv_form .boxaligncenter tbody tr:first-child td {
   border: none;
   padding: 0;
 }
-.boxaligncenter tbody tr td {
+#data_adv_form .boxaligncenter tbody tr td {
   border: none;
 }
-.boxaligncenter tbody tr td .advancesearch {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr;
@@ -5819,32 +5853,32 @@ a.ygtvspacer:hover {
   width: auto;
   padding: 8px 16px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
   width: 100%;
   border: 1px solid #383d47;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
   width: 100%;
   border: 1px solid #383d47;
   border-radius: 0;
@@ -5852,57 +5886,57 @@ a.ygtvspacer:hover {
   background-color: #fafffd;
   padding: 8px 10px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
   height: 65%;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
   width: 100%;
   border: 1px solid #383d47;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
   width: 100%;
   border: 1px solid #383d47;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
   /*display: flex;
   flex-flow: row wrap;
   width: 60%;
   align-items: center;*/
   gap: 5px 5px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
   margin-right: 4px;
 }
-.boxaligncenter tbody tr td .btn {
+#data_adv_form .boxaligncenter tbody tr td .btn {
   margin: 0 8px;
   float: right;
 }
-.boxaligncenter tbody tr td .btn-primary {
-  margin-right: 36px !important;
+#data_adv_form .boxaligncenter tbody tr td .btn-primary {
+  margin-right: 36px;
 }
 
 .layout.fullscreen {
@@ -6161,6 +6195,51 @@ body #page-wrapper #page #region-main {
 .dropdown a {
   color: #383d47;
   text-decoration: none;
+}
+
+/*Grade view table*/
+.path-grade-report-grader .gradeparent {
+  overflow: auto;
+  margin-bottom: 2vh;
+}
+.path-grade-report-grader .gradeparent th.header {
+  position: relative;
+}
+.path-grade-report-grader .gradeparent tr.avg.r0.lastrow.pinned {
+  position: static;
+}
+
+table#user-grades {
+  display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: static;
+  bottom: 0;
+  height: auto;
+  margin-top: 1.5vh;
+}
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
+/* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+  background-color: #383d47;
+  border: 1px solid #383d47;
+}
+a#action-menu-toggle-1:hover {
+  color: #383d47;
+  border: 1px solid #383d47;
+  background-color: #fff;
+}
+a#action-menu-toggle-1:focus {
+  color: #fff;
+  background-color: #383d47;
+  border: 1px solid #383d47;
 }
 
 /*# sourceMappingURL=moodle.css.map */
