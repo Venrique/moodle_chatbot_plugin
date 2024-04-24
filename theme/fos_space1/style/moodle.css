@@ -6587,6 +6587,9 @@ table#subscribers-table {
 }
 }*/
 /* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+}
 a#action-menu-toggle-1 .btn-primary {
   color: #fff;
 }
