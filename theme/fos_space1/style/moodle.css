@@ -6595,4 +6595,10 @@ table#subscribers-table {
   color: #5c3873;
 }
 
+#action-menu-toggle-1:active {
+  background-color: #f3eff5;
+  color: #FFF;
+  border-color: #f3eff5;
+}
+
 /*# sourceMappingURL=moodle.css.map */
