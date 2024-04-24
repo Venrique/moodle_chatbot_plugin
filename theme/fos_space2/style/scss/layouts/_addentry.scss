@@ -11,6 +11,21 @@
     display: list-item;
     list-style: none;
 
+    .cnt_row0 {
+      margin: auto auto;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      float: inline-end;
+      display: grid;
+      grid-auto-columns: auto;
+      grid-template-columns: auto auto;
+      align-items: baseline;
+      h6 {
+        margin-left: 10px;
+        color: $primary;
+      }
+    }
+
     // Title & Upload date
     .cnt_row1 {
       display: grid;
@@ -25,7 +40,7 @@
       // Title
       .col1 {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto auto;
         grid-template-rows: 18px 36.47px auto;
         grid-auto-columns: 1fr;
         gap: 4px 4px;
@@ -35,9 +50,9 @@
         justify-item_customs: stretch;
         align-item_customs: stretch;
         grid-template-areas:
-          "field cta"
-          "value value"
-          "description-cont description-cont";
+          "field lockTranslation cta"
+          "value value value"
+          "description-cont description-cont description-cont";
 
         .field {
           grid-area: field;
@@ -47,6 +62,17 @@
             color: $primary;
           }
         }
+        
+      .lockTranslation {
+        align-self: end;
+        display: grid;
+        grid-area: lockTranslation;
+        margin: auto;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        align-items: baseline;
+        padding: 0 4px;
+      }
 
         .cta {
           align-self: center;
@@ -91,7 +117,7 @@
             border-radius: $border-radius;
             padding: 4px 8px;
             background-color: $navbar-bg;
-            color: $primary;
+            color: $darkprimary;
           }
         }
       }
@@ -162,7 +188,7 @@
             border-radius: $border-radius;
             padding: 4px 8px;
             background-color: $navbar-bg;
-            color: $primary;
+            color: $darkprimary;
           }
         }
       }
@@ -171,7 +197,7 @@
     // Description
     .cnt_row2 {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto auto;
       grid-template-rows: 18px repeat(2, auto);
       grid-auto-columns: 1fr;
       gap: 4px 4px;
@@ -181,9 +207,9 @@
       justify-item_customs: stretch;
       align-item_customs: stretch;
       grid-template-areas:
-        "field cta"
-        "value value"
-        "description-cont description-cont";
+        "field lockTranslation cta"
+        "value value value"
+        "description-cont description-cont description-cont";
 
       .field {
         grid-area: field;
@@ -192,6 +218,17 @@
           margin-left: 24px;
           color: $primary;
         }
+      }
+
+      .lockTranslation {
+        align-self: end;
+        display: grid;
+        grid-area: lockTranslation;
+        margin: auto;
+        grid-template-columns: auto auto;
+        gap: 8px;
+        align-items: baseline;
+        padding: 0 4px;
       }
 
       .cta {
@@ -259,7 +296,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
         }
       }
     }
@@ -327,7 +364,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
         }
       }
     }
@@ -395,7 +432,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
         }
       }
     }
@@ -474,7 +511,7 @@
             border-radius: $border-radius;
             padding: 4px 8px;
             background-color: $navbar-bg;
-            color: $primary;
+            color: $darkprimary;
           }
         }
       }
@@ -542,7 +579,7 @@
             border-radius: $border-radius;
             padding: 4px 8px;
             background-color: $navbar-bg;
-            color: $primary;
+            color: $darkprimary;
           }
         }
       }
@@ -641,7 +678,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
         }
       }
     }
@@ -738,7 +775,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
         }
       }
     }
@@ -1030,7 +1067,7 @@
           border-radius: $border-radius;
           padding: 4px 8px;
           background-color: $navbar-bg;
-          color: $primary;
+          color: $darkprimary;
           margin: 0 0 4px;
         }
       }

@@ -123,7 +123,7 @@ h5 {
   color: #f9f2ea;
   background-color: #383d47;
   padding: 30px 20px;
-  font-size: small;
+  font-size: medium;
 }
 .fos_space2-footer .grid-footer {
   display: grid;
@@ -207,7 +207,7 @@ h5 {
   align-self: center;
   grid-area: title;
   color: #60ad8f;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
