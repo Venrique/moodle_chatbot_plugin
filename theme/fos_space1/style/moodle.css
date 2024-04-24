@@ -6483,8 +6483,7 @@ body #page-wrapper #page #region-main {
 }
 
 .dropdown a {
-  /*color: $primary;*/
-  color: #fff;
+  color: #5c3873;
   text-decoration: none;
 }
 
@@ -6586,5 +6585,9 @@ table#subscribers-table {
   line-height: 2;
 }
 }*/
+/* add field on database activity*/
+#action-menu-toggle-1 {
+  color: #fff;
+}
 
 /*# sourceMappingURL=moodle.css.map */

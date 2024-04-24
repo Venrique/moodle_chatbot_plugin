@@ -309,8 +309,7 @@ body {
 
 .dropdown {
   a {
-    /*color: $primary;*/
-    color:#fff;
+    color: $primary;
     text-decoration: none;
   }
 }
@@ -415,3 +414,8 @@ table#subscribers-table {
   line-height: 2;
 }
 }*/
+
+/* add field on database activity*/
+#action-menu-toggle-1 {
+  color: #fff;
+}
