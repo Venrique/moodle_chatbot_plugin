@@ -6591,4 +6591,8 @@ table#subscribers-table {
   color: #fff;
 }
 
+#action-menu-toggle-1:hover {
+  color: #5c3873;
+}
+
 /*# sourceMappingURL=moodle.css.map */
