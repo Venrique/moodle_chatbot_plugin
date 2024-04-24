@@ -1,18 +1,5 @@
 require(["jquery"], function ($) {
   $(document).ready(function () {
-      $(window).scroll(function () {
-          if ($(this).scrollTop() > 200) {
-              $("#scroll").fadeIn();
-          } else {
-              $("#scroll").fadeOut();
-          }
-      });
-
-      $("#scroll").click(function () {
-          $("html, body").animate({scrollTop: 0}, 600);
-          return false;
-      });
-
       // add entry
       $(".cta").click(function () {
           var description = $(this).parent().find(".description-cont");
@@ -29,7 +16,7 @@ require(["jquery"], function ($) {
 
       var hidden = true;
 
-      $("#expertmode").find('.mod-data-input.mr-1').click(function() {
+    /*  $("#expertmode").find('.mod-data-input.mr-1').click(function() {
           if(hidden){
               $('[hidden]').removeAttr('hidden');
               hidden=false;
@@ -181,7 +168,7 @@ require(["jquery"], function ($) {
               }
           });
       }
-
+*/
       // Assign a limit of 100 characters to the title field
       var titleInput = $("#titleDiv").find(".basefieldinput");
 
@@ -304,6 +291,7 @@ require(["jquery"], function ($) {
               $(this).text(newText);
           }
       });
+      
       //block event on data entry view
       $('input[type=text]').on('keypress', function(e) {
         if (e.which === 13) {
