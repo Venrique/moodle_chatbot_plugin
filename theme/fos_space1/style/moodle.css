@@ -6375,7 +6375,7 @@ table {
   background-color: #ddd3e1;
 }
 .courseindex .courseindex-section .pageitem:hover a {
-  color: #5c3873 !important;
+  color: #5c3873;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem {
   background-color: #5c3873;
@@ -6384,7 +6384,7 @@ table {
   background-color: #ddd3e1;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem:hover a {
-  color: #5c3873 !important;
+  color: #5c3873;
 }
 
 body {
@@ -6405,8 +6405,8 @@ body #page-wrapper #page #page-content {
 }
 body #page-wrapper #page .main-inner {
   background-color: #f3eff5;
-  padding: 0 0.5rem 1.5rem !important;
-  max-width: 1320px !important;
+  padding: 0 0.5rem 1.5rem;
+  max-width: 1320px;
   margin-top: 0;
   min-height: 86vh;
   margin-bottom: 0;
@@ -6416,8 +6416,8 @@ body #page-wrapper #page .main-inner .header-maxwidth {
   margin-top: 1.5rem;
 }
 body #page-wrapper #page div.grid-category {
-  padding: 0 0.5rem 1.5rem !important;
-  max-width: 1320px !important;
+  padding: 0 0.5rem 1.5rem;
+  max-width: 1320px;
   width: 100%;
 }
 body #page-wrapper #page #region-main {
@@ -6439,7 +6439,7 @@ body #page-wrapper #page #region-main {
 }
 
 .btn-link {
-  color: #60ad8f !important;
+  color: #60ad8f;
   text-decoration: none;
 }
 .btn-link .icon {
@@ -6447,7 +6447,7 @@ body #page-wrapper #page #region-main {
 }
 
 .bnt-custom-exp {
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
 }
 
 .navbar-brand .logo {
@@ -6596,9 +6596,7 @@ table#subscribers-table {
 }
 
 #action-menu-toggle-1:active {
-  background-color: #f3eff5;
   color: #FFF;
-  border-color: #f3eff5;
 }
 
 /*# sourceMappingURL=moodle.css.map */
