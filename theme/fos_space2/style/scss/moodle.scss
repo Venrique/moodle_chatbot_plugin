@@ -324,9 +324,16 @@ body {
   }
 }
 
-/* add entry button*/
-div#sticky-footer {
-  position: sticky;
+/*Grade view table*/
+.path-grade-report-grader .gradeparent {
+  overflow: auto;
+  margin-bottom: 2vh;
+  th.header {
+    position: relative;
+}
+tr.avg.r0.lastrow.pinned {
+  position: static;
+}
 }
 
 table#user-grades{
@@ -338,6 +345,12 @@ table#user-grades{
   bottom: 0;
   height: auto;
   margin-top: 1.5vh;
+}
+
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
 }
 
 /* add field on database activity*/
