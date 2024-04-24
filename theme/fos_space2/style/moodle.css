@@ -5788,29 +5788,29 @@ a.ygtvspacer:hover {
   padding-left: 5px;
 }
 
-.boxaligncenter {
-  width: 83% !important;
+#data_adv_form .boxaligncenter {
+  width: 83%;
   display: inline-grid;
 }
-.boxaligncenter tbody {
+#data_adv_form .boxaligncenter tbody {
   color: #60ad8f;
   font-size: 13px;
   background-color: rgba(96, 173, 143, 0.1);
   padding-bottom: 16px;
 }
-.boxaligncenter tbody tr:first-child {
-  height: 0px !important;
-  padding: 0px !important;
-  line-height: 0 !important;
+#data_adv_form .boxaligncenter tbody tr:first-child {
+  height: 0px;
+  padding: 0px;
+  line-height: 0;
 }
-.boxaligncenter tbody tr:first-child td {
+#data_adv_form .boxaligncenter tbody tr:first-child td {
   border: none;
   padding: 0;
 }
-.boxaligncenter tbody tr td {
+#data_adv_form .boxaligncenter tbody tr td {
   border: none;
 }
-.boxaligncenter tbody tr td .advancesearch {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr;
@@ -5819,32 +5819,32 @@ a.ygtvspacer:hover {
   width: auto;
   padding: 8px 16px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item1 select {
   width: 100%;
   border: 1px solid #60ad8f;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 2px;
 }
-.boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 .template-token {
   width: 100%;
   border: 1px solid #60ad8f;
   border-radius: 0;
@@ -5852,57 +5852,57 @@ a.ygtvspacer:hover {
   background-color: #fafffd;
   padding: 8px 10px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
   gap: 10px 0;
   height: 65%;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
-.boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item1 input,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item4 input {
   width: 100%;
   border: 1px solid #60ad8f;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: auto;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
-.boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2 select,
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 select {
   width: 100%;
   border: 1px solid #60ad8f;
   border-radius: 0;
   align-content: left;
   background-color: #fafffd;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
   /*display: flex;
   flex-flow: row wrap;
   width: 60%;
   align-items: center;*/
   gap: 5px 5px;
 }
-.boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
+#data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline select {
   margin-right: 4px;
 }
-.boxaligncenter tbody tr td .btn {
+#data_adv_form .boxaligncenter tbody tr td .btn {
   margin: 0 8px;
   float: right;
 }
-.boxaligncenter tbody tr td .btn-primary {
-  margin-right: 36px !important;
+#data_adv_form .boxaligncenter tbody tr td .btn-primary {
+  margin-right: 36px;
 }
 
 .layout.fullscreen {
