@@ -16,7 +16,7 @@ require(["jquery"], function ($) {
 
       var hidden = true;
 
-    /*  $("#expertmode").find('.mod-data-input.mr-1').click(function() {
+    $("#expertmode").find('.mod-data-input.mr-1').click(function() {
           if(hidden){
               $('[hidden]').removeAttr('hidden');
               hidden=false;
@@ -168,7 +168,7 @@ require(["jquery"], function ($) {
               }
           });
       }
-*/
+
       // Assign a limit of 100 characters to the title field
       var titleInput = $("#titleDiv").find(".basefieldinput");
 
@@ -291,7 +291,7 @@ require(["jquery"], function ($) {
               $(this).text(newText);
           }
       });
-      
+
       //block event on data entry view
       $('input[type=text]').on('keypress', function(e) {
         if (e.which === 13) {
