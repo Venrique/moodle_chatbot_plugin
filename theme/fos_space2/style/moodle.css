@@ -6237,6 +6237,7 @@ a#action-menu-toggle-1 {
 a#action-menu-toggle-1:hover {
   color: #60ad8f;
   border: 1px solid #60ad8f;
+  background-color: #fff;
 }
 a#action-menu-toggle-1:focus {
   color: #fff;
