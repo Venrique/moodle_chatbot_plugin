@@ -6231,6 +6231,8 @@ table#user-grades {
 /* add field on database activity*/
 a#action-menu-toggle-1 {
   color: #fff;
+  background-color: #60ad8f;
+  border: 1px solid #60ad8f;
 }
 a#action-menu-toggle-1:hover {
   color: #60ad8f;
