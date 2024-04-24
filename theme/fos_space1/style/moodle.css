@@ -6592,18 +6592,9 @@ a#action-menu-toggle-1 {
 }
 a#action-menu-toggle-1:hover {
   color: #5c3873;
-  background-color: #5c3873;
-  border: 1px solid #f3eff5;
+  border: 1px solid #5c3873;
 }
-a#action-menu-toggle-1 .btn-primary {
-  color: #fff;
-}
-a#action-menu-toggle-1 .btn-primary:hover {
-  color: #5c3873;
-  background-color: #5c3873;
-  border: 1px solid #f3eff5;
-}
-a#action-menu-toggle-1 .btn-primary:focus {
+a#action-menu-toggle-1:focus {
   color: #fff;
   background-color: #5c3873;
   border: 1px solid #f3eff5;

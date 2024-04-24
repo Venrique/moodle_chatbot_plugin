@@ -421,20 +421,11 @@ a#action-menu-toggle-1 {
   color: #fff;
   &:hover {
     color: $primary;
-    background-color: $primary;
-    border: 1px solid $FOS-Aubergine-bk;
+    border: 1px solid $primary;
   } 
-  .btn-primary{
-  color: #fff;
-  &:hover {
-    color: $primary;
-    background-color: $primary;
-    border: 1px solid $FOS-Aubergine-bk;
-  }  
   &:focus {
     color: #fff;
     background-color: $primary;
     border: 1px solid $FOS-Aubergine-bk;
   }
-}
 }
