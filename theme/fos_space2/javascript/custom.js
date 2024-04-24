@@ -230,6 +230,14 @@ var inputadvacedsearch = $(".input-advancedsearch input");
         $(this).text(newText);
       }
     });
+    
+          //block event on data entry view
+          $('input[type=text]').on('keypress', function(e) {
+            if (e.which === 13) {
+                e.preventDefault();
+            }
+        });
+
 
   });
 });
