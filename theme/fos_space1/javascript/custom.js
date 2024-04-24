@@ -381,6 +381,13 @@ require(["jquery"], function ($) {
                 e.preventDefault();
             }
         });
+       //block event on data entry view
+       $('input[type=text]').on('keypress', function(e) {
+        if (e.which === 13) {
+            e.preventDefault();
+        }
+    });
+   
   
     });
 });

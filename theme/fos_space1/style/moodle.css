@@ -6483,7 +6483,8 @@ body #page-wrapper #page #region-main {
 }
 
 .dropdown a {
-  color: #5c3873;
+  /*color: $primary;*/
+  color: #fff;
   text-decoration: none;
 }
 
