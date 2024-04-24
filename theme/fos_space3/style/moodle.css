@@ -208,6 +208,7 @@ h5 {
   grid-area: title;
   color: #383d47;
   font-size: 2rem;
+  text-align: center;
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
