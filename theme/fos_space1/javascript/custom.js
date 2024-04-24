@@ -90,46 +90,48 @@ require(["jquery"], function ($) {
 
       var hidden = true;
 
-      $("#expertmode").find('.mod-data-input.mr-1').click(function() {
+      $("#expertmode").click(function() {
           if(hidden){
               $('[hidden]').removeAttr('hidden');
               hidden=false;
           }else{
               $(".lockTranslation").attr('hidden', true);
-              $("#titleEN").attr('hidden', true);
               $("#titleES").attr('hidden', true);
               $("#titleFR").attr('hidden', true);
               $("#titlePT").attr('hidden', true);
-              $("#descEN").attr('hidden', true);
               $("#descES").attr('hidden', true);
               $("#descFR").attr('hidden', true);
               $("#descPT").attr('hidden', true);
               hidden=true;
           }
+
       });
 
       //AUTOMATIC TRANSLATION OF TEXT
-      $("#description").on('focusout', translateDescriptions);
       $("#descriptionEN").on('focusout', translateDescriptions);
       $("#descriptionES").on('focusout', translateDescriptions);
       $("#descriptionFR").on('focusout', translateDescriptions);
       $("#descriptionPT").on('focusout', translateDescriptions);
-      $("#titleDiv").on('focusout', translateTitles);
+
       $("#titleDivEN").on('focusout', translateTitles);
       $("#titleDivES").on('focusout', translateTitles);
       $("#titleDivFR").on('focusout', translateTitles);
       $("#titleDivPT").on('focusout', translateTitles);
+
       function translateTitles(){
           let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
           let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
           let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
           let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
           let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-data-input');
+
           let lockEN = $("#TitlelockENTranslation");
           let lockES = $("#TitlelockESTranslation");
           let lockFR = $("#TitlelockFRTranslation");
           let lockPT = $("#TitlelockPTTranslation");
+
           let targetLanguages = [];
+
           if (!lockEN.is(':checked')) {
               console.log("Translation to english");
               targetLanguages.push("EN");
@@ -146,6 +148,7 @@ require(["jquery"], function ($) {
               console.log("Translation to portuguese");
               targetLanguages.push("PT");
           }
+
           targetLanguages.forEach(function (targetLang) {
               translateText(origin.val(), '', targetLang, function (error, translatedText) {
                   if (error) {
@@ -167,17 +170,22 @@ require(["jquery"], function ($) {
               });
           });
       }
+
       function translateDescriptions() {
+
           let origin = $(this).find('.editor_atto_content.form-control');
           let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
           let descES = $("#descriptionES").find('.editor_atto_content.form-control');
           let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
           let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
+
           let lockEN = $("#lockENTranslation");
           let lockES = $("#lockESTranslation");
           let lockFR = $("#lockFRTranslation");
           let lockPT = $("#lockPTTranslation");
+
           let targetLanguages = [];
+
           if (!lockEN.is(':checked')) {
               console.log("Translation to english");
               targetLanguages.push("EN");
@@ -194,6 +202,7 @@ require(["jquery"], function ($) {
               console.log("Translation to portuguese");
               targetLanguages.push("PT");
           }
+
           targetLanguages.forEach(function (targetLang) {
               translateText(origin.text(), '', targetLang, function (error, translatedText) {
                   if (error) {
@@ -345,7 +354,7 @@ require(["jquery"], function ($) {
       $('#miCampo').prop('readonly', true);
 
 
-      // - list view
+      //list view
       var maxChars = 100;
       var maxWords = 30;
 
@@ -365,5 +374,13 @@ require(["jquery"], function ($) {
               $(this).text(newText);
           }
       });
-  });
+  
+      //block event on data entry view
+        $('input[type=text]').on('keypress', function(e) {
+            if (e.which === 13) {
+                e.preventDefault();
+            }
+        });
+  
+    });
 });
