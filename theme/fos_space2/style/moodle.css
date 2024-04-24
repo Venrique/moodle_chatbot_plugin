@@ -6090,9 +6090,14 @@ body {
   font-family: "Isidora Sans Regular", sans-serif;
   background-color: #fafffd;
 }
+body #page-wrapper {
+  display: inline;
+  min-height: auto;
+}
 body #page-wrapper #page {
   background-color: #fafffd;
-  min-height: auto;
+  min-height: fit-content;
+  margin-bottom: 0;
 }
 body #page-wrapper #page #page-content {
   background-color: #fafffd;
@@ -6116,6 +6121,12 @@ body #page-wrapper #page div.grid-category {
 }
 body #page-wrapper #page #region-main {
   background-color: #fafffd;
+}
+body #page-wrapper #page th.header {
+  position: relative;
+}
+body #page-wrapper #page tr.avg.r0.lastrow.pinned {
+  position: static;
 }
 
 .popover.footer .popover-body {
@@ -6165,6 +6176,22 @@ body #page-wrapper #page #region-main {
 .dropdown a {
   color: #60ad8f;
   text-decoration: none;
+}
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
+table#user-grades {
+  display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: static;
+  bottom: 0;
+  height: auto;
+  margin-top: 1.5vh;
 }
 
 /*# sourceMappingURL=moodle.css.map */

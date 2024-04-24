@@ -184,25 +184,25 @@ require(["jquery"], function ($) {
 
     }
 
-// remove space on title and author field
-var inputadvacedsearch = $(".input-advancedsearch input");
+    // remove space on title and author field
+    var inputadvacedsearch = $(".input-advancedsearch input");
     console.log(inputadvacedsearch);
 
     if (inputadvacedsearch.length > 0) {
-        var inputtitle = inputadvacedsearch.eq(0);
-        var inputauthor = inputadvacedsearch.eq(1);
+      var inputtitle = inputadvacedsearch.eq(0);
+      var inputauthor = inputadvacedsearch.eq(1);
 
-        inputtitle.on('focusout', removespaceAdvancesearch);
-        inputauthor.on('focusout', removespaceAdvancesearch);
+      inputtitle.on('focusout', removespaceAdvancesearch);
+      inputauthor.on('focusout', removespaceAdvancesearch);
 
-        function removespaceAdvancesearch(event) {
-            // Obtén el valor del campo de entrada
-            var inputValue = $(event.target).val();
-            // Elimina los espacios en blanco al inicio y al final
-            var trimmedValue = $.trim(inputValue);
-            // Asigna el valor corregido al campo de entrada
-            $(event.target).val(trimmedValue);
-        }
+      function removespaceAdvancesearch(event) {
+        // Obtén el valor del campo de entrada
+        var inputValue = $(event.target).val();
+        // Elimina los espacios en blanco al inicio y al final
+        var trimmedValue = $.trim(inputValue);
+        // Asigna el valor corregido al campo de entrada
+        $(event.target).val(trimmedValue);
+      }
     }
 
     //upload field
@@ -230,13 +230,13 @@ var inputadvacedsearch = $(".input-advancedsearch input");
         $(this).text(newText);
       }
     });
-    
-          //block event on data entry view
-          $('input[type=text]').on('keypress', function(e) {
-            if (e.which === 13) {
-                e.preventDefault();
-            }
-        });
+
+    //block event on data entry view
+    $('input[type=text]').on('keypress', function (e) {
+      if (e.which === 13) {
+        e.preventDefault();
+      }
+    });
 
 
   });

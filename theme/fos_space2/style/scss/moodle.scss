@@ -214,36 +214,51 @@ body {
   @include font-body("Isidora Sans Regular");
   background-color: $body-bg;
 
-  #page-wrapper #page {
-    background-color: $body-bg;
+  #page-wrapper {
+    display   : inline;
     min-height: auto;
 
-    #page-content {
+    #page {
       background-color: $body-bg;
-    }
+      min-height      : fit-content;
+      margin-bottom   : 0;
 
-    .main-inner {
-      background-color: $body-bg;
-      padding         : 0 0.5rem 1.5rem !important;
-      max-width       : 1320px !important;
-      min-height: 86vh;
-      margin-bottom: 0;
-      margin-top: 0;
-      .header-maxwidth {
-        max-width: 100%;
-        margin-top: 1.5rem;
+      #page-content {
+        background-color: $body-bg;
       }
 
-    }
+      .main-inner {
+        background-color: $body-bg;
+        padding         : 0 0.5rem 1.5rem !important;
+        max-width       : 1320px !important;
+        min-height      : 86vh;
+        margin-bottom   : 0;
+        margin-top      : 0;
 
-    div.grid-category {
-      padding  : 0 .5rem 1.5rem !important;
-      max-width: 1320px !important;
-      width    : 100%;
-    }
+        .header-maxwidth {
+          max-width : 100%;
+          margin-top: 1.5rem;
+        }
 
-    #region-main {
-      background-color: $body-bg;
+      }
+
+      div.grid-category {
+        padding  : 0 .5rem 1.5rem !important;
+        max-width: 1320px !important;
+        width    : 100%;
+      }
+
+      #region-main {
+        background-color: $body-bg;
+      }
+
+      th.header {
+        position: relative;
+      }
+
+      tr.avg.r0.lastrow.pinned {
+        position: static;
+      }
     }
   }
 }
@@ -307,4 +322,20 @@ body {
     color          : $primary;
     text-decoration: none;
   }
+}
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
+table#user-grades{
+  display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: static;
+  bottom: 0;
+  height: auto;
+  margin-top: 1.5vh;
 }
