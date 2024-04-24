@@ -339,3 +339,17 @@ table#user-grades{
   height: auto;
   margin-top: 1.5vh;
 }
+
+/* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+  } 
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+}

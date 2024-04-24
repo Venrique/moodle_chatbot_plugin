@@ -259,6 +259,20 @@ h5 {
   display: list-item;
   list-style: none;
 }
+.custom_form .item_custom .cnt_row0 {
+  margin: auto auto;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  float: inline-end;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+}
+.custom_form .item_custom .cnt_row0 h6 {
+  margin-left: 10px;
+  color: #60ad8f;
+}
 .custom_form .item_custom .cnt_row1 {
   display: grid;
   grid-auto-columns: 1fr;
@@ -271,7 +285,7 @@ h5 {
 }
 .custom_form .item_custom .cnt_row1 .col1 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px 36.47px auto;
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -280,7 +294,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row1 .col1 .field {
   grid-area: field;
@@ -288,6 +302,16 @@ h5 {
 .custom_form .item_custom .cnt_row1 .col1 .field h6 {
   margin-left: 24px;
   color: #60ad8f;
+}
+.custom_form .item_custom .cnt_row1 .col1 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
 }
 .custom_form .item_custom .cnt_row1 .col1 .cta {
   align-self: center;
@@ -327,7 +351,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row1 .col2 {
   display: grid;
@@ -385,11 +409,11 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row2 {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: 18px repeat(2, auto);
   grid-auto-columns: 1fr;
   gap: 4px 4px;
@@ -398,7 +422,7 @@ h5 {
   align-content: stretch;
   justify-item_customs: stretch;
   align-item_customs: stretch;
-  grid-template-areas: "field cta" "value value" "description-cont description-cont";
+  grid-template-areas: "field lockTranslation cta" "value value value" "description-cont description-cont description-cont";
 }
 .custom_form .item_custom .cnt_row2 .field {
   grid-area: field;
@@ -406,6 +430,16 @@ h5 {
 .custom_form .item_custom .cnt_row2 .field h6 {
   margin-left: 24px;
   color: #60ad8f;
+}
+.custom_form .item_custom .cnt_row2 .lockTranslation {
+  align-self: end;
+  display: grid;
+  grid-area: lockTranslation;
+  margin: auto;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 0 4px;
 }
 .custom_form .item_custom .cnt_row2 .cta {
   align-self: center;
@@ -459,7 +493,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row3 {
   display: grid;
@@ -513,7 +547,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row4 {
   display: grid;
@@ -567,7 +601,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row5 {
   display: grid;
@@ -631,7 +665,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row5 .col2 {
   display: grid;
@@ -685,7 +719,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row6 {
   display: grid;
@@ -767,7 +801,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row7 {
   display: grid;
@@ -842,7 +876,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
 }
 .custom_form .item_custom .cnt_row8 {
   display: grid;
@@ -1075,7 +1109,7 @@ h5 {
   border-radius: 0.25rem;
   padding: 4px 8px;
   background-color: #dbfcef;
-  color: #60ad8f;
+  color: #333;
   margin: 0 0 4px;
 }
 
@@ -6192,6 +6226,20 @@ table#user-grades {
   bottom: 0;
   height: auto;
   margin-top: 1.5vh;
+}
+
+/* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+}
+a#action-menu-toggle-1:hover {
+  color: #60ad8f;
+  border: 1px solid #60ad8f;
+}
+a#action-menu-toggle-1:focus {
+  color: #fff;
+  background-color: #60ad8f;
+  border: 1px solid #60ad8f;
 }
 
 /*# sourceMappingURL=moodle.css.map */
