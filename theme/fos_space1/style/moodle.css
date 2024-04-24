@@ -6590,6 +6590,11 @@ table#subscribers-table {
 a#action-menu-toggle-1 {
   color: #fff;
 }
+a#action-menu-toggle-1:hover {
+  color: #5c3873;
+  background-color: #5c3873;
+  border: 1px solid #f3eff5;
+}
 a#action-menu-toggle-1 .btn-primary {
   color: #fff;
 }
