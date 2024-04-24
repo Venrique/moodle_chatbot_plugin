@@ -419,9 +419,14 @@ table#subscribers-table {
 /* add field on database activity*/
 #action-menu-toggle-1 {
   color: #fff;
-}
-#action-menu-toggle-1:hover:active {
-  color: $primary;
-  background-color: $primary;
-  border: 1px solid $FOS-Aubergine-bk;
+  :hover {
+    color: $primary;
+    background-color: $primary;
+    border: 1px solid $FOS-Aubergine-bk;
+  }  
+  :active {
+    color: #fff;
+    background-color: $primary;
+    border: 1px solid $FOS-Aubergine-bk;
+  }
 }
