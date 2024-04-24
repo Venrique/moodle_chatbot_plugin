@@ -135,9 +135,10 @@ table {
   }
   .dropdown-item.active {
     background-color: $primary;
+    color: #fff;
   }
 }
-//------
+
 .btn-primary.disabled,
 .btn-primary:disabled {
   background-color: $primary;
