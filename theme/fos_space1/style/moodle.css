@@ -6587,15 +6587,15 @@ table#subscribers-table {
 }
 }*/
 /* add field on database activity*/
-#action-menu-toggle-1 {
+a#action-menu-toggle-1 {
   color: #fff;
 }
-#action-menu-toggle-1 :hover {
+a#action-menu-toggle-1 :hover {
   color: #5c3873;
   background-color: #5c3873;
   border: 1px solid #f3eff5;
 }
-#action-menu-toggle-1 :active {
+a#action-menu-toggle-1 :active {
   color: #fff;
   background-color: #5c3873;
   border: 1px solid #f3eff5;
