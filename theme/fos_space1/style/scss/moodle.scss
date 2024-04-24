@@ -420,10 +420,8 @@ table#subscribers-table {
 #action-menu-toggle-1 {
   color: #fff;
 }
-#action-menu-toggle-1:hover {
+#action-menu-toggle-1:hover:active {
   color: $primary;
-}
-#action-menu-toggle-1:active {
-  color: #FFF;
-
+  background-color: $primary;
+  border: 1px solid $FOS-Aubergine-bk;
 }

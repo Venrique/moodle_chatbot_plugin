@@ -6591,12 +6591,10 @@ table#subscribers-table {
   color: #fff;
 }
 
-#action-menu-toggle-1:hover {
+#action-menu-toggle-1:hover:active {
   color: #5c3873;
-}
-
-#action-menu-toggle-1:active {
-  color: #FFF;
+  background-color: #5c3873;
+  border: 1px solid #f3eff5;
 }
 
 /*# sourceMappingURL=moodle.css.map */
