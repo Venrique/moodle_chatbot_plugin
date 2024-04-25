@@ -256,11 +256,11 @@ require(["jquery"], function ($) {
 
         function wordlimit() {
             if (tdList.length >= 2) {
-                var value = tdList.eq(1).val().trim();
+                var value = tdList.eq(1).val();
                 var words = value.split(" ");
                 var wordCount = words.length;
                 if (wordCount > 6) {
-                    var newContent = words.slice(0, 6).join(" ");
+                    var newContent = words.slice(0, 6).join(" ").trim();
                     tdList.eq(1).val(newContent);
                 }
             } else {
