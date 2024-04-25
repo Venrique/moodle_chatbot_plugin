@@ -344,13 +344,15 @@ div#sticky-footer {
   position: sticky;
 }
 
-
 /* add field on database activity*/
 a#action-menu-toggle-1 {
   color: #fff;
+  background-color: $primary;
+  border: 1px solid $primary;
   &:hover {
     color: $primary;
     border: 1px solid $primary;
+    background-color: #fff;
   } 
   &:focus {
     color: #fff;
