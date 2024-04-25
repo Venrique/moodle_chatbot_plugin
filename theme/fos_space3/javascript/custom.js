@@ -273,7 +273,8 @@ require(["jquery"], function ($) {
         //upload date field
 
         $('#uploadDate').prop('readonly', true);
-
+        $('#uploadDate').prop('tabindex', -1);
+        
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //list view
         var maxChars = 100;
