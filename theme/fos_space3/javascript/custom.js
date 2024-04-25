@@ -195,7 +195,7 @@ require(["jquery"], function ($) {
         linkfield.on('input', wordlimit);
         linkfield.on('focusout', removespace);
 
-        var selectlist = $("#titleDiv").find('div select');
+        var selectlist = $("#uploadDate").find('div select');
         selectlist.each(function () {
             $(this).prop('readonly', true).attr('tabindex', '-1');
         });
@@ -269,12 +269,6 @@ require(["jquery"], function ($) {
 
         }
 
-        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //upload date field
-
-        $('#uploadDate').prop('readonly', true);
-        $('#uploadDate').prop('tabindex', -1);
-        
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //list view
         var maxChars = 100;
