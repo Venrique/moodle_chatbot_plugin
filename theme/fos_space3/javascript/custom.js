@@ -177,13 +177,13 @@ require(["jquery"], function ($) {
       });
 
       // Assign a limit of 100 words to the description and comment field
-      var textareaDivs = $(".value");
+     var textareaDivs = $(".value");
       console.log(textareaDivs);
 
-      if (textareaDivs.length >= 9) {
-          var textareaDiv2 = $(textareaDivs[2]);
-          var textareaDiv8 = $(textareaDivs[8]);
-          var linkfield = $(textareaDivs[9]);
+   
+          var textareaDiv2 = $("#description");
+          var textareaDiv8 = $("#comments");
+          var linkfield = $("#linkfield");
 
           textareaDiv2.on('input', limitWordCount);
           textareaDiv8.on('input', limitWordCount);
@@ -198,7 +198,7 @@ require(["jquery"], function ($) {
           selectlist.each(function () {
               $(this).prop('readonly', true).attr('tabindex', '-1');
           });
-      }
+      
 
       function limitWordCount() {
           var editorDiv = $(this).find('.editor_atto_content.form-control');
