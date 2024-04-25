@@ -173,12 +173,12 @@ require(["jquery"], function ($) {
       var titleInput = $("#titleDiv").find(".basefieldinput");
 
       titleInput.on('click', function () {
-          //console.log("Adding maxlength attribute to input text");
           $(this).attr('maxlength', '100');
       });
 
       // Assign a limit of 100 words to the description and comment field
       var textareaDivs = $(".value");
+      console.log(textareaDivs);
 
       if (textareaDivs.length >= 9) {
           var textareaDiv2 = $(textareaDivs[2]);
