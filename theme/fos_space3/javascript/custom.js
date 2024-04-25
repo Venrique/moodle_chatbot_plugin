@@ -257,6 +257,7 @@ require(["jquery"], function ($) {
         function wordlimit() {
             if (tdList.length >= 2) {
                 var value = tdList.eq(1).val().trim();
+                var words = value.split(" ");
                 var wordCount = words.length;
                 if (wordCount > 6) {
                     var newContent = words.slice(0, 6).join(" ");
@@ -265,8 +266,9 @@ require(["jquery"], function ($) {
             } else {
                 console.log("Not enough items in tdList to access index 1.");
             }
+
         }
-        
+
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //upload field
 
