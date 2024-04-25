@@ -203,7 +203,8 @@ body {
   background-color: $body-bg;
   #page-wrapper #page {
     background-color: $body-bg;
-    min-height: auto;
+    margin-bottom: 0;
+    min-height: fit-content;
     #page-content {
       background-color: $body-bg;
     }

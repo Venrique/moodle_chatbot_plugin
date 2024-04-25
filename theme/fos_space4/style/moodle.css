@@ -6120,7 +6120,8 @@ body {
 }
 body #page-wrapper #page {
   background-color: #fdf6fa;
-  min-height: auto;
+  margin-bottom: 0;
+  min-height: fit-content;
 }
 body #page-wrapper #page #page-content {
   background-color: #fdf6fa;
