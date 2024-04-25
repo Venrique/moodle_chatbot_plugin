@@ -184,7 +184,7 @@ require(["jquery"], function ($) {
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Assign a limit of 100 words to the description and comment field
         var descriptionDiv = $("#description");
-        var commentDiv = $("#comment");
+        var commentDiv = $("#comments");
         var linkfield = $("#linkfield");
 
         descriptionDiv.on('input', limitWordCount);
