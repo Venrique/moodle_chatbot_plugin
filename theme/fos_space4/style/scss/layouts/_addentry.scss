@@ -1,59 +1,75 @@
 .custom_form {
-  display: grid;
+  display              : grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-  gap: 4px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  grid-auto-rows       : auto;
+  gap                  : 4px;
+  overflow-y           : auto;
+  overflow-x           : hidden;
 
   .item_custom {
-    padding: 4px 0px;
-    display: list-item;
+    padding   : 4px 0px;
+    display   : list-item;
     list-style: none;
+
+    .cnt_row0 {
+      margin               : auto auto;
+      padding-bottom       : 8px;
+      padding-top          : 8px;
+      float                : inline-end;
+      display              : grid;
+      grid-auto-columns    : auto;
+      grid-template-columns: auto auto;
+      align-items          : baseline;
+
+      h6 {
+        margin-left: 10px;
+        color      : $primary;
+      }
+    }
 
     // Title & Upload date
     .cnt_row1 {
-      display: grid;
-      grid-auto-columns: 1fr;
+      display              : grid;
+      grid-auto-columns    : 1fr;
       grid-template-columns: 1fr auto;
-      gap: 0px 8px;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
+      gap                  : 0px 8px;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
 
       // Title
       .col1 {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-rows: 18px 36.47px auto;
-        grid-auto-columns: 1fr;
-        gap: 4px 4px;
-        grid-auto-flow: row;
-        justify-content: stretch;
-        align-content: stretch;
-        justify-item_customs: stretch;
-        align-item_customs: stretch;
-        grid-template-areas:
-          "field cta"
-          "value value"
-          "description-cont description-cont";
+        display              : grid;
+        grid-template-columns: 1fr auto auto;
+        grid-template-rows   : 18px 36.47px auto;
+        grid-auto-columns    : 1fr;
+        gap                  : 4px 4px;
+        grid-auto-flow       : row;
+        justify-content      : stretch;
+        align-content        : stretch;
+        justify-item_customs : stretch;
+        align-item_customs   : stretch;
+        grid-template-areas  :
+          "field lockTranslation cta"
+          "value value value"
+          "description-cont description-cont description-cont";
 
         .field {
           grid-area: field;
 
           h6 {
             margin-left: 24px;
-            color: $primary;
+            color      : $primary;
           }
         }
 
         .cta {
           align-self: center;
-          grid-area: cta;
+          grid-area : cta;
 
           .i-arrow {
-            width: 18px;
+            width : 18px;
             height: 18px;
             cursor: pointer;
           }
@@ -73,42 +89,55 @@
           input {
             width: calc(100% - 24px) !important;
           }
+
           .alert {
             position: absolute;
-            top: 3px;
-            left: 28px;
-            padding: 4px 8px;
+            top     : 3px;
+            left    : 28px;
+            padding : 4px 8px;
           }
         }
 
         .description-cont {
-          grid-area: description-cont;
-          display: none;
+          grid-area   : description-cont;
+          display     : none;
           padding-left: 24px;
+
           .description {
-            width: 100%;
-            height: 100%;
-            border-radius: $border-radius;
-            padding: 4px 8px;
+            width           : 100%;
+            height          : 100%;
+            border-radius   : $border-radius;
+            padding         : 4px 8px;
             background-color: $navbar-bg;
-            color: $darkprimary;
+            color           : $darkprimary;
           }
+        }
+
+        .lockTranslation {
+          align-self           : end;
+          display              : grid;
+          grid-area            : lockTranslation;
+          margin               : auto;
+          grid-template-columns: auto auto;
+          gap                  : 8px;
+          align-items          : baseline;
+          padding              : 0 4px;
         }
       }
 
       // Upload date
       .col2 {
-        display: grid;
+        display              : grid;
         grid-template-columns: 1fr auto;
-        grid-template-rows: 18px 36.47px auto;
-        grid-auto-columns: 1fr;
-        gap: 4px 4px;
-        grid-auto-flow: row;
-        justify-content: stretch;
-        align-content: stretch;
-        justify-item_customs: stretch;
-        align-item_customs: stretch;
-        grid-template-areas:
+        grid-template-rows   : 18px 36.47px auto;
+        grid-auto-columns    : 1fr;
+        gap                  : 4px 4px;
+        grid-auto-flow       : row;
+        justify-content      : stretch;
+        align-content        : stretch;
+        justify-item_customs : stretch;
+        align-item_customs   : stretch;
+        grid-template-areas  :
           "field cta"
           "value value"
           "description-cont description-cont";
@@ -123,10 +152,10 @@
 
         .cta {
           align-self: center;
-          grid-area: cta;
+          grid-area : cta;
 
           .i-arrow {
-            width: 18px;
+            width : 18px;
             height: 18px;
             cursor: pointer;
           }
@@ -142,64 +171,80 @@
 
         .value {
           grid-area: value;
+
           .form-inline {
             gap: 8px;
+
             .custom-select {
-              background: none;
+              background    : none;
               pointer-events: none;
-              padding: 8px 8px;
+              padding       : 8px 8px;
             }
           }
         }
 
         .description-cont {
-          grid-area: description-cont;
-          display: none;
+          grid-area   : description-cont;
+          display     : none;
           padding-left: 24px;
+
           .description {
-            width: 100%;
-            height: 100%;
-            border-radius: $border-radius;
-            padding: 4px 8px;
+            width           : 100%;
+            height          : 100%;
+            border-radius   : $border-radius;
+            padding         : 4px 8px;
             background-color: $navbar-bg;
-            color: $darkprimary;
+            color           : $darkprimary;
           }
         }
       }
+
     }
 
     // Description
     .cnt_row2 {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
-        "field cta"
-        "value value"
-        "description-cont description-cont";
+      display              : grid;
+      grid-template-columns: 1fr auto auto;
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
+        "field lockTranslation cta"
+        "value value value"
+        "description-cont description-cont description-cont";
+
 
       .field {
         grid-area: field;
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
+      }
+
+      .lockTranslation {
+        align-self           : end;
+        display              : grid;
+        grid-area            : lockTranslation;
+        margin               : auto;
+        grid-template-columns: auto auto;
+        gap                  : 8px;
+        align-items          : baseline;
+        padding              : 0 4px;
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -218,28 +263,30 @@
 
         div {
           width: 100%;
+
           .mod-data-input {
-            > div:first-child {
+            >div:first-child {
               .editor_atto {
                 .editor_atto_toolbar {
                   visibility: hidden;
-                  height: 0;
-                  display: none !important;
+                  height    : 0;
+                  display   : none !important;
                 }
+
                 .editor_atto_content_wrap {
-                  width: 100% !important;
-                  border-top: 1px solid $primary;
-                  border-top-left-radius: 0.5rem;
+                  width                  : 100% !important;
+                  border-top             : 1px solid $primary;
+                  border-top-left-radius : 0.5rem;
                   border-top-right-radius: 0.5rem;
-                  resize: none !important;
-                  overflow-x: hidden;
+                  resize                 : none !important;
+                  overflow-x             : hidden;
                 }
               }
             }
 
-            > div:nth-child(2) {
+            >div:nth-child(2) {
               visibility: hidden;
-              height: 0;
+              height    : 0;
             }
           }
         }
@@ -250,33 +297,35 @@
       }
 
       .description-cont {
-        grid-area: description-cont;
-        display: none;
+        grid-area   : description-cont;
+        display     : none;
         padding-left: 24px;
+
         .description {
-          width: 100%;
-          height: 100%;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : 100%;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
+          color           : $darkprimary;
         }
       }
     }
 
+
     // Organization
     .cnt_row3 {
-      display: grid;
+      display              : grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
         "field cta"
         "value value"
         "description-cont description-cont";
@@ -286,16 +335,16 @@
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -318,33 +367,34 @@
       }
 
       .description-cont {
-        grid-area: description-cont;
-        display: none;
+        grid-area   : description-cont;
+        display     : none;
         padding-left: 24px;
+
         .description {
-          width: 100%;
-          height: 100%;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : 100%;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
+          color           : $darkprimary;
         }
       }
     }
 
     // Category
     .cnt_row4 {
-      display: grid;
+      display              : grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
         "field cta"
         "value value"
         "description-cont description-cont";
@@ -354,16 +404,16 @@
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -386,44 +436,45 @@
       }
 
       .description-cont {
-        grid-area: description-cont;
-        display: none;
+        grid-area   : description-cont;
+        display     : none;
         padding-left: 24px;
+
         .description {
-          width: 100%;
-          height: 100%;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : 100%;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
+          color           : $darkprimary;
         }
       }
     }
 
     // Year of completion & Author
     .cnt_row5 {
-      display: grid;
-      grid-auto-columns: 1fr;
+      display              : grid;
+      grid-auto-columns    : 1fr;
       grid-template-columns: 1fr 1fr;
-      gap: 0px 8px;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
+      gap                  : 0px 8px;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
 
       // Year of completion
       .col1 {
-        display: grid;
+        display              : grid;
         grid-template-columns: 1fr auto;
-        grid-template-rows: 18px 36.47px auto;
-        grid-auto-columns: 1fr;
-        gap: 4px 4px;
-        grid-auto-flow: row;
-        justify-content: stretch;
-        align-content: stretch;
-        justify-item_customs: stretch;
-        align-item_customs: stretch;
-        grid-template-areas:
+        grid-template-rows   : 18px 36.47px auto;
+        grid-auto-columns    : 1fr;
+        gap                  : 4px 4px;
+        grid-auto-flow       : row;
+        justify-content      : stretch;
+        align-content        : stretch;
+        justify-item_customs : stretch;
+        align-item_customs   : stretch;
+        grid-template-areas  :
           "field cta"
           "value value"
           "description-cont description-cont";
@@ -433,16 +484,16 @@
 
           h6 {
             margin-left: 24px;
-            color: $primary;
+            color      : $primary;
           }
         }
 
         .cta {
           align-self: center;
-          grid-area: cta;
+          grid-area : cta;
 
           .i-arrow {
-            width: 18px;
+            width : 18px;
             height: 18px;
             cursor: pointer;
           }
@@ -465,33 +516,34 @@
         }
 
         .description-cont {
-          grid-area: description-cont;
-          display: none;
+          grid-area   : description-cont;
+          display     : none;
           padding-left: 24px;
+
           .description {
-            width: 100%;
-            height: 100%;
-            border-radius: $border-radius;
-            padding: 4px 8px;
+            width           : 100%;
+            height          : 100%;
+            border-radius   : $border-radius;
+            padding         : 4px 8px;
             background-color: $navbar-bg;
-            color: $darkprimary;
+            color           : $darkprimary;
           }
         }
       }
 
       // Author
       .col2 {
-        display: grid;
+        display              : grid;
         grid-template-columns: 1fr auto;
-        grid-template-rows: 18px 36.47px auto;
-        grid-auto-columns: 1fr;
-        gap: 4px 4px;
-        grid-auto-flow: row;
-        justify-content: stretch;
-        align-content: stretch;
-        justify-item_customs: stretch;
-        align-item_customs: stretch;
-        grid-template-areas:
+        grid-template-rows   : 18px 36.47px auto;
+        grid-auto-columns    : 1fr;
+        gap                  : 4px 4px;
+        grid-auto-flow       : row;
+        justify-content      : stretch;
+        align-content        : stretch;
+        justify-item_customs : stretch;
+        align-item_customs   : stretch;
+        grid-template-areas  :
           "field cta"
           "value value"
           "description-cont description-cont";
@@ -501,16 +553,16 @@
 
           h6 {
             margin-left: 24px;
-            color: $primary;
+            color      : $primary;
           }
         }
 
         .cta {
           align-self: center;
-          grid-area: cta;
+          grid-area : cta;
 
           .i-arrow {
-            width: 18px;
+            width : 18px;
             height: 18px;
             cursor: pointer;
           }
@@ -533,16 +585,17 @@
         }
 
         .description-cont {
-          grid-area: description-cont;
-          display: none;
+          grid-area   : description-cont;
+          display     : none;
           padding-left: 24px;
+
           .description {
-            width: 100%;
-            height: 100%;
-            border-radius: $border-radius;
-            padding: 4px 8px;
+            width           : 100%;
+            height          : 100%;
+            border-radius   : $border-radius;
+            padding         : 4px 8px;
             background-color: $navbar-bg;
-            color: $darkprimary;
+            color           : $darkprimary;
           }
         }
       }
@@ -550,17 +603,17 @@
 
     // Needs
     .cnt_row6 {
-      display: grid;
+      display              : grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
         "field cta"
         "value value"
         "description-cont description-cont";
@@ -570,16 +623,16 @@
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -632,33 +685,34 @@
       }
 
       .description-cont {
-        grid-area: description-cont;
-        display: none;
+        grid-area   : description-cont;
+        display     : none;
         padding-left: 24px;
+
         .description {
-          width: 100%;
-          height: 100%;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : 100%;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
+          color           : $darkprimary;
         }
       }
     }
 
     // Comments
     .cnt_row7 {
-      display: grid;
+      display              : grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
         "field cta"
         "value value"
         "description-cont description-cont";
@@ -668,16 +722,16 @@
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -692,33 +746,35 @@
       }
 
       .value {
-        grid-area: value;
+        grid-area  : value;
         margin-left: 24px;
 
         div {
           width: 100%;
+
           .mod-data-input {
-            > div:first-child {
+            >div:first-child {
               .editor_atto {
                 .editor_atto_toolbar {
                   visibility: hidden;
-                  height: 0;
-                  display: none !important;
+                  height    : 0;
+                  display   : none !important;
                 }
+
                 .editor_atto_content_wrap {
-                  width: 100% !important;
-                  border-top: 1px solid $primary;
-                  border-top-left-radius: 0.5rem;
+                  width                  : 100% !important;
+                  border-top             : 1px solid $primary;
+                  border-top-left-radius : 0.5rem;
                   border-top-right-radius: 0.5rem;
-                  resize: none !important;
-                  overflow-x: hidden;
+                  resize                 : none !important;
+                  overflow-x             : hidden;
                 }
               }
             }
 
-            > div:nth-child(2) {
+            >div:nth-child(2) {
               visibility: hidden;
-              height: 0;
+              height    : 0;
             }
           }
         }
@@ -729,33 +785,34 @@
       }
 
       .description-cont {
-        grid-area: description-cont;
-        display: none;
+        grid-area   : description-cont;
+        display     : none;
         padding-left: 24px;
+
         .description {
-          width: 100%;
-          height: 100%;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : 100%;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
+          color           : $darkprimary;
         }
       }
     }
 
     // Link & Files
     .cnt_row8 {
-      display: grid;
+      display              : grid;
       grid-template-columns: 1fr auto;
-      grid-template-rows: 18px repeat(2, auto);
-      grid-auto-columns: 1fr;
-      gap: 4px 4px;
-      grid-auto-flow: row;
-      justify-content: stretch;
-      align-content: stretch;
-      justify-item_customs: stretch;
-      align-item_customs: stretch;
-      grid-template-areas:
+      grid-template-rows   : 18px repeat(2, auto);
+      grid-auto-columns    : 1fr;
+      gap                  : 4px 4px;
+      grid-auto-flow       : row;
+      justify-content      : stretch;
+      align-content        : stretch;
+      justify-item_customs : stretch;
+      align-item_customs   : stretch;
+      grid-template-areas  :
         "field cta"
         "value value"
         "description-cont description-cont";
@@ -765,16 +822,16 @@
 
         h6 {
           margin-left: 24px;
-          color: $primary;
+          color      : $primary;
         }
       }
 
       .cta {
         align-self: center;
-        grid-area: cta;
+        grid-area : cta;
 
         .i-arrow {
-          width: 18px;
+          width : 18px;
           height: 18px;
           cursor: pointer;
         }
@@ -789,26 +846,26 @@
       }
 
       .value {
-        grid-area: value;
-        display: grid;
+        grid-area            : value;
+        display              : grid;
         grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-        gap: 4px;
-        padding-left: 24px;
+        grid-auto-rows       : auto;
+        gap                  : 4px;
+        padding-left         : 24px;
 
         .value-rws {
-          display: grid;
+          display              : grid;
           grid-template-columns: 1fr;
-          grid-auto-rows: auto;
-          gap: 4px;
+          grid-auto-rows       : auto;
+          gap                  : 4px;
 
           .value-link {
             .form-inline {
               table {
                 border-collapse: collapse;
-                margin: 0;
-                width: 100%;
-                table-layout: auto;
+                margin         : 0;
+                width          : 100%;
+                table-layout   : auto;
 
                 tbody {
                   border-collapse: collapse;
@@ -816,20 +873,23 @@
                   th,
                   td {
                     border: none;
-//TODO
+
+                    //TODO
                     input {
                       width: 100%;
                     }
+
                     .icon {
                       float: left;
                     }
                   }
+
                   tr {
                     td:first-child {
-                      width: 140px;
+                      width    : 140px;
                       font-size: 14px;
-                      color: $primary;
-                      padding: 7px;
+                      color    : $primary;
+                      padding  : 7px;
                     }
                   }
                 }
@@ -838,34 +898,35 @@
           }
 
           .value-files {
-            display: grid;
+            display              : grid;
             grid-template-columns: 1fr;
-            grid-auto-rows: auto;
-            gap: 8px;
-            padding: 16px;
+            grid-auto-rows       : auto;
+            gap                  : 8px;
+            padding              : 16px;
+
             .value-lang-file {
-              display: grid;
-              grid-auto-columns: 1fr;
+              display              : grid;
+              grid-auto-columns    : 1fr;
               grid-template-columns: 1fr 1fr 1fr 1fr;
-              gap: 0px 8px;
-              justify-content: stretch;
-              align-content: stretch;
-              justify-item_customs: stretch;
-              align-item_customs: stretch;
+              gap                  : 0px 8px;
+              justify-content      : stretch;
+              align-content        : stretch;
+              justify-item_customs : stretch;
+              align-item_customs   : stretch;
 
               // EN
               .col1 {
-                display: grid;
+                display              : grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 18px auto;
-                grid-auto-columns: 1fr;
-                gap: 4px 4px;
-                grid-auto-flow: row;
-                justify-content: stretch;
-                align-content: stretch;
-                justify-item_customs: stretch;
-                align-item_customs: stretch;
-                grid-template-areas:
+                grid-template-rows   : 18px auto;
+                grid-auto-columns    : 1fr;
+                gap                  : 4px 4px;
+                grid-auto-flow       : row;
+                justify-content      : stretch;
+                align-content        : stretch;
+                justify-item_customs : stretch;
+                align-item_customs   : stretch;
+                grid-template-areas  :
                   "field"
                   "value";
 
@@ -880,24 +941,23 @@
                 .value {
                   grid-area: value;
 
-                  .mod-data-input {
-                  }
+                  .mod-data-input {}
                 }
               }
 
               // ES
               .col2 {
-                display: grid;
+                display              : grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 18px auto;
-                grid-auto-columns: 1fr;
-                gap: 4px 4px;
-                grid-auto-flow: row;
-                justify-content: stretch;
-                align-content: stretch;
-                justify-item_customs: stretch;
-                align-item_customs: stretch;
-                grid-template-areas:
+                grid-template-rows   : 18px auto;
+                grid-auto-columns    : 1fr;
+                gap                  : 4px 4px;
+                grid-auto-flow       : row;
+                justify-content      : stretch;
+                align-content        : stretch;
+                justify-item_customs : stretch;
+                align-item_customs   : stretch;
+                grid-template-areas  :
                   "field"
                   "value";
 
@@ -916,17 +976,17 @@
 
               // FR
               .col3 {
-                display: grid;
+                display              : grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 18px auto;
-                grid-auto-columns: 1fr;
-                gap: 4px 4px;
-                grid-auto-flow: row;
-                justify-content: stretch;
-                align-content: stretch;
-                justify-item_customs: stretch;
-                align-item_customs: stretch;
-                grid-template-areas:
+                grid-template-rows   : 18px auto;
+                grid-auto-columns    : 1fr;
+                gap                  : 4px 4px;
+                grid-auto-flow       : row;
+                justify-content      : stretch;
+                align-content        : stretch;
+                justify-item_customs : stretch;
+                align-item_customs   : stretch;
+                grid-template-areas  :
                   "field"
                   "value";
 
@@ -945,17 +1005,17 @@
 
               // PT
               .col4 {
-                display: grid;
+                display              : grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 18px auto;
-                grid-auto-columns: 1fr;
-                gap: 4px 4px;
-                grid-auto-flow: row;
-                justify-content: stretch;
-                align-content: stretch;
-                justify-item_customs: stretch;
-                align-item_customs: stretch;
-                grid-template-areas:
+                grid-template-rows   : 18px auto;
+                grid-auto-columns    : 1fr;
+                gap                  : 4px 4px;
+                grid-auto-flow       : row;
+                justify-content      : stretch;
+                align-content        : stretch;
+                justify-item_customs : stretch;
+                align-item_customs   : stretch;
+                grid-template-areas  :
                   "field"
                   "value";
 
@@ -969,7 +1029,7 @@
 
                 .value {
                   grid-area: value;
-                  border: none;
+                  border   : none;
                 }
               }
 
@@ -989,30 +1049,35 @@
               .dndupload-arrow {
                 height: 50px;
               }
+
               .fp-navbar {
-                border-top: 1px solid $primary !important;
+                border-top  : 1px solid $primary !important;
                 border-right: 1px solid $primary !important;
-                border-left: 1px solid $primary !important;
+                border-left : 1px solid $primary !important;
               }
+
               .filemanager-container {
-                border-right: 1px solid $primary !important;
-                border-left: 1px solid $primary !important;
+                border-right : 1px solid $primary !important;
+                border-left  : 1px solid $primary !important;
                 border-bottom: 1px solid $primary !important;
               }
+
               .bg-faded,
               .filemanager-container {
                 background-color: $white;
               }
             }
+
             .value-msg-files {
               padding: 12px 0 0 24px;
+
               div {
-                width: 100%;
-                padding: 8px 12px;
-                text-align: center;
-                color: $primary;
+                width           : 100%;
+                padding         : 8px 12px;
+                text-align      : center;
+                color           : $primary;
                 background-color: $white;
-                border-radius: 6px;
+                border-radius   : 6px;
               }
             }
           }
@@ -1021,17 +1086,17 @@
 
       .description-cont {
         grid-area: description-cont;
-        display: none;
-        padding: 0 16px 0 24px;
+        display  : none;
+        padding  : 0 16px 0 24px;
 
         .description {
-          width: 100%;
-          height: auto;
-          border-radius: $border-radius;
-          padding: 4px 8px;
+          width           : 100%;
+          height          : auto;
+          border-radius   : $border-radius;
+          padding         : 4px 8px;
           background-color: $navbar-bg;
-          color: $darkprimary;
-          margin: 0 0 4px;
+          color           : $darkprimary;
+          margin          : 0 0 4px;
         }
       }
     }
