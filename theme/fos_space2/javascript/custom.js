@@ -1,79 +1,164 @@
 require(["jquery"], function ($) {
     $(document).ready(function () {
-        function loadStylesheet(href, integrity, crossorigin) {
-            var link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.href = href;
-            link.integrity = integrity;
-            link.crossOrigin = crossorigin;
-            document.head.appendChild(link);
-        }
+        //----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+        // Expert Mode
 
-        loadStylesheet(
-            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
-            "sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==",
-            "anonymous"
-        );
+        /* var hidden = true;
+ 
+         $("#expertmode").find('.mod-data-input.mr-1').click(function () {
+             if (hidden) {
+                 $('[hidden]').removeAttr('hidden');
+                 hidden = false;
+             } else {
+                 $(".lockTranslation").attr('hidden', true);
+                 $("#titleEN").attr('hidden', true);
+                 $("#titleES").attr('hidden', true);
+                 $("#titleFR").attr('hidden', true);
+                 $("#titlePT").attr('hidden', true);
+                 $("#descEN").attr('hidden', true);
+                 $("#descES").attr('hidden', true);
+                 $("#descFR").attr('hidden', true);
+                 $("#descPT").attr('hidden', true);
+                 hidden = true;
+             }
+         });
+ 
+         //AUTOMATIC TRANSLATION OF TEXT
+         $("#description").on('focusout', translateDescriptions);
+         $("#descriptionEN").on('focusout', translateDescriptions);
+         $("#descriptionES").on('focusout', translateDescriptions);
+         $("#descriptionFR").on('focusout', translateDescriptions);
+         $("#descriptionPT").on('focusout', translateDescriptions);
+         $("#titleDiv").on('focusout', translateTitles);
+         $("#titleDivEN").on('focusout', translateTitles);
+         $("#titleDivES").on('focusout', translateTitles);
+         $("#titleDivFR").on('focusout', translateTitles);
+         $("#titleDivPT").on('focusout', translateTitles);
+         function translateTitles() {
+             let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
+             let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
+             let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
+             let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
+             let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-data-input');
+             let lockEN = $("#TitlelockENTranslation");
+             let lockES = $("#TitlelockESTranslation");
+             let lockFR = $("#TitlelockFRTranslation");
+             let lockPT = $("#TitlelockPTTranslation");
+             let targetLanguages = [];
+             if (!lockEN.is(':checked')) {
+                 console.log("Translation to english");
+                 targetLanguages.push("EN");
+             }
+             if (!lockES.is(':checked')) {
+                 console.log("Translation to spanish");
+                 targetLanguages.push("ES");
+             }
+             if (!lockFR.is(':checked')) {
+                 console.log("Translation to french");
+                 targetLanguages.push("FR");
+             }
+             if (!lockPT.is(':checked')) {
+                 console.log("Translation to portuguese");
+                 targetLanguages.push("PT");
+             }
+             targetLanguages.forEach(function (targetLang) {
+                 translateText(origin.val(), '', targetLang, function (error, translatedText) {
+                     if (error) {
+                         console.error("Translation error:", error);
+                     } else {
+                         if (targetLang === "EN") {
+                             titleEN.val(translatedText);
+                         }
+                         if (targetLang === "ES") {
+                             titleES.val(translatedText);
+                         }
+                         if (targetLang === "FR") {
+                             titleFR.val(translatedText);
+                         }
+                         if (targetLang === "PT") {
+                             titlePT.val(translatedText);
+                         }
+                     }
+                 });
+             });
+         }
+         function translateDescriptions() {
+             let origin = $(this).find('.editor_atto_content.form-control');
+             let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
+             let descES = $("#descriptionES").find('.editor_atto_content.form-control');
+             let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
+             let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
+             let lockEN = $("#lockENTranslation");
+             let lockES = $("#lockESTranslation");
+             let lockFR = $("#lockFRTranslation");
+             let lockPT = $("#lockPTTranslation");
+             let targetLanguages = [];
+             if (!lockEN.is(':checked')) {
+                 console.log("Translation to english");
+                 targetLanguages.push("EN");
+             }
+             if (!lockES.is(':checked')) {
+                 console.log("Translation to spanish");
+                 targetLanguages.push("ES");
+             }
+             if (!lockFR.is(':checked')) {
+                 console.log("Translation to french");
+                 targetLanguages.push("FR");
+             }
+             if (!lockPT.is(':checked')) {
+                 console.log("Translation to portuguese");
+                 targetLanguages.push("PT");
+             }
+             targetLanguages.forEach(function (targetLang) {
+                 translateText(origin.text(), '', targetLang, function (error, translatedText) {
+                     if (error) {
+                         console.error("Translation error:", error);
+                     } else {
+                         if (targetLang === "EN") {
+                             descEN.text(translatedText);
+                         }
+                         if (targetLang === "ES") {
+                             descES.text(translatedText);
+                         }
+                         if (targetLang === "FR") {
+                             descFR.text(translatedText);
+                         }
+                         if (targetLang === "PT") {
+                             descPT.text(translatedText);
+                         }
+                     }
+                 });
+             });
+         }
+ 
+         function translateText(text, sourceLang, targetLang, callback) {
+             var authKey = 'bf185a4a-075b-9397-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
+             var apiUrl = 'https://api-free.deepl.com/v2/translate';
+             $.ajax({
+                 url: apiUrl,
+                 type: 'POST',
+                 contentType: 'application/x-www-form-urlencoded',
+                 data: {
+                     'auth_key': authKey,
+                     'text': text,
+                     'source_lang': sourceLang,
+                     'target_lang': targetLang
+                 },
+                 success: function (response) {
+                     if (response && response.translations && response.translations.length > 0) {
+                         var translatedText = response.translations[0].text;
+                         callback(null, translatedText);
+                     } else {
+                         callback("Translation failed");
+                     }
+                 },
+                 error: function (xhr, status, error) {
+                     callback("Error occurred: " + error);
+                 }
+             });
+         }*/
 
-        loadStylesheet(
-            "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
-            "sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==",
-            "anonymous"
-        );
-
-        function loadScript(src, integrity, crossorigin) {
-            return new Promise(function (resolve, reject) {
-                var script = document.createElement("script");
-                script.type = "text/javascript";
-                script.src = src;
-                script.integrity = integrity;
-                script.crossOrigin = crossorigin;
-                script.onload = resolve;
-                script.onerror = reject;
-                document.head.appendChild(script);
-            });
-        }
-
-        Promise.all([
-            loadScript(
-                "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
-                "sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==",
-                "anonymous"
-            ),
-        ])
-            .then(function () {
-                console.log("All scripts have been loaded");
-                var owl = $("#owl-carousel_slider");
-                //owl.empty();
-                owl.owlCarousel({
-                    items: 1,
-                    margin: 30,
-                    stagePadding: 30,
-                    smartSpeed: 450,
-                    loop: true,
-                    autoplay: true,
-                });
-            })
-            .catch(function () {
-                console.log("Something went wrong loading the scripts");
-            });
-
-        //$("#login").remove();
-        //$("#page-header").remove();
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 200) {
-                $("#scroll").fadeIn();
-            } else {
-                $("#scroll").fadeOut();
-            }
-        });
-
-        $("#scroll").click(function () {
-            $("html, body").animate({scrollTop: 0}, 600);
-            return false;
-        });
-
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // add entry
         $(".cta").click(function () {
             var description = $(this).parent().find(".description-cont");
@@ -88,191 +173,33 @@ require(["jquery"], function ($) {
             }
         });
 
-        var hidden = true;
-
-        $("#expertmode").find('.mod-data-input.mr-1').click(function() {
-            if(hidden){
-                $('[hidden]').removeAttr('hidden');
-                hidden=false;
-            }else{
-                $(".lockTranslation").attr('hidden', true);
-                $("#titleEN").attr('hidden', true);
-                $("#titleES").attr('hidden', true);
-                $("#titleFR").attr('hidden', true);
-                $("#titlePT").attr('hidden', true);
-                $("#descEN").attr('hidden', true);
-                $("#descES").attr('hidden', true);
-                $("#descFR").attr('hidden', true);
-                $("#descPT").attr('hidden', true);
-                hidden=true;
-            }
-        });
-
-        //AUTOMATIC TRANSLATION OF TEXT
-        $("#description").on('focusout', translateDescriptions);
-        $("#descriptionEN").on('focusout', translateDescriptions);
-        $("#descriptionES").on('focusout', translateDescriptions);
-        $("#descriptionFR").on('focusout', translateDescriptions);
-        $("#descriptionPT").on('focusout', translateDescriptions);
-        $("#titleDiv").on('focusout', translateTitles);
-        $("#titleDivEN").on('focusout', translateTitles);
-        $("#titleDivES").on('focusout', translateTitles);
-        $("#titleDivFR").on('focusout', translateTitles);
-        $("#titleDivPT").on('focusout', translateTitles);
-        function translateTitles(){
-            let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
-            let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
-            let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
-            let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
-            let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-data-input');
-            let lockEN = $("#TitlelockENTranslation");
-            let lockES = $("#TitlelockESTranslation");
-            let lockFR = $("#TitlelockFRTranslation");
-            let lockPT = $("#TitlelockPTTranslation");
-            let targetLanguages = [];
-            if (!lockEN.is(':checked')) {
-                console.log("Translation to english");
-                targetLanguages.push("EN");
-            }
-            if (!lockES.is(':checked')) {
-                console.log("Translation to spanish");
-                targetLanguages.push("ES");
-            }
-            if (!lockFR.is(':checked')) {
-                console.log("Translation to french");
-                targetLanguages.push("FR");
-            }
-            if (!lockPT.is(':checked')) {
-                console.log("Translation to portuguese");
-                targetLanguages.push("PT");
-            }
-            targetLanguages.forEach(function (targetLang) {
-                translateText(origin.val(), '', targetLang, function (error, translatedText) {
-                    if (error) {
-                        console.error("Translation error:", error);
-                    } else {
-                        if (targetLang === "EN") {
-                            titleEN.val(translatedText);
-                        }
-                        if (targetLang === "ES") {
-                            titleES.val(translatedText);
-                        }
-                        if (targetLang === "FR") {
-                            titleFR.val(translatedText);
-                        }
-                        if (targetLang === "PT") {
-                            titlePT.val(translatedText);
-                        }
-                    }
-                });
-            });
-        }
-        function translateDescriptions() {
-            let origin = $(this).find('.editor_atto_content.form-control');
-            let descEN = $("#descriptionEN").find('.editor_atto_content.form-control');
-            let descES = $("#descriptionES").find('.editor_atto_content.form-control');
-            let descFR = $("#descriptionFR").find('.editor_atto_content.form-control');
-            let descPT = $("#descriptionPT").find('.editor_atto_content.form-control');
-            let lockEN = $("#lockENTranslation");
-            let lockES = $("#lockESTranslation");
-            let lockFR = $("#lockFRTranslation");
-            let lockPT = $("#lockPTTranslation");
-            let targetLanguages = [];
-            if (!lockEN.is(':checked')) {
-                console.log("Translation to english");
-                targetLanguages.push("EN");
-            }
-            if (!lockES.is(':checked')) {
-                console.log("Translation to spanish");
-                targetLanguages.push("ES");
-            }
-            if (!lockFR.is(':checked')) {
-                console.log("Translation to french");
-                targetLanguages.push("FR");
-            }
-            if (!lockPT.is(':checked')) {
-                console.log("Translation to portuguese");
-                targetLanguages.push("PT");
-            }
-            targetLanguages.forEach(function (targetLang) {
-                translateText(origin.text(), '', targetLang, function (error, translatedText) {
-                    if (error) {
-                        console.error("Translation error:", error);
-                    } else {
-                        if (targetLang === "EN") {
-                            descEN.text(translatedText);
-                        }
-                        if (targetLang === "ES") {
-                            descES.text(translatedText);
-                        }
-                        if (targetLang === "FR") {
-                            descFR.text(translatedText);
-                        }
-                        if (targetLang === "PT") {
-                            descPT.text(translatedText);
-                        }
-                    }
-                });
-            });
-        }
-
-        function translateText(text, sourceLang, targetLang, callback) {
-            var authKey = 'bf185a4a-075b-9397-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
-            var apiUrl = 'https://api-free.deepl.com/v2/translate';
-            $.ajax({
-                url: apiUrl,
-                type: 'POST',
-                contentType: 'application/x-www-form-urlencoded',
-                data: {
-                    'auth_key': authKey,
-                    'text': text,
-                    'source_lang': sourceLang,
-                    'target_lang': targetLang
-                },
-                success: function (response) {
-                    if (response && response.translations && response.translations.length > 0) {
-                        var translatedText = response.translations[0].text;
-                        callback(null, translatedText);
-                    } else {
-                        callback("Translation failed");
-                    }
-                },
-                error: function (xhr, status, error) {
-                    callback("Error occurred: " + error);
-                }
-            });
-        }
-
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Assign a limit of 100 characters to the title field
         var titleInput = $("#titleDiv").find(".basefieldinput");
 
         titleInput.on('click', function () {
-            //console.log("Adding maxlength attribute to input text");
             $(this).attr('maxlength', '100');
         });
 
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Assign a limit of 100 words to the description and comment field
-        var textareaDivs = $(".value");
+        var descriptionDiv = $("#description");
+        var commentDiv = $("#comments");
+        var linkfield = $("#linkfield");
 
-        if (textareaDivs.length >= 9) {
-            var textareaDiv2 = $(textareaDivs[2]);
-            var textareaDiv8 = $(textareaDivs[8]);
-            var linkfield = $(textareaDivs[9]);
+        descriptionDiv.on('input', limitWordCount);
+        commentDiv.on('input', limitWordCount);
+        commentDiv.on('focusout', limitword);
+        descriptionDiv.on('focusout', limitword);
 
-            textareaDiv2.on('input', limitWordCount);
-            textareaDiv8.on('input', limitWordCount);
-            textareaDiv2.on('focusout', limitword);
-            textareaDiv8.on('focusout', limitword);
-            textareaDiv8.on('focusout', limitword);
+        linkfield.on('input', wordlimit);
+        linkfield.on('focusout', removespace);
 
-            linkfield.on('input', wordlimit);
-            linkfield.on('focusout', removespace);
+        var selectlist = $("#uploadDate").find('div select');
+        selectlist.each(function () {
+            $(this).prop('readonly', true).attr('tabindex', '-1');
+        });
 
-            var selectlist = $(textareaDivs[1]).find('div select');
-            selectlist.each(function () {
-                $(this).prop('readonly', true).attr('tabindex', '-1');
-            });
-        }
 
         function limitWordCount() {
             var editorDiv = $(this).find('.editor_atto_content.form-control');
@@ -305,8 +232,10 @@ require(["jquery"], function ($) {
             }
         }
 
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //remove space of link field
         var tdList = $('.form-inline table tbody td input');
+        console.log(tdList);
 
         function removespace() {
             if (tdList.length >= 2) {
@@ -331,7 +260,7 @@ require(["jquery"], function ($) {
                 var words = value.split(" ");
                 var wordCount = words.length;
                 if (wordCount > 6) {
-                    var newContent = words.slice(0, 6).join(" ");
+                    var newContent = words.slice(0, 6).join(" ").trim();
                     tdList.eq(1).val(newContent);
                 }
             } else {
@@ -340,12 +269,8 @@ require(["jquery"], function ($) {
 
         }
 
-        //upload field
-
-        $('#miCampo').prop('readonly', true);
-
-
-        // - list view
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //list view
         var maxChars = 100;
         var maxWords = 30;
 
@@ -365,11 +290,33 @@ require(["jquery"], function ($) {
                 $(this).text(newText);
             }
         });
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // remove space on title and author field - advancedSearch
+        var inputadvacedsearch = $(".input-advancedsearch input");
+        console.log(inputadvacedsearch);
+
+        if (inputadvacedsearch.length > 0) {
+            var inputtitle = inputadvacedsearch.eq(0);
+            var inputauthor = inputadvacedsearch.eq(1);
+
+            inputtitle.on('focusout', removespaceAdvancesearch);
+            inputauthor.on('focusout', removespaceAdvancesearch);
+
+            function removespaceAdvancesearch(event) {
+                var inputValue = $(event.target).val();
+                var trimmedValue = $.trim(inputValue);
+                $(event.target).val(trimmedValue);
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //block event on data entry view
-        $('input[type=text]').on('keypress', function(e) {
-          if (e.which === 13) {
-              e.preventDefault();
-          }
-      });
+        $('input[type=text]').on('keypress', function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+            }
+        });
+
+
     });
-  });
+});
