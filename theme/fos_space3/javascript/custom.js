@@ -175,7 +175,7 @@ require(["jquery"], function ($) {
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Assign a limit of 100 characters to the title field
-        var titleInput = $("#title").find(".basefieldinput");
+        var titleInput = $("#titleDiv").find(".basefieldinput");
 
         titleInput.on('click', function () {
             $(this).attr('maxlength', '100');
@@ -195,7 +195,7 @@ require(["jquery"], function ($) {
         linkfield.on('input', wordlimit);
         linkfield.on('focusout', removespace);
 
-        var selectlist = $("#title").find('div select');
+        var selectlist = $("#titleDiv").find('div select');
         selectlist.each(function () {
             $(this).prop('readonly', true).attr('tabindex', '-1');
         });
