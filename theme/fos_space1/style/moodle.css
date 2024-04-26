@@ -349,8 +349,16 @@ h5 {
   width: 100% !important;
 }
 .ktt_log_page .lg_cnt div[role=main] .loginform .login-heading {
-  font-size: 1em !important;
+  font-size: 1.5em !important;
   font-weight: 500 !important;
+  color: #f06043 !important;
+}
+.ktt_log_page .lg_cnt div[role=main] .loginform a.btn.login-identityprovider-btn.btn-block {
+  border: 1px solid #5c3873;
+  background-color: #5c3873;
+  width: fit-content;
+  margin: auto auto;
+  color: white;
 }
 .ktt_log_page .lg_cnt div[role=main] .login-signup .btn-secondary {
   width: 100% !important;
