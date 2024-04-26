@@ -204,6 +204,7 @@ table {
 }
 
 body {
+  height: auto;
   @include font-body("Isidora Sans Regular");
   background-color: $FOS-Aubergine-bk;
   #page-wrapper {

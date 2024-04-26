@@ -6396,6 +6396,7 @@ table {
 }
 
 body {
+  height: auto;
   font-family: "Isidora Sans Regular", sans-serif;
   background-color: #f3eff5;
 }
