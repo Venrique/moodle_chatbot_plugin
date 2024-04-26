@@ -63,7 +63,7 @@
 ) !default;*/
 @font-face {
   font-family: "Isidora Sans Regular";
-  src: url("fos_space1/fonts/isidora-sans/IsidoraSans-Regular.otf") format("opentype"), url("fos_space1/fonts/isidora-sans/IsidoraSans-Regular.ttf") format("truetype");
+  src: url([[font:theme|isidora-sans/IsidoraSans-Regular.otf]]) format("opentype"), url([[font:theme|isidora-sans/IsidoraSans-Regular.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -6396,7 +6396,6 @@ table {
 }
 
 body {
-  height: auto;
   font-family: "Isidora Sans Regular", sans-serif;
   background-color: #f3eff5;
 }
