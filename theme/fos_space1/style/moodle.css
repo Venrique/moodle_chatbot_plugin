@@ -63,7 +63,8 @@
 ) !default;*/
 @font-face {
   font-family: "Isidora Sans Regular";
-  src: url([[font:theme|isidora-sans/IsidoraSans-Regular.otf]]) format("opentype"), url([[font:theme|isidora-sans/IsidoraSans-Regular.ttf]]) format("truetype");
+  src: url([[font:theme|IsidoraSans-Regular.otf]]);
+  src: url([[font:theme|IsidoraSans-Regular.otf]]) format("opentype"), url([[font:theme|IsidoraSans-Regular.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
