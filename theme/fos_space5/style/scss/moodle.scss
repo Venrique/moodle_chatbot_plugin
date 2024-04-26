@@ -199,19 +199,20 @@ table {
   }
 }
 
-body {
+body  {
   @include font-body("Isidora Sans Regular");
   background-color: $body-bg;
   #page-wrapper #page {
     background-color: $body-bg;
+    margin-bottom: 0;
     min-height: fit-content;
     #page-content {
       background-color: $body-bg;
     }
 
     .main-inner {
-      background-color: $body-bg;
-      padding: 0 .5rem 1.5rem !important;
+      background-color: $body-bg;    
+      padding: 0 0.5rem 1.5rem !important;
       max-width: 1320px !important;
       margin-top: 0;
       min-height: 86vh;
@@ -220,10 +221,7 @@ body {
         max-width: 100%;
         margin-top: 1.5rem;
     }
-    }
 
-    #region-main {
-      background-color: $body-bg;
     }
 
     div.grid-category {
@@ -231,7 +229,11 @@ body {
       max-width: 1320px !important;
       width: 100%;
   }
-   
+
+
+    #region-main {
+      background-color: $body-bg;
+    }
   }
 }
 
@@ -282,4 +284,57 @@ body {
   background-repeat: no-repeat;
   width: 44px;
   height: 31px;
+}
+
+.dropdown {
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+/*Grade view table*/
+.path-grade-report-grader .gradeparent {
+  overflow: auto;
+  margin-bottom: 2vh;
+  th.header {
+    position: relative;
+}
+tr.avg.r0.lastrow.pinned {
+  position: static;
+}
+}
+
+table#user-grades{
+  display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: static;
+  bottom: 0;
+  height: auto;
+  margin-top: 1.5vh;
+}
+
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
+/* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+  background-color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: #fff;
+  } 
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
 }
