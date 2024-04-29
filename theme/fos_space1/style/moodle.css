@@ -359,8 +359,8 @@ h5 {
   width: 100% !important;
 }
 .ktt_log_page .lg_cnt div[role=main] .loginform .login-heading {
-  font-size: 1.5em !important;
-  font-family: "Isidora Sans Bold", sans-serif;
+  font-size: 1.2em !important;
+  font-family: "Isidora Sans Medium", sans-serif !important;
   color: #f06043 !important;
 }
 .ktt_log_page .lg_cnt div[role=main] .loginform a.btn.login-identityprovider-btn.btn-block {
