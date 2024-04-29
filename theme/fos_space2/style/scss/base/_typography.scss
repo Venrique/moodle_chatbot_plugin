@@ -1,27 +1,38 @@
 @font-face {
-  font-family: 'Isidora Sans Regular';
-  src: url('fos_space2/fonts/isidora-sans/IsidoraSans-Regular.otf') format('opentype'),
-       url('fos_space2/fonts/isidora-sans/IsidoraSans-Regular.ttf') format('truetype');
+  font-family: "Isidora Sans Regular";
+  src: url([[font:theme|IsidoraSans-Regular.otf]]);
+  src: url([[font:theme|IsidoraSans-Regular.otf]]) format("opentype"),
+    url([[font:theme|IsidoraSans-Regular.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Isidora Sans Medium';
-  src: url('fos_space2/fonts/isidora-sans/IsidoraSans-Medium.otf') format('opentype'),
-       url('fos_space2/fonts/isidora-sans/IsidoraSans-Medium.ttf') format('truetype');
+  font-family: "Isidora Sans Medium";
+  src: url([[font:theme|IsidoraSans-Medium.otf]]);
+  src: url([[font:theme|IsidoraSans-Medium.otf]]) format("opentype"),
+    url([[font:theme|IsidoraSans-Medium.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Isidora Sans Alt-Black';
-  src: url('fos_space2/fonts/isidora-sans/IsidoraSansAlt-Black.otf') format('opentype'),
-       url('fos_space2/fonts/isidora-sans/IsidoraSansAlt-Black.ttf') format('truetype');
+  font-family: "Isidora Sans Alt-Black";
+  src: url([[font:theme|IsidoraSansAlt-Black.otf]]);
+  src: url([[font:theme|IsidoraSansAlt-Black.otf]]) format("opentype"),
+    url([[font:theme|IsidoraSansAlt-Black.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Isidora Sans Bold";
+  src: url([[font:theme|IsidoraSans-Bold.otf]]);
+  src: url([[font:theme|IsidoraSans-Bold.otf]]) format("opentype"),
+    url([[font:theme|IsidoraSans-Bold.ttf]]) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 h1 {
   @include font-header-Sans_Black('Isidora Sans Black');

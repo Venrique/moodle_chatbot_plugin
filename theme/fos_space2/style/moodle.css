@@ -63,19 +63,29 @@
 ) !default;*/
 @font-face {
   font-family: "Isidora Sans Regular";
-  src: url("fos_space2/fonts/isidora-sans/IsidoraSans-Regular.otf") format("opentype"), url("fos_space2/fonts/isidora-sans/IsidoraSans-Regular.ttf") format("truetype");
+  src: url([[font:theme|IsidoraSans-Regular.otf]]);
+  src: url([[font:theme|IsidoraSans-Regular.otf]]) format("opentype"), url([[font:theme|IsidoraSans-Regular.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Isidora Sans Medium";
-  src: url("fos_space2/fonts/isidora-sans/IsidoraSans-Medium.otf") format("opentype"), url("fos_space2/fonts/isidora-sans/IsidoraSans-Medium.ttf") format("truetype");
+  src: url([[font:theme|IsidoraSans-Medium.otf]]);
+  src: url([[font:theme|IsidoraSans-Medium.otf]]) format("opentype"), url([[font:theme|IsidoraSans-Medium.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Isidora Sans Alt-Black";
-  src: url("fos_space2/fonts/isidora-sans/IsidoraSansAlt-Black.otf") format("opentype"), url("fos_space2/fonts/isidora-sans/IsidoraSansAlt-Black.ttf") format("truetype");
+  src: url([[font:theme|IsidoraSansAlt-Black.otf]]);
+  src: url([[font:theme|IsidoraSansAlt-Black.otf]]) format("opentype"), url([[font:theme|IsidoraSansAlt-Black.ttf]]) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Isidora Sans Bold";
+  src: url([[font:theme|IsidoraSans-Bold.otf]]);
+  src: url([[font:theme|IsidoraSans-Bold.otf]]) format("opentype"), url([[font:theme|IsidoraSans-Bold.ttf]]) format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -205,9 +215,10 @@ h5 {
 .grid-category .img_header .grid-header_content .title {
   justify-self: center;
   align-self: center;
+  text-align: center;
   grid-area: title;
   color: #60ad8f;
-  font-size: 2rem;
+  font-size: 2.7rem;
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
@@ -1541,6 +1552,9 @@ h5 {
 .slst_body .table-card-slst .data-item .menubar {
   width: 24px;
 }
+.slst_body .table-card-slst .data-item .title_year b {
+  font-family: "Isidora Sans Bold", sans-serif;
+}
 .slst_body .table-card-slst .data-item .title_year span {
   font-weight: 300;
 }
@@ -1609,6 +1623,7 @@ h5 {
   background-color: #dbfcef !important;
   align-items: stretch;
   height: 61px;
+  font-size: 1.1rem;
 }
 
 .moremenu .nav-link {

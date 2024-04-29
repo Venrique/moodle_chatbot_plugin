@@ -206,6 +206,9 @@ table {
 body {
   @include font-body("Isidora Sans Regular");
   background-color: $FOS-Aubergine-bk;
+  #page-admin-index {
+    height: fit-content;
+}
   #page-wrapper {
   display: inline;  
   min-height: auto;

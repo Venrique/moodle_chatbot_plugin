@@ -358,9 +358,9 @@ h5 {
 .ktt_log_page .lg_cnt div[role=main] .loginform .login-form .login-form-submit .btn {
   width: 100% !important;
 }
-.ktt_log_page .lg_cnt div[role=main] .loginform .login-heading {
+.ktt_log_page .lg_cnt div[role=main] .loginform h2 .login-heading {
   font-size: 1.5em !important;
-  font-weight: 500 !important;
+  font-weight: normal !important;
   color: #f06043 !important;
 }
 .ktt_log_page .lg_cnt div[role=main] .loginform a.btn.login-identityprovider-btn.btn-block {
@@ -6413,6 +6413,9 @@ table {
 body {
   font-family: "Isidora Sans Regular", sans-serif;
   background-color: #f3eff5;
+}
+body #page-admin-index {
+  height: fit-content;
 }
 body #page-wrapper {
   display: inline;
