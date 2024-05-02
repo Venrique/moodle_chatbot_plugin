@@ -8,19 +8,16 @@ require(["jquery"], function ($) {
             link.crossOrigin = crossorigin;
             document.head.appendChild(link);
         }
-
         loadStylesheet(
             "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
             "sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==",
             "anonymous"
         );
-
         loadStylesheet(
             "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css",
             "sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==",
             "anonymous"
         );
-
         function loadScript(src, integrity, crossorigin) {
             return new Promise(function (resolve, reject) {
                 var script = document.createElement("script");
@@ -33,7 +30,6 @@ require(["jquery"], function ($) {
                 document.head.appendChild(script);
             });
         }
-
         Promise.all([
             loadScript(
                 "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
@@ -58,8 +54,10 @@ require(["jquery"], function ($) {
                 console.log("Something went wrong loading the scripts");
             });
 
+  
         //$("#login").remove();
         //$("#page-header").remove();
+  
 
         $(window).scroll(function () {
             if ($(this).scrollTop() > 200) {
