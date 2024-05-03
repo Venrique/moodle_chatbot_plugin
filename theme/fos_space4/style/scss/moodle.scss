@@ -199,7 +199,7 @@ table {
 }
 
 body {
-  @include font-body("Isidora Sans Regular");
+  @include font-body("Isidora Sans Medium");
   background-color: $body-bg;
   #page-wrapper #page {
     background-color: $body-bg;
