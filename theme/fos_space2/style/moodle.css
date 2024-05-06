@@ -6272,4 +6272,24 @@ a#action-menu-toggle-1:focus {
   border: 1px solid #60ad8f;
 }
 
+/* Glossary activity*/
+.entrybox th {
+  border: none !important;
+}
+
+table.entrylowersection {
+  border: none !important;
+  padding: 0 0;
+}
+
+.entrylowersection td {
+  border: none !important;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.glossarypost.dictionary td {
+  border: none !important;
+}
+
 /*# sourceMappingURL=moodle.css.map */
