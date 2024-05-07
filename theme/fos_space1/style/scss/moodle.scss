@@ -364,14 +364,9 @@ a#action-menu-toggle-1 {
   }
 }
 
-/* Glossary activity*/
+/* Glossary activity
 
-table.glossarycategoryheader { 
-  th {
-	border: none !important;
-	padding: 0 0;
-}
-}
+
 
 table.glossarypost{
 
@@ -392,7 +387,15 @@ table.glossarypost{
   .fullwithoutauthor th {
     border: none !important;
   }
+}*/
+
+table.glossarycategoryheader { 
+  th {
+	border: none !important;
+	padding: 0 0;
 }
+}
+
 .glossarypost tbody tr {
   th {
   border: none !important;

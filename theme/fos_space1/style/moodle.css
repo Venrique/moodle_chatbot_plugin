@@ -6559,27 +6559,33 @@ a#action-menu-toggle-1:focus {
   border: 1px solid #5c3873;
 }
 
-/* Glossary activity*/
+/* Glossary activity
+
+
+
+table.glossarypost{
+
+  .encyclopedia th {
+    border: none !important;
+  }
+  .faq th {
+    border: none !important;
+  }
+  .fullwithauthor th {
+    border: none !important;
+  }
+  .dictionary td{
+    border: none !important;
+    padding: 0 0;
+
+  }
+  .fullwithoutauthor th {
+    border: none !important;
+  }
+}*/
 table.glossarycategoryheader th {
   border: none !important;
   padding: 0 0;
-}
-
-table.glossarypost .encyclopedia th {
-  border: none !important;
-}
-table.glossarypost .faq th {
-  border: none !important;
-}
-table.glossarypost .fullwithauthor th {
-  border: none !important;
-}
-table.glossarypost .dictionary td {
-  border: none !important;
-  padding: 0 0;
-}
-table.glossarypost .fullwithoutauthor th {
-  border: none !important;
 }
 
 .glossarypost tbody tr th {
