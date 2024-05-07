@@ -393,8 +393,10 @@ table.glossarypost{
     border: none !important;
   }
 }
-.glossarypost tbody tr th,
-.glossarypost tbody tr {
+.glossarypost tbody tr th {
+  border: none !important;
+  padding: 0;
+  .glossarypost tbody tr {
     td {
     border: none !important;
     padding: 0;
@@ -402,4 +404,6 @@ table.glossarypost{
     td .left .picture {
         padding: .5em;
     }
+}
+
 }

@@ -6582,13 +6582,15 @@ table.glossarypost .fullwithoutauthor th {
   border: none !important;
 }
 
-.glossarypost tbody tr th td,
-.glossarypost tbody tr td {
+.glossarypost tbody tr th {
   border: none !important;
   padding: 0;
 }
-.glossarypost tbody tr th td .left .picture,
-.glossarypost tbody tr td .left .picture {
+.glossarypost tbody tr th .glossarypost tbody tr td {
+  border: none !important;
+  padding: 0;
+}
+.glossarypost tbody tr th .glossarypost tbody tr td .left .picture {
   padding: 0.5em;
 }
 
