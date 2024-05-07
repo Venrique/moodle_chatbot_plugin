@@ -6570,6 +6570,13 @@ table.glossarycategoryheader th {
   padding: 0 0;
 }
 
+table.glossarypost .encyclopedia th {
+  border: none !important;
+}
+table.glossarypost .faq th {
+  border: none !important;
+}
+
 .glossarypost tbody tr th td,
 .glossarypost tbody tr td {
   border: none !important;

@@ -380,6 +380,16 @@ table.glossarycategoryheader {
 }
 }
 
+table.glossarypost{
+
+  .encyclopedia th {
+    border: none !important;
+  }
+  .faq th {
+    border: none !important;
+  }
+}
+
 .glossarypost tbody tr th,
 .glossarypost tbody tr {
     td {
