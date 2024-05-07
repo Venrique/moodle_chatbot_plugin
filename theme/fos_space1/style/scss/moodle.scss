@@ -372,13 +372,6 @@ table.glossarycategoryheader {
 	padding: 0 0;
 }
 }
-.glossarypost.dictionary { 
-  td{
-	border: none !important;
-	padding: 0 0;
-    
-}
-}
 
 table.glossarypost{
 
@@ -388,8 +381,18 @@ table.glossarypost{
   .faq th {
     border: none !important;
   }
+  .fullwithauthor th {
+    border: none !important;
+  }
+  .dictionary td{
+    border: none !important;
+    padding: 0 0;
+      
+  }
+  .fullwithoutauthor th {
+    border: none !important;
+  }
 }
-
 .glossarypost tbody tr th,
 .glossarypost tbody tr {
     td {

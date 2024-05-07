@@ -6565,15 +6565,20 @@ table.glossarycategoryheader th {
   padding: 0 0;
 }
 
-.glossarypost.dictionary td {
-  border: none !important;
-  padding: 0 0;
-}
-
 table.glossarypost .encyclopedia th {
   border: none !important;
 }
 table.glossarypost .faq th {
+  border: none !important;
+}
+table.glossarypost .fullwithauthor th {
+  border: none !important;
+}
+table.glossarypost .dictionary td {
+  border: none !important;
+  padding: 0 0;
+}
+table.glossarypost .fullwithoutauthor th {
   border: none !important;
 }
 
