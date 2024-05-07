@@ -393,17 +393,13 @@ table.glossarypost{
     border: none !important;
   }
 }
-.glossarypost tbody tr th {
+.glossarypost tbody tr {
+  th {
   border: none !important;
   padding: 0;
-  .glossarypost tbody tr {
-    td {
+  }
+  td {
     border: none !important;
     padding: 0;
 }
-    td .left .picture {
-        padding: .5em;
-    }
-}
-
 }

@@ -6586,12 +6586,9 @@ table.glossarypost .fullwithoutauthor th {
   border: none !important;
   padding: 0;
 }
-.glossarypost tbody tr th .glossarypost tbody tr td {
+.glossarypost tbody tr td {
   border: none !important;
   padding: 0;
-}
-.glossarypost tbody tr th .glossarypost tbody tr td .left .picture {
-  padding: 0.5em;
 }
 
 /*# sourceMappingURL=moodle.css.map */
