@@ -461,6 +461,18 @@ h5 {
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0 32px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  margin: 10px 0;
+  grid-template-areas: "cta-left cta-center";
 }
 .grid-category .cta-btns .cta-btns-cont {
   width: max-content;
@@ -6559,30 +6571,7 @@ a#action-menu-toggle-1:focus {
   border: 1px solid #5c3873;
 }
 
-/* Glossary activity
-
-
-
-table.glossarypost{
-
-  .encyclopedia th {
-    border: none !important;
-  }
-  .faq th {
-    border: none !important;
-  }
-  .fullwithauthor th {
-    border: none !important;
-  }
-  .dictionary td{
-    border: none !important;
-    padding: 0 0;
-
-  }
-  .fullwithoutauthor th {
-    border: none !important;
-  }
-}*/
+/* Glossary activity*/
 table.glossarycategoryheader th {
   border: none !important;
   padding: 0 0;

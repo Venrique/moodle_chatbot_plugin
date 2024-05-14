@@ -54,6 +54,18 @@
 
   .cta-btns {
     grid-area: cta-btns;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+    gap: 0 32px;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    margin: 10px 0;
+    grid-template-areas: "cta-left cta-center";
 
     .cta-btns-cont {
       width: max-content;

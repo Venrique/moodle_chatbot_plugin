@@ -30,7 +30,7 @@ $string['slider3text'] = "<span class='slider_clour_text_white'>Juntos, aprovech
 $string["FosFeministaTeam"] = "Equipo Fòs Feminista";
 $string["OurFeministAlliance"] = "Nuestra Alianza Feminista";
 $string["Innovation_SocialEnterpriseLab"] = "Laboratorio de Innovación y Empresa Social";
-$string["CenterforEvidence-BasedAdvocacy"] = "Centro de defensa basada en evidencia";
+$string["CenterforEvidence-BasedAdvocacy"] = "Centro de Incidencia Basada en Evidencia";
 $string["CenterforLegalResponses"] = "Centro de Respuestas Legales";
 $string["CenterforTransformativeNarratives"] = "Centro de Narrativas Transformadoras";
 $string["CenterforCSE_Youth_FriendlyServices"] = "Centro de EIS y servicios orientados a los jóvenes";
