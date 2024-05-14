@@ -461,6 +461,10 @@ h5 {
 }
 .grid-category .cta-btns {
   grid-area: cta-btns;
+}
+.grid-category .cta-btns .cta-btns-cont {
+  height: auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -471,21 +475,20 @@ h5 {
   align-content: stretch;
   justify-items: stretch;
   align-items: stretch;
-  margin: 10px 0;
+  padding: 0;
   grid-template-areas: "cta-left cta-center";
-}
-.grid-category .cta-btns .cta-btns-cont {
-  width: max-content;
-  height: auto;
-  margin: 0 auto;
 }
 .grid-category .cta-btns .cta-btns-cont .cta-left {
   margin: 8px 4px;
   float: left;
+  justify-self: end;
+  align-self: center;
+  grid-area: cta-left;
 }
 .grid-category .cta-btns .cta-btns-cont .cta-center {
   margin: 8px 4px;
   float: left;
+  grid-area: cta-center;
 }
 .grid-category .cta-btns .cta-btns-cont .cta-right {
   margin: 8px 4px;
