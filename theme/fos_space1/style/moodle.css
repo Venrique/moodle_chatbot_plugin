@@ -6558,17 +6558,17 @@ div#sticky-footer {
 }
 
 /* add field on database activity*/
-a#action-menu-toggle-1 {
+div#action-menu-1.action-menu.moodle-actionmenu.singlebutton a#action-menu-toggle-1 {
   color: #fff;
   background-color: #5c3873;
   border: 1px solid #5c3873;
 }
-a#action-menu-toggle-1:hover {
+div#action-menu-1.action-menu.moodle-actionmenu.singlebutton a#action-menu-toggle-1:hover {
   color: #5c3873;
   border: 1px solid #5c3873;
   background-color: #fff;
 }
-a#action-menu-toggle-1:focus {
+div#action-menu-1.action-menu.moodle-actionmenu.singlebutton a#action-menu-toggle-1:focus {
   color: #fff;
   background-color: #5c3873;
   border: 1px solid #5c3873;
