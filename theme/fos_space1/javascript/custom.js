@@ -206,7 +206,7 @@ require(["jquery"], function ($) {
                 }
 
                 function translateText(text, sourceLang, targetLang, callback) {
-                    var authKey = 'bf185a4a-075b-9397-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
+                    var authKey = 'bf185a4a-075b-939-1bd3-7b10de0c9fa5:fx'; // Replace 'YOUR_DEEPL_API_KEY' with your actual DeepL API key
                     var apiUrl = 'https://api-free.deepl.com/v2/translate';
                     $.ajax({
                         url: apiUrl,
