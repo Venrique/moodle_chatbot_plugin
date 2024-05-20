@@ -139,7 +139,7 @@ require(["jquery"], function ($) {
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
                             if (error) {
                                 console.error("Translation error:", error);
-                                titleEN.val("Translation error: "+error);
+                                titleEN.val(origin.val()+" **Translation error**");
                                 titleES.val("Translation error: "+error);
                                 titleFR.val("Translation error: "+error);
                                 titlePT.val("Translation error: "+error);
@@ -191,7 +191,7 @@ require(["jquery"], function ($) {
                         translateText(origin.text(), '', targetLang, function (error, translatedText) {
                             if (error) {
                                 console.error("Translation error:", error);
-                                descEN.text("Translation error: "+error);
+                                descEN.text(origin.text()+" **Translation error**");
                                 descES.text("Translation error: "+error);
                                 descFR.text("Translation error: "+error);
                                 descPT.text("Translation error: "+error);
