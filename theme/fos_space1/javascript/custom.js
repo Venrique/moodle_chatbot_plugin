@@ -136,7 +136,7 @@ require(["jquery"], function ($) {
                         targetLanguages.push("PT");
                     }
 
-                    var errors = false;
+                    let errors = false;
                     targetLanguages.forEach(function (targetLang) {
 
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
