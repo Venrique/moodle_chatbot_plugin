@@ -139,6 +139,10 @@ require(["jquery"], function ($) {
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
                             if (error) {
                                 console.error("Translation error:", error);
+                                titleEN.val("Translation error:", error);
+                                titleES.val("Translation error:", error);
+                                titleFR.val("Translation error:", error);
+                                titlePT.val("Translation error:", error);
                             } else {
                                 if (targetLang === "EN") {
                                     titleEN.val(translatedText);
