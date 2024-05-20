@@ -138,6 +138,7 @@ require(["jquery"], function ($) {
                     targetLanguages.forEach(function (targetLang) {
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
                             if (error) {
+                                alert("Error generating automatic translations for the title. Entry will be saved without translations");
                                 console.error("Translation error:", error);
                                 titleEN.val(origin.val()+" **Translation error**");
                                 titleES.val("Translation error: "+error);
