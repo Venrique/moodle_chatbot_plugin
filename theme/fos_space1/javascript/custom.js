@@ -136,14 +136,29 @@ require(["jquery"], function ($) {
                         targetLanguages.push("PT");
                     }
                     targetLanguages.forEach(function (targetLang) {
+
+                        var errors = false;
+
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
                             if (error) {
-                                alert("Error generating automatic translations for the title. Entry will be saved without translations");
+                                if (!errors){
+                                    alert("Error generating automatic translations for the title. Entry will be saved without translations");
+                                    errors=true;
+                                }
                                 console.error("Translation error:", error);
-                                titleEN.val(origin.val()+" **Translation error**");
-                                titleES.val("Translation error: "+error);
-                                titleFR.val("Translation error: "+error);
-                                titlePT.val("Translation error: "+error);
+                                if (targetLang === "EN") {
+                                    titleEN.val(origin.val()+" **Translation error**");
+                                }
+                                if (targetLang === "ES") {
+                                    titleES.val("Translation error: "+error);
+                                }
+                                if (targetLang === "FR") {
+                                    titleFR.val("Translation error: "+error);
+                                }
+                                if (targetLang === "PT") {
+                                    titlePT.val("Translation error: "+error);
+                                }
+
                             } else {
                                 if (targetLang === "EN") {
                                     titleEN.val(translatedText);
