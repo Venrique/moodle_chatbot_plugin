@@ -203,14 +203,29 @@ require(["jquery"], function ($) {
                         console.log("Translation to portuguese");
                         targetLanguages.push("PT");
                     }
+
+                    let errors = false;
                     targetLanguages.forEach(function (targetLang) {
                         translateText(origin.text(), '', targetLang, function (error, translatedText) {
                             if (error) {
+                                if (!errors){
+                                    alert("Error generating automatic translations for the description. Entry will be saved without translations");
+                                    errors=true;
+                                }
                                 console.error("Translation error:", error);
-                                descEN.text(origin.text()+" **Translation error**");
-                                descES.text("Translation error: "+error);
-                                descFR.text("Translation error: "+error);
-                                descPT.text("Translation error: "+error);
+                                if (targetLang === "EN") {
+                                    descEN.text(origin.text()+" **Translation error**");
+                                }
+                                if (targetLang === "ES") {
+                                    descES.text("Translation error: "+error);
+                                }
+                                if (targetLang === "FR") {
+                                    descFR.text("Translation error: "+error);
+                                }
+                                if (targetLang === "PT") {
+                                    descPT.text("Translation error: "+error);
+                                }
+
                             } else {
                                 if (targetLang === "EN") {
                                     descEN.text(translatedText);
