@@ -1,0 +1,207 @@
+.path-mod-datafos-field .c0,
+#page-mod-datafos-view #sortsearch .c0 {
+    text-align: right;
+}
+
+#page-mod-datafos-view .approve img.icon {
+    width: 34px;
+    height: 34px;
+}
+
+.path-mod-datafos #id_entrieshdr div .alert.alert-danger {
+    margin-bottom: 2rem;
+}
+
+#page-mod-datafos-view img.list_picture {
+    border: 0;
+}
+
+#page-mod-datafos-view div.search_none {
+    display: none;
+}
+
+#page-mod-datafos-view div.search_inline,
+#page-mod-datafos-view form#latlongfieldbrowse {
+    display: inline;
+}
+
+#page-mod-datafos-view div#data_adv_form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#page-mod-datafos-edit .basefieldinput {
+    width: 300px;
+}
+
+/** Styles for preset.php **/
+#page-mod-datafos-preset .presetmapping table {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#page-mod-datafos-preset .overwritesettings {
+    margin-bottom: 1em;
+}
+
+#page-mod-datafos-preset table.presets {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** Styles for the search form **/
+#page-mod-datafos-view .datapreferences label {
+    display: inline-block;
+}
+
+/** Styles for field.php **/
+.path-mod-datafos-field .sortdefault {
+    margin: 1em 0;
+}
+
+.path-mod-datafos-field .sortdefault select {
+    margin-left: 1em;
+}
+
+.path-mod-datafos-field .fieldname,
+.path-mod-datafos-field .fielddescription {
+    width: 300px;
+}
+
+.path-mod-datafos-field textarea.optionstextarea {
+    width: 300px;
+    height: 150px;
+}
+
+.path-mod-datafos-field input.textareafieldsize {
+    width: 50px;
+}
+
+.path-mod-datafos-field input.picturefieldsize {
+    width: 70px;
+}
+
+.path-mod-datafos .action-icon img.portfolio-add-icon {
+    margin-left: 0;
+}
+
+/** UI Usability Hacks **/
+#page-mod-datafos-export #notice span {
+    padding: 0 10px;
+}
+/*rtl:ignore*/
+#page-mod-datafos-edit input[id*="url"] {
+    text-align: left;
+    direction: ltr;
+}
+
+.mod-datafos-default-template td {
+    vertical-align: top;
+}
+
+.mod-datafos-default-template .template-field {
+    text-align: right;
+}
+
+.mod-datafos-default-template .template-token {
+    text-align: left;
+}
+
+.mod-datafos-default-template .controls {
+    text-align: center;
+}
+
+.mod-datafos-default-template .searchcontrols {
+    text-align: right;
+}
+
+#page-mod-datafos-view .notapproved {
+    background-color: #fff3cd;
+    color: #856404;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    gap: 1em;
+}
+
+#page-mod-datafos-templates td.save_template,
+#page-mod-datafos-templates .template_heading {
+    text-align: center;
+}
+
+#page-mod-datafos-templates #availabletags_wrapper {
+    max-width: 250px;
+}
+
+#page-mod-datafos-edit .req {
+    cursor: help;
+}
+
+#page-mod-datafos-edit .inline-req .req {
+    position: absolute;
+}
+
+#page-mod-datafos-edit .inline-req {
+    text-align: left;
+}
+
+#page-mod-datafos-edit .datatagcontrol {
+    padding-left: 10px;
+}
+
+.preset_action_menu .dropdown-toggle::after,
+.entry-actionsmenu .dropdown-toggle::after,
+.fields-actions .dropdown-toggle::after {
+    display: none;
+}
+
+.defaulttemplate-single-body img.list_picture {
+    max-width: 100%;
+}
+
+.defaulttemplate-list-body img.list_picture {
+    max-width: 100%;
+}
+
+/* Date information displayed in templates/presets */
+.datafos-timeinfo {
+    color: var(–gray);
+}
+
+/* Legacy icons */
+.dataicon,
+.portfolio-add-icon {
+    color: var(--dark);
+}
+
+/* Preset preview styles */
+#page-mod-datafos-preset .nopreview {
+    border: 1px solid var(--secondary);
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+/* Disable links and buttons in the preset preview */
+.template-preview-content .preview-disabled,
+.template-preview-content .action-icon,
+.template-preview-content .dropdown-menu a,
+.template-preview-content .datafos-field-link,
+.template-preview-content .datafos-field-html a,
+.template-preview-content .datafos-field-html button {
+    pointer-events: none;
+}
+
+/* Actions menu */
+.presetsactions .dropdown-toggle,
+.presetsactions .dropdown-toggle:hover,
+.presetsactions .show > .btn-secondary.dropdown-toggle,
+.entriesactions .dropdown-toggle,
+.entriesactions .dropdown-toggle:hover,
+.entriesactions .show > .btn-secondary.dropdown-toggle,
+#page-mod-datafos-view .whitebutton .btn-secondary,
+#page-mod-datafos-preset .whitebutton .btn-secondary,
+#page-mod-datafos-field- .whitebutton .btn-secondary,
+#page-mod-datafos-templates .whitebutton .btn-secondary {
+    background: white;
+    border-color: var(--primary);
+    color: var(--primary);
+}
