@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines backup_datafos_activity_task
+ * Defines backup_data_activity_task
  *
  * @package     mod_datafos
  * @category    backup
@@ -31,7 +31,7 @@ require_once($CFG->dirroot . '/mod/datafos/backup/moodle2/backup_data_stepslib.p
 /**
  * Provides the steps to perform one complete backup of the Database instance
  */
-class backup_datafos_activity_task extends backup_activity_task {
+class backup_data_activity_task extends backup_activity_task {
 
     /**
      * No specific settings for this activity

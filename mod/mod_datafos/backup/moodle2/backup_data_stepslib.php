@@ -23,7 +23,7 @@
  */
 
 /**
- * Define all the backup steps that will be used by the backup_datafos_activity_task
+ * Define all the backup steps that will be used by the backup_data_activity_task
  */
 
 /**

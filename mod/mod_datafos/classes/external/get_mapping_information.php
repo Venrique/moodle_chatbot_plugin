@@ -66,7 +66,7 @@ class get_mapping_information extends external_api {
             $manager = manager::create_from_coursemodule($cm);
 
             $importer = preset_importer::create_from_plugin_or_directory($manager, $params['importedpreset']);
-            $result['datafos'] = $importer->get_mapping_information();
+            $result['data'] = $importer->get_mapping_information();
         } catch (\moodle_exception $e) {
             $result['warnings'][] = [
                 'item' => $importedpreset,
@@ -85,7 +85,7 @@ class get_mapping_information extends external_api {
      */
     public static function execute_returns(): external_single_structure {
         return new external_single_structure([
-            'datafos' => new external_single_structure([
+            'data' => new external_single_structure([
                 'needsmapping' => new external_value(PARAM_BOOL, 'Whether the importing needs mapping or not'),
                 'presetname' => new external_value(PARAM_TEXT, 'Name of the applied preset'),
                 'fieldstocreate' => new external_value(PARAM_TEXT, 'List of field names to create'),
