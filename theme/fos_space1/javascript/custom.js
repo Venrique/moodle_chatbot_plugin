@@ -135,10 +135,30 @@ require(["jquery"], function ($) {
                         console.log("Translation to portuguese");
                         targetLanguages.push("PT");
                     }
+
+                    let errors = false;
                     targetLanguages.forEach(function (targetLang) {
+
                         translateText(origin.val(), '', targetLang, function (error, translatedText) {
                             if (error) {
+                                if (!errors){
+                                    alert("Error generating automatic translations for the title. Entry will be saved without translations");
+                                    errors=true;
+                                }
                                 console.error("Translation error:", error);
+                                if (targetLang === "EN") {
+                                    titleEN.val(origin.val()+" **Translation error**");
+                                }
+                                if (targetLang === "ES") {
+                                    titleES.val("Translation error: "+error);
+                                }
+                                if (targetLang === "FR") {
+                                    titleFR.val("Translation error: "+error);
+                                }
+                                if (targetLang === "PT") {
+                                    titlePT.val("Translation error: "+error);
+                                }
+
                             } else {
                                 if (targetLang === "EN") {
                                     titleEN.val(translatedText);
@@ -183,10 +203,29 @@ require(["jquery"], function ($) {
                         console.log("Translation to portuguese");
                         targetLanguages.push("PT");
                     }
+
+                    let errors = false;
                     targetLanguages.forEach(function (targetLang) {
                         translateText(origin.text(), '', targetLang, function (error, translatedText) {
                             if (error) {
+                                if (!errors){
+                                    alert("Error generating automatic translations for the description. Entry will be saved without translations");
+                                    errors=true;
+                                }
                                 console.error("Translation error:", error);
+                                if (targetLang === "EN") {
+                                    descEN.text(origin.text()+" **Translation error**");
+                                }
+                                if (targetLang === "ES") {
+                                    descES.text("Translation error: "+error);
+                                }
+                                if (targetLang === "FR") {
+                                    descFR.text("Translation error: "+error);
+                                }
+                                if (targetLang === "PT") {
+                                    descPT.text("Translation error: "+error);
+                                }
+
                             } else {
                                 if (targetLang === "EN") {
                                     descEN.text(translatedText);
