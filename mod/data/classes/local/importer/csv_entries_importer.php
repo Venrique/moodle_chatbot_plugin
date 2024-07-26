@@ -109,7 +109,7 @@ class csv_entries_importer extends entries_importer {
                             continue;
                         }
                         require_once($filepath);
-                        $classname = 'data_field_' . $field->type;
+                        $classname = 'datafos_field_' . $field->type;
                         $fields[$name] = new $classname($field, $data, $cm);
                     }
                 }

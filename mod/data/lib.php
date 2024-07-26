@@ -1033,7 +1033,7 @@ function data_get_field_new($type, $data) {
         throw new \moodle_exception('invalidfieldtype', 'data');
     }
     require_once($filepath);
-    $newfield = 'data_field_'.$type;
+    $newfield = 'datafos_field_'.$type;
     $newfield = new $newfield(0, $data);
     return $newfield;
 }
@@ -1059,7 +1059,7 @@ function data_get_field(stdClass $field, stdClass $data, ?stdClass $cm=null): da
         return new data_field_base($field);
     }
     require_once($filepath);
-    $newfield = 'data_field_'.$field->type;
+    $newfield = 'datafos_field_'.$field->type;
     $newfield = new $newfield($field, $data, $cm);
     return $newfield;
 }
@@ -2669,7 +2669,7 @@ abstract class data_preset_importer {
                     if (!isset($newfield->description)) {
                         $newfield->description = '';
                     }
-                    $classname = 'data_field_'.$newfield->type;
+                    $classname = 'datafos_field_'.$newfield->type;
                     $fieldclass = new $classname($newfield, $this->module);
                     $fieldclass->insert_field();
                     unset($fieldclass);

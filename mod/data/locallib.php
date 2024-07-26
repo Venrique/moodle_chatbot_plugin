@@ -981,7 +981,7 @@ function data_get_tag_title_field($dataid) {
             continue;
         }
         require_once($filepath);
-        $classname = 'data_field_' . $field->type;
+        $classname = 'datafos_field_' . $field->type;
         $field->priority = $classname::get_priority();
         $filteredfields[] = $field;
     }
@@ -1025,7 +1025,7 @@ function data_get_tag_title_for_entry($field, $entry) {
     }
     require_once($filepath);
 
-    $classname = 'data_field_' . $field->type;
+    $classname = 'datafos_field_' . $field->type;
     $sql = "SELECT dc.*
               FROM {data_content} dc
         INNER JOIN {data_fields} df

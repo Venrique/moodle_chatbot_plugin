@@ -57,14 +57,14 @@ class import_presets extends dynamic_form {
      * @return context
      */
     protected function get_context_for_dynamic_submission(): context {
-        $cmid = $this->optional_param('id', null, PARAM_INT);
+        $cmid = $this->optional_param('cmid', null, PARAM_INT);
         $cm = get_coursemodule_from_id('datafos', $cmid);
         $context = \context_module::instance($cm->id);
         return $context;
     }
 
     /**
-     * Set data
+     * Set datafos
      *
      * @return void
      */
