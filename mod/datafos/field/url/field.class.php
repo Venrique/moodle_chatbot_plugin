@@ -170,6 +170,9 @@ class datafos_field_url extends datafos_field_base {
             // Param2 forces the text to something.
             $text = $this->field->param2;
         }
+
+        echo('PRINT ZERO:'.$this->field->param1);
+
         if ($this->field->param1) {
             // Param1 defines whether we want to autolink the url.
             $attributes = ['class' => 'datafos-field-link'];
@@ -186,12 +189,15 @@ class datafos_field_url extends datafos_field_base {
 
             $str = html_writer::link($url, $text, $attributes);
 
+            echo('PRIMER PRINT: '.$template);
+
             //KTT CUSTOMIZATION
             if ($template==='listtemplate'){
                 $str = html_writer::link($url, "Link", $attributes);
             }
 
         } else {
+            echo("SEGUNDO PRINT");
             $str = $url;
         }
         return $str;
