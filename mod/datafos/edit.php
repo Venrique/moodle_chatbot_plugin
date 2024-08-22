@@ -154,7 +154,7 @@ if ($datarecord && confirm_sesskey()) {
         if ($rid) {
             $recordid = $rid;
             // Updating an existing record.
-            data_update_record_fields_contents($data, $record, $context, $datarecord, $processeddata);
+            datafos_update_record_fields_contents()$data, $record, $context, $datarecord, $processeddata);
         } else {
             // Add instance to data_record.
             $recordid = datafos_add_record($data, $currentgroup);

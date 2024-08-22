@@ -1151,7 +1151,7 @@ class mod_datafos_external extends external_api {
 
         if ($processeddata->validated) {
             // Now update the fields contents.
-            data_update_record_fields_contents($database, $record, $context, $datarecord, $processeddata);
+            datafos_update_record_fields_contents()$database, $record, $context, $datarecord, $processeddata);
             $updated = true;
         }
 
