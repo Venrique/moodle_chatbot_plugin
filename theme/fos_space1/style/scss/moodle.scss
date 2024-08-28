@@ -387,9 +387,7 @@ table.glossarycategoryheader {
 //Rich text editor 
 
 div.mod-datafos-input{ 
-  select {
-  display: none;
-}
+
   div.editor_atto_toolbar {
   display: none;
 }
@@ -401,5 +399,9 @@ div.mod-datafos-input{
   border-top-right-radius: 0.5rem;
   resize: none !important;
   overflow-x: hidden;
+}
+
+select {
+  display: none;
 }
 }

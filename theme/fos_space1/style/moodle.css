@@ -6589,9 +6589,6 @@ table.glossarycategoryheader th {
   padding: 0;
 }
 
-div.mod-datafos-input select {
-  display: none;
-}
 div.mod-datafos-input div.editor_atto_toolbar {
   display: none;
 }
@@ -6602,6 +6599,9 @@ div.mod-datafos-input .editor_atto_content.form-control {
   border-top-right-radius: 0.5rem;
   resize: none !important;
   overflow-x: hidden;
+}
+div.mod-datafos-input select {
+  display: none;
 }
 
 /*# sourceMappingURL=moodle.css.map */
