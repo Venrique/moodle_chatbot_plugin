@@ -157,6 +157,9 @@ $string['errorpresetexists'] = 'A preset with this name already exists.';
 $string['errorpresetexistsbutnotoverwrite'] = 'A preset with this name already exists. Choose a different name.';
 $string['errormustsupplyvalue'] = 'You must supply a value here.';
 $string['errorpresetnotfound'] = 'Preset with name {$a} not found.';
+//KTT
+$string['errormustsupplyvaluegeneral'] = 'Please check that all the mandatory form fields are completed.';
+//---
 $string['example'] = 'Database module example';
 $string['excel'] = 'Excel';
 $string['export'] = 'Export';
@@ -417,7 +420,7 @@ $string['saveaspreset'] = 'Publish preset on this site';
 $string['saveaspreset_help'] = 'The save as preset feature publishes the templates and fields as a preset which others on the site can then use. (You may delete it from the list of presets at any time.)';
 $string['savedataaspreset'] = 'Save all fields and templates and publish as preset on this site';
 $string['saveaspresetmissingcapability'] = 'The user does not have permission to save the database as a preset.';
-$string['savesettings'] = 'Save settings';
+$string['savesettings'] = 'Apply filters';
 $string['savesuccess'] = 'Preset saved. <a href="{$a->url}">Preview preset</a>';
 $string['search'] = 'Search';
 $string['search:activity'] = 'Database - activity information';
@@ -445,7 +448,7 @@ $string['templatereset'] = 'Template reset';
 $string['templateresetall'] = 'All templates reset';
 $string['templatesnavigation'] = 'Templates tertiary navigation';
 $string['templatesaved'] = 'Template saved';
-$string['text'] = 'Text';
+$string['text'] = 'Short text to display as link';
 $string['textarea'] = 'Text area';
 $string['timeadded'] = 'Time added';
 $string['timemodified'] = 'Time modified';
@@ -489,3 +492,93 @@ $string['fieldids'] = 'Field ids';
 
 // Deprecated since Moodle 4.3.
 $string['completionentries'] = 'Require entries';
+
+//KTT MULTILINGUAL CUSTOMIZATIONS
+$string['categoryfield'] = 'Category';
+$string['authorfield'] = 'Author';
+$string['needsfield'] = 'Needs';
+$string['organizationfield'] = 'Organization';
+$string['uploaddatefield'] = 'Upload date';
+$string['yearofcompletionfield'] = 'Year of completion';
+$string['generaltoolcategory'] = 'General tool';
+$string['qualityofcaretoolcategory'] = 'Quality of care tool';
+$string['researchcategory'] = 'Research';
+$string['narrativecategory'] = 'Narrative';
+$string['comprenhensivesexualityeducationneeds'] = 'Comprehensive sexuality education';
+$string['communitybasedchannelsneeds'] = 'Community-based channels';
+$string['humanitarianresponsesneeds'] = 'Humanitarian responses';
+$string['generalshrservicesneeds'] = 'General SRH services';
+$string['safeandlegalabortionneeds'] = 'Safe and/or legal abortion';
+$string['contraceptionneeds'] = 'Contraception';
+$string['sexualandgenderbasedviolenceneeds'] = 'Sexual and gender-based violence';
+$string['intersectionalfeminismandgenderequityneeds'] = 'Intersectional feminism and gender equity';
+$string['sexualandreproductiverightsneeds'] = 'Sexual and reproductive rights';
+$string['digitalhealthchannelsneeds'] = 'Digital health channels';
+
+/*
+//KTT SPANISH
+$string['categoryfield'] = 'Categoría';
+$string['authorfield'] = 'Autor';
+$string['needsfield'] = 'Necesidad';
+$string['organizationfield'] = 'Organización';
+$string['uploaddatefield'] = 'Fecha de subida';
+$string['yearofcompletionfield'] = 'Año de finalización';
+$string['generaltoolcategory'] = 'Herramienta general';
+$string['qualityofcaretoolcategory'] = 'Herramienta de calidad del cuidado';
+$string['researchcategory'] = 'Investigación';
+$string['narrativecategory'] = 'Narrativa';
+$string['comprenhensivesexualityeducationneeds'] = 'Educación integral en sexualidad';
+$string['communitybasedchannelsneeds'] = 'Canales comunitarios';
+$string['humanitarianresponsesneeds'] = 'Respuestas Humanitarias';
+$string['generalshrservicesneeds'] = 'Servicios generales de SSR';
+$string['safeandlegalabortionneeds'] = 'Aborto seguro y/o legal';
+$string['contraceptionneeds'] = 'Anticoncepción';
+$string['sexualandgenderbasedviolenceneeds'] = 'Violencia sexual y de género';
+$string['intersectionalfeminismandgenderequityneeds'] = 'Feminismo interseccional y equidad de género';
+$string['sexualandreproductiverightsneeds'] = 'Derechos sexuales y reproductivos';
+$string['digitalhealthchannelsneeds'] = 'Canales de salud digital';
+
+//KTT PORTUGUESE
+$string['categoryfield'] = 'Categoria';
+$string['authorfield'] = 'Nome do autor';
+$string['needsfield'] = 'Necessidade';
+$string['organizationfield'] = 'Organização';
+$string['uploaddatefield'] = 'Data do upload';
+$string['yearofcompletionfield'] = 'Ano de conclusão';
+$string['generaltoolcategory'] = 'Ferramenta geral';
+$string['qualityofcaretoolcategory'] = 'Ferramenta de qualidade do atendimento';
+$string['researchcategory'] = 'Pesquisa';
+$string['narrativecategory'] = 'Narrativa';
+$string['comprenhensivesexualityeducationneeds'] = 'Educação sexual abrangente';
+$string['communitybasedchannelsneeds'] = 'Canais de base comunitária';
+$string['humanitarianresponsesneeds'] = 'Respostas humanitárias';
+$string['generalshrservicesneeds'] = 'Serviços gerais de SSR';
+$string['safeandlegalabortionneeds'] = 'Aborto seguro e/ou legal';
+$string['contraceptionneeds'] = 'Contracepção';
+$string['sexualandgenderbasedviolenceneeds'] = 'Violência sexual e baseada em gênero';
+$string['intersectionalfeminismandgenderequityneeds'] = 'Feminismo interseccional e equidade de gênero';
+$string['sexualandreproductiverightsneeds'] = 'Direitos sexuais e reprodutivos';
+$string['digitalhealthchannelsneeds'] = 'Canais de saúde digitais';
+
+//KTT FRENCH
+$string['categoryfield'] = 'Catégorie';
+$string['authorfield'] = 'Nom de l\'auteur';
+$string['needsfield'] = 'Nécessité';
+$string['organizationfield'] = 'Organisation';
+$string['uploaddatefield'] = 'Date de téléchargement';
+$string['yearofcompletionfield'] = 'Année d\'achèvement';
+$string['generaltoolcategory'] = 'Outil général';
+$string['qualityofcaretoolcategory'] = 'Outil de qualité des soins';
+$string['researchcategory'] = 'Recherche';
+$string['narrativecategory'] = 'Narratif';
+$string['comprenhensivesexualityeducationneeds'] = 'Éducation sexuelle complète';
+$string['communitybasedchannelsneeds'] = 'Canaux communautaires';
+$string['humanitarianresponsesneeds'] = 'Réponses humanitaires';
+$string['generalshrservicesneeds'] = 'Services généraux de santé sexuelle et reproductive';
+$string['safeandlegalabortionneeds'] = 'Avortement sûr et/ou légal';
+$string['contraceptionneeds'] = 'Contraception';
+$string['sexualandgenderbasedviolenceneeds'] = 'Violence sexuelle et sexiste';
+$string['intersectionalfeminismandgenderequityneeds'] = 'Féminisme intersectionnel et équité entre les sexes';
+$string['sexualandreproductiverightsneeds'] = 'Droits sexuels et génésiques';
+$string['digitalhealthchannelsneeds'] = 'Canaux de santé numériques';
+ */

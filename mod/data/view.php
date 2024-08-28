@@ -73,6 +73,9 @@ comment::init();
 
 require_capability('mod/data:viewentry', $context);
 
+//KTT CHANGE
+$SESSION->context = $context;
+
 /// Check further parameters that set browsing preferences
 if (!isset($SESSION->dataprefs)) {
     $SESSION->dataprefs = array();
@@ -504,7 +507,7 @@ if ($showactivity) {
                 $baseurl = new moodle_url($baseurl, $baseurlparams);
 
                 echo $OUTPUT->box_start('', 'data-listview-content');
-                echo $data->listtemplateheader;
+                echo format_text($data->listtemplateheader, FORMAT_HTML, ['allowid'=>true, 'noclean'=>true, 'trusted'=>true, 'para'=>false]);
                 $options = [
                     'search' => $search,
                     'page' => $page,

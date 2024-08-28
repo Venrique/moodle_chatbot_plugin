@@ -53,7 +53,7 @@ class data_field_menu extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT;
+        global $DB, $OUTPUT, $SESSION;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
@@ -71,7 +71,27 @@ class data_field_menu extends data_field_base {
         foreach ($rawoptions as $option) {
             $option = trim($option);
             if (strlen($option) > 0) {
-                $options[$option] = $option;
+
+                if ($this->field->name === "Category"){
+                    switch ($option) {
+                        case "General tool":
+                            $options[$option] = get_string('generaltoolcategory', 'data');
+                            break;
+                        case "Quality of care tool":
+                            $options[$option] = get_string('qualityofcaretoolcategory', 'data');
+                            break;
+                        case "Research":
+                            $options[$option] = get_string('researchcategory', 'data');
+                            break;
+                        case "Narrative":
+                            $options[$option] = get_string('narrativecategory', 'data');
+                            break;
+                    }
+                }else{
+                    $options[$option] = $option;
+                }
+
+                //$options[$option] = $option;
             }
         }
 
@@ -115,7 +135,24 @@ class data_field_menu extends data_field_base {
             if (!isset($usedoptions[$option])) {
                 continue;
             }
-            $options[$option] = $option;
+            if ($this->field->name === "Category"){
+                switch ($option) {
+                    case "General tool":
+                        $options[$option] = get_string('generaltoolcategory', 'data');
+                        break;
+                    case "Quality of care tool":
+                        $options[$option] = get_string('qualityofcaretoolcategory', 'data');
+                        break;
+                    case "Research":
+                        $options[$option] = get_string('researchcategory', 'data');
+                        break;
+                    case "Narrative":
+                        $options[$option] = get_string('narrativecategory', 'data');
+                        break;
+                }
+            }else{
+                $options[$option] = $option;
+            }
         }
         if (!$options) {
             // oh, nothing to search for

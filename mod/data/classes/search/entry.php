@@ -384,7 +384,7 @@ class entry extends \core_search\base_mod {
         }
 
         require_once($fieldpath);
-        return 'data_field_' . $fieldtype;
+        return 'datafos_field_' . $fieldtype;
     }
 
     /**
