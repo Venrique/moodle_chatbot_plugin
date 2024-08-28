@@ -183,14 +183,7 @@ class data_field_url extends data_field_base {
                 $text = $url;
             }
 
-
             $str = html_writer::link($url, $text, $attributes);
-
-            //KTT CUSTOMIZATION
-            if ($template==='listtemplate'){
-                $str = html_writer::link($url, "Link", $attributes);
-            }
-
         } else {
             $str = $url;
         }

@@ -976,12 +976,13 @@ function data_get_tag_title_field($dataid) {
         if ($field->addtemplateposition === false) {
             continue;
         }
+        $field->type = clean_param($field->type, PARAM_ALPHA);
         $filepath = $CFG->dirroot . '/mod/data/field/' . $field->type . '/field.class.php';
         if (!file_exists($filepath)) {
             continue;
         }
         require_once($filepath);
-        $classname = 'datafos_field_' . $field->type;
+        $classname = 'data_field_' . $field->type;
         $field->priority = $classname::get_priority();
         $filteredfields[] = $field;
     }
@@ -1019,13 +1020,14 @@ function data_get_tag_title_for_entry($field, $entry) {
     if (!isset($field->type)) {
         return null;
     }
+    $field->type = clean_param($field->type, PARAM_ALPHA);
     $filepath = $CFG->dirroot . '/mod/data/field/' . $field->type . '/field.class.php';
     if (!file_exists($filepath)) {
         return null;
     }
     require_once($filepath);
 
-    $classname = 'datafos_field_' . $field->type;
+    $classname = 'data_field_' . $field->type;
     $sql = "SELECT dc.*
               FROM {data_content} dc
         INNER JOIN {data_fields} df

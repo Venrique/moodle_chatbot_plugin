@@ -300,41 +300,9 @@ class template {
 
         $patterns = array_keys($replacements);
         $replacement = array_values($replacements);
-
-        $templatecontents = $this->data_filter_template($this->templatecontent, $patterns, $context);
-
-        //$result = str_ireplace($patterns, $replacement, $this->templatecontent);
-        $result = str_ireplace($patterns, $replacement, $templatecontents);
+        $result = str_ireplace($patterns, $replacement, $this->templatecontent);
 
         return $this->post_parse($result, $entry);
-    }
-
-    /**
-     * Apply filters to the template we are about to render.
-     *
-     * @param string $template the template
-     * @param string[] $patterns the tags that the database activity will ater be substituting
-     * @param context $context the context we will be displaying the filter in
-     * @return string the template with filters applied
-     */
-    function data_filter_template($template, $patterns, $context) {
-
-        // To avoid mod_data placeholders being processed by filters/clean... we are simply
-        // enclosing them between <nolink> and </nolink> tags. Some good implications about their use:
-        // 1) the placeholders won't be mofified by linking filters ever.
-        // 2) no extra processing is needed. filterlib handles them perfectly.
-        // 3) the <nolink> and </nolink> tags are automatically removed before output happens.
-
-        // Let's calculate the <nolink> placeholders.
-        $nolinkpatterns = array_map(function($pattern) {
-            return '<nolink>' . $pattern . '</nolink>';
-        }, $patterns);
-
-        // Perform the switch to <nolink> placeholders.
-        $template = str_replace($patterns, $nolinkpatterns, $template);
-
-        // Return normal format_text() to process the template and apply filters.
-        return format_text($template, FORMAT_HTML, ['noclean' => true, 'context' => $context]);
     }
 
     /**
@@ -929,15 +897,11 @@ class template {
         ?int $entryid = null,
         ?stdClass $entrydata = null
     ): string {
-        global $OUTPUT, $SESSION, $USER;
+        global $OUTPUT;
 
         $manager = $this->manager;
         $renderer = $manager->get_renderer();
-        //KTT CHANGE
-        $templatecontent = format_text($this->templatecontent, FORMAT_HTML, ['allowid'=>true, 'noclean'=>true, 'trusted'=>true, 'para'=>false]);
-        if (!property_exists($SESSION,'lang')){
-            $SESSION->lang = $USER->lang;
-        }
+        $templatecontent = $this->templatecontent;
 
         if (!$processeddata) {
             $processeddata = (object)[
@@ -1029,7 +993,7 @@ class template {
                 $errors .= $renderer->notification(get_string(
                     'missingfieldtype',
                     'data',
-                    (object)['name' => $field->field->name]
+                    (object)['name' => s($field->field->name)]
                 ));
             }
         } else {

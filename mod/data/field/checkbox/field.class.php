@@ -53,20 +53,20 @@ class data_field_checkbox extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT, $SESSION;
+        global $DB, $OUTPUT;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
             $content = $formdata->$fieldname ?? [];
         } else if ($recordid) {
             $content = $DB->get_field('data_content', 'content', ['fieldid' => $this->field->id, 'recordid' => $recordid]);
-            $content = explode('##', $content);
+            $content = explode('##', $content ?? '');
         } else {
             $content = [];
         }
 
         $str = '<div title="' . s($this->field->description) . '">';
-        $str .= '<fieldset><legend><span class="accesshide">'.$this->field->name;
+        $str .= '<fieldset><legend><span class="accesshide">'.s($this->field->name);
         if ($this->field->required) {
             $str .= '$nbsp;' . get_string('requiredelement', 'form');
             $str .= '</span></legend>';
@@ -76,84 +76,22 @@ class data_field_checkbox extends data_field_base {
             $str .= '</span></legend>';
         }
 
-        //echo(json_encode($SESSION));
-        $expertmodeEnabled = false;
-
-        if($this->field->name === "ExpertMode"){
-            if (has_capability('theme/fos_space1:usedatabaseexpertmode', $SESSION->context)) {
-                $expertmodeEnabled = true;
-            }
-        }
-
-
         $i = 0;
         foreach (explode("\n", $this->field->param1) as $checkbox) {
             $checkbox = trim($checkbox);
             if ($checkbox === '') {
                 continue; // skip empty lines
             }
-
-            //$categorycontext = context_coursecat::instance(2);
-
-
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
-            if ($this->field->name === "ExpertMode"){
-                if($expertmodeEnabled){
-                    $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
-                }else{
-                    $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" disabled title="Expert mode only available for managers" ';
-                }
-            }else {
-                $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
-            }
-
+            $str .= 'value="' . s($checkbox) . '" class="mod-data-input mr-1" ';
 
             if (array_search($checkbox, $content) !== false) {
                 $str .= 'checked />';
             } else {
                 $str .= '/>';
             }
-
-            //KTT CODE
-            if ($this->field->name === "Needs"){
-                switch ($checkbox){
-                    case "Comprehensive sexuality education":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('comprenhensivesexualityeducationneeds', 'data') .'</label><br />';
-                        break;
-                    case "Community-based channels":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('communitybasedchannelsneeds', 'data') .'</label><br />';
-                        break;
-                    case "Humanitarian responses":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('humanitarianresponsesneeds', 'data') .'</label><br />';
-                        break;
-                    case "General SRH services":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('generalshrservicesneeds', 'data') .'</label><br />';
-                        break;
-                    case "Safe and/or legal abortion":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('safeandlegalabortionneeds', 'data') .'</label><br />';
-                        break;
-                    case "Contraception":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('contraceptionneeds', 'data') .'</label><br />';
-                        break;
-                    case "Sexual and gender-based violence":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('sexualandgenderbasedviolenceneeds', 'data') .'</label><br />';
-                        break;
-                    case "Intersectional feminism and gender equity":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('intersectionalfeminismandgenderequityneeds', 'data') .'</label><br />';
-                        break;
-                    case "Sexual and reproductive rights":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('sexualandreproductiverightsneeds', 'data') .'</label><br />';
-                        break;
-                    case "Digital health channels":
-                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('digitalhealthchannelsneeds', 'data') .'</label><br />';
-                        break;
-                }
-            }else{
-                $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
-            }
-
-            //$str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
+            $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
             $i++;
         }
         $str .= '</fieldset>';
@@ -178,82 +116,9 @@ class data_field_checkbox extends data_field_base {
         foreach (explode("\n",$this->field->param1) as $checkbox) {
             $checkbox = trim($checkbox);
             if (in_array($checkbox, $content)) {
-
-                //KTT CODE
-                if ($this->field->name === "Needs"){
-                    switch ($checkbox){
-                        case "Comprehensive sexuality education":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('comprenhensivesexualityeducationneeds', 'data'), $marginclass);
-                            break;
-                        case "Community-based channels":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('communitybasedchannelsneeds', 'data'), $marginclass);
-                            break;
-                        case "Humanitarian responses":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('humanitarianresponsesneeds', 'data'), $marginclass);
-                            break;
-                        case "General SRH services":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('generalshrservicesneeds', 'data'), $marginclass);
-                            break;
-                        case "Safe and/or legal abortion":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('safeandlegalabortionneeds', 'data'), $marginclass);
-                            break;
-                        case "Contraception":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('contraceptionneeds', 'data'), $marginclass);
-                            break;
-                        case "Sexual and gender-based violence":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('sexualandgenderbasedviolenceneeds', 'data'), $marginclass);
-                            break;
-                        case "Intersectional feminism and gender equity":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('intersectionalfeminismandgenderequityneeds', 'data'), $marginclass);
-                            break;
-                        case "Sexual and reproductive rights":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('sexualandreproductiverightsneeds', 'data'), $marginclass);
-                            break;
-                        case "Digital health channels":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, get_string('digitalhealthchannelsneeds', 'data'), $marginclass);
-                            break;
-                    }
-                }else{
-                    $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, $checkbox, $marginclass);
-                }
+                $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), true, $checkbox, $marginclass);
             } else {
-                //KTT CODE
-                if ($this->field->name === "Needs"){
-                    switch ($checkbox){
-                        case "Comprehensive sexuality education":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('comprenhensivesexualityeducationneeds', 'data'), $marginclass);
-                            break;
-                        case "Community-based channels":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('communitybasedchannelsneeds', 'data'), $marginclass);
-                            break;
-                        case "Humanitarian responses":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('humanitarianresponsesneeds', 'data'), $marginclass);
-                            break;
-                        case "General SRH services":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('generalshrservicesneeds', 'data'), $marginclass);
-                            break;
-                        case "Safe and/or legal abortion":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('safeandlegalabortionneeds', 'data'), $marginclass);
-                            break;
-                        case "Contraception":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('contraceptionneeds', 'data'), $marginclass);
-                            break;
-                        case "Sexual and gender-based violence":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('sexualandgenderbasedviolenceneeds', 'data'), $marginclass);
-                            break;
-                        case "Intersectional feminism and gender equity":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('intersectionalfeminismandgenderequityneeds', 'data'), $marginclass);
-                            break;
-                        case "Sexual and reproductive rights":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('sexualandreproductiverightsneeds', 'data'), $marginclass);
-                            break;
-                        case "Digital health channels":
-                            $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, get_string('digitalhealthchannelsneeds', 'data'), $marginclass);
-                            break;
-                    }
-                }else{
-                    $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, $checkbox, $marginclass);
-                }
+                $str .= html_writer::checkbox('f_'.$this->field->id.'[]', s($checkbox), false, $checkbox, $marginclass);
             }
             $str .= html_writer::empty_tag('br');
             $found = true;
@@ -341,8 +206,6 @@ class data_field_checkbox extends data_field_base {
     }
 
     function display_browse_field($recordid, $template) {
-        global $SESSION;
-
         $content = $this->get_data_content($recordid);
         if (!$content || empty($content->content)) {
             return '';
@@ -358,46 +221,7 @@ class data_field_checkbox extends data_field_base {
                 // Hmm, looks like somebody edited the field definition.
                 continue;
             }
-
-            //KTT CODE
-            if ($this->field->name === "Needs"){
-                switch ($line){
-                    case "Comprehensive sexuality education":
-                        $str .= get_string('comprenhensivesexualityeducationneeds', 'data') . "<br />\n";
-                        break;
-                    case "Community-based channels":
-                        $str .= get_string('communitybasedchannelsneeds', 'data') . "<br />\n";
-                        break;
-                    case "Humanitarian responses":
-                        $str .= get_string('humanitarianresponsesneeds', 'data') . "<br />\n";
-                        break;
-                    case "General SRH services":
-                        $str .= get_string('generalshrservicesneeds', 'data') . "<br />\n";
-                        break;
-                    case "Safe and/or legal abortion":
-                        $str .= get_string('safeandlegalabortionneeds', 'data') . "<br />\n";
-                        break;
-                    case "Contraception":
-                        $str .= get_string('contraceptionneeds', 'data') . "<br />\n";
-                        break;
-                    case "Sexual and gender-based violence":
-                        $str .= get_string('sexualandgenderbasedviolenceneeds', 'data') . "<br />\n";
-                        break;
-                    case "Intersectional feminism and gender equity":
-                        $str .= get_string('intersectionalfeminismandgenderequityneeds', 'data') . "<br />\n";
-                        break;
-                    case "Sexual and reproductive rights":
-                        $str .= get_string('sexualandreproductiverightsneeds', 'data') . "<br />\n";
-                        break;
-                    case "Digital health channels":
-                        $str .= get_string('digitalhealthchannelsneeds', 'data') . "<br />\n";
-                        break;
-                }
-            }else{
-                $str .= $line . "<br />\n";
-            }
-
-            //$str .= $line . "<br />\n";
+            $str .= $line . "<br />\n";
         }
         return $str;
     }

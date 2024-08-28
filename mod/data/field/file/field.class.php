@@ -70,7 +70,7 @@ class data_field_file extends data_field_base {
 
         // database entry label
         $html = '<div title="' . s($this->field->description) . '">';
-        $html .= '<fieldset><legend><span class="accesshide">'.$this->field->name;
+        $html .= '<fieldset><legend><span class="accesshide">'.s($this->field->name);
 
         if ($this->field->required) {
             $html .= '&nbsp;' . get_string('requiredelement', 'form') . '</span></legend>';
@@ -105,7 +105,7 @@ class data_field_file extends data_field_base {
     }
 
     function display_search_field($value = '') {
-        return '<label class="accesshide" for="f_' . $this->field->id . '">' . $this->field->name . '</label>' .
+        return '<label class="accesshide" for="f_' . $this->field->id . '">' . s($this->field->name) . '</label>' .
                '<input type="text" size="16" id="f_'.$this->field->id.'" name="f_'.$this->field->id.'" ' .
                     'value="'.s($value).'" class="form-control"/>';
     }
@@ -184,27 +184,7 @@ class data_field_file extends data_field_base {
             ['width' => 16, 'height' => 16]
         );
 
-        //KTT CUSTOMIZATION
-        if ($template==='listtemplate'){
-            if ($this->field->name === "File EN") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("EN") . '</a> |';
-            }
-
-            if ($this->field->name === "File ES") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("ES") . '</a> |';
-            }
-
-            if ($this->field->name === "File FR") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("FR") . '</a> |';
-            }
-
-            if ($this->field->name === "File PT") {
-                return '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s("PT") . '</a>';
-            }
-        }
-
         return $icon . '&nbsp;<a class="data-field-link" href="'.$url.'" >' . s($name) . '</a>';
-
     }
 
 

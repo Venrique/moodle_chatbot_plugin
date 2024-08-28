@@ -54,7 +54,7 @@ class data_field_multimenu extends data_field_base {
     }
 
     function display_add_field($recordid = 0, $formdata = null) {
-        global $DB, $OUTPUT, $SESSION;
+        global $DB, $OUTPUT;
 
         if ($formdata) {
             $fieldname = 'field_' . $this->field->id;
@@ -64,8 +64,8 @@ class data_field_multimenu extends data_field_base {
                 $content = array();
             }
         } else if ($recordid) {
-            $content = $DB->get_field('data_content', 'content', array('fieldid'=>$this->field->id, 'recordid'=>$recordid));
-            $content = explode('##', $content);
+            $contentfield = $DB->get_field('data_content', 'content', ['fieldid' => $this->field->id, 'recordid' => $recordid]);
+            $content = explode('##', $contentfield ?? '');
         } else {
             $content = array();
         }
@@ -74,7 +74,7 @@ class data_field_multimenu extends data_field_base {
         $str .= '<input name="field_' . $this->field->id . '[xxx]" type="hidden" value="xxx"/>'; // hidden field - needed for empty selection
 
         $str .= '<label for="field_' . $this->field->id . '">';
-        $str .= '<legend><span class="accesshide">' . $this->field->name;
+        $str .= '<legend><span class="accesshide">' . s($this->field->name);
 
         if ($this->field->required) {
             $str .= '&nbsp;' . get_string('requiredelement', 'form') . '</span></legend>';
@@ -98,155 +98,7 @@ class data_field_multimenu extends data_field_base {
             }
 
             $str .= '>';
-
-            if ($this->field->name === "Needs"){
-                switch ($option){
-                    case "Comprehensive sexuality education":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Comprehensive sexuality education" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Educación integral en sexualidad" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Educação sexual abrangente" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Éducation sexuelle complète" . '</option>';
-                        }
-                        break;
-                    case "Community outreach channels":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Community outreach channels" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Canales de alcance comunitario" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de alcance comunitário" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux d'information communautaires" . '</option>';
-                        }
-                        break;
-                    case "Humanitarian Responses":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Humanitarian Responses" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Respuestas Humanitarias" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Respostas humanitárias" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Réponses humanitaires" . '</option>';
-                        }
-                        break;
-                    case "General SRH services":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "General SRH services" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Servicios generales de SSR" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Serviços gerais de SSR" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Services généraux de santé sexuelle et reproductive" . '</option>';
-                        }
-                        break;
-                    case "Safe and/or legal abortion":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Safe and/or legal abortion" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Aborto seguro y/o legal" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Aborto seguro e/ou legal" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Avortement sûr et/ou légal" . '</option>';
-                        }
-                        break;
-                    case "Contraception":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Contraception" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Anticoncepción" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Contracepção" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Contraception" . '</option>';
-                        }
-                        break;
-                    case "Sexual and gender-based violence":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and gender-based violence" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Violencia sexual y de género" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Violência sexual e baseada em gênero" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Violence sexuelle et sexiste" . '</option>';
-                        }
-                        break;
-                    case "Intersectional Feminism and Gender Equity":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Intersectional Feminism and Gender Equity" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Feminismo interseccional y equidad de género" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Feminismo interseccional e equidade de gênero" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Féminisme intersectionnel et équité entre les sexes" . '</option>';
-                        }
-                        break;
-                    case "Sexual and reproductive rights":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and reproductive rights" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Derechos sexuales y reproductivos" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Direitos sexuais e reprodutivos" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Droits sexuels et génésiques" . '</option>';
-                        }
-                        break;
-                    case "Health channels":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Health channels" . '</option>';
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Canales de salud" . '</option>';
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de saúde" . '</option>';
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux de santé" . '</option>';
-                        }
-                        break;
-                }
-            }else{
-                $str .= $option . '</option>';
-            }
-
-            //$str .= $option . '</option>';
+            $str .= $option . '</option>';
         }
         $str .= '</select>';
         $str .= '</div>';
@@ -267,7 +119,7 @@ class data_field_multimenu extends data_field_base {
 
         static $c = 0;
 
-        $str = '<label class="accesshide" for="f_' . $this->field->id . '">' . $this->field->name . '</label>';
+        $str = '<label class="accesshide" for="f_' . $this->field->id . '">' . s($this->field->name) . '</label>';
         $str .= '<select id="f_'.$this->field->id.'" name="f_'.$this->field->id.'[]" multiple="multiple" class="form-control">';
 
         // display only used options
@@ -419,8 +271,6 @@ class data_field_multimenu extends data_field_base {
 
 
     function display_browse_field($recordid, $template) {
-        global $SESSION;
-
         $content = $this->get_data_content($recordid);
         if (!$content || empty($content->content)) {
             return '';
@@ -435,154 +285,7 @@ class data_field_multimenu extends data_field_base {
                 // Hmm, looks like somebody edited the field definition.
                 continue;
             }
-
-            if ($this->field->name === "Needs"){
-                switch ($line){
-                    case "Comprehensive sexuality education":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Comprehensive sexuality education" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Educación integral en sexualidad" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Educação sexual abrangente" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Éducation sexuelle complète" . "<br />\n";
-                        }
-                        break;
-                    case "Community outreach channels":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Community outreach channels" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Canales de alcance comunitario" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de alcance comunitário" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux d'information communautaires" . "<br />\n";
-                        }
-                        break;
-                    case "Humanitarian Responses":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Humanitarian Responses" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Respuestas Humanitarias" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Respostas humanitárias" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Réponses humanitaires" . "<br />\n";
-                        }
-                        break;
-                    case "General SRH services":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "General SRH services" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Servicios generales de SSR" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Serviços gerais de SSR" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Services généraux de santé sexuelle et reproductive" . "<br />\n";
-                        }
-                        break;
-                    case "Safe and/or legal abortion":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Safe and/or legal abortion" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Aborto seguro y/o legal" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Aborto seguro e/ou legal" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Avortement sûr et/ou légal" . "<br />\n";
-                        }
-                        break;
-                    case "Contraception":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Contraception" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Anticoncepción" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Contracepção" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Contraception" . "<br />\n";
-                        }
-                        break;
-                    case "Sexual and gender-based violence":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and gender-based violence" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Violencia sexual y de género" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Violência sexual e baseada em gênero" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Violence sexuelle et sexiste" . "<br />\n";
-                        }
-                        break;
-                    case "Intersectional Feminism and Gender Equity":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Intersectional Feminism and Gender Equity" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Feminismo interseccional y equidad de género" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Feminismo interseccional e equidade de gênero" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Féminisme intersectionnel et équité entre les sexes" . "<br />\n";
-                        }
-                        break;
-                    case "Sexual and reproductive rights":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Sexual and reproductive rights" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Derechos sexuales y reproductivos" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Direitos sexuais e reprodutivos" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Droits sexuels et génésiques" . "<br />\n";
-                        }
-                        break;
-                    case "Health channels":
-                        if ($SESSION->lang === 'en'){
-                            $str .= "Health channels" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'es'){
-                            $str .= "Canales de salud" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'pt'){
-                            $str .= "Canais de saúde" . "<br />\n";
-                        }
-                        if ($SESSION->lang === 'fr'){
-                            $str .= "Canaux de santé" . "<br />\n";
-                        }
-                        break;
-                }
-            }else{
-                $str .= $line . "<br />\n";
-            }
-            // $str .= $line . "<br />\n";
+            $str .= $line . "<br />\n";
         }
         return $str;
     }

@@ -103,13 +103,14 @@ class csv_entries_importer extends entries_importer {
                         unset($fieldnames[$id]); // To ensure the user provided content fields remain in the array once flipped.
                     } else {
                         $field = $rawfields[$name];
+                        $field->type = clean_param($field->type, PARAM_ALPHA);
                         $filepath = "$CFG->dirroot/mod/data/field/$field->type/field.class.php";
                         if (!file_exists($filepath)) {
                             $errorfield .= "'$name' ";
                             continue;
                         }
                         require_once($filepath);
-                        $classname = 'datafos_field_' . $field->type;
+                        $classname = 'data_field_' . $field->type;
                         $fields[$name] = new $classname($field, $data, $cm);
                     }
                 }
@@ -132,7 +133,15 @@ class csv_entries_importer extends entries_importer {
                         $authorid = $author->id;
                     }
                 }
-                if ($recordid = data_add_record($data, 0, $authorid)) {  // Add instance to data_record.
+
+                // Determine presence of "approved" field within the record to import.
+                $approved = true;
+                if (array_key_exists(get_string('approved', 'data'), $fieldnames)) {
+                    $approvedindex = $fieldnames[get_string('approved', 'data')];
+                    $approved = !empty($record[$approvedindex]);
+                }
+
+                if ($recordid = data_add_record($data, 0, $authorid, $approved)) { // Add instance to data_record.
                     foreach ($fields as $field) {
                         $fieldid = $fieldnames[$field->field->name];
                         if (isset($record[$fieldid])) {

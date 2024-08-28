@@ -380,7 +380,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
         }
 
         $str = '<div title="' . s($this->field->description) . '">';
-        $str .= '<label for="field_'.$this->field->id.'"><span class="accesshide">'.$this->field->name.'</span>';
+        $str .= '<label for="field_'.$this->field->id.'"><span class="accesshide">'.s($this->field->name).'</span>';
         if ($this->field->required) {
             $image = $OUTPUT->pix_icon('req', get_string('requiredelement', 'form'));
             $str .= html_writer::div($image, 'inline-req');
@@ -497,7 +497,7 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
      * @return bool|string
      */
     function display_browse_field($recordid, $template) {
-        global $DB, $SESSION, $USER;
+        global $DB;
         $content = $this->get_data_content($recordid);
         if (!$content || !isset($content->content)) {
             return '';
@@ -508,28 +508,6 @@ class data_field_base {     // Base class for Database Field Types (see field/*/
             $options->filter = false;
         }
         $options->para = false;
-        if (!property_exists($SESSION,'lang')){
-            $SESSION->lang = $USER->lang;
-        }
-
-        //KTT CUSTOMIZATION
-        if ($this->field->name === "Category"){
-            switch ($content->content) {
-                case "General tool":
-                    $content->content = get_string('generaltoolcategory','data');
-                    break;
-                case "Quality of care tool":
-                    $content->content = get_string('qualityofcaretoolcategory','data');
-                    break;
-                case "Research":
-                    $content->content = get_string('researchcategory','data');
-                    break;
-                case "Narrative":
-                    $content->content = get_string('narrativecategory','data');
-                    break;
-            }
-        }
-
         $str = format_text($content->content, $content->content1, $options);
         return $str;
     }
@@ -1027,13 +1005,14 @@ function data_get_field_from_id($fieldid, $data){
 function data_get_field_new($type, $data) {
     global $CFG;
 
+    $type = clean_param($type, PARAM_ALPHA);
     $filepath = $CFG->dirroot.'/mod/data/field/'.$type.'/field.class.php';
     // It should never access this method if the subfield class doesn't exist.
     if (!file_exists($filepath)) {
         throw new \moodle_exception('invalidfieldtype', 'data');
     }
     require_once($filepath);
-    $newfield = 'datafos_field_'.$type;
+    $newfield = 'data_field_'.$type;
     $newfield = new $newfield(0, $data);
     return $newfield;
 }
@@ -1054,12 +1033,13 @@ function data_get_field(stdClass $field, stdClass $data, ?stdClass $cm=null): da
     if (!isset($field->type)) {
         return new data_field_base($field);
     }
+    $field->type = clean_param($field->type, PARAM_ALPHA);
     $filepath = $CFG->dirroot.'/mod/data/field/'.$field->type.'/field.class.php';
     if (!file_exists($filepath)) {
         return new data_field_base($field);
     }
     require_once($filepath);
-    $newfield = 'datafos_field_'.$field->type;
+    $newfield = 'data_field_'.$field->type;
     $newfield = new $newfield($field, $data, $cm);
     return $newfield;
 }
@@ -1130,9 +1110,11 @@ function data_numentries($data, $userid=null) {
  * @param object $data
  * @param int $groupid
  * @param int $userid
+ * @param bool $approved If specified, and the user has the capability to approve entries, then this value
+ *      will be used as the approved status of the new record
  * @return bool
  */
-function data_add_record($data, $groupid = 0, $userid = null) {
+function data_add_record($data, $groupid = 0, $userid = null, bool $approved = true) {
     global $USER, $DB;
 
     $cm = get_coursemodule_from_instance('data', $data->id);
@@ -1144,7 +1126,7 @@ function data_add_record($data, $groupid = 0, $userid = null) {
     $record->groupid = $groupid;
     $record->timecreated = $record->timemodified = time();
     if (has_capability('mod/data:approve', $context)) {
-        $record->approved = 1;
+        $record->approved = $approved;
     } else {
         $record->approved = 0;
     }
@@ -1746,7 +1728,7 @@ function mod_data_rating_can_see_item_ratings($params) {
  * @return void
  */
 function data_print_preference_form($data, $perpage, $search, $sort='', $order='ASC', $search_array = '', $advanced = 0, $mode= ''){
-    global $DB, $PAGE, $OUTPUT, $SESSION;
+    global $DB, $PAGE, $OUTPUT;
 
     $cm = get_coursemodule_from_instance('data', $data->id);
     $context = context_module::instance($cm->id);
@@ -1760,7 +1742,8 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
         echo '<input type="hidden" name="mode" value="list" />';
     }
     echo '<label for="pref_perpage">'.get_string('pagesize','data').'</label> ';
-    $pagesizes = array(10=>10,20=>20,30=>30,40=>40,50=>50,100=>100,200=>200,300=>300,400=>400,500=>500,1000=>1000);
+    $pagesizes = array(2=>2,3=>3,4=>4,5=>5,6=>6,7=>7,8=>8,9=>9,10=>10,15=>15,
+                       20=>20,30=>30,40=>40,50=>50,100=>100,200=>200,300=>300,400=>400,500=>500,1000=>1000);
     echo html_writer::select($pagesizes, 'perpage', $perpage, false, array('id' => 'pref_perpage', 'class' => 'custom-select'));
 
     if ($advanced) {
@@ -1780,38 +1763,9 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
         echo '<optgroup label="'.get_string('fields', 'data').'">';
         foreach ($fields as $field) {
             if ($field->id == $sort) {
-
-                if ($field->name === "Category"){
-                    echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'</option>';
-                }else{
-                    echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
-                }
-
+                echo '<option value="'.$field->id.'" selected="selected">'.s($field->name).'</option>';
             } else {
-                switch ($field->name) {
-                    case "Author":
-                        echo '<option value="' . $field->id . '">' . get_string('authorfield', 'data'). '</option>';
-                        break;
-                    case "Category":
-                        echo '<option value="' . $field->id . '">' . get_string('categoryfield', 'data'). '</option>';
-                        break;
-                    case "Needs":
-                        echo '<option value="' . $field->id . '">' . get_string('needsfield', 'data'). '</option>';
-                        break;
-                    case "Organization":
-                        echo '<option value="' . $field->id . '">' . get_string('organizationfield', 'data'). '</option>';
-                        break;
-                    case "Upload Date":
-                        echo '<option value="' . $field->id . '">' . get_string('uploaddatefield', 'data'). '</option>';
-                        break;
-                    case "Year of Completion":
-                        echo '<option value="' . $field->id . '">' . get_string('yearofcompletionfield', 'data'). '</option>';
-                        break;
-                    default:
-                        //echo '<option value="' . $field->id . '">' . $field->name . '</option>';
-                        break;
-                }
-                // echo '<option value="'.$field->id.'">'.$field->name.'</option>';
+                echo '<option value="'.$field->id.'">'.s($field->name).'</option>';
             }
         }
         echo '</optgroup>';
@@ -1819,8 +1773,8 @@ function data_print_preference_form($data, $perpage, $search, $sort='', $order='
     $options = array();
     $options[DATA_TIMEADDED]    = get_string('timeadded', 'data');
     $options[DATA_TIMEMODIFIED] = get_string('timemodified', 'data');
-    //$options[DATA_FIRSTNAME]    = get_string('authorfirstname', 'data');
-    //$options[DATA_LASTNAME]     = get_string('authorlastname', 'data');
+    $options[DATA_FIRSTNAME]    = get_string('authorfirstname', 'data');
+    $options[DATA_LASTNAME]     = get_string('authorlastname', 'data');
     if ($data->approval and has_capability('mod/data:approve', $context)) {
         $options[DATA_APPROVED] = get_string('approved', 'data');
     }
@@ -2669,7 +2623,7 @@ abstract class data_preset_importer {
                     if (!isset($newfield->description)) {
                         $newfield->description = '';
                     }
-                    $classname = 'datafos_field_'.$newfield->type;
+                    $classname = 'data_field_'.$newfield->type;
                     $fieldclass = new $classname($newfield, $this->module);
                     $fieldclass->insert_field();
                     unset($fieldclass);
@@ -3892,9 +3846,6 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
         }
     }
 
-    $OneUploadFieldNotEmpty = false;
-    //$OneNeedSelected = false;
-
     // Check all form fields which have the required are filled.
     foreach ($fields as $fieldrecord) {
         // Check whether the field has any data.
@@ -3919,35 +3870,12 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
         }
 
-        //KTT CUSTOMIZATION
-        if ($field->field->name === "File EN" && $fieldhascontent){
-            $OneUploadFieldNotEmpty = true;
-        }elseif ($field->field->name === "File ES" && $fieldhascontent){
-            $OneUploadFieldNotEmpty = true;
-        }elseif ($field->field->name === "File PT" && $fieldhascontent){
-            $OneUploadFieldNotEmpty = true;
-        }elseif ($field->field->name === "File FR" && $fieldhascontent){
-            $OneUploadFieldNotEmpty = true;
-        }elseif ($field->field->name === "Link" && $fieldhascontent){
-            $OneUploadFieldNotEmpty = true;
-        }
-
-        /*if ($field->field->name === "Needs1" && $fieldhascontent){
-            $OneNeedSelected = true;
-        }elseif ($field->field->name === "Needs2" && $fieldhascontent){
-            $OneNeedSelected = true;
-        }*/
-        //----------
-
         // If the field is required, add a notification to that effect.
         if ($field->field->required && !$fieldhascontent) {
-            /*if (!isset($result->fieldnotifications[$field->field->name])) {
+            if (!isset($result->fieldnotifications[$field->field->name])) {
                 $result->fieldnotifications[$field->field->name] = array();
             }
-            $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'data');*/
-            if(count($result->generalnotifications)===0){
-                $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'data');
-            }
+            $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'data');
             $requiredfieldsfilled = false;
         }
 
@@ -3958,31 +3886,6 @@ function data_process_submission(stdClass $mod, $fields, stdClass $datarecord) {
             }
         }
     }
-
-    //KTT CUSTOMIZATION
-    if (!$OneUploadFieldNotEmpty){
-        /*if (!isset($result->fieldnotifications["File EN"])) {
-            $result->fieldnotifications["File EN"] = array();
-        }
-        $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');*/
-        if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'data');
-        }
-        $requiredfieldsfilled = false;
-    }
-
-    /*if (!$OneNeedSelected){
-        if (!isset($result->fieldnotifications["Needs1"])) {
-            $result->fieldnotifications["Needs1"] = array();
-        }
-        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');
-        if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
-        }
-        $requiredfieldsfilled = false;
-    }*/
-
-    //------------------
 
     if ($emptyform) {
         // The form is empty.

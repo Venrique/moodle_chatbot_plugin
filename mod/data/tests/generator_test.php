@@ -115,7 +115,7 @@ class generator_test extends \advanced_testcase {
 
             ${$fieldname} = $this->getDataGenerator()->get_plugin_generator('mod_data')->create_field($record, $data);
 
-            $this->assertInstanceOf('datafos_field_' . $fieldtype, ${$fieldname});
+            $this->assertInstanceOf('data_field_' . $fieldtype, ${$fieldname});
             $count++;
         }
 

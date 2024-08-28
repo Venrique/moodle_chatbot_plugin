@@ -274,7 +274,7 @@ abstract class preset_importer {
             if (!isset($newfield->description)) {
                 $newfield->description = '';
             }
-            $classname = 'datafos_field_' . $newfield->type;
+            $classname = 'data_field_' . $newfield->type;
             $fieldclass = new $classname($newfield, $module);
             $fieldclass->insert_field();
             unset($fieldclass);
