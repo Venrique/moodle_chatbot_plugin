@@ -383,3 +383,22 @@ table.glossarycategoryheader {
     padding: 0;
 }
 }
+
+//Rich text editor 
+
+div.mod-datafos-input{ 
+  select {
+  display: none;
+}
+  div.editor_atto_toolbar {
+  display: none;
+}
+
+.editor_atto_content.form-control {
+  width: 100% !important;
+  border-top: 1px solid #5c3873;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  resize: none !important;
+  overflow-x: hidden;
+}

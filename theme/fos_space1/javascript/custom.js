@@ -79,7 +79,7 @@ require(["jquery"], function ($) {
 
                 var hidden = true;
 
-                $("#expertmode").find('.mod-datafos-input.mr-1').click(function () {
+                $("#expertmode").find('.mod-data-input.mr-1').click(function () {
                     if (hidden) {
                         $('[hidden]').removeAttr('hidden');
                         hidden = false;
@@ -109,11 +109,11 @@ require(["jquery"], function ($) {
                 $("#titleDivFR").on('focusout', translateTitles);
                 $("#titleDivPT").on('focusout', translateTitles);
                 function translateTitles() {
-                    let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-datafos-input');
-                    let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-datafos-input');
-                    let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-datafos-input');
-                    let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-datafos-input');
-                    let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-datafos-input');
+                    let origin = $(this).find('.basefieldinput.form-control.d-inline.mod-data-input');
+                    let titleEN = $("#titleDivEN").find('.basefieldinput.form-control.d-inline.mod-data-input');
+                    let titleES = $("#titleDivES").find('.basefieldinput.form-control.d-inline.mod-data-input');
+                    let titleFR = $("#titleDivFR").find('.basefieldinput.form-control.d-inline.mod-data-input');
+                    let titlePT = $("#titleDivPT").find('.basefieldinput.form-control.d-inline.mod-data-input');
                     let lockEN = $("#TitlelockENTranslation");
                     let lockES = $("#TitlelockESTranslation");
                     let lockFR = $("#TitlelockFRTranslation");
