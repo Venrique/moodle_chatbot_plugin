@@ -226,7 +226,7 @@ class presets implements templatable, renderable {
     private function add_action_menu(action_menu &$actionmenu, string $actionlabel, moodle_url $actionurl,
         array $otherattributes) {
         $attributes = [
-            'data-dataid' => $this->id,
+            'datafos-datafosid' => $this->id,
         ];
         $actionmenu->add(new action_menu_link_secondary(
             $actionurl,

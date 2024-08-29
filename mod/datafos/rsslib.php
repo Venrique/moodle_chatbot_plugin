@@ -45,8 +45,8 @@ defined('MOODLE_INTERNAL') || die();
             return null;
         }
 
-        $dataid = clean_param($args[3], PARAM_INT);
-        $cm = get_coursemodule_from_instance('datafos', $dataid, 0, false, MUST_EXIST);
+        $datafosid = clean_param($args[3], PARAM_INT);
+        $cm = get_coursemodule_from_instance('datafos', $datafosid, 0, false, MUST_EXIST);
         if ($cm) {
             $modcontext = context_module::instance($cm->id);
 
@@ -56,7 +56,7 @@ defined('MOODLE_INTERNAL') || die();
             }
         }
 
-        $data = $DB->get_record('datafos', array('id' => $dataid), '*', MUST_EXIST);
+        $data = $DB->get_record('datafos', array('id' => $datafosid), '*', MUST_EXIST);
         if (!rss_enabled_for_mod('datafos', $data, false, true)) {
             return null;
         }
@@ -80,7 +80,7 @@ defined('MOODLE_INTERNAL') || die();
             require_once($CFG->dirroot . '/mod/datafos/lib.php');
 
             // Get the first field in the list  (a hack for now until we have a selector)
-            if (!$firstfield = $DB->get_record_sql('SELECT id,name FROM {data_fields_fos} WHERE dataid = ? ORDER by id', array($data->id), true)) {
+            if (!$firstfield = $DB->get_record_sql('SELECT id,name FROM {data_fields_fos} WHERE datafosid = ? ORDER by id', array($data->id), true)) {
                 return null;
             }
 
@@ -161,7 +161,7 @@ defined('MOODLE_INTERNAL') || die();
 
         $sql = "SELECT dr.*, u.firstname, u.lastname
                   FROM {data_records_fos} dr, {user} u
-                 WHERE dr.dataid = {$data->id} $approved
+                 WHERE dr.datafosid = {$data->id} $approved
                        AND dr.userid = u.id $time
               ORDER BY dr.timecreated DESC";
 

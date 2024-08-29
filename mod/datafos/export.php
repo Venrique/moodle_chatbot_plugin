@@ -39,7 +39,7 @@ $url = new moodle_url('/mod/datafos/export.php', array('d' => $d));
 $PAGE->set_url($url);
 
 if (! $data = $DB->get_record('datafos', array('id'=>$d))) {
-    throw new \moodle_exception('wrongdataid', 'datafos');
+    throw new \moodle_exception('wrongdatafosid', 'datafos');
 }
 
 if (! $cm = get_coursemodule_from_instance('datafos', $data->id, $data->course)) {
@@ -61,7 +61,7 @@ require_login($course, false, $cm);
 require_capability(DATAFOS_CAP_EXPORT, $context);
 
 // get fields for this database
-$fieldrecords = $DB->get_records('data_fields_fos', array('dataid'=>$data->id), 'id');
+$fieldrecords = $DB->get_records('data_fields_fos', array('datafosid'=>$data->id), 'id');
 
 if(empty($fieldrecords)) {
     if (has_capability('mod/datafos:managetemplates', $context)) {

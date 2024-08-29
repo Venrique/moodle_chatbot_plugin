@@ -78,7 +78,7 @@ class csv_entries_importer extends entries_importer {
             }
 
             // Check the fieldnames are valid.
-            $rawfields = $DB->get_records('data_fields_fos', ['dataid' => $data->id], '', 'name, id, type');
+            $rawfields = $DB->get_records('data_fields_fos', ['datafosid' => $data->id], '', 'name, id, type');
             $fields = [];
             $errorfield = '';
             $usernamestring = get_string('username');

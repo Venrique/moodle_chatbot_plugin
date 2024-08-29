@@ -86,7 +86,7 @@ class restore_data_activity_structure_step extends restore_activity_structure_st
         $data = (object)$data;
         $oldid = $data->id;
 
-        $data->dataid = $this->get_new_parentid('datafos');
+        $data->datafosid = $this->get_new_parentid('datafos');
 
         // insert the data_fields_fos record
         $newitemid = $DB->insert_record('data_fields_fos', $data);
@@ -101,7 +101,7 @@ class restore_data_activity_structure_step extends restore_activity_structure_st
 
         $data->userid = $this->get_mappingid('user', $data->userid);
         $data->groupid = $this->get_mappingid('group', $data->groupid);
-        $data->dataid = $this->get_new_parentid('datafos');
+        $data->datafosid = $this->get_new_parentid('datafos');
 
         // insert the data_records_fos record
         $newitemid = $DB->insert_record('data_records_fos', $data);

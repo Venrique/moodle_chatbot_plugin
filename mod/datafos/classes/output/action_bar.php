@@ -202,7 +202,7 @@ class action_bar {
             null,
             get_string('resettemplate', 'mod_datafos'),
             false,
-            ['datafos-action' => 'resettemplate', 'data-dataid' => $this->id]
+            ['datafos-action' => 'resettemplate', 'datafos-datafosid' => $this->id]
         ));
 
         // Reset all templates action.
@@ -216,7 +216,7 @@ class action_bar {
             null,
             get_string('resetalltemplates', 'mod_datafos'),
             false,
-            ['datafos-action' => 'resetalltemplates', 'data-dataid' => $this->id]
+            ['datafos-action' => 'resetalltemplates', 'datafos-datafosid' => $this->id]
         ));
 
         $templatesactionbar = new templates_action_bar($this->id, $selectmenu, null, null, $presetsactions);
@@ -290,7 +290,7 @@ class action_bar {
     protected function get_presets_actions_select(bool $hasimport = false): ?\action_menu {
         global $DB;
 
-        $hasfields = $DB->record_exists('data_fields_fos', ['dataid' => $this->id]);
+        $hasfields = $DB->record_exists('data_fields_fos', ['datafosid' => $this->id]);
 
         // Early return if the database has no fields and the import action won't be displayed.
         if (!$hasfields && !$hasimport) {
@@ -308,7 +308,7 @@ class action_bar {
                 null,
                 get_string('importpreset', 'mod_datafos'),
                 false,
-                ['datafos-action' => 'importpresets', 'data-dataid' => $this->cmid]
+                ['datafos-action' => 'importpresets', 'datafos-datafosid' => $this->cmid]
             ));
         }
 
@@ -328,7 +328,7 @@ class action_bar {
                 null,
                 get_string('saveaspreset', 'mod_datafos'),
                 false,
-                ['datafos-action' => 'saveaspreset', 'data-dataid' => $this->id]
+                ['datafos-action' => 'saveaspreset', 'datafos-datafosid' => $this->id]
             ));
         }
 

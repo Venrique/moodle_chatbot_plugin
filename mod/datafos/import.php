@@ -66,7 +66,7 @@ require_login($course, false, $cm);
 $context = context_module::instance($cm->id);
 require_capability('mod/datafos:manageentries', $context);
 
-$form = new mod_datafos_import_form(new moodle_url('/mod/datafos/import.php'), ['dataid' => $data->id,
+$form = new mod_datafos_import_form(new moodle_url('/mod/datafos/import.php'), ['datafosid' => $data->id,
     'backtourl' => $redirectbackto]);
 
 if ($form->is_cancelled()) {

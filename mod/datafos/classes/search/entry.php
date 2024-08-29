@@ -63,7 +63,7 @@ class entry extends \core_search\base_mod {
 
         $sql = "SELECT dr.*, d.course
                   FROM {data_records_fos} dr
-                  JOIN {datafos} d ON d.id = dr.dataid
+                  JOIN {datafos} d ON d.id = dr.datafosid
           $contextjoin
                  WHERE dr.timemodified >= :timemodified";
         return $DB->get_recordset_sql($sql,
@@ -79,7 +79,7 @@ class entry extends \core_search\base_mod {
      */
     public function get_document($entry, $options = array()) {
         try {
-            $cm = $this->get_cm('datafos', $entry->dataid, $entry->course);
+            $cm = $this->get_cm('datafos', $entry->datafosid, $entry->course);
             $context = \context_module::instance($cm->id);
         } catch (\dml_missing_record_exception $ex) {
             // Notify it as we run here as admin, we should see everything.
@@ -143,7 +143,7 @@ class entry extends \core_search\base_mod {
 
         $sql = "SELECT dr.*, d.*
                   FROM {data_records_fos} dr
-                  JOIN {datafos} d ON d.id = dr.dataid
+                  JOIN {datafos} d ON d.id = dr.datafosid
                  WHERE dr.id = ?";
 
         $entry = $DB->get_record_sql($sql, array( $id ), IGNORE_MISSING);
@@ -156,7 +156,7 @@ class entry extends \core_search\base_mod {
             return \core_search\manager::ACCESS_DENIED;
         }
 
-        $cm = $this->get_cm('datafos', $entry->dataid, $entry->course);
+        $cm = $this->get_cm('datafos', $entry->datafosid, $entry->course);
         $context = \context_module::instance($cm->id);
 
         $canmanageentries = has_capability('mod/datafos:manageentries', $context);
@@ -165,7 +165,7 @@ class entry extends \core_search\base_mod {
             return \core_search\manager::ACCESS_DENIED;
         }
 
-        $numberofentriesindb = $DB->count_records('data_records_fos', array('dataid' => $entry->dataid));
+        $numberofentriesindb = $DB->count_records('data_records_fos', array('datafosid' => $entry->datafosid));
         $requiredentriestoview = $entry->requiredentriestoview;
 
         if ($requiredentriestoview && ($requiredentriestoview > $numberofentriesindb) &&
@@ -195,7 +195,7 @@ class entry extends \core_search\base_mod {
      */
     public function get_doc_url(\core_search\document $doc) {
         $entry = $this->get_entry($doc->get('itemid'));
-        return new \moodle_url('/mod/datafos/view.php', array( 'd' => $entry->dataid, 'rid' => $entry->id ));
+        return new \moodle_url('/mod/datafos/view.php', array( 'd' => $entry->datafosid, 'rid' => $entry->id ));
     }
 
     /**
@@ -206,7 +206,7 @@ class entry extends \core_search\base_mod {
      */
     public function get_context_url(\core_search\document $doc) {
         $entry = $this->get_entry($doc->get('itemid'));
-        return new \moodle_url('/mod/datafos/view.php', array('d' => $entry->dataid));
+        return new \moodle_url('/mod/datafos/view.php', array('d' => $entry->datafosid));
     }
 
     /**
@@ -236,7 +236,7 @@ class entry extends \core_search\base_mod {
             return;
         }
 
-        $cm = $this->get_cm('datafos', $entry->dataid, $doc->get('courseid'));
+        $cm = $this->get_cm('datafos', $entry->datafosid, $doc->get('courseid'));
         $context = \context_module::instance($cm->id);
 
         // Get all content fields which have files in them.
@@ -303,7 +303,7 @@ class entry extends \core_search\base_mod {
         $contents = $DB->get_records_sql($sql, ['recordid' => $entry->id]);
         $filteredcontents = [];
 
-        $data = $DB->get_record('datafos', ['id' => $entry->dataid]);
+        $data = $DB->get_record('datafos', ['id' => $entry->datafosid]);
         $manager = manager::create_from_instance($data);
         $template = $manager->get_template('addtemplate');
         $template = $template->get_template_content();

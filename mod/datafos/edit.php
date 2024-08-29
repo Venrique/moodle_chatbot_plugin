@@ -57,7 +57,7 @@ $url->param('id', $cm->id);
 if ($rid !== 0) {
     $record = $DB->get_record(
         'data_records_fos',
-        ['id' => $rid, 'dataid' => $data->id],
+        ['id' => $rid, 'datafosid' => $data->id],
         '*',
         MUST_EXIST
     );

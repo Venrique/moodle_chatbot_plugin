@@ -66,13 +66,13 @@ const registerEventListeners = () => {
  */
 const deletePresetConfirm = (deleteOption) => {
     const presetName = deleteOption.getAttribute('data-presetname');
-    const dataId = deleteOption.getAttribute('data-dataid');
+    const datafosid = deleteOption.getAttribute('datafos-datafosid');
 
     Notification.deleteCancelPromise(
         getString('deleteconfirm', 'mod_datafos', presetName),
         getString('deletewarning', 'mod_datafos'),
     ).then(() => {
-        return deletePreset(dataId, presetName);
+        return deletePreset(datafosid, presetName);
     }).catch(() => {
         return;
     });
@@ -81,15 +81,15 @@ const deletePresetConfirm = (deleteOption) => {
 /**
  * Delete site user preset.
  *
- * @param {int} dataId The id of the current database activity.
+ * @param {int} datafosid The id of the current database activity.
  * @param {string} presetName The preset name to delete.
  * @return {promise} Resolved with the result and warnings of deleting a preset.
  */
-async function deletePreset(dataId, presetName) {
+async function deletePreset(datafosid, presetName) {
     var request = {
         methodname: 'mod_data_delete_saved_preset',
         args: {
-            dataid: dataId,
+            datafosid: datafosid,
             presetnames: {presetname: presetName},
         }
     };
@@ -98,7 +98,7 @@ async function deletePreset(dataId, presetName) {
         window.location.href = Url.relativeUrl(
             'mod/datafos/preset.php',
             {
-                d: dataId,
+                d: datafosid,
             },
             false
         );

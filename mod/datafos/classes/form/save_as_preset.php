@@ -144,7 +144,7 @@ class save_as_preset extends dynamic_form {
         if ($action == 'saveaspreset') {
             // For saving it as a new preset, some fields need to be created; otherwise, an exception will be raised.
             $instanceid = $this->optional_param('d', null, PARAM_INT);
-            $hasfields = $DB->record_exists('datafos_fields', ['dataid' => $instanceid]);
+            $hasfields = $DB->record_exists('datafos_fields', ['datafosid' => $instanceid]);
 
             if (!$hasfields) {
                 throw new moodle_exception('nofieldindatabase', 'datafos');

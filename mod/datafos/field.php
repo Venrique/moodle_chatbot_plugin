@@ -431,7 +431,7 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
     echo '<input type="hidden" name="sesskey" value="'.sesskey().'" />';
     echo '<label for="defaultsort">'.get_string('defaultsortfield','datafos').'</label>';
     echo '<select id="defaultsort" name="defaultsort" class="custom-select">';
-    if ($fields = $DB->get_records('data_fields_fos', array('dataid'=>$data->id))) {
+    if ($fields = $DB->get_records('data_fields_fos', array('datafosid'=>$data->id))) {
         echo '<optgroup label="'.get_string('fields', 'datafos').'">';
         foreach ($fields as $field) {
             if ($data->defaultsort == $field->id) {

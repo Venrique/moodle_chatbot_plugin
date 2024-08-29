@@ -36,7 +36,7 @@ class datafos_field_latlong extends datafos_field_base {
 
     var $linkoutservices = array(
           "Google Maps" => "http://maps.google.com/maps?q=@lat@,+@long@&iwloc=A&hl=en",
-          "Google Earth" => "@wwwroot@/mod/datafos/field/latlong/kml.php?d=@dataid@&fieldid=@fieldid@&rid=@recordid@",
+          "Google Earth" => "@wwwroot@/mod/datafos/field/latlong/kml.php?d=@datafosid@&fieldid=@fieldid@&rid=@recordid@",
           "Geabios" => "http://www.geabios.com/html/services/maps/PublicMap.htm?lat=@lat@&lon=@long@&fov=0.3&title=Moodle%20data%20item",
           "OpenStreetMap" => "http://www.openstreetmap.org/index.html?lat=@lat@&lon=@long@&zoom=11",
           "Multimap" => "http://www.multimap.com/map/browse.cgi?scale=200000&lon=@long@&lat=@lat@&icon=x"
@@ -198,7 +198,7 @@ class datafos_field_latlong extends datafos_field_base {
             '@long@' => $long,
             '@wwwroot@' => $CFG->wwwroot,
             '@contentid@' => $content->id,
-            '@dataid@' => $this->datafos->id,
+            '@datafosid@' => $this->datafos->id,
             '@courseid@' => $this->datafos->course,
             '@fieldid@' => $content->fieldid,
             '@recordid@' => $content->recordid,

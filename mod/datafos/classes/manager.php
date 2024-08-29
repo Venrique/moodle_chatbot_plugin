@@ -128,7 +128,7 @@ class manager {
      */
     public static function create_from_data_record($record): self {
         global $DB;
-        $instance = $DB->get_record(self::MODULE, ['id' => $record->dataid], '*', MUST_EXIST);
+        $instance = $DB->get_record(self::MODULE, ['id' => $record->datafosid], '*', MUST_EXIST);
         $cm = get_coursemodule_from_instance(self::MODULE, $instance->id);
         $cm = cm_info::create($cm);
         return new self($cm, $instance);
@@ -207,7 +207,7 @@ class manager {
             'context' => $this->context,
             'courseid' => $this->cm->course,
             'other' => [
-                'dataid' => $this->instance->id,
+                'datafosid' => $this->instance->id,
             ],
         ]);
         $event->add_record_snapshot(self::MODULE, $this->instance);
@@ -222,7 +222,7 @@ class manager {
     public function has_records(): bool {
         global $DB;
 
-        return $DB->record_exists('data_records_fos', ['dataid' => $this->instance->id]);
+        return $DB->record_exists('data_records_fos', ['datafosid' => $this->instance->id]);
     }
 
     /**
@@ -233,7 +233,7 @@ class manager {
     public function has_fields(): bool {
         global $DB;
         if ($this->_fieldrecords === null) {
-            return $DB->record_exists('data_fields_fos', ['dataid' => $this->instance->id]);
+            return $DB->record_exists('data_fields_fos', ['datafosid' => $this->instance->id]);
         }
         return !empty($this->_fieldrecords);
     }
@@ -260,7 +260,7 @@ class manager {
     public function get_field_records() {
         global $DB;
         if ($this->_fieldrecords === null) {
-            $this->_fieldrecords = $DB->get_records('data_fields_fos', ['dataid' => $this->instance->id], 'id');
+            $this->_fieldrecords = $DB->get_records('data_fields_fos', ['datafosid' => $this->instance->id], 'id');
         }
         return $this->_fieldrecords;
     }
@@ -346,7 +346,7 @@ class manager {
         return has_capability('mod/datafos:exportallentries', $this->context) ||
                 has_capability('mod/datafos:exportentry', $this->context) ||
                 (has_capability('mod/datafos:exportownentry', $this->context) &&
-                $DB->record_exists('data_records_fos', ['userid' => $userid, 'dataid' => $this->instance->id]));
+                $DB->record_exists('data_records_fos', ['userid' => $userid, 'datafosid' => $this->instance->id]));
     }
 
     /**
@@ -380,7 +380,7 @@ class manager {
             'context' => $this->context,
             'courseid' => $this->cm->course,
             'other' => array(
-                'dataid' => $this->instance->id,
+                'datafosid' => $this->instance->id,
             )
         ));
         $event->trigger();

@@ -32,7 +32,7 @@ class utils {
     /**
      * Exports the datafos of the mod_datafos instance to an entries_exporter object which then can export it to a file format.
      *
-     * @param int $dataid
+     * @param int $datafosid
      * @param array $fields
      * @param array $selectedfields
      * @param entries_exporter $exporter the entries_exporter object used
@@ -46,7 +46,7 @@ class utils {
      * @param bool $includefiles whether files should be exported as well
      * @return void
      */
-    public static function data_exportdata(int $dataid, array $fields, array $selectedfields, entries_exporter $exporter,
+    public static function data_exportdata(int $datafosid, array $fields, array $selectedfields, entries_exporter $exporter,
         int $currentgroup = 0, context $context = null, bool $userdetails = false, bool $time = false, bool $approval = false,
         bool $tags = false, bool $includefiles = true): void {
         global $DB;
@@ -84,7 +84,7 @@ class utils {
         }
         $exporter->add_row($header);
 
-        $datarecords = $DB->get_records('data_records_fos', array('dataid' => $dataid));
+        $datarecords = $DB->get_records('data_records_fos', array('datafosid' => $datafosid));
         ksort($datarecords);
         $line = 1;
         foreach ($datarecords as $record) {
