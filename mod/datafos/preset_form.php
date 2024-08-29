@@ -93,7 +93,7 @@ class data_export_form extends moodleform {
     }
 }
 
-class data_save_preset_form extends moodleform {
+class datafos_save_preset_form extends moodleform {
     public function definition() {
         $this->_form->addElement('header', 'exportheading', get_string('saveaspreset', 'datafos'));
         $this->_form->addElement('hidden', 'd');

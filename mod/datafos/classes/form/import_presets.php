@@ -39,7 +39,7 @@ class import_presets extends dynamic_form {
     public function process_dynamic_submission(): array {
         global $CFG;
         $filepath = $this->save_temp_file('importfile');
-       $context = $this->get_context_for_dynamic_submission();
+        $context = $this->get_context_for_dynamic_submission();
         $returnurl = new moodle_url('/mod/datafos/preset.php', [
             'id' => $context->instanceid,
             'action' => 'importzip',
@@ -70,7 +70,7 @@ class import_presets extends dynamic_form {
      */
     public function set_data_for_dynamic_submission(): void {
         $data = (object) [
-            'cmid' => $this->optional_param('cmid', 1, PARAM_INT),
+            'cmid' => $this->optional_param('cmid', 0, PARAM_INT),
         ];
         $this->set_data($data);
     }
@@ -105,7 +105,7 @@ class import_presets extends dynamic_form {
     protected function definition() {
         $mform = $this->_form;
         $mform->addElement('html', \html_writer::div(get_string('importpreset_desc', 'mod_datafos'), 'py-3'));
-      //  $mform->addElement('hidden', 'cmid');
+        $mform->addElement('hidden', 'cmid');
         $mform->setType('cmid', PARAM_INT);
 
         $mform->addElement('filepicker', 'importfile', get_string('choosepreset', 'mod_datafos'), null,
