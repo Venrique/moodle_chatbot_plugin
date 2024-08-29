@@ -871,7 +871,7 @@ class preset_test extends \advanced_testcase {
             $this->assertEquals($user->email, $entry->email);
             $this->assertEquals($user->firstname, $entry->firstname);
             $this->assertEquals($user->lastname, $entry->lastname);
-            $this->assertEquals($activity->id, $entry->datafosid);
+            $this->assertEquals($activity->id, $entry->dataid);
             $this->assertEquals(0, $entry->groupid);
             $this->assertEquals(1, $entry->approved);
         }

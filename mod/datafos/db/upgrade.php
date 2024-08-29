@@ -51,13 +51,13 @@ function xmldb_data_upgrade($oldversion) {
     if ($oldversion < 2023061300) {
         // Clean orphan data_records_fos.
         $sql = "SELECT d.id FROM {datafos} d
-            LEFT JOIN {data_fields_fos} f ON d.id = f.datafosid
+            LEFT JOIN {data_fields_fos} f ON d.id = f.dataid
             WHERE f.id IS NULL";
         $emptydatas = $DB->get_records_sql($sql);
         if (!empty($emptydatas)) {
-            $datafosids = array_keys($emptydatas);
-            list($datainsql, $dataparams) = $DB->get_in_or_equal($datafosids, SQL_PARAMS_NAMED, 'datafos');
-            $DB->delete_records_select('data_records_fos', "datafosid $datainsql", $dataparams);
+            $dataids = array_keys($emptydatas);
+            list($datainsql, $dataparams) = $DB->get_in_or_equal($dataids, SQL_PARAMS_NAMED, 'datafos');
+            $DB->delete_records_select('data_records_fos', "dataid $datainsql", $dataparams);
         }
 
         // Data savepoint reached.

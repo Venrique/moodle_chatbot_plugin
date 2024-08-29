@@ -99,9 +99,9 @@ class mod_data_generator extends testing_module_generator {
         }
 
         if (!isset($data->id)) {
-            throw new coding_exception('datafosid must be present in phpunit_util::create_field() $data');
+            throw new coding_exception('dataid must be present in phpunit_util::create_field() $data');
         } else {
-            $record['datafosid'] = $data->id;
+            $record['dataid'] = $data->id;
         }
 
         if (!isset($record['type'])) {
@@ -234,7 +234,7 @@ class mod_data_generator extends testing_module_generator {
             $approved = null;
         }
 
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id));
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id));
 
         // Validating whether required field are filled.
         foreach ($fields as $field) {

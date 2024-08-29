@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @property-read array $other {
  *      Extra information about event.
  *
- *      - int datafosid the id of the datafos activity.
+ *      - int dataid the id of the datafos activity.
  * }
  *
  * @package    mod_datafos
@@ -78,7 +78,7 @@ class template_viewed extends \core\event\base {
      * @return \moodle_url
      */
     public function get_url() {
-        return new \moodle_url('/mod/datafos/templates.php', array('d' => $this->other['datafosid']));
+        return new \moodle_url('/mod/datafos/templates.php', array('d' => $this->other['dataid']));
     }
 
     /**
@@ -90,8 +90,8 @@ class template_viewed extends \core\event\base {
     protected function validate_data() {
         parent::validate_data();
 
-        if (!isset($this->other['datafosid'])) {
-            throw new \coding_exception('The \'datafosid\' value must be set in other.');
+        if (!isset($this->other['dataid'])) {
+            throw new \coding_exception('The \'dataid\' value must be set in other.');
         }
     }
 
@@ -102,7 +102,7 @@ class template_viewed extends \core\event\base {
      */
     public static function get_other_mapping() {
         return [
-            'datafosid' => ['db' => 'datafos', 'restore' => 'datafos']
+            'dataid' => ['db' => 'datafos', 'restore' => 'datafos']
         ];
     }
 }

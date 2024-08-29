@@ -474,7 +474,7 @@ $string['viewnavigation'] = 'View mode tertiary navigation';
 $string['viewtemplates'] = 'View templates';
 $string['viewtodate'] = 'Read only to';
 $string['viewtodatevalidation'] = 'The read only to date cannot be before the read only from date.';
-$string['wrongdatafosid'] = 'Wrong datafos ID provided';
+$string['wrongdataid'] = 'Wrong datafos ID provided';
 
 // Deprecated since Moodle 4.1.
 $string['buttons'] = 'Actions';

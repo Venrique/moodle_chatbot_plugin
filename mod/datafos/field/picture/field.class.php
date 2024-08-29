@@ -225,7 +225,7 @@ class datafos_field_picture extends datafos_field_base {
             // Thumbnails are already converted to the correct width and height.
             $width = '';
             $height = '';
-            $url = new moodle_url('/mod/datafos/view.php', ['d' => $this->field->datafosid, 'rid' => $recordid]);
+            $url = new moodle_url('/mod/datafos/view.php', ['d' => $this->field->dataid, 'rid' => $recordid]);
         } else {
             $filename = $content->content;
             $url = null;
@@ -309,7 +309,7 @@ class datafos_field_picture extends datafos_field_base {
                     }
 
                     if ($file->get_imageinfo() === false) {
-                        $url = new moodle_url('/mod/datafos/edit.php', array('d' => $this->field->datafosid));
+                        $url = new moodle_url('/mod/datafos/edit.php', array('d' => $this->field->dataid));
                         redirect($url, get_string('invalidfiletype', 'error', $file->get_filename()));
                     }
                     $content->content = $file->get_filename();

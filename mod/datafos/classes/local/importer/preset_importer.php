@@ -208,7 +208,7 @@ abstract class preset_importer {
                     }
                     $fieldstoimport->$param = $value[0]['#'];
                 }
-                $fieldstoimport->datafosid = $module->id;
+                $fieldstoimport->dataid = $module->id;
                 $fieldstoimport->type = clean_param($fieldstoimport->type, PARAM_ALPHA);
                 $result->importfields[] = $fieldstoimport;
             }
@@ -302,7 +302,7 @@ abstract class preset_importer {
                 $settings->defaultsort = (int)$DB->get_field(
                     'data_fields_fos',
                     'id',
-                    ['datafosid' => $module->id, 'name' => $settings->defaultsort]
+                    ['dataid' => $module->id, 'name' => $settings->defaultsort]
                 );
             }
         } else {

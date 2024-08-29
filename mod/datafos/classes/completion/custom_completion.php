@@ -43,7 +43,7 @@ class custom_completion extends activity_custom_completion {
 
         $this->validate_rule($rule);
 
-        $userentries = $DB->count_records('data_records_fos', ['datafosid' => $this->cm->instance, 'userid' => $this->userid]);
+        $userentries = $DB->count_records('data_records_fos', ['dataid' => $this->cm->instance, 'userid' => $this->userid]);
         $completionentries = $this->cm->customdata['customcompletionrules']['completionentries'];
 
         return ($completionentries <= $userentries) ? COMPLETION_COMPLETE : COMPLETION_INCOMPLETE;

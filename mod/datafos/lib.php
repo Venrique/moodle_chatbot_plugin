@@ -110,7 +110,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
                 throw new \moodle_exception('invalidfieldid', 'datafos');
             }
             if (empty($data)) {
-                if (!$this->datafos = $DB->get_record('datafos', array('id'=>$this->field->datafosid))) {
+                if (!$this->datafos = $DB->get_record('datafos', array('id'=>$this->field->dataid))) {
                     throw new \moodle_exception('invalidid', 'datafos');
                 }
             }
@@ -211,11 +211,11 @@ class datafos_field_base {     // Base class for Database Field Types (see field
     function define_default_field() {
         global $OUTPUT;
         if (empty($this->datafos->id)) {
-            echo $OUTPUT->notification('Programmer error: datafosid not defined in field class');
+            echo $OUTPUT->notification('Programmer error: dataid not defined in field class');
         }
         $this->field = new stdClass();
         $this->field->id = 0;
-        $this->field->datafosid = $this->datafos->id;
+        $this->field->dataid = $this->datafos->id;
         $this->field->type   = $this->type;
         $this->field->param1 = '';
         $this->field->param2 = '';
@@ -234,7 +234,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
      */
     function define_field($data) {
         $this->field->type        = $this->type;
-        $this->field->datafosid      = $this->datafos->id;
+        $this->field->dataid      = $this->datafos->id;
 
         $this->field->name        = trim($data->name);
         $this->field->description = trim($data->description);
@@ -282,7 +282,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
             'context' => $this->context,
             'other' => array(
                 'fieldname' => $this->field->name,
-                'datafosid' => $this->datafos->id
+                'dataid' => $this->datafos->id
             )
         ));
         $event->trigger();
@@ -308,7 +308,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
             'context' => $this->context,
             'other' => array(
                 'fieldname' => $this->field->name,
-                'datafosid' => $this->datafos->id
+                'dataid' => $this->datafos->id
             )
         ));
         $event->trigger();
@@ -340,12 +340,12 @@ class datafos_field_base {     // Base class for Database Field Types (see field
                 'context' => $this->context,
                 'other' => array(
                     'fieldname' => $this->field->name,
-                    'datafosid' => $this->datafos->id
+                    'dataid' => $this->datafos->id
                  )
             ));
 
             if (!$manager->has_fields() && $manager->has_records()) {
-                $DB->delete_records('data_records_fos', ['datafosid' => $this->datafos->id]);
+                $DB->delete_records('data_records_fos', ['dataid' => $this->datafos->id]);
             }
 
             $event->add_record_snapshot('data_fields_fos', $field);
@@ -768,7 +768,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
 
 
 /**
- * Given a template and a datafosid, generate a default case template
+ * Given a template and a dataid, generate a default case template
  *
  * @param stdClass $data the mod_datafos record.
  * @param string $template the template name
@@ -985,7 +985,7 @@ function datafos_append_new_field_to_templates($data, $newfieldname): bool {
 function datafos_get_field_from_name($name, $data){
     global $DB;
 
-    $field = $DB->get_record('data_fields_fos', array('name'=>$name, 'datafosid'=>$data->id));
+    $field = $DB->get_record('data_fields_fos', array('name'=>$name, 'dataid'=>$data->id));
 
     if ($field) {
         return datafos_get_field($field, $data);
@@ -1006,7 +1006,7 @@ function datafos_get_field_from_name($name, $data){
 function datafos_get_field_from_id($fieldid, $data){
     global $DB;
 
-    $field = $DB->get_record('data_fields_fos', array('id'=>$fieldid, 'datafosid'=>$data->id));
+    $field = $DB->get_record('data_fields_fos', array('id'=>$fieldid, 'dataid'=>$data->id));
 
     if ($field) {
         return datafos_get_field($field, $data);
@@ -1127,12 +1127,12 @@ function datafos_numentries($data, $userid=null) {
     if ($userid === null) {
         $userid = $USER->id;
     }
-    $sql = 'SELECT COUNT(*) FROM {data_records_fos} WHERE datafosid=? AND userid=?';
+    $sql = 'SELECT COUNT(*) FROM {data_records_fos} WHERE dataid=? AND userid=?';
     return $DB->count_records_sql($sql, array($data->id, $userid));
 }
 
 /**
- * function that takes in a datafosid and adds a record
+ * function that takes in a dataid and adds a record
  * this is used everytime an add template is submitted
  *
  * @global object
@@ -1150,7 +1150,7 @@ function datafos_add_record($data, $groupid = 0, $userid = null) {
 
     $record = new stdClass();
     $record->userid = $userid ?? $USER->id;
-    $record->datafosid = $data->id;
+    $record->dataid = $data->id;
     $record->groupid = $groupid;
     $record->timecreated = $record->timemodified = time();
     if (has_capability('mod/datafos:approve', $context)) {
@@ -1165,7 +1165,7 @@ function datafos_add_record($data, $groupid = 0, $userid = null) {
         'objectid' => $record->id,
         'context' => $context,
         'other' => array(
-            'datafosid' => $data->id
+            'dataid' => $data->id
         )
     ));
     $event->trigger();
@@ -1182,15 +1182,15 @@ function datafos_add_record($data, $groupid = 0, $userid = null) {
  * check to see if there are 2 or more of the same tag being used.
  *
  * @global object
- * @param int $datafosid,
+ * @param int $dataid,
  * @param string $template
  * @return bool
  */
-function datafos_tags_check($datafosid, $template) {
+function datafos_tags_check($dataid, $template) {
     global $DB, $OUTPUT;
 
     // first get all the possible tags
-    $fields = $DB->get_records('data_fields_fos', array('datafosid'=>$datafosid));
+    $fields = $DB->get_records('data_fields_fos', array('dataid'=>$dataid));
     // then we generate strings to replace
     $tagsok = true; // let's be optimistic
     foreach ($fields as $field){
@@ -1304,7 +1304,7 @@ function datafos_update_instance($data) {
  * @param int $id
  * @return bool
  */
-function datafos_delete_instance($id) {    // takes the datafosid
+function datafos_delete_instance($id) {    // takes the dataid
     global $DB, $CFG;
 
     if (!$data = $DB->get_record('datafos', array('id'=>$id))) {
@@ -1315,7 +1315,7 @@ function datafos_delete_instance($id) {    // takes the datafosid
     $context = context_module::instance($cm->id);
 
     // Delete all information related to fields.
-    $fields = $DB->get_records('data_fields_fos', ['datafosid' => $id]);
+    $fields = $DB->get_records('data_fields_fos', ['dataid' => $id]);
     foreach ($fields as $field) {
         $todelete = datafos_get_field($field, $data, $cm);
         $todelete->delete_field();
@@ -1360,11 +1360,11 @@ function datafos_user_outline($course, $user, $mod, $data) {
     }
 
 
-    if ($countrecords = $DB->count_records('data_records_fos', array('datafosid'=>$data->id, 'userid'=>$user->id))) {
+    if ($countrecords = $DB->count_records('data_records_fos', array('dataid'=>$data->id, 'userid'=>$user->id))) {
         $result = new stdClass();
         $result->info = get_string('numrecords', 'datafos', $countrecords);
         $lastrecord   = $DB->get_record_sql('SELECT id,timemodified FROM {data_records_fos}
-                                              WHERE datafosid = ? AND userid = ?
+                                              WHERE dataid = ? AND userid = ?
                                            ORDER BY timemodified DESC', array($data->id, $user->id), true);
         $result->time = $lastrecord->timemodified;
         if ($grade) {
@@ -1417,7 +1417,7 @@ function datafos_user_complete($course, $user, $mod, $data) {
     }
     $records = $DB->get_records(
         'data_records_fos',
-        ['datafosid' => $data->id, 'userid' => $user->id],
+        ['dataid' => $data->id, 'userid' => $user->id],
         'timemodified DESC'
     );
     if ($records) {
@@ -1622,9 +1622,9 @@ function datafos_rating_validate($params) {
         throw new rating_exception('nopermissiontorate');
     }
 
-    $datasql = "SELECT d.id as datafosid, d.scale, d.course, r.userid as userid, d.approval, r.approved, r.timecreated, d.assesstimestart, d.assesstimefinish, r.groupid
+    $datasql = "SELECT d.id as dataid, d.scale, d.course, r.userid as userid, d.approval, r.approved, r.timecreated, d.assesstimestart, d.assesstimefinish, r.groupid
                   FROM {data_records_fos} r
-                  JOIN {datafos} d ON r.datafosid = d.id
+                  JOIN {datafos} d ON r.dataid = d.id
                  WHERE r.id = :itemid";
     $dataparams = array('itemid'=>$params['itemid']);
     if (!$info = $DB->get_record_sql($datasql, $dataparams)) {
@@ -1674,7 +1674,7 @@ function datafos_rating_validate($params) {
     }
 
     $course = $DB->get_record('course', array('id'=>$info->course), '*', MUST_EXIST);
-    $cm = get_coursemodule_from_instance('datafos', $info->datafosid, $course->id, false, MUST_EXIST);
+    $cm = get_coursemodule_from_instance('datafos', $info->dataid, $course->id, false, MUST_EXIST);
     $context = context_module::instance($cm->id);
 
     // if the supplied context doesnt match the item's context
@@ -1728,9 +1728,9 @@ function mod_datafos_rating_can_see_item_ratings($params) {
         throw new rating_exception('invaliditemid');
     }
 
-    $datasql = "SELECT d.id as datafosid, d.course, r.groupid
+    $datasql = "SELECT d.id as dataid, d.course, r.groupid
                   FROM {data_records_fos} r
-                  JOIN {datafos} d ON r.datafosid = d.id
+                  JOIN {datafos} d ON r.dataid = d.id
                  WHERE r.id = :itemid";
     $dataparams = array('itemid' => $params['itemid']);
     if (!$info = $DB->get_record_sql($datasql, $dataparams)) {
@@ -1744,7 +1744,7 @@ function mod_datafos_rating_can_see_item_ratings($params) {
     }
 
     $course = $DB->get_record('course', array('id' => $info->course), '*', MUST_EXIST);
-    $cm = get_coursemodule_from_instance('datafos', $info->datafosid, $course->id, false, MUST_EXIST);
+    $cm = get_coursemodule_from_instance('datafos', $info->dataid, $course->id, false, MUST_EXIST);
 
     // Make sure groups allow this user to see the item they're rating.
     return groups_group_visible($info->groupid, $course, $cm);
@@ -1802,7 +1802,7 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     echo '&nbsp;&nbsp;&nbsp;<label for="pref_sortby">'.get_string('sortby').'</label> ';
     // foreach field, print the option
     echo '<select name="sort" id="pref_sortby" class="custom-select mr-1">';
-    if ($fields = $DB->get_records('data_fields_fos', array('datafosid'=>$data->id), 'name')) {
+    if ($fields = $DB->get_records('data_fields_fos', array('dataid'=>$data->id), 'name')) {
         echo '<optgroup label="'.get_string('fields', 'datafos').'">';
         foreach ($fields as $field) {
             if ($field->id == $sort) {
@@ -1909,16 +1909,16 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     }
 
     static $fields = array();
-    static $datafosid = null;
+    static $dataid = null;
 
-    if (empty($datafosid)) {
-        $datafosid = $data->id;
-    } else if ($datafosid != $data->id) {
+    if (empty($dataid)) {
+        $dataid = $data->id;
+    } else if ($dataid != $data->id) {
         $fields = array();
     }
 
     if (empty($fields)) {
-        $fieldrecords = $DB->get_records('data_fields_fos', array('datafosid'=>$data->id));
+        $fieldrecords = $DB->get_records('data_fields_fos', array('dataid'=>$data->id));
         foreach ($fieldrecords as $fieldrecord) {
             $fields[]= datafos_get_field($fieldrecord, $data);
         }
@@ -2053,11 +2053,11 @@ function datafos_get_post_actions() {
 
 /**
  * @param string $name
- * @param int $datafosid
+ * @param int $dataid
  * @param int $fieldid
  * @return bool
  */
-function datafos_fieldname_exists($name, $datafosid, $fieldid = 0) {
+function datafos_fieldname_exists($name, $dataid, $fieldid = 0) {
     global $DB;
 
     if (!is_numeric($name)) {
@@ -2067,16 +2067,16 @@ function datafos_fieldname_exists($name, $datafosid, $fieldid = 0) {
     }
     $params = array('name'=>$name);
     if ($fieldid) {
-        $params['datafosid']   = $datafosid;
+        $params['dataid']   = $dataid;
         $params['fieldid1'] = $fieldid;
         $params['fieldid2'] = $fieldid;
         return $DB->record_exists_sql("SELECT * FROM {data_fields_fos} df
-                                        WHERE $like AND df.datafosid = :datafosid
+                                        WHERE $like AND df.dataid = :dataid
                                               AND ((df.id < :fieldid1) OR (df.id > :fieldid2))", $params);
     } else {
-        $params['datafosid']   = $datafosid;
+        $params['dataid']   = $dataid;
         return $DB->record_exists_sql("SELECT * FROM {data_fields_fos} df
-                                        WHERE $like AND df.datafosid = :datafosid", $params);
+                                        WHERE $like AND df.dataid = :dataid", $params);
     }
 }
 
@@ -2361,7 +2361,7 @@ function datafos_user_can_add_entry($data, $currentgroup, $groupmode, $context =
     global $DB;
 
     // Don't let add entry to a database that has no fields.
-    if (!$DB->record_exists('data_fields_fos', ['datafosid' => $data->id])) {
+    if (!$DB->record_exists('data_fields_fos', ['dataid' => $data->id])) {
         return false;
     }
 
@@ -2588,7 +2588,7 @@ abstract class datafos_preset_importer {
         $result = new stdClass;
         $result->settings = new stdClass;
         $result->importfields = array();
-        $result->currentfields = $DB->get_records('data_fields_fos', array('datafosid'=>$this->module->id));
+        $result->currentfields = $DB->get_records('data_fields_fos', array('dataid'=>$this->module->id));
         if (!$result->currentfields) {
             $result->currentfields = array();
         }
@@ -2622,7 +2622,7 @@ abstract class datafos_preset_importer {
                 }
                 $f->$param = $value[0]['#'];
             }
-            $f->datafosid = $this->module->id;
+            $f->dataid = $this->module->id;
             $f->type = clean_param($f->type, PARAM_ALPHA);
             $result->importfields[] = $f;
         }
@@ -2724,7 +2724,7 @@ abstract class datafos_preset_importer {
                 // old broken value
                 $settings->defaultsort = 0;
             } else {
-                $settings->defaultsort = (int)$DB->get_field('data_fields_fos', 'id', array('datafosid'=>$this->module->id, 'name'=>$settings->defaultsort));
+                $settings->defaultsort = (int)$DB->get_field('data_fields_fos', 'id', array('dataid'=>$this->module->id, 'name'=>$settings->defaultsort));
             }
         } else {
             $settings->defaultsort = 0;
@@ -2922,7 +2922,7 @@ function datafos_reset_userdata($data) {
 
     $allrecordssql = "SELECT r.id
                         FROM {data_records_fos} r
-                             INNER JOIN {datafos} d ON r.datafosid = d.id
+                             INNER JOIN {datafos} d ON r.dataid = d.id
                        WHERE d.course = ?";
 
     $alldatassql = "SELECT d.id
@@ -2941,11 +2941,11 @@ function datafos_reset_userdata($data) {
     if (!empty($data->reset_data)) {
         $DB->delete_records_select('comments', "itemid IN ($allrecordssql) AND commentarea='database_entry'", array($data->courseid));
         $DB->delete_records_select('data_content_fos', "recordid IN ($allrecordssql)", array($data->courseid));
-        $DB->delete_records_select('data_records_fos', "datafosid IN ($alldatassql)", array($data->courseid));
+        $DB->delete_records_select('data_records_fos', "dataid IN ($alldatassql)", array($data->courseid));
 
         if ($datas = $DB->get_records_sql($alldatassql, array($data->courseid))) {
-            foreach ($datas as $datafosid=>$unused) {
-                if (!$cm = get_coursemodule_from_instance('datafos', $datafosid)) {
+            foreach ($datas as $dataid=>$unused) {
+                if (!$cm = get_coursemodule_from_instance('datafos', $dataid)) {
                     continue;
                 }
                 $datacontext = context_module::instance($cm->id);
@@ -2969,9 +2969,9 @@ function datafos_reset_userdata($data) {
 
     // remove entries by users not enrolled into course
     if (!empty($data->reset_data_notenrolled)) {
-        $recordssql = "SELECT r.id, r.userid, r.datafosid, u.id AS userexists, u.deleted AS userdeleted
+        $recordssql = "SELECT r.id, r.userid, r.dataid, u.id AS userexists, u.deleted AS userdeleted
                          FROM {data_records_fos} r
-                              JOIN {datafos} d ON r.datafosid = d.id
+                              JOIN {datafos} d ON r.dataid = d.id
                               LEFT JOIN {user} u ON r.userid = u.id
                         WHERE d.course = ? AND r.userid > 0";
 
@@ -2983,7 +2983,7 @@ function datafos_reset_userdata($data) {
             if (array_key_exists($record->userid, $notenrolled) or !$record->userexists or $record->userdeleted
               or !is_enrolled($course_context, $record->userid)) {
                 //delete ratings
-                if (!$cm = get_coursemodule_from_instance('datafos', $record->datafosid)) {
+                if (!$cm = get_coursemodule_from_instance('datafos', $record->dataid)) {
                     continue;
                 }
                 $datacontext = context_module::instance($cm->id);
@@ -3013,8 +3013,8 @@ function datafos_reset_userdata($data) {
     // remove all ratings
     if (!empty($data->reset_data_ratings)) {
         if ($datas = $DB->get_records_sql($alldatassql, array($data->courseid))) {
-            foreach ($datas as $datafosid=>$unused) {
-                if (!$cm = get_coursemodule_from_instance('datafos', $datafosid)) {
+            foreach ($datas as $dataid=>$unused) {
+                if (!$cm = get_coursemodule_from_instance('datafos', $dataid)) {
                     continue;
                 }
                 $datacontext = context_module::instance($cm->id);
@@ -3041,8 +3041,8 @@ function datafos_reset_userdata($data) {
     // Remove all the tags.
     if (!empty($data->reset_DATAFOS_TAGS)) {
         if ($datas = $DB->get_records_sql($alldatassql, array($data->courseid))) {
-            foreach ($datas as $datafosid => $unused) {
-                if (!$cm = get_coursemodule_from_instance('datafos', $datafosid)) {
+            foreach ($datas as $dataid => $unused) {
+                if (!$cm = get_coursemodule_from_instance('datafos', $dataid)) {
                     continue;
                 }
 
@@ -3159,7 +3159,7 @@ function datafos_get_file_info($browser, $areas, $course, $cm, $context, $filear
         return null;
     }
 
-    if (!$data = $DB->get_record('datafos', array('id'=>$field->datafosid))) {
+    if (!$data = $DB->get_record('datafos', array('id'=>$field->dataid))) {
         return null;
     }
 
@@ -3240,7 +3240,7 @@ function datafos_pluginfile($course, $cm, $context, $filearea, $args, $forcedown
             return false;
         }
 
-        if (!$data = $DB->get_record('datafos', array('id'=>$field->datafosid))) {
+        if (!$data = $DB->get_record('datafos', array('id'=>$field->dataid))) {
             return false;
         }
 
@@ -3472,7 +3472,7 @@ function datafos_comment_permissions($comment_param) {
     if (!$record = $DB->get_record('data_records_fos', array('id'=>$comment_param->itemid))) {
         throw new comment_exception('invalidcommentitemid');
     }
-    if (!$data = $DB->get_record('datafos', array('id'=>$record->datafosid))) {
+    if (!$data = $DB->get_record('datafos', array('id'=>$record->dataid))) {
         throw new comment_exception('invalidid', 'datafos');
     }
     if ($data->comments) {
@@ -3507,7 +3507,7 @@ function datafos_comment_validate($comment_param) {
     if (!$record = $DB->get_record('data_records_fos', array('id'=>$comment_param->itemid))) {
         throw new comment_exception('invalidcommentitemid');
     }
-    if (!$data = $DB->get_record('datafos', array('id'=>$record->datafosid))) {
+    if (!$data = $DB->get_record('datafos', array('id'=>$record->dataid))) {
         throw new comment_exception('invalidid', 'datafos');
     }
     if (!$course = $DB->get_record('course', array('id'=>$data->course))) {
@@ -3572,22 +3572,22 @@ function datafos_page_type_list($pagetype, $parentcontext, $currentcontext) {
 /**
  * Get all of the record ids from a database activity.
  *
- * @param int    $datafosid      The datafosid of the database module.
+ * @param int    $dataid      The dataid of the database module.
  * @param object $selectdata  Contains an additional sql statement for the
  *                            where clause for group and approval fields.
  * @param array  $params      Parameters that coincide with the sql statement.
  * @return array $idarray     An array of record ids
  */
-function datafos_get_all_recordids($datafosid, $selectdata = '', $params = null) {
+function datafos_get_all_recordids($dataid, $selectdata = '', $params = null) {
     global $DB;
     $initsql = 'SELECT r.id
                   FROM {data_records_fos} r
-                 WHERE r.datafosid = :datafosid';
+                 WHERE r.dataid = :dataid';
     if ($selectdata != '') {
         $initsql .= $selectdata;
-        $params = array_merge(array('datafosid' => $datafosid), $params);
+        $params = array_merge(array('dataid' => $dataid), $params);
     } else {
-        $params = array('datafosid' => $datafosid);
+        $params = array('dataid' => $dataid);
     }
     $initsql .= ' GROUP BY r.id';
     $initrecord = $DB->get_recordset_sql($initsql, $params);
@@ -3607,10 +3607,10 @@ function datafos_get_all_recordids($datafosid, $selectdata = '', $params = null)
  *
  * @param array $recordids    An array of record ids.
  * @param array $searcharray  Contains information for the advanced search criteria
- * @param int $datafosid         The datafos id of the database.
+ * @param int $dataid         The datafos id of the database.
  * @return array $recordids   An array of record ids.
  */
-function datafos_get_advance_search_ids($recordids, $searcharray, $datafosid) {
+function datafos_get_advance_search_ids($recordids, $searcharray, $dataid) {
     // Check to see if we have any record IDs.
     if (empty($recordids)) {
         // Send back an empty search.
@@ -3619,7 +3619,7 @@ function datafos_get_advance_search_ids($recordids, $searcharray, $datafosid) {
     $searchcriteria = array_keys($searcharray);
     // Loop through and reduce the IDs one search criteria at a time.
     foreach ($searchcriteria as $key) {
-        $recordids = datafos_get_recordids($key, $searcharray, $datafosid, $recordids);
+        $recordids = datafos_get_recordids($key, $searcharray, $dataid, $recordids);
         // If we don't have anymore IDs then stop.
         if (!$recordids) {
             break;
@@ -3633,11 +3633,11 @@ function datafos_get_advance_search_ids($recordids, $searcharray, $datafosid) {
  *
  * @param string $alias       Record alias.
  * @param array $searcharray  Criteria for the search.
- * @param int $datafosid         Data ID for the database
+ * @param int $dataid         Data ID for the database
  * @param array $recordids    An array of record IDs.
  * @return array $nestarray   An arry of record IDs
  */
-function datafos_get_recordids($alias, $searcharray, $datafosid, $recordids) {
+function datafos_get_recordids($alias, $searcharray, $dataid, $recordids) {
     global $DB;
     $searchcriteria = $alias;   // Keep the criteria.
     $nestsearch = $searcharray[$alias];
@@ -3654,11 +3654,11 @@ function datafos_get_recordids($alias, $searcharray, $datafosid, $recordids) {
                        ON r.id = c' . $alias . '.recordid
                INNER JOIN {user} u
                        ON u.id = r.userid ';
-    $nestwhere = 'WHERE r.datafosid = :datafosid
+    $nestwhere = 'WHERE r.dataid = :dataid
                     AND c' . $alias .'.recordid ' . $insql . '
                     AND ';
 
-    $params['datafosid'] = $datafosid;
+    $params['dataid'] = $dataid;
     if (count($nestsearch->params) != 0) {
         $params = array_merge($params, $nestsearch->params);
         $nestsql = $nestselect . $nestwhere . $nestsearch->sql;
@@ -3759,7 +3759,7 @@ function datafos_get_advanced_search_sql($sort, $data, $recordids, $selectdata, 
     // Default to a standard Where statement if $selectdata is empty.
     if ($selectdata == '') {
         $selectdata = 'WHERE c.recordid = r.id
-                         AND r.datafosid = :datafosid
+                         AND r.dataid = :dataid
                          AND r.userid = u.id ';
     }
 
@@ -3827,7 +3827,7 @@ function datafos_delete_record($recordid, $data, $courseid, $cmid) {
     global $DB, $CFG;
 
     if ($deleterecord = $DB->get_record('data_records_fos', array('id' => $recordid))) {
-        if ($deleterecord->datafosid == $data->id) {
+        if ($deleterecord->dataid == $data->id) {
             if ($contents = $DB->get_records('data_content_fos', array('recordid' => $deleterecord->id))) {
                 foreach ($contents as $content) {
                     if ($field = datafos_get_field_from_id($content->fieldid, $data)) {
@@ -3851,7 +3851,7 @@ function datafos_delete_record($recordid, $data, $courseid, $cmid) {
                     'context' => context_module::instance($cmid),
                     'courseid' => $courseid,
                     'other' => array(
-                        'datafosid' => $deleterecord->datafosid
+                        'dataid' => $deleterecord->dataid
                     )
                 ));
                 $event->add_record_snapshot('data_records_fos', $deleterecord);

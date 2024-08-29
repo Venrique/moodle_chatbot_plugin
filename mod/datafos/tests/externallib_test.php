@@ -471,7 +471,7 @@ class externallib_test extends externallib_advanced_testcase {
             $count++;
         }
         // Get all the fields created.
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $this->database->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $this->database->id), 'id');
 
         // Populate with contents, creating a new entry.
         $contents = array();
@@ -541,17 +541,17 @@ class externallib_test extends externallib_advanced_testcase {
         $this->assertCount(2, $result['entries'][0]['tags']);
         $this->assertEquals($this->student1->id, $result['entries'][0]['userid']);
         $this->assertEquals($this->group1->id, $result['entries'][0]['groupid']);
-        $this->assertEquals($this->database->id, $result['entries'][0]['datafosid']);
+        $this->assertEquals($this->database->id, $result['entries'][0]['dataid']);
         $this->assertEquals($entry12, $result['entries'][1]['id']);
         $this->assertCount(1, $result['entries'][1]['tags']);
         $this->assertEquals('Cats', $result['entries'][1]['tags'][0]['rawname']);
         $this->assertEquals($this->student2->id, $result['entries'][1]['userid']);
         $this->assertEquals($this->group1->id, $result['entries'][1]['groupid']);
-        $this->assertEquals($this->database->id, $result['entries'][1]['datafosid']);
+        $this->assertEquals($this->database->id, $result['entries'][1]['dataid']);
         $this->assertEquals($entry14, $result['entries'][2]['id']);
         $this->assertEquals($this->student2->id, $result['entries'][2]['userid']);
         $this->assertEquals(0, $result['entries'][2]['groupid']);
-        $this->assertEquals($this->database->id, $result['entries'][2]['datafosid']);
+        $this->assertEquals($this->database->id, $result['entries'][2]['dataid']);
         // Other user in same group.
         $this->setUser($this->student2);
         $result = mod_data_external::get_entries($this->database->id);
@@ -570,11 +570,11 @@ class externallib_test extends externallib_advanced_testcase {
         $this->assertEquals($entry14, $result['entries'][0]['id']);
         $this->assertEquals($this->student2->id, $result['entries'][0]['userid']);
         $this->assertEquals(0, $result['entries'][0]['groupid']);
-        $this->assertEquals($this->database->id, $result['entries'][0]['datafosid']);
+        $this->assertEquals($this->database->id, $result['entries'][0]['dataid']);
         $this->assertEquals($entry21, $result['entries'][1]['id']);
         $this->assertEquals($this->student3->id, $result['entries'][1]['userid']);
         $this->assertEquals($this->group2->id, $result['entries'][1]['groupid']);
-        $this->assertEquals($this->database->id, $result['entries'][1]['datafosid']);
+        $this->assertEquals($this->database->id, $result['entries'][1]['dataid']);
 
         // Now, as teacher we should see all (we have permissions to view all groups).
         $this->setUser($this->teacher);
@@ -584,7 +584,7 @@ class externallib_test extends externallib_advanced_testcase {
         $this->assertCount(5, $result['entries']);  // I can see the not approved one.
         $this->assertEquals(5, $result['totalcount']);
 
-        $entries = $DB->get_records('data_records_fos', array('datafosid' => $this->database->id), 'id');
+        $entries = $DB->get_records('data_records_fos', array('dataid' => $this->database->id), 'id');
         $this->assertCount(5, $entries);
         $count = 0;
         foreach ($entries as $entry) {
@@ -759,7 +759,7 @@ class externallib_test extends externallib_advanced_testcase {
         $result = external_api::clean_returnvalue(mod_data_external::get_fields_returns(), $result);
 
         // Basically compare we retrieve all the fields and the correct values.
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $this->database->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $this->database->id), 'id');
         foreach ($result['fields'] as $field) {
             $this->assertEquals($field, (array) $fields[$field['id']]);
         }
@@ -998,7 +998,7 @@ class externallib_test extends externallib_advanced_testcase {
 
         $this->setUser($this->student1);
         $newentrydata = [];
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $this->database->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $this->database->id), 'id');
         // Prepare the new entry datafos.
         foreach ($fields as $field) {
             $subfield = $value = '';
@@ -1211,7 +1211,7 @@ class externallib_test extends externallib_advanced_testcase {
 
         $this->setUser($this->student1);
         $newentrydata = [];
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $this->database->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $this->database->id), 'id');
         // Prepare the new entry datafos.
         foreach ($fields as $field) {
             $subfield = $value = '';

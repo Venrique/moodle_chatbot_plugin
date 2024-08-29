@@ -36,7 +36,7 @@ if ($rid) {
     if (! $record = $DB->get_record('data_records_fos', array('id'=>$rid))) {
         throw new \moodle_exception('invalidrecord', 'datafos');
     }
-    if (! $data = $DB->get_record('datafos', array('id'=>$record->datafosid))) {
+    if (! $data = $DB->get_record('datafos', array('id'=>$record->dataid))) {
         throw new \moodle_exception('invalidid', 'datafos');
     }
     if (! $course = $DB->get_record('course', array('id'=>$data->course))) {
@@ -78,7 +78,7 @@ require_course_login($course, true, $cm);
 $context = context_module::instance($cm->id);
 // If we have an empty Database then redirect because this page is useless without datafos.
 if (has_capability('mod/datafos:managetemplates', $context)) {
-    if (!$DB->record_exists('data_fields_fos', array('datafosid'=>$data->id))) {      // Brand new database!
+    if (!$DB->record_exists('data_fields_fos', array('dataid'=>$data->id))) {      // Brand new database!
         redirect($CFG->wwwroot.'/mod/datafos/field.php?d='.$data->id);  // Redirect to field entry
     }
 }

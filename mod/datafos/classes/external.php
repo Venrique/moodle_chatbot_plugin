@@ -516,7 +516,7 @@ class mod_datafos_external extends external_api {
         $warnings = array();
 
         $record = $DB->get_record('data_records_fos', array('id' => $params['entryid']), '*', MUST_EXIST);
-        list($database, $course, $cm, $context) = self::validate_database($record->datafosid);
+        list($database, $course, $cm, $context) = self::validate_database($record->dataid);
 
         // Check database is open in time.
         $canmanageentries = has_capability('mod/datafos:manageentries', $context);
@@ -853,7 +853,7 @@ class mod_datafos_external extends external_api {
         $warnings = array();
 
         $record = $DB->get_record('data_records_fos', array('id' => $params['entryid']), '*', MUST_EXIST);
-        list($database, $course, $cm, $context) = self::validate_database($record->datafosid);
+        list($database, $course, $cm, $context) = self::validate_database($record->dataid);
         // Check database is open in time.
         data_require_time_available($database, null, $context);
         // Check specific capabilities.
@@ -913,7 +913,7 @@ class mod_datafos_external extends external_api {
         $warnings = array();
 
         $record = $DB->get_record('data_records_fos', array('id' => $params['entryid']), '*', MUST_EXIST);
-        list($database, $course, $cm, $context) = self::validate_database($record->datafosid);
+        list($database, $course, $cm, $context) = self::validate_database($record->dataid);
 
         if (datafos_user_can_manage_entry($record, $database, $context)) {
             datafos_delete_record($record->id, $database, $course->id, $cm->id);
@@ -988,7 +988,7 @@ class mod_datafos_external extends external_api {
 
         list($database, $course, $cm, $context) = self::validate_database($params['databaseid']);
 
-        $fields = $DB->get_records('data_fields_fos', ['datafosid' => $database->id]);
+        $fields = $DB->get_records('data_fields_fos', ['dataid' => $database->id]);
         if (empty($fields)) {
             throw new moodle_exception('nofieldindatabase', 'datafos');
         }
@@ -1118,7 +1118,7 @@ class mod_datafos_external extends external_api {
         $updated = false;
 
         $record = $DB->get_record('data_records_fos', array('id' => $params['entryid']), '*', MUST_EXIST);
-        list($database, $course, $cm, $context) = self::validate_database($record->datafosid);
+        list($database, $course, $cm, $context) = self::validate_database($record->dataid);
         // Check database is open in time.
         data_require_time_available($database, null, $context);
 
@@ -1134,7 +1134,7 @@ class mod_datafos_external extends external_api {
             $datarecord->{'field_' . $data['fieldid'] . $subfield} = json_decode($data['value']);
         }
         // Validate to ensure that enough datafos was submitted.
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $database->id));
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $database->id));
         $processeddata = datafos_process_submission($database, $fields, $datarecord);
 
         // Format notifications.

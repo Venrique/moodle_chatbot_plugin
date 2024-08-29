@@ -96,12 +96,12 @@ class backup_data_activity_structure_step extends backup_activity_structure_step
         $field->set_source_sql('
             SELECT *
               FROM {data_fields_fos}
-             WHERE datafosid = ?',
+             WHERE dataid = ?',
             array(backup::VAR_PARENTID));
 
         // All the rest of elements only happen if we are including user info
         if ($userinfo) {
-            $record->set_source_table('data_records_fos', array('datafosid' => backup::VAR_PARENTID));
+            $record->set_source_table('data_records_fos', array('dataid' => backup::VAR_PARENTID));
 
             $content->set_source_table('data_content_fos', array('recordid' => backup::VAR_PARENTID));
 

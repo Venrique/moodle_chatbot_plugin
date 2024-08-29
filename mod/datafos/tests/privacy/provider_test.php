@@ -150,7 +150,7 @@ class provider_test extends \core_privacy\tests\provider_testcase {
         $contents[] = array("Cat{$counter}.jpg", 'Cat' . $counter); // Picture - filename with alt text.
         $count = 0;
         $fieldcontents = array();
-        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $datamodule->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('dataid' => $datamodule->id), 'id');
         foreach ($fields as $fieldrecord) {
             $fieldcontents[$fieldrecord->id] = $contents[$count++];
         }

@@ -138,7 +138,7 @@ function datafos_export_ods($export, $dataname, $count) {
 /**
  * @deprecated since Moodle 4.3, use \mod_datafos\local\exporter\utils::data_exportdata with a \mod_datafos\local\exporter\entries_exporter object
  * @global object
- * @param int $datafosid
+ * @param int $dataid
  * @param array $fields
  * @param array $selectedfields
  * @param int $currentgroup group ID of the current group. This is used for
@@ -150,7 +150,7 @@ function datafos_export_ods($export, $dataname, $count) {
  * @param bool $tags whether to include tags
  * @return array
  */
-function datafos_get_exportdata($datafosid, $fields, $selectedfields, $currentgroup=0, $context=null,
+function datafos_get_exportdata($dataid, $fields, $selectedfields, $currentgroup=0, $context=null,
     $userdetails=false, $time=false, $approval=false, $tags = false) {
     global $DB;
 
@@ -191,7 +191,7 @@ function datafos_get_exportdata($datafosid, $fields, $selectedfields, $currentgr
         $exportdata[0][] = get_string('approved', 'datafos');
     }
 
-    $datarecords = $DB->get_records('data_records_fos', array('datafosid'=>$datafosid));
+    $datarecords = $DB->get_records('data_records_fos', array('dataid'=>$dataid));
     ksort($datarecords);
     $line = 1;
     foreach($datarecords as $record) {

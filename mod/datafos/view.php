@@ -300,7 +300,7 @@ if ($delete && confirm_sesskey() && (datafos_user_can_manage_entry($delete, $dat
                                                    FROM {data_records_fos} dr
                                                         JOIN {user} u ON dr.userid = u.id
                                                   WHERE dr.id = ?", $dbparams, MUST_EXIST)) { // Need to check this is valid.
-            if ($deleterecord->datafosid == $data->id) {                       // Must be from this database
+            if ($deleterecord->dataid == $data->id) {                       // Must be from this database
                 echo $OUTPUT->heading(get_string('deleteentry', 'mod_datafos'), 2, 'mb-4');
                 $deletebutton = new single_button(
                     new moodle_url('/mod/datafos/view.php?d=' . $data->id . '&delete=' . $delete . '&confirm=1'),
@@ -343,7 +343,7 @@ if ($multidelete && confirm_sesskey() && $canmanageentries) {
                                                        FROM {data_records_fos} dr
                                                        JOIN {user} u ON dr.userid = u.id
                                                       WHERE dr.id = ?", $dbparams)) { // Need to check this is valid.
-                if ($deleterecord->datafosid == $data->id) {  // Must be from this database.
+                if ($deleterecord->dataid == $data->id) {  // Must be from this database.
                     $validrecords[] = $deleterecord;
                     $recordids[] = $deleterecord->id;
                 }
@@ -380,7 +380,7 @@ if ($showactivity) {
             $newapproved = $approve ? true : false;
             $recordid = $newapproved ? $approve : $disapprove;
             if ($approverecord = $DB->get_record('data_records_fos', array('id' => $recordid))) {   // Need to check this is valid
-                if ($approverecord->datafosid == $data->id) {                       // Must be from this database
+                if ($approverecord->dataid == $data->id) {                       // Must be from this database
                     data_approve_entry($approverecord->id, $newapproved);
                     $msgkey = $newapproved ? 'recordapproved' : 'recorddisapproved';
                     echo $OUTPUT->notification(get_string($msgkey, 'datafos'), 'notifysuccess');

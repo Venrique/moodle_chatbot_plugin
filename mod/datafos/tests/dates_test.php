@@ -56,30 +56,30 @@ class dates_test extends advanced_testcase {
             ],
             'only with opening time' => [
                 $after, null, [
-                    ['label' => 'Opens:', 'timestamp' => $after, 'datafosid' => 'timeavailablefrom'],
+                    ['label' => 'Opens:', 'timestamp' => $after, 'dataid' => 'timeavailablefrom'],
                 ]
             ],
             'only with closing time' => [
                 null, $after, [
-                    ['label' => 'Closes:', 'timestamp' => $after, 'datafosid' => 'timeavailableto'],
+                    ['label' => 'Closes:', 'timestamp' => $after, 'dataid' => 'timeavailableto'],
                 ]
             ],
             'with both times' => [
                 $after, $later, [
-                    ['label' => 'Opens:', 'timestamp' => $after, 'datafosid' => 'timeavailablefrom'],
-                    ['label' => 'Closes:', 'timestamp' => $later, 'datafosid' => 'timeavailableto'],
+                    ['label' => 'Opens:', 'timestamp' => $after, 'dataid' => 'timeavailablefrom'],
+                    ['label' => 'Closes:', 'timestamp' => $later, 'dataid' => 'timeavailableto'],
                 ]
             ],
             'between the dates' => [
                 $before, $after, [
-                    ['label' => 'Opened:', 'timestamp' => $before, 'datafosid' => 'timeavailablefrom'],
-                    ['label' => 'Closes:', 'timestamp' => $after, 'datafosid' => 'timeavailableto'],
+                    ['label' => 'Opened:', 'timestamp' => $before, 'dataid' => 'timeavailablefrom'],
+                    ['label' => 'Closes:', 'timestamp' => $after, 'dataid' => 'timeavailableto'],
                 ]
             ],
             'dates are past' => [
                 $earlier, $before, [
-                    ['label' => 'Opened:', 'timestamp' => $earlier, 'datafosid' => 'timeavailablefrom'],
-                    ['label' => 'Closed:', 'timestamp' => $before, 'datafosid' => 'timeavailableto'],
+                    ['label' => 'Opened:', 'timestamp' => $earlier, 'dataid' => 'timeavailablefrom'],
+                    ['label' => 'Closed:', 'timestamp' => $before, 'dataid' => 'timeavailableto'],
                 ]
             ],
         ];

@@ -54,7 +54,7 @@ class record_exporter extends exporter {
                 'description' => 'The group id this record belongs to (0 for no groups).',
                 'default' => 0,
             ),
-            'datafosid' => array(
+            'dataid' => array(
                 'type' => PARAM_INT,
                 'description' => 'The database id this record belongs to.',
                 'default' => 0,

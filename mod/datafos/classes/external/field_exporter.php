@@ -41,7 +41,7 @@ class field_exporter extends exporter {
                 'type' => PARAM_INT,
                 'description' => 'Field id.',
             ),
-            'datafosid' => array(
+            'dataid' => array(
                 'type' => PARAM_INT,
                 'description' => 'The field type of the content.',
                 'default' => 0,

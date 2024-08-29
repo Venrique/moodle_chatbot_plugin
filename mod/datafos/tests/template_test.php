@@ -128,7 +128,7 @@ class template_test extends \advanced_testcase {
             'timemodified' => 1657618650,
             'userid' => $author->id,
             'groupid' => 0,
-            'datafosid' => $activity->id,
+            'dataid' => $activity->id,
             'picture' => 0,
             'firstname' => $author->firstname,
             'lastname' => $author->lastname,

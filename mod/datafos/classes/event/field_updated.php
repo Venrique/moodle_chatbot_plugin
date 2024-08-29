@@ -33,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  *      Extra information about event.
  *
  *      - string fieldname: the name of the field.
- *      - int datafosid: the id of the datafos activity.
+ *      - int dataid: the id of the datafos activity.
  * }
  *
  * @package    mod_datafos
@@ -79,7 +79,7 @@ class field_updated extends \core\event\base {
      * @return \moodle_url
      */
     public function get_url() {
-        return new \moodle_url('/mod/datafos/field.php', array('d' => $this->other['datafosid']));
+        return new \moodle_url('/mod/datafos/field.php', array('d' => $this->other['dataid']));
     }
 
     /**
@@ -95,8 +95,8 @@ class field_updated extends \core\event\base {
             throw new \coding_exception('The \'fieldname\' value must be set in other.');
         }
 
-        if (!isset($this->other['datafosid'])) {
-            throw new \coding_exception('The \'datafosid\' value must be set in other.');
+        if (!isset($this->other['dataid'])) {
+            throw new \coding_exception('The \'dataid\' value must be set in other.');
         }
     }
 
@@ -106,7 +106,7 @@ class field_updated extends \core\event\base {
 
     public static function get_other_mapping() {
         $othermapped = array();
-        $othermapped['datafosid'] = array('db' => 'datafos', 'restore' => 'datafos');
+        $othermapped['dataid'] = array('db' => 'datafos', 'restore' => 'datafos');
 
         return $othermapped;
     }

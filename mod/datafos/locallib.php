@@ -80,7 +80,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
         if (!$this->datafos = $DB->get_record('datafos', array('id' => $this->cm->instance))) {
             throw new portfolio_caller_exception('invalidid', 'datafos');
         }
-        $fieldrecords = $DB->get_records('data_fields_fos', array('datafosid' => $this->cm->instance), 'id');
+        $fieldrecords = $DB->get_records('data_fields_fos', array('dataid' => $this->cm->instance), 'id');
         // populate objets for this databases fields
         $this->fields = array();
         foreach ($fieldrecords as $fieldrecord) {
@@ -95,7 +95,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
             $tmp->content = $DB->get_records('data_content_fos', array('recordid' => $this->recordid));
             $this->records[] = $tmp;
         } else {
-            $where = array('datafosid' => $this->datafos->id);
+            $where = array('dataid' => $this->datafos->id);
             if (!has_capability('mod/datafos:exportallentries', context_module::instance($this->cm->id))) {
                 $where['userid'] = $USER->id; // get them all in case, we'll unset ones that aren't ours later if necessary
             }
@@ -104,7 +104,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
                 $t->content = $DB->get_records('data_content_fos', array('recordid' => $t->id));
                 $this->records[] = $t;
             }
-            $this->minecount = $DB->count_records('data_records_fos', array('datafosid' => $this->datafos->id, 'userid' => $USER->id));
+            $this->minecount = $DB->count_records('data_records_fos', array('dataid' => $this->datafos->id, 'userid' => $USER->id));
         }
 
         if ($this->recordid) {
@@ -367,7 +367,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
 
     public static function has_files($data) {
         global $DB;
-        $fieldrecords = $DB->get_records('data_fields_fos', array('datafosid' => $data->id), 'id');
+        $fieldrecords = $DB->get_records('data_fields_fos', array('dataid' => $data->id), 'id');
         // populate objets for this databases fields
         foreach ($fieldrecords as $fieldrecord) {
             $field = datafos_get_field($fieldrecord, $data);
@@ -813,11 +813,11 @@ function mod_datafos_get_tagged_records($tag, $exclusivemode = false, $fromctx =
 
     // Build the SQL query.
     $ctxselect = context_helper::get_preload_record_columns_sql('ctx');
-    $query = "SELECT dr.id, dr.datafosid, dr.approved, d.timeviewfrom, d.timeviewto, dr.groupid, d.approval, dr.userid,
+    $query = "SELECT dr.id, dr.dataid, dr.approved, d.timeviewfrom, d.timeviewto, dr.groupid, d.approval, dr.userid,
                      d.requiredentriestoview, cm.id AS cmid, c.id AS courseid, c.shortname, c.fullname, $ctxselect
                 FROM {data_records_fos} dr
                 JOIN {datafos} d
-                  ON d.id = dr.datafosid
+                  ON d.id = dr.dataid
                 JOIN {modules} m
                   ON m.name = 'datafos'
                 JOIN {course_modules} cm
@@ -902,10 +902,10 @@ function mod_datafos_get_tagged_records($tag, $exclusivemode = false, $fromctx =
         }
 
         if ($item->requiredentriestoview) {
-            if (!isset($entrycount[$item->datafosid])) {
-                $entrycount[$item->datafosid] = $DB->count_records('data_records_fos', array('datafosid' => $item->datafosid));
+            if (!isset($entrycount[$item->dataid])) {
+                $entrycount[$item->dataid] = $DB->count_records('data_records_fos', array('dataid' => $item->dataid));
             }
-            $sufficiententries = $item->requiredentriestoview > $entrycount[$item->datafosid];
+            $sufficiententries = $item->requiredentriestoview > $entrycount[$item->dataid];
             $builder->set_accessible($item, $sufficiententries);
         }
 
@@ -940,14 +940,14 @@ function mod_datafos_get_tagged_records($tag, $exclusivemode = false, $fromctx =
             $cm = $modinfo->get_cm($item->cmid);
             $pageurl = new moodle_url('/mod/datafos/view.php', array(
                     'rid' => $item->id,
-                    'd' => $item->datafosid
+                    'd' => $item->dataid
             ));
 
-            if (!isset($titlefields[$item->datafosid])) {
-                $titlefields[$item->datafosid] = datafos_get_tag_title_field($item->datafosid);
+            if (!isset($titlefields[$item->dataid])) {
+                $titlefields[$item->dataid] = datafos_get_tag_title_field($item->dataid);
             }
 
-            $pagename = datafos_get_tag_title_for_entry($titlefields[$item->datafosid], $item);
+            $pagename = datafos_get_tag_title_for_entry($titlefields[$item->dataid], $item);
             $pagename = html_writer::link($pageurl, $pagename);
             $courseurl = course_get_url($item->courseid, $cm->sectionnum);
             $cmname = html_writer::link($cm->url, $cm->get_formatted_name());
@@ -966,17 +966,17 @@ function mod_datafos_get_tagged_records($tag, $exclusivemode = false, $fromctx =
 /**
  * Get the title of a field to show when displaying tag results.
  *
- * @param int $datafosid The id of the datafos field
+ * @param int $dataid The id of the datafos field
  * @return stdClass The field datafos from the 'data_fields_fos' table as well as its priority
  */
-function datafos_get_tag_title_field($datafosid) {
+function datafos_get_tag_title_field($dataid) {
     global $DB, $CFG;
 
     $validfieldtypes = array('text', 'textarea', 'menu', 'radiobutton', 'checkbox', 'multimenu', 'url');
-    $fields = $DB->get_records('data_fields_fos', ['datafosid' => $datafosid]);
-    $template = $DB->get_field('datafos', 'addtemplate', ['id' => $datafosid]);
+    $fields = $DB->get_records('data_fields_fos', ['dataid' => $dataid]);
+    $template = $DB->get_field('datafos', 'addtemplate', ['id' => $dataid]);
     if (empty($template)) {
-        $data = $DB->get_record('datafos', ['id' => $datafosid]);
+        $data = $DB->get_record('datafos', ['id' => $dataid]);
         $template = datafos_generate_default_template($data, 'addtemplate', 0, false, false);
     }
 
@@ -1169,13 +1169,13 @@ function datafos_search_entries($data, $cm, $context, $mode, $currentgroup, $sea
                 $ordering = "r.timecreated $order";
         }
 
-        $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, r.groupid, r.datafosid, ' . $namefields;
+        $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, r.groupid, r.dataid, ' . $namefields;
         $count = ' COUNT(DISTINCT c.recordid) ';
         $tables = '{data_content_fos} c,{data_records_fos} r, {user} u ';
         $where = 'WHERE c.recordid = r.id
-                     AND r.datafosid = :datafosid
+                     AND r.dataid = :dataid
                      AND r.userid = u.id ';
-        $params['datafosid'] = $data->id;
+        $params['dataid'] = $data->id;
         $sortorder = " ORDER BY $ordering, r.id $order";
         $searchselect = '';
 
@@ -1203,18 +1203,18 @@ function datafos_search_entries($data, $cm, $context, $mode, $currentgroup, $sea
         $sortcontent = $DB->sql_compare_text('s.' . $sortfield->get_sort_field());
         $sortcontentfull = $sortfield->get_sort_sql($sortcontent);
 
-        $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, r.groupid, r.datafosid, ' . $namefields . ',
+        $what = ' DISTINCT r.id, r.approved, r.timecreated, r.timemodified, r.userid, r.groupid, r.dataid, ' . $namefields . ',
                 ' . $sortcontentfull . ' AS sortorder ';
         $count = ' COUNT(DISTINCT c.recordid) ';
         $tables = '{data_content_fos} c, {data_records_fos} r, {user} u ';
         $where = 'WHERE c.recordid = r.id
-                     AND r.datafosid = :datafosid
+                     AND r.dataid = :dataid
                      AND r.userid = u.id ';
         if (!$advanced) {
             $where .= 'AND s.fieldid = :sort AND s.recordid = r.id';
             $tables .= ',{data_content_fos} s ';
         }
-        $params['datafosid'] = $data->id;
+        $params['dataid'] = $data->id;
         $params['sort'] = $sort;
         $sortorder = ' ORDER BY sortorder '.$order.' , r.id ASC ';
         $searchselect = '';
@@ -1334,7 +1334,7 @@ function datafos_get_field_instances($data) {
     global $DB;
 
     $instances = [];
-    if ($fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id), 'id')) {
+    if ($fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id), 'id')) {
         foreach ($fields as $field) {
             $instances[] = datafos_get_field($field, $data);
         }
@@ -1359,7 +1359,7 @@ function datafos_build_search_array($data, $paging, $searcharray, $defaults = nu
 
     $search = '';
     $vals = array();
-    $fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id));
+    $fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id));
 
     if (!empty($fields)) {
         foreach ($fields as $field) {
@@ -1519,7 +1519,7 @@ function datafos_update_record_fields_contents($data, $record, $context, $datare
         'context' => $context,
         'courseid' => $data->course,
         'other' => array(
-            'datafosid' => $data->id
+            'dataid' => $data->id
         )
     ));
     $event->add_record_snapshot('datafos', $data);

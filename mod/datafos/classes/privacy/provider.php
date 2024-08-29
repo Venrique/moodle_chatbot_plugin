@@ -111,7 +111,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id
                  WHERE dr.userid = :userid";
 
         $params = [
@@ -127,7 +127,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id
                   JOIN {comments} com ON com.commentarea = :commentarea and com.itemid = dr.id
                  WHERE com.userid = :userid";
 
@@ -146,7 +146,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id
             {$ratingquery->join}
                  WHERE {$ratingquery->userwhere}";
 
@@ -178,7 +178,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id
                  WHERE c.id = :contextid";
 
         $params = [
@@ -198,7 +198,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = c.instanceid AND c.contextlevel = :contextlevel
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id
                  WHERE c.id = :contextid";
 
         $params = [
@@ -275,7 +275,7 @@ class provider implements
      * @return string
      */
     protected static function sql_fields() {
-        return 'd.id AS datafosid, dc.id AS contentid, dc.fieldid, df.type AS fieldtype, df.name AS fieldname,
+        return 'd.id AS dataid, dc.id AS contentid, dc.fieldid, df.type AS fieldtype, df.name AS fieldname,
                   df.description AS fielddescription, df.required AS fieldrequired,
                   df.param1 AS fieldparam1, df.param2 AS fieldparam2, df.param3 AS fieldparam3, df.param4 AS fieldparam4,
                   df.param5 AS fieldparam5, df.param6 AS fieldparam6, df.param7 AS fieldparam7, df.param8 AS fieldparam8,
@@ -306,7 +306,7 @@ class provider implements
                 JOIN {course_modules} cm ON cm.id = ctx.instanceid
                 JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                 JOIN {datafos} d ON d.id = cm.instance
-                JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                JOIN {data_records_fos} dr ON dr.dataid = d.id
                 JOIN {data_content_fos} dc ON dc.recordid = dr.id
                 JOIN {data_fields_fos} df ON df.id = dc.fieldid
                 WHERE ctx.id {$contextsql} AND ctx.contextlevel = :contextlevel
@@ -335,9 +335,9 @@ class provider implements
                 // Export previous datafos record.
                 self::export_data_record($context, $user, $recordobj);
                 // Prepare for exporting new datafos record.
-                $recordobj = self::extract_object_from_record($row, 'record', ['datafosid' => $row->datafosid]);
+                $recordobj = self::extract_object_from_record($row, 'record', ['dataid' => $row->dataid]);
             }
-            $fieldobj = self::extract_object_from_record($row, 'field', ['datafosid' => $row->datafosid]);
+            $fieldobj = self::extract_object_from_record($row, 'field', ['dataid' => $row->dataid]);
             $contentobj = self::extract_object_from_record($row, 'content',
                 ['fieldid' => $fieldobj->id, 'recordid' => $recordobj->id]);
             self::export_data_content($context, $recordobj, $fieldobj, $contentobj);
@@ -412,7 +412,7 @@ class provider implements
                 FROM {course_modules} cm
                 JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                 JOIN {datafos} d ON d.id = cm.instance
-                JOIN {data_records_fos} dr ON dr.datafosid = d.id
+                JOIN {data_records_fos} dr ON dr.dataid = d.id
                 LEFT JOIN {data_content_fos} dc ON dc.recordid = dr.id
                 LEFT JOIN {data_fields_fos} df ON df.id = dc.fieldid
                 WHERE cm.id = :cmid
@@ -448,7 +448,7 @@ class provider implements
                 JOIN {course_modules} cm ON cm.id = ctx.instanceid
                 JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                 JOIN {datafos} d ON d.id = cm.instance
-                JOIN {data_records_fos} dr ON dr.datafosid = d.id AND dr.userid = :userid
+                JOIN {data_records_fos} dr ON dr.dataid = d.id AND dr.userid = :userid
                 LEFT JOIN {data_content_fos} dc ON dc.recordid = dr.id
                 LEFT JOIN {data_fields_fos} df ON df.id = dc.fieldid
                 WHERE ctx.id = :ctxid AND ctx.contextlevel = :contextlevel
@@ -486,7 +486,7 @@ class provider implements
                   JOIN {course_modules} cm ON cm.id = ctx.instanceid
                   JOIN {modules} m ON m.id = cm.module AND m.name = :modname
                   JOIN {datafos} d ON d.id = cm.instance
-                  JOIN {data_records_fos} dr ON dr.datafosid = d.id AND dr.userid {$userinsql}
+                  JOIN {data_records_fos} dr ON dr.dataid = d.id AND dr.userid {$userinsql}
              LEFT JOIN {data_content_fos} dc ON dc.recordid = dr.id
              LEFT JOIN {data_fields_fos} df ON df.id = dc.fieldid
                  WHERE ctx.id = :ctxid AND ctx.contextlevel = :contextlevel
@@ -523,9 +523,9 @@ class provider implements
      * @param \stdClass $row result of SQL query - tables data_content_fos, data_record, data_fields_fos join together
      */
     protected static function mark_data_content_for_deletion($context, $row) {
-        $recordobj = self::extract_object_from_record($row, 'record', ['datafosid' => $row->datafosid]);
+        $recordobj = self::extract_object_from_record($row, 'record', ['dataid' => $row->dataid]);
         if ($row->contentid && $row->fieldid) {
-            $fieldobj = self::extract_object_from_record($row, 'field', ['datafosid' => $row->datafosid]);
+            $fieldobj = self::extract_object_from_record($row, 'field', ['dataid' => $row->dataid]);
             $contentobj = self::extract_object_from_record($row, 'content',
                 ['fieldid' => $fieldobj->id, 'recordid' => $recordobj->id]);
 

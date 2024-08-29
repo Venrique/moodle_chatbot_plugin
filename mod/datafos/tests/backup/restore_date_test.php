@@ -72,7 +72,7 @@ class restore_date_test extends \restore_date_testcase {
         $props = ['assesstimefinish', 'assesstimestart', 'timeavailablefrom', 'timeavailableto', 'timeviewfrom', 'timeviewto'];
         $this->assertFieldsRolledForward($data, $newdata, $props);
 
-        $newdatarecord = $DB->get_record('data_records_fos', ['datafosid' => $newdata->id]);
+        $newdatarecord = $DB->get_record('data_records_fos', ['dataid' => $newdata->id]);
         $newcm = $DB->get_record('course_modules', ['course' => $newcourseid, 'instance' => $newdata->id]);
 
         // Data record time checks.

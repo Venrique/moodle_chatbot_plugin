@@ -42,7 +42,7 @@ class delete_saved_preset extends external_api {
      */
     public static function execute_parameters(): external_function_parameters {
         return new external_function_parameters([
-            'datafosid' => new external_value(PARAM_INT, 'Id of the datafos activity', VALUE_REQUIRED),
+            'dataid' => new external_value(PARAM_INT, 'Id of the datafos activity', VALUE_REQUIRED),
             'presetnames' => new external_multiple_structure(
                 new external_value(PARAM_TEXT, 'The preset name to delete', VALUE_REQUIRED)
             )
@@ -52,19 +52,19 @@ class delete_saved_preset extends external_api {
     /**
      * Delete saved preset from the file system.
      *
-     * @param  int $datafosid Id of the datafos activity to check context and permissions.
+     * @param  int $dataid Id of the datafos activity to check context and permissions.
      * @param  array $presetnames List of saved preset names to delete.
      * @return array True if the content has been deleted; false and the warning, otherwise.
      */
-    public static function execute(int $datafosid, array $presetnames): array {
+    public static function execute(int $dataid, array $presetnames): array {
         global $DB;
 
         $result = false;
         $warnings = [];
 
-        $params = self::validate_parameters(self::execute_parameters(), ['datafosid' => $datafosid, 'presetnames' => $presetnames]);
+        $params = self::validate_parameters(self::execute_parameters(), ['dataid' => $dataid, 'presetnames' => $presetnames]);
 
-        $instance = $DB->get_record('datafos', ['id' => $params['datafosid']], '*', MUST_EXIST);
+        $instance = $DB->get_record('datafos', ['id' => $params['dataid']], '*', MUST_EXIST);
         $manager = manager::create_from_instance($instance);
 
         foreach ($params['presetnames'] as $presetname) {

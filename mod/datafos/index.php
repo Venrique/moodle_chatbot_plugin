@@ -108,10 +108,10 @@ foreach ($datas as $data) {
 
     // TODO: add group restricted counts here, and limit unapproved to ppl with approve cap only + link to approval page
 
-    $numrecords = $DB->count_records_sql('SELECT COUNT(r.id) FROM {data_records_fos} r WHERE r.datafosid =?', array($data->id));
+    $numrecords = $DB->count_records_sql('SELECT COUNT(r.id) FROM {data_records_fos} r WHERE r.dataid =?', array($data->id));
 
     if ($data->approval == 1) {
-        $numunapprovedrecords = $DB->count_records_sql('SELECT COUNT(r.id) FROM {data_records_fos} r WHERE r.datafosid =? AND r.approved <> 1', array($data->id));
+        $numunapprovedrecords = $DB->count_records_sql('SELECT COUNT(r.id) FROM {data_records_fos} r WHERE r.dataid =? AND r.approved <> 1', array($data->id));
     } else {
         $numunapprovedrecords = '-';
     }

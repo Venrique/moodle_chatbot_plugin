@@ -66,7 +66,7 @@ class manager_test extends \advanced_testcase {
         $this->assertEquals($context->id, $managercontext->id);
 
         $datarecord = (object)[
-            'datafosid' => $activity->id,
+            'dataid' => $activity->id,
             'id' => 0,
             'userid' => 0,
             'groupid' => 0,
@@ -184,7 +184,7 @@ class manager_test extends \advanced_testcase {
         // Create datafos record.
         $datarecords = new \stdClass();
         $datarecords->userid = '2';
-        $datarecords->datafosid = $data->id;
+        $datarecords->dataid = $data->id;
         $datarecords->id = $DB->insert_record('data_records_fos', $datarecords);
 
         // Database with records should return true.

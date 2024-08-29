@@ -11,7 +11,7 @@ class mod_datafos_import_form extends moodleform {
     function definition() {
         $mform =& $this->_form;
 
-        $datafosid = $this->_customdata['datafosid'];
+        $dataid = $this->_customdata['dataid'];
         $backtourl = $this->_customdata['backtourl'];
 
         $mform->addElement('filepicker', 'recordsfile', get_string('csvfile', 'datafos'),
@@ -31,7 +31,7 @@ class mod_datafos_import_form extends moodleform {
         // Database activity ID.
         $mform->addElement('hidden', 'd');
         $mform->setType('d', PARAM_INT);
-        $mform->setDefault('d', $datafosid);
+        $mform->setDefault('d', $dataid);
 
         // Back to URL.
         $mform->addElement('hidden', 'backto');

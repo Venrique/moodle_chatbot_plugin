@@ -460,7 +460,7 @@ class preset {
         // Generate stub record.
         $fieldrecord = (object)[
             'id' => $id,
-            'datafosid' => $instance->id,
+            'dataid' => $instance->id,
             'type' => (string) $fieldinfo->type,
             'name' => (string) $fieldinfo->name,
             'description' => (string) $fieldinfo->description ?? '',
@@ -492,7 +492,7 @@ class preset {
                 'id' => $current,
                 'userid' => $USER->id,
                 'groupid' => 0,
-                'datafosid' => $instance->id,
+                'dataid' => $instance->id,
                 'timecreated' => time(),
                 'timemodified' => time(),
                 'approved' => 1,
@@ -741,13 +741,13 @@ class preset {
         $presetxmldata .= "</settings>\n\n";
 
         // Add fields. Grab all that are non-empty.
-        $fields = $DB->get_records('data_fields_fos', ['datafosid' => $instance->id]);
+        $fields = $DB->get_records('data_fields_fos', ['dataid' => $instance->id]);
         ksort($fields);
         if (!empty($fields)) {
             foreach ($fields as $field) {
                 $presetxmldata .= "<field>\n";
                 foreach ($field as $key => $value) {
-                    if ($value != '' && $key != 'id' && $key != 'datafosid') {
+                    if ($value != '' && $key != 'id' && $key != 'dataid') {
                         $presetxmldata .= "<$key>" . htmlspecialchars($value, ENT_COMPAT) . "</$key>\n";
                     }
                 }
