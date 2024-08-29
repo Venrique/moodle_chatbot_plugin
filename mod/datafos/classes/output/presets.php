@@ -155,7 +155,7 @@ class presets implements templatable, renderable {
         $this->add_action_menu($actionmenu, get_string('usepreset', 'mod_datafos'), $usepreseturl, [
                 'datafos-action' => 'selectpreset',
                 'datafos-presetname' => $preset->get_fullname(),
-                'datafos-cmid' => $this->cmid,
+                'data-cmid' => $this->cmid,
             ]
         );
 
