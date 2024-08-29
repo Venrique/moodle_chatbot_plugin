@@ -1,4 +1,4 @@
-id,dataid,type,name,description,param1,param2,param3,param4,param5
+id,datafosid,type,name,description,param1,param2,param3,param4,param5
 1,1,latlong,location,Your current location,,-1,,NULL,NULL
 2,1,multimenu,beer,Which beer is good?,,,,NULL,NULL
 3,1,checkbox,month,One month or Two,,,,NULL,NULL

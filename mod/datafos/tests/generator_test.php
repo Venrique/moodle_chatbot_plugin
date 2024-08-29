@@ -119,7 +119,7 @@ class generator_test extends \advanced_testcase {
             $count++;
         }
 
-        $this->assertEquals(count($fieldtypes), $DB->count_records('data_fields_fos', ['dataid' => $data->id]));
+        $this->assertEquals(count($fieldtypes), $DB->count_records('data_fields_fos', ['datafosid' => $data->id]));
     }
 
     /**
@@ -175,7 +175,7 @@ class generator_test extends \advanced_testcase {
             $count++;
         }
 
-        $fields = $DB->get_records('data_fields_fos', ['dataid' => $data->id], 'id');
+        $fields = $DB->get_records('data_fields_fos', ['datafosid' => $data->id], 'id');
 
         $contents = [];
         $contents[] = ['opt1', 'opt2', 'opt3', 'opt4'];
@@ -206,7 +206,7 @@ class generator_test extends \advanced_testcase {
             $tags
         );
 
-        $this->assertEquals(1, $DB->count_records('data_records_fos', ['dataid' => $data->id]));
+        $this->assertEquals(1, $DB->count_records('data_records_fos', ['datafosid' => $data->id]));
         $this->assertEquals(count($contents), $DB->count_records('data_content_fos', ['recordid' => $datarecordid]));
 
         $entry = $DB->get_record('data_records_fos', ['id' => $datarecordid]);

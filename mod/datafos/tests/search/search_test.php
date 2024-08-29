@@ -167,9 +167,9 @@ class search_test extends \advanced_testcase {
                 'data_content_fos' => __DIR__.'/../fixtures/test_data_content.csv',
         );
         $this->dataset_from_files($files)->to_database();
-        // Set dataid to the correct value now the datafos has been inserted by csv file.
-        $DB->execute('UPDATE {data_fields_fos} SET dataid = ?', array($data->id));
-        $DB->execute('UPDATE {data_records_fos} SET dataid = ?', array($data->id));
+        // Set datafosid to the correct value now the datafos has been inserted by csv file.
+        $DB->execute('UPDATE {data_fields_fos} SET datafosid = ?', array($data->id));
+        $DB->execute('UPDATE {data_records_fos} SET datafosid = ?', array($data->id));
 
         // Create the search array which contains our advanced search criteria.
         $fieldinfo = array('0' => new \stdClass(),
@@ -243,7 +243,7 @@ class search_test extends \advanced_testcase {
         // Test 4
         $sortorder = 'ORDER BY r.timecreated ASC , r.id ASC';
         $html = datafos_get_advanced_search_sql('0', $this->recorddata, $newrecordids, '', $sortorder);
-        $allparams = array_merge($html['params'], array('dataid' => $this->recorddata->id));
+        $allparams = array_merge($html['params'], array('datafosid' => $this->recorddata->id));
         $records = $DB->get_records_sql($html['sql'], $allparams);
         $this->assertEquals($records, $this->finalrecord);
 
@@ -600,7 +600,7 @@ class search_test extends \advanced_testcase {
                 'groupmode' => SEPARATEGROUPS]);
         $fieldtypes = ['text', 'textarea'];
         $this->create_default_data_fields($fieldtypes, $data);
-        $fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id));
+        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id));
         foreach ($fields as $field) {
             switch ($field->type) {
                 case 'text' :
@@ -877,7 +877,7 @@ class search_test extends \advanced_testcase {
         // Creating file field.
         $record = new \stdClass;
         $record->type = 'file';
-        $record->dataid = $data1->id;
+        $record->datafosid = $data1->id;
         $record->required = 0;
         $record->name = 'FileFld';
         $record->description = 'Just another file field';
@@ -890,7 +890,7 @@ class search_test extends \advanced_testcase {
         // Creating text field.
         $record = new \stdClass;
         $record->type = 'text';
-        $record->dataid = $data1->id;
+        $record->datafosid = $data1->id;
         $record->required = 0;
         $record->name = 'TextFld';
         $record->description = 'Just another text field';
@@ -903,7 +903,7 @@ class search_test extends \advanced_testcase {
         // Creating textarea field.
         $record = new \stdClass;
         $record->type = 'textarea';
-        $record->dataid = $data1->id;
+        $record->datafosid = $data1->id;
         $record->required = 0;
         $record->name = 'TextAreaFld';
         $record->description = 'Just another textarea field';
@@ -918,7 +918,7 @@ class search_test extends \advanced_testcase {
         // Creating 1st entry.
         $record = new \stdClass;
         $record->userid = $USER->id;
-        $record->dataid = $data1->id;
+        $record->datafosid = $data1->id;
         $record->groupid = 0;
 
         $data1record1id = $DB->insert_record('data_records_fos', $record);
@@ -956,7 +956,7 @@ class search_test extends \advanced_testcase {
         // Creating 2nd entry.
         $record = new \stdClass;
         $record->userid = $USER->id;
-        $record->dataid = $data1->id;
+        $record->datafosid = $data1->id;
         $record->groupid = 0;
         $data1record2id = $DB->insert_record('data_records_fos', $record);
 
@@ -1052,7 +1052,7 @@ class search_test extends \advanced_testcase {
     protected function create_default_data_record($data, $groupid = 0) {
         global $DB;
 
-        $fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id));
+        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id));
 
         $fieldcontents = array();
         foreach ($fields as $fieldrecord) {
@@ -1114,7 +1114,7 @@ class search_test extends \advanced_testcase {
 
         $sql = "SELECT dr.*, d.course
                   FROM {data_records_fos} dr
-                  JOIN {datafos} d ON d.id = dr.dataid
+                  JOIN {datafos} d ON d.id = dr.datafosid
                  WHERE dr.id = :drid";
         return $DB->get_record_sql($sql, array('drid' => $recordid));
     }

@@ -96,7 +96,7 @@ class behat_mod_data_generator extends behat_generator_base {
         $data = array_reduce(array_keys($data), function ($fields, $fieldname) use ($data, $database) {
             global $DB;
 
-            $field = $DB->get_record('data_fields_fos', ['name' => $fieldname, 'dataid' => $database->id], 'id', MUST_EXIST);
+            $field = $DB->get_record('data_fields_fos', ['name' => $fieldname, 'datafosid' => $database->id], 'id', MUST_EXIST);
 
             $fields[$field->id] = $data[$fieldname];
 

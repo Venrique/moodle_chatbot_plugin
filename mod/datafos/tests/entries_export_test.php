@@ -109,7 +109,7 @@ class entries_export_test extends \advanced_testcase {
 
         $exporter = new csv_entries_exporter();
         $exporter->set_export_file_name('testexportfile');
-        $fieldrecords = $DB->get_records('data_fields_fos', ['dataid' => $data->id], 'id');
+        $fieldrecords = $DB->get_records('data_fields_fos', ['datafosid' => $data->id], 'id');
 
         $fields = [];
         foreach ($fieldrecords as $fieldrecord) {
@@ -188,7 +188,7 @@ class entries_export_test extends \advanced_testcase {
 
         $exporter = new ods_entries_exporter();
         $exporter->set_export_file_name('testexportfile');
-        $fieldrecords = $DB->get_records('data_fields_fos', ['dataid' => $data->id], 'id');
+        $fieldrecords = $DB->get_records('data_fields_fos', ['datafosid' => $data->id], 'id');
 
         $fields = [];
         foreach ($fieldrecords as $fieldrecord) {

@@ -1254,7 +1254,7 @@ class lib_test extends \advanced_testcase {
             $count++;
         }
 
-        $fields = $DB->get_records('data_fields_fos', array('dataid' => $data->id), 'id');
+        $fields = $DB->get_records('data_fields_fos', array('datafosid' => $data->id), 'id');
 
         $contents = array();
         $contents[] = array('opt1', 'opt2', 'opt3', 'opt4');
@@ -1267,7 +1267,7 @@ class lib_test extends \advanced_testcase {
 
         $datarecor1did = $datagenerator->create_entry($data, $fieldcontents);
         $datarecor2did = $datagenerator->create_entry($data, $fieldcontents);
-        $records = $DB->get_records('data_records_fos', array('dataid' => $data->id));
+        $records = $DB->get_records('data_records_fos', array('datafosid' => $data->id));
         $this->assertCount(2, $records);
         // Check we received the entries updated.
         $updates = datafos_check_updates_since($cm, $onehourago);

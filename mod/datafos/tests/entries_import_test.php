@@ -356,14 +356,14 @@ class entries_import_test extends \advanced_testcase {
      * Each records has an item entry, which contains all fields associated with this item.
      * Each fields has the parameters name, type and content.
      *
-     * @param int $dataid Id of the datafos instance.
+     * @param int $datafosid Id of the datafos instance.
      * @return array The records of the datafos instance.
      * @throws dml_exception
      */
-    private function get_data_records(int $dataid): array {
+    private function get_data_records(int $datafosid): array {
         global $DB;
 
-        $records = $DB->get_records('data_records_fos', ['dataid' => $dataid]);
+        $records = $DB->get_records('data_records_fos', ['datafosid' => $datafosid]);
         foreach ($records as $record) {
             $sql = 'SELECT f.name, f.type, con.content FROM
                 {data_content_fos} con JOIN {data_fields_fos} f ON con.fieldid = f.id

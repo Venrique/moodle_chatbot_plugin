@@ -195,7 +195,7 @@ class events_test extends \advanced_testcase {
             'context' => \context_module::instance($data->cmid),
             'courseid' => $course->id,
             'other' => array(
-                'dataid' => $data->id
+                'datafosid' => $data->id
             )
         ));
 
@@ -238,7 +238,7 @@ class events_test extends \advanced_testcase {
         // Create datafos record.
         $datarecords = new \stdClass();
         $datarecords->userid = '2';
-        $datarecords->dataid = $data->id;
+        $datarecords->datafosid = $data->id;
         $datarecords->id = $DB->insert_record('data_records_fos', $datarecords);
 
         // Create datafos content.
@@ -281,7 +281,7 @@ class events_test extends \advanced_testcase {
             'context' => \context_module::instance($data->cmid),
             'courseid' => $course->id,
             'other' => array(
-                'dataid' => $data->id
+                'datafosid' => $data->id
             )
         ));
 
@@ -319,7 +319,7 @@ class events_test extends \advanced_testcase {
             'context' => \context_module::instance($data->cmid),
             'courseid' => $course->id,
             'other' => array(
-                'dataid' => $data->id,
+                'datafosid' => $data->id,
             )
         ));
 
