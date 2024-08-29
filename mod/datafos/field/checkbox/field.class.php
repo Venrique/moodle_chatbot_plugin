@@ -52,6 +52,114 @@ class datafos_field_checkbox extends datafos_field_base {
         ];
     }
 
+  /*  function display_add_field($recordid = 0, $formdata = null) {
+        global $DB, $OUTPUT, $SESSION;
+
+        if ($formdata) {
+            $fieldname = 'field_' . $this->field->id;
+            $content = $formdata->$fieldname ?? [];
+        } else if ($recordid) {
+            $content = $DB->get_field('data_content_fos', 'content', ['fieldid' => $this->field->id, 'recordid' => $recordid]);
+            $content = explode('##', $content);
+        } else {
+            $content = [];
+        }
+
+        $str = '<div title="' . s($this->field->description) . '">';
+        $str .= '<fieldset><legend><span class="accesshide">'.$this->field->name;
+        if ($this->field->required) {
+            $str .= '$nbsp;' . get_string('requiredelement', 'form');
+            $str .= '</span></legend>';
+            $image = $OUTPUT->pix_icon('req', get_string('requiredelement', 'form'));
+            $str .= html_writer::div($image, 'inline-req');
+        } else {
+            $str .= '</span></legend>';
+        }
+
+        //echo(json_encode($SESSION));
+        $expertmodeEnabled = false;
+
+        if($this->field->name === "ExpertMode"){
+            if (has_capability('theme/fos_space1:usedatabaseexpertmode', $SESSION->context)) {
+                $expertmodeEnabled = true;
+            }
+        }
+
+
+        $i = 0;
+        foreach (explode("\n", $this->field->param1) as $checkbox) {
+            $checkbox = trim($checkbox);
+            if ($checkbox === '') {
+                continue; // skip empty lines
+            }
+
+            //$categorycontext = context_coursecat::instance(2);
+
+
+            $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
+            $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
+            if ($this->field->name === "ExpertMode"){
+                if($expertmodeEnabled){
+                    $str .= 'value="' . s($checkbox) . '" class="mod-datafos-input mr-1" ';
+                }else{
+                    $str .= 'value="' . s($checkbox) . '" class="mod-datafos-input mr-1" disabled title="Expert mode only available for managers" ';
+                }
+            }else {
+                $str .= 'value="' . s($checkbox) . '" class="mod-datafos-input mr-1" ';
+            }
+
+
+            if (array_search($checkbox, $content) !== false) {
+                $str .= 'checked />';
+            } else {
+                $str .= '/>';
+            }
+
+            //KTT CODE
+            if ($this->field->name === "Needs"){
+                switch ($checkbox){
+                    case "Comprehensive sexuality education":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('comprenhensivesexualityeducationneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Community-based channels":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('communitybasedchannelsneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Humanitarian responses":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('humanitarianresponsesneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "General SRH services":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('generalshrservicesneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Safe and/or legal abortion":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('safeandlegalabortionneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Contraception":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('contraceptionneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Sexual and gender-based violence":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('sexualandgenderbasedviolenceneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Intersectional feminism and gender equity":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('intersectionalfeminismandgenderequityneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Sexual and reproductive rights":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('sexualandreproductiverightsneeds', 'datafos') .'</label><br />';
+                        break;
+                    case "Digital health channels":
+                        $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('digitalhealthchannelsneeds', 'datafos') .'</label><br />';
+                        break;
+                }
+            }else{
+                $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
+            }
+
+            //$str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
+            $i++;
+        }
+        $str .= '</fieldset>';
+        $str .= '</div>';
+        return $str;
+    }*/
     function display_add_field($recordid = 0, $formdata = null) {
         global $DB, $OUTPUT, $SESSION;
     
@@ -61,7 +169,7 @@ class datafos_field_checkbox extends datafos_field_base {
         } else if ($recordid) {
             $content = $DB->get_field('data_content_fos', 'content', ['fieldid' => $this->field->id, 'recordid' => $recordid]);
             
-            // 
+            
             $content = ($content !== null) ? explode('##', $content) : [];
         } else {
             $content = [];
@@ -87,13 +195,13 @@ class datafos_field_checkbox extends datafos_field_base {
         foreach (explode("\n", $this->field->param1) as $checkbox) {
             $checkbox = trim($checkbox);
             if ($checkbox === '') {
-                continue; //
+                continue; 
             }
     
             $str .= '<input type="hidden" name="field_' . $this->field->id . '[]" value="" />';
             $str .= '<input type="checkbox" id="field_'.$this->field->id.'_'.$i.'" name="field_' . $this->field->id . '[]" ';
             
-            //
+            
             $str .= 'value="' . s($checkbox) . '" class="mod-datafos-input mr-1" ';
             if ($this->field->name === "ExpertMode" && !$expertmodeEnabled) {
                 $str .= 'disabled title="Expert mode only available for managers" ';
@@ -105,7 +213,7 @@ class datafos_field_checkbox extends datafos_field_base {
                 $str .= '/>';
             }
     
-            // 
+            
             if ($this->field->name === "Needs") {
                 switch ($checkbox) {
                     case "Comprehensive sexuality education":
@@ -114,7 +222,7 @@ class datafos_field_checkbox extends datafos_field_base {
                     case "Community-based channels":
                         $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'. get_string('communitybasedchannelsneeds', 'datafos') .'</label><br />';
                         break;
-                    // 
+                    
                     default:
                         $str .= '<label for="field_'.$this->field->id.'_'.$i.'">'.$checkbox.'</label><br />';
                         break;
@@ -129,7 +237,6 @@ class datafos_field_checkbox extends datafos_field_base {
         $str .= '</div>';
         return $str;
     }
-    
 
     function display_search_field($value='') {
         global $CFG, $DB;
