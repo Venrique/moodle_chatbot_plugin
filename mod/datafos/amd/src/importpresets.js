@@ -46,7 +46,7 @@ export const init = () => {
                 title: getString('importpreset', 'mod_datafos'),
             },
             formClass: 'mod_datafos\\form\\import_presets',
-            args: {cmid: importPresetButton.dataset.datafosDataid},
+            args: {cmid: importPresetButton.dataset.dataid},
             saveButtonText: getString('importandapply', 'mod_datafos'),
         });
 
