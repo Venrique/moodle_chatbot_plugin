@@ -166,12 +166,9 @@ class action_bar {
     public function get_templates_action_bar(): string {
         global $PAGE;
 
-        $listtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'listtemplate']);
-        $singletemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'singletemplate']);
-        $advancedsearchtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'asearchtemplate']);
+        $listtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'listtemplate']);
+        $singletemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'singletemplate']);
+        $advancedsearchtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'asearchtemplate']);
         $addtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'addtemplate']);
         $rsstemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'rsstemplate']);
         $csstemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'csstemplate']);
@@ -202,7 +199,7 @@ class action_bar {
             null,
             get_string('resettemplate', 'mod_datafos'),
             false,
-            ['datafos-action' => 'resettemplate', 'data-dataid' => $this->id]
+            ['data-action' => 'resettemplate', 'data-dataid' => $this->id]
         ));
 
         // Reset all templates action.
@@ -216,7 +213,7 @@ class action_bar {
             null,
             get_string('resetalltemplates', 'mod_datafos'),
             false,
-            ['datafos-action' => 'resetalltemplates', 'data-dataid' => $this->id]
+            ['data-action' => 'resetalltemplates', 'data-dataid' => $this->id]
         ));
 
         $templatesactionbar = new templates_action_bar($this->id, $selectmenu, null, null, $presetsactions);
@@ -290,7 +287,7 @@ class action_bar {
     protected function get_presets_actions_select(bool $hasimport = false): ?\action_menu {
         global $DB;
 
-        $hasfields = $DB->record_exists('data_fields_fos', ['dataid' => $this->id]);
+        $hasfields = $DB->record_exists('datafos_fields', ['dataid' => $this->id]);
 
         // Early return if the database has no fields and the import action won't be displayed.
         if (!$hasfields && !$hasimport) {
@@ -331,7 +328,6 @@ class action_bar {
                 ['data-action' => 'saveaspreset', 'data-dataid' => $this->id]
             ));
         }
-
 
         return $actionsselect;
     }
