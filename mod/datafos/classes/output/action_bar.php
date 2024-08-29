@@ -21,13 +21,6 @@ use mod_datafos\preset;
 use moodle_url;
 use url_select;
 
-/**
- * Class responsible for generating the action bar elements in the database module pages.
- *
- * @package    mod_datafos
- * @copyright  2021 Mihail Geshoski <mihail@moodle.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 class action_bar {
 
     /** @var int $id The database module id. */
@@ -50,184 +43,15 @@ class action_bar {
         [$course, $cm] = get_course_and_cm_from_instance($this->id, 'datafos');
         $this->cmid = $cm->id;
         $this->currenturl = $pageurl;
+
+        // Depura el valor de cmid
+        error_log('Constructor: cmid = ' . $this->cmid);
     }
 
     /**
-     * Generate the output for the action bar in the field page.
+     * Generate the output for the action bar in the presets page.
      *
-     * @param bool $hasfieldselect Whether the field selector element should be rendered.
-     * @param null $unused1 This parameter has been deprecated since 4.1 and should not be used anymore.
-     * @param null $unused2 This parameter has been deprecated since 4.1 and should not be used anymore.
-     * @return string The HTML code for the action bar.
-     */
-    public function get_fields_action_bar(
-        bool $hasfieldselect = false,
-        ?bool $unused1 = null,
-        ?bool $unused2 = null
-    ): string {
-        global $PAGE;
-
-        if ($unused1 !== null || $unused2 !== null) {
-            debugging('Deprecated argument passed to get_fields_action_bar method', DEBUG_DEVELOPER);
-        }
-
-        $renderer = $PAGE->get_renderer('mod_datafos');
-        $fieldsactionbar = new fields_action_bar($this->id);
-
-        return $renderer->render_fields_action_bar($fieldsactionbar);
-    }
-
-    /**
-     * Generate the output for the action bar in the field mappings page.
-     *
-     * @return string The HTML code for the action bar.
-     */
-    public function get_fields_mapping_action_bar(): string {
-        global $PAGE;
-
-        $renderer = $PAGE->get_renderer('mod_datafos');
-        $fieldsactionbar = new fields_mappings_action_bar($this->id);
-
-        $data = $fieldsactionbar->export_for_template($renderer);
-        return $renderer->render_from_template('mod_datafos/fields_action_bar', $data);
-    }
-
-    /**
-     * Generate the output for the create a new field action menu.
-     *
-     * @param bool $isprimarybutton is the action trigger a primary or secondary button?
-     * @return \action_menu Action menu to create a new field
-     */
-    public function get_create_fields(bool $isprimarybutton = false): \action_menu {
-        // Get the list of possible fields (plugins).
-        $plugins = \core_component::get_plugin_list('datafield');
-        $menufield = [];
-        foreach ($plugins as $plugin => $fulldir) {
-            $menufield[$plugin] = get_string('pluginname', "datafield_{$plugin}");
-        }
-        asort($menufield);
-
-        $fieldselect = new \action_menu();
-        $triggerclasses = ['btn'];
-        $triggerclasses[] = $isprimarybutton ? 'btn-primary' : 'btn-secondary';
-        $fieldselect->set_menu_trigger(get_string('newfield', 'mod_datafos'), join(' ', $triggerclasses));
-        $fieldselectparams = ['id' => $this->cmid, 'mode' => 'new'];
-        foreach ($menufield as $fieldtype => $fieldname) {
-            $fieldselectparams['newtype'] = $fieldtype;
-            $fieldselect->add(new \action_menu_link(
-                new moodle_url('/mod/datafos/field.php', $fieldselectparams),
-                new \pix_icon('field/' . $fieldtype, $fieldname, 'datafos'),
-                $fieldname,
-                false
-            ));
-        }
-        $fieldselect->set_additional_classes('singlebutton');
-
-        return $fieldselect;
-    }
-
-    /**
-     * Generate the output for the action selector in the view page.
-     *
-     * @param bool $hasentries Whether entries exist.
-     * @param string $mode The current view mode (list, view...).
-     * @return string The HTML code for the action selector.
-     */
-    public function get_view_action_bar(bool $hasentries, string $mode): string {
-        global $PAGE;
-
-        $viewlistlink = new moodle_url('/mod/datafos/view.php', ['d' => $this->id]);
-        $viewsinglelink = new moodle_url('/mod/datafos/view.php', ['d' => $this->id, 'mode' => 'single']);
-
-        $menu = [
-            $viewlistlink->out(false) => get_string('listview', 'mod_datafos'),
-            $viewsinglelink->out(false) => get_string('singleview', 'mod_datafos'),
-        ];
-
-        $activeurl = $this->currenturl;
-
-        if ($this->currenturl->get_param('rid') || $this->currenturl->get_param('mode') == 'single') {
-            $activeurl = $viewsinglelink;
-        }
-
-        $urlselect = new url_select($menu, $activeurl->out(false), null, 'viewactionselect');
-        $urlselect->set_label(get_string('viewnavigation', 'mod_datafos'), ['class' => 'sr-only']);
-        $renderer = $PAGE->get_renderer('mod_datafos');
-        $viewactionbar = new view_action_bar($this->id, $urlselect, $hasentries, $mode);
-
-        return $renderer->render_view_action_bar($viewactionbar);
-    }
-
-    /**
-     * Generate the output for the action selector in the templates page.
-     *
-     * @return string The HTML code for the action selector.
-     */
-    public function get_templates_action_bar(): string {
-        global $PAGE;
-
-        $listtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'listtemplate']);
-        $singletemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'singletemplate']);
-        $advancedsearchtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id,
-            'mode' => 'asearchtemplate']);
-        $addtemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'addtemplate']);
-        $rsstemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'rsstemplate']);
-        $csstemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'csstemplate']);
-        $jstemplatelink = new moodle_url('/mod/datafos/templates.php', ['d' => $this->id, 'mode' => 'jstemplate']);
-
-        $menu = [
-            $addtemplatelink->out(false) => get_string('addtemplate', 'mod_datafos'),
-            $singletemplatelink->out(false) => get_string('singletemplate', 'mod_datafos'),
-            $listtemplatelink->out(false) => get_string('listtemplate', 'mod_datafos'),
-            $advancedsearchtemplatelink->out(false) => get_string('asearchtemplate', 'mod_datafos'),
-            $csstemplatelink->out(false) => get_string('csstemplate', 'mod_datafos'),
-            $jstemplatelink->out(false) => get_string('jstemplate', 'mod_datafos'),
-            $rsstemplatelink->out(false) => get_string('rsstemplate', 'mod_datafos'),
-        ];
-
-        $selectmenu = new \core\output\select_menu('presetsactions', $menu, $this->currenturl->out(false));
-        $selectmenu->set_label(get_string('templatesnavigation', 'mod_datafos'), ['class' => 'sr-only']);
-
-        $renderer = $PAGE->get_renderer('mod_datafos');
-
-        $presetsactions = $this->get_presets_actions_select(false);
-
-        // Reset single template action.
-        $resetcurrrent = new moodle_url($this->currenturl);
-        $resetcurrrent->param('action', 'resettemplate');
-        $presetsactions->add(new \action_menu_link(
-            $resetcurrrent,
-            null,
-            get_string('resettemplate', 'mod_datafos'),
-            false,
-            ['datafos-action' => 'resettemplate', 'datafos-dataid' => $this->id]
-        ));
-
-        // Reset all templates action.
-        $resetallurl = new moodle_url($this->currenturl);
-        $resetallurl->params([
-            'action' => 'resetalltemplates',
-            'sesskey' => sesskey(),
-        ]);
-        $presetsactions->add(new \action_menu_link(
-            $resetallurl,
-            null,
-            get_string('resetalltemplates', 'mod_datafos'),
-            false,
-            ['datafos-action' => 'resetalltemplates', 'datafos-dataid' => $this->id]
-        ));
-
-        $templatesactionbar = new templates_action_bar($this->id, $selectmenu, null, null, $presetsactions);
-
-        return $renderer->render_templates_action_bar($templatesactionbar);
-    }
-
-    /**
-     * Generate the output for the action selector in the presets page.
-     *
-     * @return string The HTML code for the action selector.
+     * @return string The HTML code for the action selector in the presets page.
      */
     public function get_presets_action_bar(): string {
         global $PAGE;
@@ -235,49 +59,10 @@ class action_bar {
         $renderer = $PAGE->get_renderer('mod_datafos');
         $presetsactionbar = new presets_action_bar($this->cmid, $this->get_presets_actions_select(true));
 
+        // Depura el valor de cmid en el método get_presets_action_bar
+        error_log('get_presets_action_bar: cmid = ' . $this->cmid);
+
         return $renderer->render_presets_action_bar($presetsactionbar);
-    }
-
-    /**
-     * Generate the output for the action selector in the presets preview page.
-     *
-     * @param manager $manager the manager instance
-     * @param string $fullname the preset fullname
-     * @param string $current the current template name
-     * @return string The HTML code for the action selector
-     */
-    public function get_presets_preview_action_bar(manager $manager, string $fullname, string $current): string {
-        global $PAGE;
-
-        $renderer = $PAGE->get_renderer(manager::PLUGINNAME);
-
-        $cm = $manager->get_coursemodule();
-
-        $menu = [];
-        $selected = null;
-        foreach (['listtemplate', 'singletemplate'] as $templatename) {
-            $link = new moodle_url('/mod/datafos/preset.php', [
-                'd' => $this->id,
-                'template' => $templatename,
-                'fullname' => $fullname,
-                'action' => 'preview',
-            ]);
-            $menu[$link->out(false)] = get_string($templatename, manager::PLUGINNAME);
-            if (!$selected || $templatename == $current) {
-                $selected = $link->out(false);
-            }
-        }
-        $urlselect = new url_select($menu, $selected, null);
-        $urlselect->set_label(get_string('templatesnavigation', manager::PLUGINNAME), ['class' => 'sr-only']);
-
-        $data = [
-            'title' => get_string('preview', manager::PLUGINNAME, preset::get_name_from_plugin($fullname)),
-            'hasback' => true,
-            'backtitle' => get_string('back'),
-            'backurl' => new moodle_url('/mod/datafos/preset.php', ['id' => $cm->id]),
-            'extraurlselect' => $urlselect->export_for_template($renderer),
-        ];
-        return $renderer->render_from_template('mod_datafos/action_bar', $data);
     }
 
     /**
@@ -291,6 +76,11 @@ class action_bar {
         global $DB;
 
         $hasfields = $DB->record_exists('data_fields_fos', ['dataid' => $this->id]);
+
+        // Depura el valor de cmid en el método get_presets_actions_select
+        error_log('get_presets_actions_select: cmid = ' . $this->cmid);
+        error_log('get_presets_actions_select: id = ' . $this->id);
+        error_log('Database has fields: ' . ($hasfields ? 'Yes' : 'No'));
 
         // Early return if the database has no fields and the import action won't be displayed.
         if (!$hasfields && !$hasimport) {
