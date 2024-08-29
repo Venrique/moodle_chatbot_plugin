@@ -287,7 +287,7 @@ class action_bar {
     protected function get_presets_actions_select(bool $hasimport = false): ?\action_menu {
         global $DB;
 
-        $hasfields = $DB->record_exists('datafos_fields', ['dataid' => $this->id]);
+        $hasfields = $DB->record_exists('data_fields', ['dataid' => $this->id]);
 
         // Early return if the database has no fields and the import action won't be displayed.
         if (!$hasfields && !$hasimport) {
