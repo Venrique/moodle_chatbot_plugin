@@ -52,7 +52,7 @@ class datafos_field_checkbox extends datafos_field_base {
         ];
     }
 
-  function display_add_field($recordid = 0, $formdata = null) {
+  /*  function display_add_field($recordid = 0, $formdata = null) {
         global $DB, $OUTPUT, $SESSION;
 
         if ($formdata) {
@@ -159,8 +159,8 @@ class datafos_field_checkbox extends datafos_field_base {
         $str .= '</fieldset>';
         $str .= '</div>';
         return $str;
-    }
-   /* function display_add_field($recordid = 0, $formdata = null) {
+    }*/
+    function display_add_field($recordid = 0, $formdata = null) {
         global $DB, $OUTPUT, $SESSION;
     
         if ($formdata) {
@@ -236,7 +236,7 @@ class datafos_field_checkbox extends datafos_field_base {
         $str .= '</fieldset>';
         $str .= '</div>';
         return $str;
-    }*/
+    }
 
     function display_search_field($value='') {
         global $CFG, $DB;
