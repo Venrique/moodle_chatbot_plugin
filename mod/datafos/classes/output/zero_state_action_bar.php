@@ -69,8 +69,8 @@ class zero_state_action_bar implements templatable, renderable {
             $importpresetlink = new moodle_url('/mod/datafos/preset.php', $params);
             $importpresetbutton = new \single_button($importpresetlink,
                 get_string('importapreset', 'mod_datafos'), 'get', \single_button::BUTTON_SECONDARY, [
-                    'data-action' => 'importpresets',
-                    'data-dataid' => $cm->id,
+                    'datafos-action' => 'importpresets',
+                    'datafos-dataId' => $cm->id,
                 ]);
             $data['importpresetbutton'] = $importpresetbutton->export_for_template($output);
         }

@@ -26,7 +26,7 @@ import Notification from 'core/notification';
 import {getString} from 'core/str';
 
 const selectors = {
-    saveAsPresetButton: '[data-action="saveaspreset"]',
+    saveAsPresetButton: '[datafos-action="saveaspreset"]',
 };
 
 /**

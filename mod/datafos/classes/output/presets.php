@@ -153,9 +153,9 @@ class presets implements templatable, renderable {
             'cmid' => $this->cmid,
         ]);
         $this->add_action_menu($actionmenu, get_string('usepreset', 'mod_datafos'), $usepreseturl, [
-                'data-action' => 'selectpreset',
-                'data-presetname' => $preset->get_fullname(),
-                'data-cmid' => $this->cmid,
+                'datafos-action' => 'selectpreset',
+                'datafos-presetname' => $preset->get_fullname(),
+                'datafos-cmid' => $this->cmid,
             ]
         );
 
@@ -166,7 +166,7 @@ class presets implements templatable, renderable {
             'id' => $this->cmid,
         ]);
         $this->add_action_menu($actionmenu, get_string('previewaction', 'mod_datafos'), $previewpreseturl, [
-                'data-action' => 'preview',
+                'datafos-action' => 'preview',
             ]
         );
 
@@ -179,8 +179,8 @@ class presets implements templatable, renderable {
                     'd' => $this->id,
                 ]);
                 $this->add_action_menu($actionmenu, get_string('edit'), $editactionurl, [
-                    'data-action' => 'editpreset',
-                    'data-presetname' => $preset->name,
+                    'datafos-action' => 'editpreset',
+                    'datafos-presetname' => $preset->name,
                     'data-presetdescription' => $preset->description,
                 ]);
             }
@@ -192,8 +192,8 @@ class presets implements templatable, renderable {
                 'd' => $this->id,
             ]);
             $this->add_action_menu($actionmenu, get_string('export', 'mod_datafos'), $exporturl, [
-                'data-action' => 'exportpreset',
-                'data-presetname' => $preset->name,
+                'datafos-action' => 'exportpreset',
+                'datafos-presetname' => $preset->name,
                 'data-presetdescription' => $preset->description,
             ]);
 
@@ -205,8 +205,8 @@ class presets implements templatable, renderable {
                     'd' => $this->id,
                 ]);
                 $this->add_action_menu($actionmenu, get_string('delete'), $deleteactionurl, [
-                    'data-action' => 'deletepreset',
-                    'data-presetname' => $preset->name,
+                    'datafos-action' => 'deletepreset',
+                    'datafos-presetname' => $preset->name,
                 ]);
             }
         }
@@ -226,7 +226,7 @@ class presets implements templatable, renderable {
     private function add_action_menu(action_menu &$actionmenu, string $actionlabel, moodle_url $actionurl,
         array $otherattributes) {
         $attributes = [
-            'data-dataid' => $this->id,
+            'datafos-dataId' => $this->id,
         ];
         $actionmenu->add(new action_menu_link_secondary(
             $actionurl,

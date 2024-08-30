@@ -202,7 +202,7 @@ class action_bar {
             null,
             get_string('resettemplate', 'mod_datafos'),
             false,
-            ['data-action' => 'resettemplate', 'data-dataid' => $this->id]
+            ['datafos-action' => 'resettemplate', 'datafos-dataId' => $this->id]
         ));
 
         // Reset all templates action.
@@ -216,7 +216,7 @@ class action_bar {
             null,
             get_string('resetalltemplates', 'mod_datafos'),
             false,
-            ['data-action' => 'resetalltemplates', 'data-dataid' => $this->id]
+            ['datafos-action' => 'resetalltemplates', 'datafos-dataId' => $this->id]
         ));
 
         $templatesactionbar = new templates_action_bar($this->id, $selectmenu, null, null, $presetsactions);
@@ -308,7 +308,7 @@ class action_bar {
                 null,
                 get_string('importpreset', 'mod_datafos'),
                 false,
-                ['data-action' => 'importpresets', 'data-dataid' => $this->cmid]
+                ['datafos-action' => 'importpresets', 'datafos-dataId' => $this->cmid]
             ));
         }
 
@@ -328,7 +328,7 @@ class action_bar {
                 null,
                 get_string('saveaspreset', 'mod_datafos'),
                 false,
-                ['data-action' => 'saveaspreset', 'data-dataid' => $this->id]
+                ['datafos-action' => 'saveaspreset', 'datafos-dataId' => $this->id]
             ));
         }
 

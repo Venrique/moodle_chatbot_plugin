@@ -28,7 +28,7 @@ import Ajax from 'core/ajax';
 import Url from 'core/url';
 
 const selectors = {
-    deletePresetButton: '[data-action="deletepreset"]',
+    deletePresetButton: '[datafos-action="deletepreset"]',
 };
 
 /**
@@ -65,8 +65,8 @@ const registerEventListeners = () => {
  * @param {HTMLElement} deleteOption the element to delete.
  */
 const deletePresetConfirm = (deleteOption) => {
-    const presetName = deleteOption.getAttribute('data-presetname');
-    const dataId = deleteOption.getAttribute('data-dataid');
+    const presetName = deleteOption.getAttribute('datafos-presetname');
+    const dataId = deleteOption.getAttribute('datafos-dataId');
 
     Notification.deleteCancelPromise(
         getString('deleteconfirm', 'mod_datafos', presetName),

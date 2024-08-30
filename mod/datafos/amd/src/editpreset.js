@@ -26,7 +26,7 @@ import Notification from 'core/notification';
 import {getString} from 'core/str';
 
 const selectors = {
-    editPresetButton: '[data-action="editpreset"]',
+    editPresetButton: '[datafos-action="editpreset"]',
 };
 
 /**
@@ -61,9 +61,9 @@ const showEditPresetModal = (editAction) => {
         },
         formClass: 'mod_datafos\\form\\save_as_preset',
         args: {
-            d: editAction.getAttribute('data-dataid'),
-            action: editAction.getAttribute('data-action'),
-            presetname: editAction.getAttribute('data-presetname'),
+            d: editAction.getAttribute('datafos-dataId'),
+            action: editAction.getAttribute('datafos-action'),
+            presetname: editAction.getAttribute('datafos-presetname'),
             presetdescription: editAction.getAttribute('data-presetdescription')
         },
         saveButtonText: getString('save'),

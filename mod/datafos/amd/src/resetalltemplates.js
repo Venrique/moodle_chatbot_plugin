@@ -26,7 +26,7 @@ import {prefetchStrings} from 'core/prefetch';
 import {getString} from 'core/str';
 
 const selectors = {
-    resetAllTemplatesAction: '[data-action="resetalltemplates"]',
+    resetAllTemplatesAction: '[datafos-action="resetalltemplates"]',
 };
 
 /**

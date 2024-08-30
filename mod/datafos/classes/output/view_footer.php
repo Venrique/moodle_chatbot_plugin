@@ -133,7 +133,7 @@ class view_footer extends sticky_footer {
                 'type' => 'submit',
                 'value' => get_string('deleteselected'),
                 'disabled' => true,
-                'data-action' => 'toggle',
+                'datafos-action' => 'toggle',
                 'datafos-togglegroup' => $togglegroup,
                 'datafos-toggle' => 'action',
             ]);
