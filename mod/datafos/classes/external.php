@@ -102,6 +102,7 @@ class mod_datafos_external extends external_api {
 
             foreach ($databases as $database) {
 
+                debugging('jstemplate: ' . print_r($database->jstemplate, true));
                 $context = context_module::instance($database->coursemodule);
                 // Remove fields added by get_all_instances_in_courses.
                 unset($database->coursemodule, $database->section, $database->visible, $database->groupmode, $database->groupingid);
