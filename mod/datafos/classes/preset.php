@@ -290,55 +290,58 @@ class preset {
      *
      * @return string the full path to the exported preset file.
      */
-    public function export(): string {
+    ublic function export(): string {
         if ($this->isplugin) {
             // For now, only saved presets can be exported.
             return '';
         }
-
+    
         $presetname = clean_filename($this->name) . '-preset-' . gmdate("Ymd_Hi");
         $exportsubdir = "mod_datafos/presetexport/$presetname";
         $exportdir = make_temp_directory($exportsubdir);
-
+    
         // Generate and write the preset.xml file.
         $presetxmldata = static::generate_preset_xml();
-        $presetxmlfile = fopen($exportdir . '/preset.xml', 'w');
-        fwrite($presetxmlfile, $presetxmldata);
-        fclose($presetxmlfile);
-
+        $presetxmlpath = $exportdir . '/preset.xml';
+        file_put_contents($presetxmlpath, $presetxmldata);
+    
         // Write the template files.
         $instance = $this->manager->get_instance();
         foreach (manager::TEMPLATES_LIST as $templatename => $templatefilename) {
-            $templatefile = fopen("$exportdir/$templatefilename", 'w');
-            fwrite($templatefile, $instance->{$templatename} ?? '');
-            fclose($templatefile);
+            $templatepath = "$exportdir/$templatefilename";
+            file_put_contents($templatepath, $instance->{$templatename} ?? '');
         }
-
+    
         // Check if all files have been generated.
         if (! static::is_directory_a_preset($exportdir)) {
             throw new \moodle_exception('generateerror', 'datafos');
         }
-
+    
         $presetfilenames = array_merge(array_values(manager::TEMPLATES_LIST), ['preset.xml']);
-
+    
         $filelist = [];
         foreach ($presetfilenames as $filename) {
             $filelist[$filename] = $exportdir . '/' . $filename;
         }
-
+    
         $exportfile = $exportdir.'.zip';
-        file_exists($exportfile) && unlink($exportfile);
-
+        if (file_exists($exportfile)) {
+            unlink($exportfile);
+        }
+    
         $fp = get_file_packer('application/zip');
-        $fp->archive_to_pathname($filelist, $exportfile);
-
+        try {
+            $fp->archive_to_pathname($filelist, $exportfile);
+        } catch (Exception $e) {
+            throw new \moodle_exception('zipcreationerror', 'datafos', '', $e->getMessage());
+        }
+    
         foreach ($filelist as $file) {
             unlink($file);
         }
         rmdir($exportdir);
-
-        return $exportfile;
-    }
+    
+        
 
     /**
      * Return the preset author.
