@@ -181,7 +181,7 @@ class presets implements templatable, renderable {
                 $this->add_action_menu($actionmenu, get_string('edit'), $editactionurl, [
                     'datafos-action' => 'editpreset',
                     'data-presetname' => $preset->name,
-                    'data-presetdescription' => $preset->description,
+                    'datafos-presetdescription' => $preset->description,
                 ]);
             }
 
@@ -194,7 +194,7 @@ class presets implements templatable, renderable {
             $this->add_action_menu($actionmenu, get_string('export', 'mod_datafos'), $exporturl, [
                 'datafos-action' => 'exportpreset',
                 'data-presetname' => $preset->name,
-                'data-presetdescription' => $preset->description,
+                'datafos-presetdescription' => $preset->description,
             ]);
 
             // Delete.
