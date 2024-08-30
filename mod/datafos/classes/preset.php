@@ -292,51 +292,53 @@ class preset {
      */
     public function export(): string {
         if ($this->isplugin) {
-           
+            // For now, only saved presets can be exported.
             return '';
         }
-    
+
         $presetname = clean_filename($this->name) . '-preset-' . gmdate("Ymd_Hi");
         $exportsubdir = "mod_datafos/presetexport/$presetname";
         $exportdir = make_temp_directory($exportsubdir);
-    
-    
+
+        // Generate and write the preset.xml file.
         $presetxmldata = static::generate_preset_xml();
-        $presetxmlfile = $exportdir . '/preset.xml';
-        file_put_contents($presetxmlfile, $presetxmldata);
-    
+        $presetxmlfile = fopen($exportdir . '/preset.xml', 'w');
+        fwrite($presetxmlfile, $presetxmldata);
+        fclose($presetxmlfile);
+
+        // Write the template files.
         $instance = $this->manager->get_instance();
         foreach (manager::TEMPLATES_LIST as $templatename => $templatefilename) {
-            $templatefile = $exportdir . '/' . $templatefilename;
-            file_put_contents($templatefile, $instance->{$templatename} ?? '');
+            $templatefile = fopen("$exportdir/$templatefilename", 'w');
+            fwrite($templatefile, $instance->{$templatename} ?? '');
+            fclose($templatefile);
         }
-        if (!static::is_directory_a_preset($exportdir)) {
-            throw new moodle_exception('generateerror', 'datafos');
+
+        // Check if all files have been generated.
+        if (! static::is_directory_a_preset($exportdir)) {
+            throw new \moodle_exception('generateerror', 'datafos');
         }
-    
+
         $presetfilenames = array_merge(array_values(manager::TEMPLATES_LIST), ['preset.xml']);
+
         $filelist = [];
         foreach ($presetfilenames as $filename) {
             $filelist[$filename] = $exportdir . '/' . $filename;
         }
-    
-        $exportfile = $exportdir . '.zip';
-        if (file_exists($exportfile)) {
-            unlink($exportfile);
-        }
-    
+
+        $exportfile = $exportdir.'.zip';
+        file_exists($exportfile) && unlink($exportfile);
+
         $fp = get_file_packer('application/zip');
         $fp->archive_to_pathname($filelist, $exportfile);
-    
 
         foreach ($filelist as $file) {
             unlink($file);
         }
         rmdir($exportdir);
-    
+
         return $exportfile;
     }
-    
 
     /**
      * Return the preset author.

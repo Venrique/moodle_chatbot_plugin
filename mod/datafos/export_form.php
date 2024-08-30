@@ -54,7 +54,7 @@ class mod_datafos_export_form extends moodleform {
             // Array $choices contains the semicolon -> drop it (because its encrypted form also contains a semicolon):
             unset($choices[$key]);
         }
-        $mform->addElement('select', 'delimiter_name', get_string('fielddelimiter', 'datafos'), $choices);
+        $mform->addElement('select', 'delimiter_name', get_string('fielddelimiter', 'data'), $choices);
         $mform->hideIf('delimiter_name', 'exporttype', 'neq', 'csv');
         if (array_key_exists('cfg', $choices)) {
             $mform->setDefault('delimiter_name', 'cfg');

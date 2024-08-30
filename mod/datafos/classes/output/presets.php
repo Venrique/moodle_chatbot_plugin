@@ -154,8 +154,8 @@ class presets implements templatable, renderable {
         ]);
         $this->add_action_menu($actionmenu, get_string('usepreset', 'mod_datafos'), $usepreseturl, [
                 'datafos-action' => 'selectpreset',
-                'data-presetname' => $preset->get_fullname(),
-                'data-cmid' => $this->cmid,
+                'datafos-presetname' => $preset->get_fullname(),
+                'datafos-cmid' => $this->cmid,
             ]
         );
 
@@ -181,7 +181,7 @@ class presets implements templatable, renderable {
                 $this->add_action_menu($actionmenu, get_string('edit'), $editactionurl, [
                     'datafos-action' => 'editpreset',
                     'data-presetname' => $preset->name,
-                    'data-presetdescription' => $preset->description,
+                    'datafos-presetdescription' => $preset->description,
                 ]);
             }
 
@@ -193,8 +193,8 @@ class presets implements templatable, renderable {
             ]);
             $this->add_action_menu($actionmenu, get_string('export', 'mod_datafos'), $exporturl, [
                 'datafos-action' => 'exportpreset',
-                'data-presetname' => $preset->name,
-                'data-presetdescription' => $preset->description,
+                'datafos-presetname' => $preset->name,
+                'datafos-presetdescription' => $preset->description,
             ]);
 
             // Delete.
@@ -206,7 +206,7 @@ class presets implements templatable, renderable {
                 ]);
                 $this->add_action_menu($actionmenu, get_string('delete'), $deleteactionurl, [
                     'datafos-action' => 'deletepreset',
-                    'data-presetname' => $preset->name,
+                    'datafos-presetname' => $preset->name,
                 ]);
             }
         }

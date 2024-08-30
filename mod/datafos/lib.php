@@ -2517,7 +2517,7 @@ abstract class datafos_preset_importer {
      * @param string $filename the name of the file we want
      * @return string the contents of the file or null if the file doesn't exist.
      */
-    public function data_preset_get_file_contents(&$filestorage, &$fileobj, $dir, $filename) {
+    public function datafos_preset_get_file_contents(&$filestorage, &$fileobj, $dir, $filename) {
         if(empty($filestorage) || empty($fileobj)) {
             if (substr($dir, -1)!='/') {
                 $dir .= '/';
@@ -2595,7 +2595,7 @@ abstract class datafos_preset_importer {
 
 
         /* Grab XML */
-        $presetxml = $this->data_preset_get_file_contents($fs, $fileobj, $this->directory,'preset.xml');
+        $presetxml = $this->datafos_preset_get_file_contents($fs, $fileobj, $this->directory,'preset.xml');
         $parsedxml = xmlize($presetxml, 0);
 
         /* First, do settings. Put in user friendly array. */
@@ -2627,16 +2627,16 @@ abstract class datafos_preset_importer {
             $result->importfields[] = $f;
         }
         /* Now add the HTML templates to the settings array so we can update d */
-        $result->settings->singletemplate     = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"singletemplate.html");
-        $result->settings->listtemplate       = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplate.html");
-        $result->settings->listtemplateheader = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplateheader.html");
-        $result->settings->listtemplatefooter = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplatefooter.html");
-        $result->settings->addtemplate        = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"addtemplate.html");
-        $result->settings->rsstemplate        = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"rsstemplate.html");
-        $result->settings->rsstitletemplate   = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"rsstitletemplate.html");
-        $result->settings->csstemplate        = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"csstemplate.css");
-        $result->settings->jstemplate         = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"jstemplate.js");
-        $result->settings->asearchtemplate    = $this->data_preset_get_file_contents($fs, $fileobj,$this->directory,"asearchtemplate.html");
+        $result->settings->singletemplate     = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"singletemplate.html");
+        $result->settings->listtemplate       = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplate.html");
+        $result->settings->listtemplateheader = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplateheader.html");
+        $result->settings->listtemplatefooter = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"listtemplatefooter.html");
+        $result->settings->addtemplate        = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"addtemplate.html");
+        $result->settings->rsstemplate        = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"rsstemplate.html");
+        $result->settings->rsstitletemplate   = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"rsstitletemplate.html");
+        $result->settings->csstemplate        = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"csstemplate.css");
+        $result->settings->jstemplate         = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"jstemplate.js");
+        $result->settings->asearchtemplate    = $this->datafos_preset_get_file_contents($fs, $fileobj,$this->directory,"asearchtemplate.html");
 
         $result->settings->instance = $this->module->id;
         return $result;

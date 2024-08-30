@@ -87,7 +87,7 @@ const deletePresetConfirm = (deleteOption) => {
  */
 async function deletePreset(dataId, presetName) {
     var request = {
-        methodname: 'mod_datafos_delete_saved_preset',
+        methodname: 'mod_data_delete_saved_preset',
         args: {
             dataid: dataId,
             presetnames: {presetname: presetName},

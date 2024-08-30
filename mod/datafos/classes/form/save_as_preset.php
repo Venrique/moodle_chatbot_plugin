@@ -100,7 +100,7 @@ class save_as_preset extends dynamic_form {
                 }
             }
             if (!$selectedpreset instanceof preset || !$selectedpreset->can_manage()) {
-                $errors['name'] = get_string('cannotoverwritepreset', 'datafos');
+                $errors['name'] = get_string('cannotoverwritepreset', 'data');
             }
         } else if ($formdata['action'] == 'saveaspreset' || $formdata['oldpresetname'] != $formdata['name']) {
 
