@@ -65,7 +65,7 @@ const registerEventListeners = () => {
  * @param {HTMLElement} deleteOption the element to delete.
  */
 const deletePresetConfirm = (deleteOption) => {
-    const presetName = deleteOption.getAttribute('datafos-presetname');
+    const presetName = deleteOption.getAttribute('data-presetname');
     const dataId = deleteOption.getAttribute('data-dataid');
 
     Notification.deleteCancelPromise(

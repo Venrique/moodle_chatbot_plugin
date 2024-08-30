@@ -63,7 +63,7 @@ const showEditPresetModal = (editAction) => {
         args: {
             d: editAction.getAttribute('data-dataid'),
             action: editAction.getAttribute('datafos-action'),
-            presetname: editAction.getAttribute('datafos-presetname'),
+            presetname: editAction.getAttribute('data-presetname'),
             presetdescription: editAction.getAttribute('data-presetdescription')
         },
         saveButtonText: getString('save'),

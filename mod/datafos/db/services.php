@@ -116,11 +116,13 @@ $functions = array(
         'services'      => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
     ),
     'mod_datafos_delete_saved_preset' => array(
-        'classname'     => 'mod_datafos\external\delete_saved_preset',
-        'description'   => 'Delete site user preset.',
-        'type'          => 'write',
-        'ajax'          => true,
-        'capabilities'  => 'mod/datafos:manageuserpresets',
+        'classname'   => 'mod_datafos\external\delete_saved_preset',
+        'methodname'  => 'execute',
+        'classpath'   => 'mod/datafos/classes/external/delete_saved_preset.php',
+        'description' => 'Delete a saved preset in datafos plugin.',
+        'type'        => 'write',
+        'ajax'        => true,
+        'capabilities'=> 'mod/datafos:managepresets',
     ),
     'mod_datafos_get_mapping_information' => array(
         'classname'     => 'mod_datafos\external\get_mapping_information',
