@@ -33,7 +33,7 @@ import {getString} from 'core/str';
 prefetchStrings('mod_datafos', ['mapping:dialogtitle:usepreset']);
 
 const selectors = {
-    selectPreset: '[datafos-action="selectpreset"]',
+    selectPreset: '[data-action="selectpreset"]',
 };
 
 /**

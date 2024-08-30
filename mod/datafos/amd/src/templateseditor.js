@@ -42,7 +42,7 @@ prefetchStrings('core', [
  */
 const selectors = {
     toggleTemplateEditor: 'input[name="useeditor"]',
-    resetTemplateAction: '[datafos-action="resettemplate"]',
+    resetTemplateAction: '[data-action="resettemplate"]',
     resetTemplate: 'input[name="defaultform"]',
     resetAllTemplates: 'input[name="resetall"]',
     resetAllCheck: 'input[name="resetallcheck"]',

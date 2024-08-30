@@ -26,7 +26,7 @@ import Notification from 'core/notification';
 import {getString} from 'core/str';
 
 const selectors = {
-    importPresetButton: '[datafos-action="importpresets"]',
+    importPresetButton: '[data-action="importpresets"]',
 };
 
 /**

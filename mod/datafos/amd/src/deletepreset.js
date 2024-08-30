@@ -28,7 +28,7 @@ import Ajax from 'core/ajax';
 import Url from 'core/url';
 
 const selectors = {
-    deletePresetButton: '[datafos-action="deletepreset"]',
+    deletePresetButton: '[data-action="deletepreset"]',
 };
 
 /**

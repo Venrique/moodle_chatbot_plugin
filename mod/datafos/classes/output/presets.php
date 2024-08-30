@@ -153,7 +153,7 @@ class presets implements templatable, renderable {
             'cmid' => $this->cmid,
         ]);
         $this->add_action_menu($actionmenu, get_string('usepreset', 'mod_datafos'), $usepreseturl, [
-                'datafos-action' => 'selectpreset',
+                'data-action' => 'selectpreset',
                 'data-presetname' => $preset->get_fullname(),
                 'data-cmid' => $this->cmid,
             ]
@@ -166,7 +166,7 @@ class presets implements templatable, renderable {
             'id' => $this->cmid,
         ]);
         $this->add_action_menu($actionmenu, get_string('previewaction', 'mod_datafos'), $previewpreseturl, [
-                'datafos-action' => 'preview',
+                'data-action' => 'preview',
             ]
         );
 
@@ -179,9 +179,9 @@ class presets implements templatable, renderable {
                     'd' => $this->id,
                 ]);
                 $this->add_action_menu($actionmenu, get_string('edit'), $editactionurl, [
-                    'datafos-action' => 'editpreset',
+                    'data-action' => 'editpreset',
                     'data-presetname' => $preset->name,
-                    'datafos-presetdescription' => $preset->description,
+                    'data-presetdescription' => $preset->description,
                 ]);
             }
 
@@ -192,9 +192,9 @@ class presets implements templatable, renderable {
                 'd' => $this->id,
             ]);
             $this->add_action_menu($actionmenu, get_string('export', 'mod_datafos'), $exporturl, [
-                'datafos-action' => 'exportpreset',
+                'data-action' => 'exportpreset',
                 'data-presetname' => $preset->name,
-                'datafos-presetdescription' => $preset->description,
+                'data-presetdescription' => $preset->description,
             ]);
 
             // Delete.
@@ -205,7 +205,7 @@ class presets implements templatable, renderable {
                     'd' => $this->id,
                 ]);
                 $this->add_action_menu($actionmenu, get_string('delete'), $deleteactionurl, [
-                    'datafos-action' => 'deletepreset',
+                    'data-action' => 'deletepreset',
                     'data-presetname' => $preset->name,
                 ]);
             }
