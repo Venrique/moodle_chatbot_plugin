@@ -290,7 +290,7 @@ class preset {
      *
      * @return string the full path to the exported preset file.
      */
-    public function export(): string {
+    public function  export(): string {
         if ($this->isplugin) {
             // For now, only saved presets can be exported.
             return '';
@@ -341,7 +341,8 @@ class preset {
         }
         rmdir($exportdir);
     
-        
+        return $exportfile;
+    }
 
     /**
      * Return the preset author.
