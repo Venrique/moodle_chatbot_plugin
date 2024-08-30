@@ -66,7 +66,7 @@ const registerEventListeners = () => {
  */
 const deletePresetConfirm = (deleteOption) => {
     const presetName = deleteOption.getAttribute('datafos-presetname');
-    const dataId = deleteOption.getAttribute('datafos-dataId');
+    const dataId = deleteOption.getAttribute('data-dataid');
 
     Notification.deleteCancelPromise(
         getString('deleteconfirm', 'mod_datafos', presetName),

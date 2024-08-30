@@ -61,7 +61,7 @@ const showEditPresetModal = (editAction) => {
         },
         formClass: 'mod_datafos\\form\\save_as_preset',
         args: {
-            d: editAction.getAttribute('datafos-dataId'),
+            d: editAction.getAttribute('data-dataid'),
             action: editAction.getAttribute('datafos-action'),
             presetname: editAction.getAttribute('datafos-presetname'),
             presetdescription: editAction.getAttribute('data-presetdescription')
