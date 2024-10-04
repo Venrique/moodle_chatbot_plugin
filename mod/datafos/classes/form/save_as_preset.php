@@ -52,7 +52,7 @@ class save_as_preset extends dynamic_form {
         $mform->setType('name', PARAM_FILE);
         $mform->addRule('name', null, 'required');
 
-        $mform->addElement('checkbox', 'overwrite', '', get_string('overwritedesc', 'datafos'), ['class' => 'hidden']);
+        $mform->addElement('checkbox', 'overwrite', '', get_string('overwritedesc', 'data'), ['class' => 'hidden']);
 
         $mform->addElement('textarea', 'description', get_string('description'), ['rows' => 5, 'cols' => 60]);
         $mform->setType('description', PARAM_TEXT);
@@ -110,10 +110,10 @@ class save_as_preset extends dynamic_form {
             foreach ($sitepresets as $preset) {
                 if ($formdata['name'] == $preset->name) {
                     if ($preset->can_manage()) {
-                        $errors['name'] = get_string('errorpresetexists', 'datafos');
+                        $errors['name'] = get_string('errorpresetexists', 'data');
                         $usercandelete = true;
                     } else {
-                        $errors['name'] = get_string('errorpresetexistsbutnotoverwrite', 'datafos');
+                        $errors['name'] = get_string('errorpresetexistsbutnotoverwrite', 'data');
                     }
                     break;
                 }

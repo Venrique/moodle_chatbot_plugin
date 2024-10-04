@@ -238,10 +238,10 @@ if (!empty(trim($search))) {
     array_unshift($titleparts, get_string('searchresults', 'datafos', s($search)));
 } else if (!empty($delete) && empty($confirm)) {
     // Displaying the delete confirmation page.
-    array_unshift($titleparts, get_string('deleteentry', 'datafos'));
+    array_unshift($titleparts, get_string('deleteentry', 'data'));
 } else if ($record !== null || $mode == 'single') {
     // Indicate on the page tile if the user is viewing this page on single view mode.
-    array_unshift($titleparts, get_string('single', 'datafos'));
+    array_unshift($titleparts, get_string('single', 'data'));
 }
 $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
 $PAGE->set_heading($course->fullname);
@@ -354,7 +354,7 @@ if ($multidelete && confirm_sesskey() && $canmanageentries) {
         $action = new moodle_url('/mod/datafos/view.php', $submitactions);
         $cancelurl = new moodle_url('/mod/datafos/view.php', array('d' => $data->id));
         $deletebutton = new single_button($action, get_string('delete'), 'post', single_button::BUTTON_DANGER);
-        echo $OUTPUT->confirm(get_string('confirmdeleterecords', 'datafos'), $deletebutton, $cancelurl);
+        echo $OUTPUT->confirm(get_string('confirmdeleterecords', 'data'), $deletebutton, $cancelurl);
         $parser = $manager->get_template('listtemplate');
         echo $parser->parse_entries($validrecords);
         echo $OUTPUT->footer();
@@ -383,7 +383,7 @@ if ($showactivity) {
                 if ($approverecord->dataid == $data->id) {                       // Must be from this database
                     data_approve_entry($approverecord->id, $newapproved);
                     $msgkey = $newapproved ? 'recordapproved' : 'recorddisapproved';
-                    echo $OUTPUT->notification(get_string($msgkey, 'datafos'), 'notifysuccess');
+                    echo $OUTPUT->notification(get_string($msgkey, 'data'), 'notifysuccess');
                 }
             }
         }
@@ -440,7 +440,7 @@ if ($showactivity) {
                 echo $OUTPUT->box_end();
             } else {
                 echo $OUTPUT->box_start();
-                echo get_string('norecords', 'datafos');
+                echo get_string('norecords', 'data');
                 echo $OUTPUT->box_end();
             }
 

@@ -208,7 +208,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
         if ($leapwriter) {
             if (count($this->records) > 1) { // make a selection element to tie them all together
                 $selection = new portfolio_format_leap2a_entry('datadb' . $this->datafos->id,
-                    get_string('entries', 'datafos') . ': ' . $this->datafos->name, 'selection');
+                    get_string('entries', 'data') . ': ' . $this->datafos->name, 'selection');
                 $leapwriter->add_entry($selection);
                 $leapwriter->make_selection($selection, $ids, 'Grouping');
             }
@@ -250,7 +250,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
      *  @return string
      */
     public static function display_name() {
-        return get_string('modulename', 'datafos');
+        return get_string('modulename', 'data');
     }
 
     /**

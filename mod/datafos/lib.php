@@ -516,16 +516,16 @@ class datafos_field_base {     // Base class for Database Field Types (see field
         if ($this->field->name === "Category"){
             switch ($content->content) {
                 case "General tool":
-                    $content->content = get_string('generaltoolcategory','datafos');
+                    $content->content = get_string('generaltoolcategory', 'data');
                     break;
                 case "Quality of care tool":
-                    $content->content = get_string('qualityofcaretoolcategory','datafos');
+                    $content->content = get_string('qualityofcaretoolcategory', 'data');
                     break;
                 case "Research":
-                    $content->content = get_string('researchcategory','datafos');
+                    $content->content = get_string('researchcategory', 'data');
                     break;
                 case "Narrative":
-                    $content->content = get_string('narrativecategory','datafos');
+                    $content->content = get_string('narrativecategory', 'data');
                     break;
             }
         }*/
@@ -1197,7 +1197,7 @@ function datafos_tags_check($dataid, $template) {
         $pattern="/\[\[" . preg_quote($field->name, '/') . "\]\]/i";
         if (preg_match_all($pattern, $template, $dummy)>1){
             $tagsok = false;
-            echo $OUTPUT->notification('[['.$field->name.']] - '.get_string('multipletags','datafos'));
+            echo $OUTPUT->notification('[['.$field->name.']] - '.get_string('multipletags', 'data'));
         }
     }
     // else return true
@@ -1785,7 +1785,7 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
         $advanced = 1;
         echo '<input type="hidden" name="mode" value="list" />';
     }
-    echo '<label for="pref_perpage">'.get_string('pagesize','datafos').'</label> ';
+    echo '<label for="pref_perpage">'.get_string('pagesize', 'data').'</label> ';
     $pagesizes = array(10=>10,20=>20,30=>30,40=>40,50=>50,100=>100,200=>200,300=>300,400=>400,500=>500,1000=>1000);
     echo html_writer::select($pagesizes, 'perpage', $perpage, false, array('id' => 'pref_perpage', 'class' => 'custom-select'));
 
@@ -1863,14 +1863,14 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     echo '<label for="pref_order" class="accesshide">'.get_string('order').'</label>';
     echo '<select id="pref_order" name="order" class="custom-select mr-1">';
     if ($order == 'ASC') {
-        echo '<option value="ASC" selected="selected">'.get_string('ascending','datafos').'</option>';
+        echo '<option value="ASC" selected="selected">'.get_string('ascending', 'data').'</option>';
     } else {
-        echo '<option value="ASC">'.get_string('ascending','datafos').'</option>';
+        echo '<option value="ASC">'.get_string('ascending', 'data').'</option>';
     }
     if ($order == 'DESC') {
-        echo '<option value="DESC" selected="selected">'.get_string('descending','datafos').'</option>';
+        echo '<option value="DESC" selected="selected">'.get_string('descending', 'data').'</option>';
     } else {
-        echo '<option value="DESC">'.get_string('descending','datafos').'</option>';
+        echo '<option value="DESC">'.get_string('descending', 'data').'</option>';
     }
     echo '</select>';
 
@@ -2858,7 +2858,7 @@ function datafos_preset_path($course, $userid, $shortname) {
  */
 function datafos_reset_course_form_definition(&$mform) {
     $mform->addElement('header', 'dataheader', get_string('modulenameplural', 'datafos'));
-    $mform->addElement('checkbox', 'reset_data', get_string('deleteallentries','datafos'));
+    $mform->addElement('checkbox', 'reset_data', get_string('deleteallentries', 'data'));
 
     $mform->addElement('checkbox', 'reset_data_notenrolled', get_string('deletenotenrolled', 'datafos'));
     $mform->disabledIf('reset_data_notenrolled', 'reset_data', 'checked');

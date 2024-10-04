@@ -73,28 +73,28 @@ if ($useeditor !== null) {
 $PAGE->requires->js('/mod/datafos/datafos.js');
 switch ($mode) {
     case 'asearchtemplate':
-        $title = get_string('asearchtemplate', 'datafos');
+        $title = get_string('asearchtemplate', 'data');
         break;
     case 'csstemplate':
-        $title = get_string('csstemplate', 'datafos');
+        $title = get_string('csstemplate', 'data');
         break;
     case 'jstemplate':
-        $title = get_string('jstemplate', 'datafos');
+        $title = get_string('jstemplate', 'data');
         break;
     case 'listtemplate':
-        $title = get_string('listtemplate', 'datafos');
+        $title = get_string('listtemplate', 'data');
         break;
     case 'rsstemplate':
-        $title = get_string('rsstemplate', 'datafos');
+        $title = get_string('rsstemplate', 'data');
         break;
     case 'singletemplate':
-        $title = get_string('singletemplate', 'datafos');
+        $title = get_string('singletemplate', 'data');
         break;
     default:
         if ($manager->has_fields()) {
-            $title = get_string('addtemplate', 'datafos');
+            $title = get_string('addtemplate', 'data');
         } else {
-            $title = get_string('datafos:managetemplates', 'datafos');
+            $title = get_string('datafos:managetemplates', 'data');
         }
         break;
 }
@@ -132,11 +132,11 @@ if (($formdata = data_submitted()) && confirm_sesskey()) {
             $notificationstr = get_string('templateresetall', 'mod_datafos');
         } else {
             $manager->reset_template($mode);
-            $notificationstr = get_string('templatereset', 'datafos');
+            $notificationstr = get_string('templatereset', 'data');
         }
     } else {
         $manager->update_templates($formdata);
-        $notificationstr = get_string('templatesaved', 'datafos');
+        $notificationstr = get_string('templatesaved', 'data');
     }
 }
 

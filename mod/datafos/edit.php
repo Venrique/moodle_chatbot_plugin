@@ -115,17 +115,17 @@ if ($data->jstemplate) {
 }
 
 // Define page variables.
-$strdata = get_string('modulenameplural','datafos');
+$strdata = get_string('modulenameplural','data');
 
 if ($rid) {
-    $PAGE->navbar->add(get_string('editentry', 'datafos'));
+    $PAGE->navbar->add(get_string('editentry', 'data'));
 }
 
 $PAGE->add_body_class('mediumwidth');
 if ($rid) {
-    $pagename = get_string('editentry', 'datafos');
+    $pagename = get_string('editentry', 'data');
 } else {
-    $pagename = get_string('newentry', 'datafos');
+    $pagename = get_string('newentry', 'data');
 }
 $PAGE->navbar->add($pagename);
 $titleparts = [
@@ -220,7 +220,7 @@ if (!$rid && ((!$data->maxentries) ||
     (datafos_numentries($data) < ($data->maxentries - 1)))) {
     $actionbuttons .= html_writer::empty_tag('input', [
         'type' => 'submit', 'name' => 'saveandadd',
-        'value' => get_string('saveandadd', 'datafos'), 'class' => 'btn btn-primary mx-1'
+        'value' => get_string('saveandadd', 'data'), 'class' => 'btn btn-primary mx-1'
     ]);
 }
 
