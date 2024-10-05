@@ -1803,7 +1803,7 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     // foreach field, print the option
     echo '<select name="sort" id="pref_sortby" class="custom-select mr-1">';
     if ($fields = $DB->get_records('data_fields_fos', array('dataid'=>$data->id), 'name')) {
-        echo '<optgroup label="'.get_string('fields', 'datafos').'">';
+        echo '<optgroup label="'.get_string('fields', 'data').'">';
         foreach ($fields as $field) {
             if ($field->id == $sort) {
 
@@ -3304,11 +3304,11 @@ function datafos_extend_navigation($navigation, $course, $module, $cm) {
         $entriesnode->add_class('note');
     }
 
-    $navigation->add(get_string('list', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance)));
+    $navigation->add(get_string('listview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance)));
     if (!empty($rid)) {
-        $navigation->add(get_string('single', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'rid'=>$rid)));
+        $navigation->add(get_string('singleview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'rid'=>$rid)));
     } else {
-        $navigation->add(get_string('single', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'single')));
+        $navigation->add(get_string('singleview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'single')));
     }
     $navigation->add(get_string('search', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'asearch')));
 }
@@ -3365,7 +3365,7 @@ function datafos_extend_settings_navigation(settings_navigation $settings, navig
         }
 
         $datanode->add(get_string('presets', 'datafos'), new moodle_url('/mod/datafos/preset.php', array('d' => $data->id)));
-        $datanode->add(get_string('fields', 'datafos'),
+        $datanode->add(get_string('fields', 'data'),
             new moodle_url('/mod/datafos/field.php', array('d' => $data->id)));
         $datanode->add(get_string('templates', 'datafos'),
             new moodle_url('/mod/datafos/templates.php', array('d' => $data->id)));

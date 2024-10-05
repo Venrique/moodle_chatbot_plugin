@@ -241,7 +241,7 @@ if (!empty(trim($search))) {
     array_unshift($titleparts, get_string('deleteentry', 'data'));
 } else if ($record !== null || $mode == 'single') {
     // Indicate on the page tile if the user is viewing this page on single view mode.
-    array_unshift($titleparts, get_string('single', 'data'));
+    array_unshift($titleparts, get_string('singleview', 'data'));
 }
 $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
 $PAGE->set_heading($course->fullname);
