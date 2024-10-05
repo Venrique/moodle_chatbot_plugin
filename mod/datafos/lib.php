@@ -1843,14 +1843,14 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
         echo '</optgroup>';
     }
     $options = array();
-    $options[DATAFOS_TIMEADDED]    = get_string('timeadded', 'datafos');
-    $options[DATAFOS_TIMEMODIFIED] = get_string('timemodified', 'datafos');
+    $options[DATAFOS_TIMEADDED]    = get_string('timeadded', 'data');
+    $options[DATAFOS_TIMEMODIFIED] = get_string('timemodified', 'data');
     //$options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'datafos');
     //$options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'datafos');
     if ($data->approval and has_capability('mod/datafos:approve', $context)) {
         $options[DATAFOS_APPROVED] = get_string('approved', 'datafos');
     }
-    echo '<optgroup label="'.get_string('other', 'datafos').'">';
+    echo '<optgroup label="'.get_string('other', 'data').'">';
     foreach ($options as $key => $name) {
         if ($key == $sort) {
             echo '<option value="'.$key.'" selected="selected">'.$name.'</option>';
@@ -1885,10 +1885,10 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     echo '&nbsp;<input type="hidden" name="filter" value="1" />';
     echo '&nbsp;<input type="checkbox" id="advancedcheckbox" name="advanced" value="1" ' . $checked . ' ' .
          'onchange="showHideAdvSearch(this.checked);" class="mx-1" />' .
-         '<label for="advancedcheckbox">' . get_string('advancedsearch', 'datafos') . '</label>';
+         '<label for="advancedcheckbox">' . get_string('advancedsearch', 'data') . '</label>';
     echo '</div>';
     echo '<div id="advsearch-save-sec" class="ml-auto '. $regsearchclass . '">';
-    echo '&nbsp;<input type="submit" class="btn btn-secondary" value="' . get_string('savesettings', 'datafos') . '" />';
+    echo '&nbsp;<input type="submit" class="btn btn-secondary" value="' . get_string('savesettings', 'data') . '" />';
     echo '</div>';
     echo '</div>';
     echo '<div>';
@@ -1993,8 +1993,8 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     echo '</td></tr>';
 
     echo '<tr><td colspan="4"><br/>' .
-         '<input type="submit" class="btn btn-primary mr-1" value="' . get_string('savesettings', 'datafos') . '" />' .
-         '<input type="submit" class="btn btn-secondary" name="resetadv" value="' . get_string('resetsettings', 'datafos') . '" />' .
+         '<input type="submit" class="btn btn-primary mr-1" value="' . get_string('savesettings', 'data') . '" />' .
+         '<input type="submit" class="btn btn-secondary" name="resetadv" value="' . get_string('resetsettings', 'data') . '" />' .
          '</td></tr>';
     echo '</table>';
     echo '</div>';
@@ -3342,12 +3342,12 @@ function datafos_extend_settings_navigation(settings_navigation $settings, navig
     if (has_capability(DATAFOS_CAP_EXPORT, $settings->get_page()->cm->context)) {
         // The capability required to Export database records is centrally defined in 'lib.php'
         // and should be weaker than those required to edit Templates, Fields and Presets.
-        $exportentriesnode = $datanode->add(get_string('exportentries', 'datafos'),
+        $exportentriesnode = $datanode->add(get_string('exportentries', 'data'),
             new moodle_url('/mod/datafos/export.php', array('d' => $data->id)));
         $exportentriesnode->set_show_in_secondary_navigation(false);
     }
     if (has_capability('mod/datafos:manageentries', $settings->get_page()->cm->context)) {
-        $importentriesnode = $datanode->add(get_string('importentries', 'datafos'),
+        $importentriesnode = $datanode->add(get_string('importentries', 'data'),
             new moodle_url('/mod/datafos/import.php', array('d' => $data->id)));
         $importentriesnode->set_show_in_secondary_navigation(false);
     }

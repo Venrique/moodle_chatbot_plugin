@@ -83,8 +83,8 @@ class csv_entries_importer extends entries_importer {
             $errorfield = '';
             $usernamestring = get_string('username');
             $safetoskipfields = [get_string('user'), get_string('email'),
-                get_string('timeadded', 'datafos'), get_string('timemodified', 'datafos'),
-                get_string('approved', 'datafos'), get_string('tags', 'datafos')];
+                get_string('timeadded', 'data'), get_string('timemodified', 'data'),
+                get_string('approved', 'data'), get_string('tags', 'data')];
             $userfieldid = null;
             foreach ($fieldnames as $id => $name) {
                 if (!isset($rawfields[$name])) {
