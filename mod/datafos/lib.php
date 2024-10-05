@@ -1808,7 +1808,7 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
             if ($field->id == $sort) {
 
                 if ($field->name === "Category"){
-                    echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'datafos').'</option>';
+                    echo '<option value="'.$field->id.'" selected="selected">'.get_string('categoryfield', 'data').'</option>';
                 }else{
                     echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
                 }
@@ -1816,22 +1816,22 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
             } else {
                 switch ($field->name) {
                     case "Author":
-                        echo '<option value="' . $field->id . '">' . get_string('authorfield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('authorfield', 'data'). '</option>';
                         break;
                     case "Category":
-                        echo '<option value="' . $field->id . '">' . get_string('categoryfield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('categoryfield', 'data'). '</option>';
                         break;
                     case "Needs":
-                        echo '<option value="' . $field->id . '">' . get_string('needsfield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('needsfield', 'data'). '</option>';
                         break;
                     case "Organization":
-                        echo '<option value="' . $field->id . '">' . get_string('organizationfield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('organizationfield', 'data'). '</option>';
                         break;
                     case "Upload Date":
-                        echo '<option value="' . $field->id . '">' . get_string('uploaddatefield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('uploaddatefield', 'data'). '</option>';
                         break;
                     case "Year of Completion":
-                        echo '<option value="' . $field->id . '">' . get_string('yearofcompletionfield', 'datafos'). '</option>';
+                        echo '<option value="' . $field->id . '">' . get_string('yearofcompletionfield', 'data'). '</option>';
                         break;
                     default:
                         //echo '<option value="' . $field->id . '">' . $field->name . '</option>';
@@ -1848,7 +1848,7 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     //$options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'datafos');
     //$options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'datafos');
     if ($data->approval and has_capability('mod/datafos:approve', $context)) {
-        $options[DATAFOS_APPROVED] = get_string('approved', 'datafos');
+        $options[DATAFOS_APPROVED] = get_string('approved', 'data');
     }
     echo '<optgroup label="'.get_string('other', 'data').'">';
     foreach ($options as $key => $name) {
@@ -1971,10 +1971,10 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     $fn = !empty($search_array[DATAFOS_FIRSTNAME]->datafos) ? $search_array[DATAFOS_FIRSTNAME]->datafos : '';
     $ln = !empty($search_array[DATAFOS_LASTNAME]->datafos) ? $search_array[DATAFOS_LASTNAME]->datafos : '';
     $patterns[]    = '/##firstname##/';
-    $replacement[] = '<label class="accesshide" for="u_fn">' . get_string('authorfirstname', 'datafos') . '</label>' .
+    $replacement[] = '<label class="accesshide" for="u_fn">' . get_string('authorfirstname', 'data') . '</label>' .
                      '<input type="text" class="form-control" size="16" id="u_fn" name="u_fn" value="' . s($fn) . '" />';
     $patterns[]    = '/##lastname##/';
-    $replacement[] = '<label class="accesshide" for="u_ln">' . get_string('authorlastname', 'datafos') . '</label>' .
+    $replacement[] = '<label class="accesshide" for="u_ln">' . get_string('authorlastname', 'data') . '</label>' .
                      '<input type="text" class="form-control" size="16" id="u_ln" name="u_ln" value="' . s($ln) . '" />';
 
     if (core_tag_tag::is_enabled('mod_datafos', 'data_records_fos')) {
@@ -2702,7 +2702,7 @@ abstract class datafos_preset_importer {
                 }
             }
             if (!empty($missingfieldtypes)) {
-                echo $OUTPUT->notification(get_string('missingfieldtypeimport', 'datafos') . html_writer::alist($missingfieldtypes));
+                echo $OUTPUT->notification(get_string('missingfieldtypeimport', 'data') . html_writer::alist($missingfieldtypes));
             }
         }
 
@@ -2857,10 +2857,10 @@ function datafos_preset_path($course, $userid, $shortname) {
  * @param MoodleQuickForm $mform form passed by reference
  */
 function datafos_reset_course_form_definition(&$mform) {
-    $mform->addElement('header', 'dataheader', get_string('modulenameplural', 'datafos'));
+    $mform->addElement('header', 'dataheader', get_string('modulenameplural', 'data'));
     $mform->addElement('checkbox', 'reset_data', get_string('deleteallentries', 'data'));
 
-    $mform->addElement('checkbox', 'reset_data_notenrolled', get_string('deletenotenrolled', 'datafos'));
+    $mform->addElement('checkbox', 'reset_data_notenrolled', get_string('deletenotenrolled', 'data'));
     $mform->disabledIf('reset_data_notenrolled', 'reset_data', 'checked');
 
     $mform->addElement('checkbox', 'reset_data_ratings', get_string('deleteallratings'));
@@ -2869,7 +2869,7 @@ function datafos_reset_course_form_definition(&$mform) {
     $mform->addElement('checkbox', 'reset_data_comments', get_string('deleteallcomments'));
     $mform->disabledIf('reset_data_comments', 'reset_data', 'checked');
 
-    $mform->addElement('checkbox', 'reset_DATAFOS_TAGS', get_string('removealldatatags', 'datafos'));
+    $mform->addElement('checkbox', 'reset_DATAFOS_TAGS', get_string('removealldatatags', 'data'));
     $mform->disabledIf('reset_DATAFOS_TAGS', 'reset_data', 'checked');
 }
 
@@ -2917,7 +2917,7 @@ function datafos_reset_userdata($data) {
     require_once($CFG->libdir.'/filelib.php');
     require_once($CFG->dirroot.'/rating/lib.php');
 
-    $componentstr = get_string('modulenameplural', 'datafos');
+    $componentstr = get_string('modulenameplural', 'data');
     $status = array();
 
     $allrecordssql = "SELECT r.id
@@ -2964,7 +2964,7 @@ function datafos_reset_userdata($data) {
             // remove all grades from gradebook
             datafos_reset_gradebook($data->courseid);
         }
-        $status[] = array('component'=>$componentstr, 'item'=>get_string('deleteallentries', 'datafos'), 'error'=>false);
+        $status[] = array('component'=>$componentstr, 'item'=>get_string('deleteallentries', 'data'), 'error'=>false);
     }
 
     // remove entries by users not enrolled into course
@@ -3007,7 +3007,7 @@ function datafos_reset_userdata($data) {
             }
         }
         $rs->close();
-        $status[] = array('component'=>$componentstr, 'item'=>get_string('deletenotenrolled', 'datafos'), 'error'=>false);
+        $status[] = array('component'=>$componentstr, 'item'=>get_string('deletenotenrolled', 'data'), 'error'=>false);
     }
 
     // remove all ratings
@@ -3051,7 +3051,7 @@ function datafos_reset_userdata($data) {
 
             }
         }
-        $status[] = array('component' => $componentstr, 'item' => get_string('tagsdeleted', 'datafos'), 'error' => false);
+        $status[] = array('component' => $componentstr, 'item' => get_string('tagsdeleted', 'data'), 'error' => false);
     }
 
     // updating dates - shift may be negative too
@@ -3300,17 +3300,17 @@ function datafos_extend_navigation($navigation, $course, $module, $cm) {
     $canmanageentries = has_capability('mod/datafos:manageentries', context_module::instance($cm->id));
 
     if ($data->entriesleft = datafos_get_entries_left_to_add($data, $numentries, $canmanageentries)) {
-        $entriesnode = $navigation->add(get_string('entrieslefttoadd', 'datafos', $data));
+        $entriesnode = $navigation->add(get_string('entrieslefttoadd', 'data', $data));
         $entriesnode->add_class('note');
     }
 
-    $navigation->add(get_string('listview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance)));
+    $navigation->add(get_string('listview', 'data'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance)));
     if (!empty($rid)) {
-        $navigation->add(get_string('singleview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'rid'=>$rid)));
+        $navigation->add(get_string('singleview', 'data'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'rid'=>$rid)));
     } else {
-        $navigation->add(get_string('singleview', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'single')));
+        $navigation->add(get_string('singleview', 'data'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'single')));
     }
-    $navigation->add(get_string('search', 'datafos'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'asearch')));
+    $navigation->add(get_string('search', 'data'), new moodle_url('/mod/datafos/view.php', array('d'=>$cm->instance, 'mode'=>'asearch')));
 }
 
 /**
@@ -3330,9 +3330,9 @@ function datafos_extend_settings_navigation(settings_navigation $settings, navig
     // Took out participation list here!
     if (datafos_user_can_add_entry($data, $currentgroup, $groupmode, $settings->get_page()->cm->context)) {
         if (empty($editentry)) { //TODO: undefined
-            $addstring = get_string('add', 'datafos');
+            $addstring = get_string('add', 'data');
         } else {
-            $addstring = get_string('editentry', 'datafos');
+            $addstring = get_string('editentry', 'data');
         }
         $addentrynode = $datanode->add($addstring,
             new moodle_url('/mod/datafos/edit.php', array('d' => $settings->get_page()->cm->instance)));
@@ -3364,17 +3364,17 @@ function datafos_extend_settings_navigation(settings_navigation $settings, navig
             $defaultemplate = 'singletemplate';
         }
 
-        $datanode->add(get_string('presets', 'datafos'), new moodle_url('/mod/datafos/preset.php', array('d' => $data->id)));
+        $datanode->add(get_string('presets', 'data'), new moodle_url('/mod/datafos/preset.php', array('d' => $data->id)));
         $datanode->add(get_string('fields', 'data'),
             new moodle_url('/mod/datafos/field.php', array('d' => $data->id)));
-        $datanode->add(get_string('templates', 'datafos'),
+        $datanode->add(get_string('templates', 'data'),
             new moodle_url('/mod/datafos/templates.php', array('d' => $data->id)));
     }
 
     if (!empty($CFG->enablerssfeeds) && !empty($CFG->data_enablerssfeeds) && $data->rssarticles > 0) {
         require_once("$CFG->libdir/rsslib.php");
 
-        $string = get_string('rsstype', 'datafos');
+        $string = get_string('rsstype', 'data');
 
         $url = new moodle_url(rss_get_url($settings->get_page()->cm->context->id, $USER->id, 'mod_datafos', $data->id));
         $datanode->add($string, $url, settings_navigation::TYPE_SETTING, null, null, new pix_icon('i/rss', ''));
@@ -3565,7 +3565,7 @@ function datafos_comment_validate($comment_param) {
  * @param stdClass $currentcontext Current context of block
  */
 function datafos_page_type_list($pagetype, $parentcontext, $currentcontext) {
-    $module_pagetype = array('mod-datafos-*'=>get_string('page-mod-datafos-x', 'datafos'));
+    $module_pagetype = array('mod-datafos-*'=>get_string('page-mod-datafos-x', 'data'));
     return $module_pagetype;
 }
 
@@ -3972,7 +3972,7 @@ function datafos_process_submission(stdClass $mod, $fields, stdClass $datarecord
             }
             $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'datafos');*/
             if(count($result->generalnotifications)===0){
-                $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'datafos');
+                $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'data');
             }
             $requiredfieldsfilled = false;
         }
@@ -4012,7 +4012,7 @@ function datafos_process_submission(stdClass $mod, $fields, stdClass $datarecord
 
     if ($emptyform) {
         // The form is empty.
-        $result->generalnotifications[] = get_string('emptyaddform', 'datafos');
+        $result->generalnotifications[] = get_string('emptyaddform', 'data');
     }
 
     $result->validated = $requiredfieldsfilled && !$emptyform && $fieldsvalidated;
@@ -4262,7 +4262,7 @@ function mod_datafos_core_calendar_provide_event_action(calendar_event $event,
     $actionable = (empty($cm->customdata['timeavailablefrom']) || $cm->customdata['timeavailablefrom'] <= $now);
 
     return $factory->create_instance(
-        get_string('add', 'datafos'),
+        get_string('add', 'data'),
         new \moodle_url('/mod/datafos/view.php', array('id' => $cm->id)),
         1,
         $actionable
@@ -4330,7 +4330,7 @@ function mod_datafos_get_completion_active_rule_descriptions($cm) {
         switch ($key) {
             case 'completionentries':
                 if (!empty($val)) {
-                    $descriptions[] = get_string('completionentriesdesc', 'datafos', $val);
+                    $descriptions[] = get_string('completionentriesdesc', 'data', $val);
                 }
                 break;
             default:
@@ -4371,7 +4371,7 @@ function mod_datafos_core_calendar_get_valid_event_timestart_range(\calendar_eve
         if (!empty($instance->timeavailableto)) {
             $maxdate = [
                 $instance->timeavailableto,
-                get_string('openafterclose', 'datafos')
+                get_string('openafterclose', 'data')
             ];
         }
     } else if ($event->eventtype == DATAFOS_EVENT_TYPE_CLOSE) {
@@ -4380,7 +4380,7 @@ function mod_datafos_core_calendar_get_valid_event_timestart_range(\calendar_eve
         if (!empty($instance->timeavailablefrom)) {
             $mindate = [
                 $instance->timeavailablefrom,
-                get_string('closebeforeopen', 'datafos')
+                get_string('closebeforeopen', 'data')
             ];
         }
     }
@@ -4461,7 +4461,7 @@ function mod_datafos_core_calendar_event_timestart_updated(\calendar_event $even
  * @return lang_string The event type lang string.
  */
 function mod_datafos_core_calendar_get_event_action_string(string $eventtype): string {
-    $modulename = get_string('modulename', 'datafos');
+    $modulename = get_string('modulename', 'data');
 
     switch ($eventtype) {
         case DATAFOS_EVENT_TYPE_OPEN:
@@ -4474,5 +4474,5 @@ function mod_datafos_core_calendar_get_event_action_string(string $eventtype): s
             return get_string('requiresaction', 'calendar', $modulename);
     }
 
-    return get_string($identifier, 'datafos', $modulename);
+    return get_string($identifier, 'data', $modulename);
 }
