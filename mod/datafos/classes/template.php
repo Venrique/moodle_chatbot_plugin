@@ -818,7 +818,7 @@ class template {
             $actionmenu->add(new action_menu_link_secondary(
                 $showmoreurl,
                 null,
-                get_string('showmore', 'mod_datafos')
+                get_string('showmore', 'data')
             ));
         }
 
