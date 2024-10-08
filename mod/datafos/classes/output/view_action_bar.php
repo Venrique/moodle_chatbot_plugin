@@ -100,7 +100,7 @@ class view_action_bar implements templatable, renderable {
             $actionsselect->add(new \action_menu_link(
                 $exportentrieslink,
                 null,
-                get_string('exportentries', 'mod_datafos'),
+                get_string('exportentries', 'data'),
                 false
             ));
         }
