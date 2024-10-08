@@ -410,7 +410,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
 
         // Throw an exception if field type doen't exist. Anyway user should never access to edit a field with an unknown fieldtype.
         if ($this->type === 'unknown') {
-            throw new \moodle_exception(get_string('missingfieldtype', 'datafos', (object)['name' => $this->field->name]));
+            throw new \moodle_exception(get_string('missingfieldtype', 'data', (object)['name' => $this->field->name]));
         }
 
         echo $OUTPUT->box_start('generalbox boxaligncenter boxwidthwide');
@@ -431,7 +431,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
         $filepath = $CFG->dirroot.'/mod/datafos/field/'.$this->type.'/mod.html';
 
         if (!file_exists($filepath)) {
-            throw new \moodle_exception(get_string('missingfieldtype', 'datafos', (object)['name' => $this->field->name]));
+            throw new \moodle_exception(get_string('missingfieldtype', 'data', (object)['name' => $this->field->name]));
         } else {
             require_once($filepath);
         }
@@ -1362,7 +1362,7 @@ function datafos_user_outline($course, $user, $mod, $data) {
 
     if ($countrecords = $DB->count_records('data_records_fos', array('dataid'=>$data->id, 'userid'=>$user->id))) {
         $result = new stdClass();
-        $result->info = get_string('numrecords', 'datafos', $countrecords);
+        $result->info = get_string('numrecords', 'data', $countrecords);
         $lastrecord   = $DB->get_record_sql('SELECT id,timemodified FROM {data_records_fos}
                                               WHERE dataid = ? AND userid = ?
                                            ORDER BY timemodified DESC', array($data->id, $user->id), true);
@@ -1845,8 +1845,8 @@ function datafos_print_preference_form($data, $perpage, $search, $sort='', $orde
     $options = array();
     $options[DATAFOS_TIMEADDED]    = get_string('timeadded', 'data');
     $options[DATAFOS_TIMEMODIFIED] = get_string('timemodified', 'data');
-    //$options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'datafos');
-    //$options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'datafos');
+    //$options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'data');
+    //$options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'data');
     if ($data->approval and has_capability('mod/datafos:approve', $context)) {
         $options[DATAFOS_APPROVED] = get_string('approved', 'data');
     }
@@ -3970,7 +3970,7 @@ function datafos_process_submission(stdClass $mod, $fields, stdClass $datarecord
             /*if (!isset($result->fieldnotifications[$field->field->name])) {
                 $result->fieldnotifications[$field->field->name] = array();
             }
-            $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'datafos');*/
+            $result->fieldnotifications[$field->field->name][] = get_string('errormustsupplyvalue', 'data');*/
             if(count($result->generalnotifications)===0){
                 $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'data');
             }
@@ -3990,9 +3990,9 @@ function datafos_process_submission(stdClass $mod, $fields, stdClass $datarecord
         /*if (!isset($result->fieldnotifications["File EN"])) {
             $result->fieldnotifications["File EN"] = array();
         }
-        $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'datafos');*/
+        $result->fieldnotifications["File EN"][] = get_string('errormustsupplyvalue', 'data');*/
       /*  if(count($result->generalnotifications)===0){
-            $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'datafos');
+            $result->generalnotifications[] = get_string('errormustsupplyvaluegeneral', 'data');
         }
         $requiredfieldsfilled = false;
      }
@@ -4001,7 +4001,7 @@ function datafos_process_submission(stdClass $mod, $fields, stdClass $datarecord
         if (!isset($result->fieldnotifications["Needs1"])) {
             $result->fieldnotifications["Needs1"] = array();
         }
-        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'datafos');
+        $result->fieldnotifications["Needs1"][] = get_string('errormustsupplyvalue', 'data');
         if(count($result->generalnotifications)===0){
             $result->generalnotifications[] = "Please check all the form fields and make to not leave any mandatory field blank";
         }
