@@ -512,7 +512,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
             $SESSION->lang = $USER->lang;
         }
 
-       /* //KTT CUSTOMIZATION
+        //KTT CUSTOMIZATION
         if ($this->field->name === "Category"){
             switch ($content->content) {
                 case "General tool":
@@ -528,7 +528,7 @@ class datafos_field_base {     // Base class for Database Field Types (see field
                     $content->content = get_string('narrativecategory', 'data');
                     break;
             }
-        }*/
+        }
 
         $str = format_text($content->content, $content->content1, $options);
         return $str;
