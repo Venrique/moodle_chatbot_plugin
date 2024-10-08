@@ -255,9 +255,9 @@ class template {
         return [
             'edit' => new pix_icon('t/editinline', get_string('edit'), '', $attrs),
             'delete' => new pix_icon('t/delete', get_string('delete'), '', $attrs),
-            'more' => new pix_icon('t/preview', get_string('more', 'datafos'), '', $attrs),
-            'approve' => new pix_icon('t/approve', get_string('approve', 'datafos'), '', $attrs),
-            'disapprove' => new pix_icon('t/block', get_string('disapprove', 'datafos'), '', $attrs),
+            'more' => new pix_icon('t/preview', get_string('more', 'data'), '', $attrs),
+            'approve' => new pix_icon('t/approve', get_string('approve', 'data'), '', $attrs),
+            'disapprove' => new pix_icon('t/block', get_string('disapprove', 'data'), '', $attrs),
         ];
     }
 
@@ -679,7 +679,7 @@ class template {
         if (!$this->instance->approval) {
             return '';
         }
-        return ($entry->approved) ? '' : html_writer::div(get_string('notapproved', 'datafos'), 'mod-datafos-approval-status-badge');
+        return ($entry->approved) ? '' : html_writer::div(get_string('notapproved', 'data'), 'mod-datafos-approval-status-badge');
     }
 
     /**

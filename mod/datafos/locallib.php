@@ -399,7 +399,7 @@ class datafos_portfolio_caller extends portfolio_module_caller_base {
         if (!$this->has_export_config()) {
             return;
         }
-        $mform->addElement('selectyesno', 'mineonly', get_string('exportownentries', 'datafos', (object)array('mine' => $this->minecount, 'all' => count($this->records))));
+        $mform->addElement('selectyesno', 'mineonly', get_string('exportownentries', 'data', (object)array('mine' => $this->minecount, 'all' => count($this->records))));
         $mform->setDefault('mineonly', 1);
     }
 
@@ -621,7 +621,7 @@ function datafos_set_events($datafos) {
             array('modulename' => 'datafos', 'instance' => $datafos->id, 'eventtype' => $event->eventtype))) {
         if ($datafos->timeavailablefrom > 0) {
             // Calendar event exists so update it.
-            $event->name         = get_string('calendarstart', 'datafos', $datafos->name);
+            $event->name         = get_string('calendarstart', 'data', $datafos->name);
             $event->description  = format_module_intro('datafos', $datafos, $datafos->coursemodule, false);
             $event->format       = FORMAT_HTML;
             $event->timestart    = $datafos->timeavailablefrom;
@@ -638,7 +638,7 @@ function datafos_set_events($datafos) {
     } else {
         // Event doesn't exist so create one.
         if (isset($datafos->timeavailablefrom) && $datafos->timeavailablefrom > 0) {
-            $event->name         = get_string('calendarstart', 'datafos', $datafos->name);
+            $event->name         = get_string('calendarstart', 'data', $datafos->name);
             $event->description  = format_module_intro('datafos', $datafos, $datafos->coursemodule, false);
             $event->format       = FORMAT_HTML;
             $event->courseid     = $datafos->course;
@@ -662,7 +662,7 @@ function datafos_set_events($datafos) {
             array('modulename' => 'datafos', 'instance' => $datafos->id, 'eventtype' => $event->eventtype))) {
         if ($datafos->timeavailableto > 0) {
             // Calendar event exists so update it.
-            $event->name         = get_string('calendarend', 'datafos', $datafos->name);
+            $event->name         = get_string('calendarend', 'data', $datafos->name);
             $event->description  = format_module_intro('datafos', $datafos, $datafos->coursemodule, false);
             $event->format       = FORMAT_HTML;
             $event->timestart    = $datafos->timeavailableto;
@@ -679,7 +679,7 @@ function datafos_set_events($datafos) {
     } else {
         // Event doesn't exist so create one.
         if (isset($datafos->timeavailableto) && $datafos->timeavailableto > 0) {
-            $event->name         = get_string('calendarend', 'datafos', $datafos->name);
+            $event->name         = get_string('calendarend', 'data', $datafos->name);
             $event->description  = format_module_intro('datafos', $datafos, $datafos->coursemodule, false);
             $event->format       = FORMAT_HTML;
             $event->courseid     = $datafos->course;

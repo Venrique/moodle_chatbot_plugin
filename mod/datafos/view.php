@@ -235,7 +235,7 @@ $titleparts = [
 ];
 if (!empty(trim($search))) {
     // Indicate search results on page title when searching.
-    array_unshift($titleparts, get_string('searchresults', 'datafos', s($search)));
+    array_unshift($titleparts, get_string('searchresults', 'data', s($search)));
 } else if (!empty($delete) && empty($confirm)) {
     // Displaying the delete confirmation page.
     array_unshift($titleparts, get_string('deleteentry', 'data'));
@@ -290,7 +290,7 @@ if ($data->intro and empty($page) and empty($record) and $mode != 'single') {
 if ($delete && confirm_sesskey() && (datafos_user_can_manage_entry($delete, $data, $context))) {
     if ($confirm) {
         if (datafos_delete_record($delete, $data, $course->id, $cm->id)) {
-            echo $OUTPUT->notification(get_string('recorddeleted','datafos'), 'notifysuccess');
+            echo $OUTPUT->notification(get_string('recorddeleted','data'), 'notifysuccess');
         }
     } else {   // Print a confirmation page
         $userfieldsapi = \core_user\fields::for_userpic()->excluding('id');
@@ -307,7 +307,7 @@ if ($delete && confirm_sesskey() && (datafos_user_can_manage_entry($delete, $dat
                     get_string('delete'), 'post',
                     single_button::BUTTON_DANGER
                 );
-                echo $OUTPUT->confirm(get_string('confirmdeleterecord','datafos'),
+                echo $OUTPUT->confirm(get_string('confirmdeleterecord','data'),
                         $deletebutton, 'view.php?d='.$data->id);
 
                 $records[] = $deleterecord;
@@ -391,14 +391,14 @@ if ($showactivity) {
         $numentries = datafos_numentries($data);
     /// Check the number of entries required against the number of entries already made (doesn't apply to teachers)
         if ($data->entriesleft = datafos_get_entries_left_to_add($data, $numentries, $canmanageentries)) {
-            $strentrieslefttoadd = get_string('entrieslefttoadd', 'datafos', $data);
+            $strentrieslefttoadd = get_string('entrieslefttoadd', 'data', $data);
             echo $OUTPUT->notification($strentrieslefttoadd);
         }
 
     /// Check the number of entries required before to view other participant's entries against the number of entries already made (doesn't apply to teachers)
         $requiredentries_allowed = true;
         if ($data->entrieslefttoview = datafos_get_entries_left_to_view($data, $numentries, $canmanageentries)) {
-            $strentrieslefttoaddtoview = get_string('entrieslefttoaddtoview', 'datafos', $data);
+            $strentrieslefttoaddtoview = get_string('entrieslefttoaddtoview', 'data', $data);
             echo $OUTPUT->notification($strentrieslefttoaddtoview);
             $requiredentries_allowed = false;
         }
@@ -436,7 +436,7 @@ if ($showactivity) {
                 $a->max = $maxcount;
                 $a->reseturl = "view.php?id=$cm->id&amp;mode=$mode&amp;search=&amp;advanced=0";
                 echo $OUTPUT->box_start();
-                echo get_string('foundnorecords', 'datafos', $a);
+                echo get_string('foundnorecords', 'data', $a);
                 echo $OUTPUT->box_end();
             } else {
                 echo $OUTPUT->box_start();
@@ -455,7 +455,7 @@ if ($showactivity) {
                 $a->max = $maxcount;
                 $a->reseturl = "view.php?id=$cm->id&amp;mode=$mode&amp;search=&amp;advanced=0";
                 echo $OUTPUT->box_start();
-                echo get_string('foundrecords', 'datafos', $a);
+                echo get_string('foundrecords', 'data', $a);
                 echo $OUTPUT->box_end();
             }
 

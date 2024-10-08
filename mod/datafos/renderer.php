@@ -93,14 +93,14 @@ class mod_datafos_renderer extends plugin_renderer_base {
                     if ($currentfield->name == $newfield->name) {
                         $row[1] .= html_writer::tag(
                             'option',
-                            get_string('mapexistingfield', 'datafos', $currentfield->name),
+                            get_string('mapexistingfield', 'data', $currentfield->name),
                             ['value' => $cid, 'selected' => 'selected']
                         );
                         $selected = true;
                     } else {
                         $row[1] .= html_writer::tag(
                             'option',
-                            get_string('mapexistingfield', 'datafos', $currentfield->name),
+                            get_string('mapexistingfield', 'data', $currentfield->name),
                             ['value' => $cid]
                         );
                     }

@@ -163,8 +163,8 @@ class csv_entries_importer extends entries_importer {
                     }
 
                     if (core_tag_tag::is_enabled('mod_datafos', 'data_records_fos') &&
-                        isset($fieldnames[get_string('tags', 'datafos')])) {
-                        $columnindex = $fieldnames[get_string('tags', 'datafos')];
+                        isset($fieldnames[get_string('tags', 'data')])) {
+                        $columnindex = $fieldnames[get_string('tags', 'data')];
                         $rawtags = $record[$columnindex];
                         $tags = explode(',', $rawtags);
                         foreach ($tags as $tag) {
@@ -178,7 +178,7 @@ class csv_entries_importer extends entries_importer {
 
                     $this->addedrecordsmessages[] = get_string('added', 'moodle',
                             count($this->addedrecordsmessages) + 1)
-                        . ". " . get_string('entry', 'datafos')
+                        . ". " . get_string('entry', 'data')
                         . " (ID $recordid)\n";
                 }
             }

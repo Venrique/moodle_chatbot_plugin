@@ -34,12 +34,12 @@
 
     $row = array();
 
-    $row[] = new tabobject('list', new moodle_url('/mod/datafos/view.php', array('d' => $data->id)), get_string('listview','datafos'));
+    $row[] = new tabobject('list', new moodle_url('/mod/datafos/view.php', array('d' => $data->id)), get_string('listview','data'));
 
     if (isset($record)) {
-        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'rid' => $record->id)), get_string('singleview','datafos'));
+        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'rid' => $record->id)), get_string('singleview','data'));
     } else {
-        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'single')), get_string('singleview','datafos'));
+        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'single')), get_string('singleview','data'));
     }
 
     // Add an advanced search tab.
@@ -68,7 +68,7 @@
             }
 
             $templatestab = new tabobject('templates', new moodle_url('/mod/datafos/templates.php', array('d' => $data->id, 'mode' => $defaultemplate)),
-                         get_string('templates','datafos'));
+                         get_string('templates','data'));
             $row[] = $templatestab;
             $row[] = new tabobject('fields', new moodle_url('/mod/datafos/field.php', array('d' => $data->id)),
                          get_string('fields','data'));
