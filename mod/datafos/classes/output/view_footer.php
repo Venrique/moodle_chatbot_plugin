@@ -145,7 +145,7 @@ class view_footer extends sticky_footer {
             );
             $addentrybutton = new action_link(
                 $addentrylink,
-                get_string('add', 'mod_datafos'),
+                get_string('add', 'data'),
                 null,
                 ['class' => 'btn btn-primary mx-1', 'role' => 'button']
             );
