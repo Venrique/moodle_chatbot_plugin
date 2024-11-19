@@ -47,8 +47,8 @@ $event->add_record_snapshot('course', $course);
 $event->trigger();
 
 $strname = get_string('name');
-$strdata = get_string('modulename','datafos');
-$strdataplural  = get_string('modulenameplural','datafos');
+$strdata = get_string('modulename', 'data');
+$strdataplural  = get_string('modulenameplural', 'data');
 
 $PAGE->navbar->add($strdata, new moodle_url('/mod/datafos/index.php', array('id'=>$course->id)));
 $titleparts = [
@@ -69,8 +69,8 @@ $usesections = course_format_uses_sections($course->format);
 $timenow  = time();
 $strname  = get_string('name');
 $strdescription = get_string("description");
-$strentries = get_string('entries', 'datafos');
-$strnumnotapproved = get_string('numnotapproved', 'datafos');
+$strentries = get_string('entries', 'data');
+$strnumnotapproved = get_string('numnotapproved', 'data');
 
 $table = new html_table();
 

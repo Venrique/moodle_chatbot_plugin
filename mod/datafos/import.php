@@ -76,7 +76,7 @@ if ($form->is_cancelled()) {
 }
 
 /// Print the page header
-$pagename = get_string('uploadrecords', 'datafos');
+$pagename = get_string('uploadrecords', 'data');
 $PAGE->navbar->add($pagename);
 $PAGE->add_body_class('mediumwidth');
 $titleparts = [
@@ -102,7 +102,7 @@ if ($formdata = $form->get_data()) {
     $importer = new \mod_datafos\local\importer\csv_entries_importer($uploadedfilepath, $form->get_new_filename('recordsfile'));
 
     if (!$importer->get_data_file_content()) {
-        echo $OUTPUT->notification(get_string('errordatafilenotfound', 'datafos'),
+        echo $OUTPUT->notification(get_string('errordatafilenotfound', 'data'),
             \core\output\notification::NOTIFY_ERROR);
     } else {
         $importer->import_csv($cm, $data, $formdata->encoding, $formdata->fielddelimiter);
@@ -111,10 +111,10 @@ if ($formdata = $form->get_data()) {
         $addedrecordsmessages = $importer->get_added_records_messages();
         echo html_writer::div(implode('<br/>', $addedrecordsmessages));
         if (count($addedrecordsmessages) > 0) {
-            echo $OUTPUT->notification(count($addedrecordsmessages) . ' ' . get_string('recordssaved', 'datafos'),
+            echo $OUTPUT->notification(count($addedrecordsmessages) . ' ' . get_string('recordssaved', 'data'),
                 \core\output\notification::NOTIFY_SUCCESS);
         } else {
-            echo $OUTPUT->notification(get_string('recordsnotsaved', 'datafos'),
+            echo $OUTPUT->notification(get_string('recordsnotsaved', 'data'),
                 \core\output\notification::NOTIFY_ERROR);
         }
     }

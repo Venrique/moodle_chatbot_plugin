@@ -168,7 +168,7 @@ function data_latlong_kml_get_item_name($content, $field) {
         $name = $content->content . ', ' . $content->content1;
     }
     if($name=='') { // Done this way so that "item #" is the default that catches any problems
-        $name = get_string('entry', 'datafos') . " #$content->recordid";
+        $name = get_string('entry', 'data') . " #$content->recordid";
     }
 
 

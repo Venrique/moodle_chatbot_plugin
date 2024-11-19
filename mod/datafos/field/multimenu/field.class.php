@@ -313,7 +313,7 @@ class datafos_field_multimenu extends datafos_field_base {
         $str .= '</select>';
 
         $str .= html_writer::checkbox('f_'.$this->field->id.'_allreq', null, $allrequired,
-            get_string('selectedrequired', 'datafos'), array('class' => 'mr-1'));
+            get_string('selectedrequired', 'data'), array('class' => 'mr-1'));
 
         return $str;
 

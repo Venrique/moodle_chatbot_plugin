@@ -73,7 +73,7 @@ $url = new moodle_url('/mod/datafos/preset.php', array('d' => $data->id));
 $PAGE->add_body_class('mediumwidth');
 $PAGE->set_url($url);
 $titleparts = [
-    get_string('presets', 'datafos'),
+    get_string('presets', 'data'),
     format_string($cm->name),
     format_string($course->fullname),
 ];
@@ -124,7 +124,7 @@ if ($action == 'importzip') {
     $importer = new preset_upload_importer($manager, $CFG->tempdir . $filepath);
     if ($importer->needs_mapping()) {
         echo $OUTPUT->header();
-        echo $OUTPUT->heading(get_string('fieldmappings', 'datafos'), 2, 'mb-4');
+        echo $OUTPUT->heading(get_string('fieldmappings', 'data'), 2, 'mb-4');
         echo $renderer->importing_preset($data, $importer);
         echo $OUTPUT->footer();
         exit(0);
@@ -153,7 +153,7 @@ if ($action === 'preview') {
     ]);
     $PAGE->set_url($url);
     $titleparts = [
-        get_string('preview', 'datafos', $preset->name),
+        get_string('preview', 'data', $preset->name),
         format_string($cm->name),
         format_string($course->fullname),
     ];

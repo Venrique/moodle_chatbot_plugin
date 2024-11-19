@@ -32,18 +32,18 @@ class mod_datafos_export_form extends moodleform {
 
     function definition() {
         $mform =& $this->_form;
-        $mform->addElement('header', 'exportformat', get_string('chooseexportformat', 'datafos'));
+        $mform->addElement('header', 'exportformat', get_string('chooseexportformat', 'data'));
 
         $optionattrs = ['class' => 'mt-1 mb-1'];
 
         // Export format type radio group.
         $typesarray = array();
-        $typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('csvwithselecteddelimiter', 'datafos'), 'csv',
+        $typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('csvwithselecteddelimiter', 'data'), 'csv',
             $optionattrs);
         // Temporarily commenting out Excel export option. See MDL-19864.
-        //$typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('excel', 'datafos'), 'xls');
-        $typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('ods', 'datafos'), 'ods', $optionattrs);
-        $mform->addGroup($typesarray, 'exportar', get_string('exportformat', 'datafos'), null, false);
+        //$typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('excel', 'data'), 'xls');
+        $typesarray[] = $mform->createElement('radio', 'exporttype', null, get_string('ods', 'data'), 'ods', $optionattrs);
+        $mform->addGroup($typesarray, 'exportar', get_string('exportformat', 'data'), null, false);
         $mform->addRule('exportar', null, 'required');
         $mform->setDefault('exporttype', 'csv');
 
@@ -65,13 +65,13 @@ class mod_datafos_export_form extends moodleform {
         }
 
         // Fields to be exported.
-        $mform->addElement('header', 'exportfieldsheader', get_string('chooseexportfields', 'datafos'));
+        $mform->addElement('header', 'exportfieldsheader', get_string('chooseexportfields', 'data'));
         $mform->setExpanded('exportfieldsheader');
         $numfieldsthatcanbeselected = 0;
         $exportfields = [];
         $unsupportedfields = [];
         foreach ($this->_datafields as $field) {
-            $label = get_string('fieldnametype', 'datafos', (object)['name' => $field->field->name, 'type' => $field->name()]);
+            $label = get_string('fieldnametype', 'data', (object)['name' => $field->field->name, 'type' => $field->name()]);
             if ($field->text_export_supported()) {
                 $numfieldsthatcanbeselected++;
                 $exportfields[] = $mform->createElement('advcheckbox', 'field_' . $field->field->id, '', $label,
@@ -81,7 +81,7 @@ class mod_datafos_export_form extends moodleform {
                 $unsupportedfields[] = $label;
             }
         }
-        $mform->addGroup($exportfields, 'exportfields', get_string('selectfields', 'datafos'), ['<br>'], false);
+        $mform->addGroup($exportfields, 'exportfields', get_string('selectfields', 'data'), ['<br>'], false);
 
         if ($numfieldsthatcanbeselected > 1) {
             $this->add_checkbox_controller(1, null, null, 1);
@@ -89,34 +89,34 @@ class mod_datafos_export_form extends moodleform {
 
         // List fields that cannot be exported.
         if (!empty($unsupportedfields)) {
-            $unsupportedfieldslist = html_writer::tag('p', get_string('unsupportedfieldslist', 'datafos'), ['class' => 'mt-1']);
+            $unsupportedfieldslist = html_writer::tag('p', get_string('unsupportedfieldslist', 'data'), ['class' => 'mt-1']);
             $unsupportedfieldslist .= html_writer::alist($unsupportedfields);
-            $mform->addElement('static', 'unsupportedfields', get_string('unsupportedfields', 'datafos'), $unsupportedfieldslist);
+            $mform->addElement('static', 'unsupportedfields', get_string('unsupportedfields', 'data'), $unsupportedfieldslist);
         }
 
         // Export options.
-        $mform->addElement('header', 'exportoptionsheader', get_string('exportoptions', 'datafos'));
+        $mform->addElement('header', 'exportoptionsheader', get_string('exportoptions', 'data'));
         $mform->setExpanded('exportoptionsheader');
         $exportoptions = [];
         if (core_tag_tag::is_enabled('mod_datafos', 'data_records_fos')) {
-            $exportoptions[] = $mform->createElement('checkbox', 'exporttags', get_string('includetags', 'datafos'), '', $optionattrs);
+            $exportoptions[] = $mform->createElement('checkbox', 'exporttags', get_string('includetags', 'data'), '', $optionattrs);
             $mform->setDefault('exporttags', 1);
         }
         $context = context_module::instance($this->_cm->id);
         if (has_capability('mod/datafos:exportuserinfo', $context)) {
-            $exportoptions[] = $mform->createElement('checkbox', 'exportuser', get_string('includeuserdetails', 'datafos'), '',
+            $exportoptions[] = $mform->createElement('checkbox', 'exportuser', get_string('includeuserdetails', 'data'), '',
                 $optionattrs);
         }
-        $exportoptions[] = $mform->createElement('checkbox', 'exporttime', get_string('includetime', 'datafos'), '', $optionattrs);
+        $exportoptions[] = $mform->createElement('checkbox', 'exporttime', get_string('includetime', 'data'), '', $optionattrs);
         if ($this->_data->approval) {
-            $exportoptions[] = $mform->createElement('checkbox', 'exportapproval', get_string('includeapproval', 'datafos'), '',
+            $exportoptions[] = $mform->createElement('checkbox', 'exportapproval', get_string('includeapproval', 'data'), '',
                 $optionattrs);
         }
-        $exportoptions[] = $mform->createElement('checkbox', 'includefiles', get_string('includefiles', 'datafos'), '', $optionattrs);
+        $exportoptions[] = $mform->createElement('checkbox', 'includefiles', get_string('includefiles', 'data'), '', $optionattrs);
         $mform->setDefault('includefiles', 1);
-        $mform->addGroup($exportoptions, 'exportoptions', get_string('selectexportoptions', 'datafos'), ['<br>'], false);
+        $mform->addGroup($exportoptions, 'exportoptions', get_string('selectexportoptions', 'data'), ['<br>'], false);
 
-        $this->add_action_buttons(true, get_string('exportentries', 'datafos'));
+        $this->add_action_buttons(true, get_string('exportentries', 'data'));
     }
 
 }
