@@ -90,11 +90,11 @@ if (isloggedin()) {
         'headercontent' => $headercontent,
         'addblockbutton' => $addblockbutton,
         'contentcategory' => $OUTPUT->main_content(),
-        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_publicSpace'),
+        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_publicspace'),
         'modules' => $modules
 
     ];
-    echo $OUTPUT->render_from_template('theme_fos_publicSpace/coursecategory', $templatecontext);
+    echo $OUTPUT->render_from_template('theme_fos_publicspace/coursecategory', $templatecontext);
 } else {
     redirect(get_login_url());
 }

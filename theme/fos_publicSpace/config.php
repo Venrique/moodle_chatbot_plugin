@@ -2,7 +2,7 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     theme_fos_publicSpace
+ * @package     theme_fos_publicspace
  * @copyright   2024 digital Mood  <findme@digital-mood.eu>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

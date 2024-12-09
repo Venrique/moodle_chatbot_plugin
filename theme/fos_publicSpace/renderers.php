@@ -4,7 +4,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/course/renderer.php');
 
-class theme_fos_publicSpace_core_course_renderer extends core_course_renderer
+class theme_fos_publicspace_core_course_renderer extends core_course_renderer
 {
 
 /**
@@ -51,7 +51,7 @@ class theme_fos_publicSpace_core_course_renderer extends core_course_renderer
         $content .= $this->course_name($chelper, $course);
 
         $content .= html_writer::start_tag('div', array('class' => 'ml-auto small text-muted'));
-        $content .= get_string('available', 'theme_fos_publicSpace') . ' ' . date('d-M-y',$course->startdate);
+        $content .= get_string('available', 'theme_fos_publicspace') . ' ' . date('d-M-y',$course->startdate);
         $content .= ($course->enddate > 0)?" to ". date('d-M-y',$course->enddate):'';
         $content .= html_writer::end_tag('div');
 
@@ -72,7 +72,7 @@ class theme_fos_publicSpace_core_course_renderer extends core_course_renderer
 
 require_once($CFG->dirroot .'/mod/assign/classes/output/renderer.php');
 
-class theme_fos_publicSpace_mod_assign_renderer extends mod_assign\output\renderer 
+class theme_fos_publicspace_mod_assign_renderer extends mod_assign\output\renderer 
 {
 
     /**
@@ -92,7 +92,7 @@ class theme_fos_publicSpace_mod_assign_renderer extends mod_assign\output\render
         $o .= "<div class='alert alert-info'>TEST</div>";
         // btn custom
         $o .= \html_writer::start_tag('button', array('type'=>'button','class' => 'btn btn-primary bnt-custom-exp','data-toggle'=>'collapse','data-target'=>'#gscollapse','aria-controls'=>'gscollapse'));
-        $o .= get_string('displaysummary', 'theme_fos_publicSpace');
+        $o .= get_string('displaysummary', 'theme_fos_publicspace');
         $o .= \html_writer::end_tag('button');
         //-
         $o .= \html_writer::start_tag('div', array('class' => 'collapse','id'=>'gscollapse'));
