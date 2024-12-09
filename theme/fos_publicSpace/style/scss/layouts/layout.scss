@@ -1,0 +1,56 @@
+.layout {
+    &.fullscreen {
+        background-color: $body-bg;
+    }
+    
+}
+
+#page.drawers {
+    .main-inner {
+        background-color: $body-bg;
+    }
+}
+
+.drawer-toggles {
+
+    .drawer-toggler {
+
+        .btn {
+            padding: 16px;
+            .icon {
+            }
+            &:focus {
+
+            }
+
+        }
+    }
+
+    .drawer-left-toggle {
+
+        .btn {
+
+            &:hover {
+                padding-left: 20px;
+            }
+        }
+    }
+
+    .drawer-right-toggle {
+
+        .btn {
+
+            &:hover {
+            }
+        }
+    }
+}
+
+
+  .pw-custom {
+      background-color: $body-bg!important;
+  }
+  
+  .header-maxwidth{
+    max-width: 100%!important;
+  }

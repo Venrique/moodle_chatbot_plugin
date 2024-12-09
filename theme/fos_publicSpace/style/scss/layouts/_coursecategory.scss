@@ -1,0 +1,93 @@
+.grid-category {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1281px;
+  margin: 0 auto 50px;
+  grid-template-rows: 230px 1fr;
+  grid-auto-columns: 1fr;
+  gap: 21px 0px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "img_header"
+    "cta-btns"
+    "content-category";
+  .img_header {
+    grid-area: img_header;
+    background-image: url('data:image/svg+xml,<svg width="1281" height="230" viewBox="0 0 1281 230" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1281" height="230" fill="%2360AD8F"/><path d="M257 115C257 51.4873 308.487 0 372 0H1281V230H372C308.487 230 257 178.513 257 115V115Z" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .grid-header_content {
+      display: grid;
+      grid-template-columns: 257px 1fr;
+      grid-template-rows: 230px;
+      grid-auto-columns: 1fr;
+      gap: 21px 0px;
+      grid-auto-flow: row;
+      justify-content: stretch;
+      align-content: stretch;
+      justify-items: stretch;
+      align-items: stretch;
+      grid-template-areas: "logos title";
+      .logos {
+        grid-area: logos;
+        padding: 40px;
+        .logo {
+          height: 150px;
+          background-repeat: no-repeat;
+          background-image: url('data:image/svg+xml,<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_540_794)"><path d="M104.616 56.2792C96.8903 53.2956 90.2908 53.3611 87.0381 53.4265C81.6677 53.5317 77.2358 54.4902 74.1326 55.389L54.5197 35.397C57.1522 34.2992 60.8617 33.0449 65.432 32.4078C67.7269 32.0864 73.4987 31.4663 80.6518 32.9368C88.987 34.6518 94.6784 38.2811 97.8702 40.3573C111.136 48.9867 118.255 61.3732 121.48 68.04C118.538 64.7493 113.021 59.5245 104.616 56.2792Z" fill="%23F06043"/><path d="M89.4986 85.2396C100.569 85.2396 109.571 94.4179 109.571 105.701C109.571 116.981 100.569 126.159 89.4986 126.159C78.4312 126.159 69.4261 116.981 69.4261 105.701C69.4261 94.4179 78.4312 85.2396 89.4986 85.2396ZM89.4986 63.3989C66.5804 63.3989 48 82.3385 48 105.701C48 129.06 66.5804 148 89.4986 148C112.42 148 131 129.06 131 105.701C131 82.3385 112.42 63.3989 89.4986 63.3989Z" fill="%23F9F2EA"/></g><defs><clipPath id="clip0_540_794"><rect width="83" height="116" fill="white" transform="translate(48 32)"/></clipPath></defs></svg>');
+          background-size: cover;
+        }
+      }
+
+      .title {
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        grid-area: title;
+        color: $primary;
+        font-size: 2.7rem;
+      }
+    }
+  }
+
+  .cta-btns {
+    grid-area: cta-btns;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-auto-columns: 1fr;
+    gap: 0px 32px;
+    grid-auto-flow: row;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    margin: 10px 0;
+    grid-template-areas: "cta-left cta-right";
+    .cta-left {
+      justify-self: end;
+      align-self: center;
+      grid-area: cta-left;
+    }
+
+    .cta-right {
+      justify-self: start;
+      align-self: center;
+      grid-area: cta-right;
+    }
+  }
+
+  .content-category {
+    grid-area: content-category;
+  }
+}
+
+.collapsible-actions {
+  visibility: hidden;
+}
+
+.course_category_tree{
+  display: none;
+}
