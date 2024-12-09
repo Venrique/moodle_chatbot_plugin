@@ -366,24 +366,23 @@ a#action-menu-toggle-1 {
   }
 }
 
+
 /* Glossary activity*/
-.entrybox th {
-	border: none !important;
-}
 
-table.entrylowersection {
+table.glossarycategoryheader { 
+  th {
 	border: none !important;
 	padding: 0 0;
-	
-} 
-.entrylowersection td {
-	border: none !important;
-	margin: 0 0;
-	padding: 0 0;
-	
+}
 }
 
-.glossarypost.dictionary td {
-	border: none !important;
-	
+.glossarypost tbody tr {
+  th {
+  border: none !important;
+  padding: 0;
+  }
+  td {
+    border: none !important;
+    padding: 0;
+}
 }

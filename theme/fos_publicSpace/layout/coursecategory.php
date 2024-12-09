@@ -1,7 +1,7 @@
 <?php
 global $USER, $DB;
 
-if (isloggedin() && !isguestuser()) {
+if (isloggedin()) {
     defined('MOODLE_INTERNAL') || die();
 
     require_once($CFG->libdir . '/behat/lib.php');
@@ -90,11 +90,11 @@ if (isloggedin() && !isguestuser()) {
         'headercontent' => $headercontent,
         'addblockbutton' => $addblockbutton,
         'contentcategory' => $OUTPUT->main_content(),
-        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_space2'),
+        'logofooter' => $OUTPUT->image_url('FOSlogo-footer', 'theme_fos_publicSpace'),
         'modules' => $modules
 
     ];
-    echo $OUTPUT->render_from_template('theme_fos_space2/coursecategory', $templatecontext);
+    echo $OUTPUT->render_from_template('theme_fos_publicSpace/coursecategory', $templatecontext);
 } else {
     redirect(get_login_url());
 }

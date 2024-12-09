@@ -26,8 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $bodyattributes = $OUTPUT->body_attributes();
 
-$showlogintext = (get_config('theme_fos_space2','showlogintext') == 1)?1:null;
-$logintext =  get_config('theme_fos_space2','logintext');
+$showlogintext = (get_config('theme_fos_publicSpace','showlogintext') == 1)?1:null;
+$logintext =  get_config('theme_fos_publicSpace','logintext');
 
 
 $templatecontext = [
