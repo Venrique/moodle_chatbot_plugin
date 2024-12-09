@@ -6589,6 +6589,14 @@ table.glossarycategoryheader th {
   padding: 0;
 }
 
+.tiles .phototile .photo-tile-text h3 {
+  color: #fff !important;
+}
+
+.course-content .tiles .phototile .photo-tile-text h3 {
+  color: #fff !important;
+}
+
 div.mod-datafos-input div.editor_atto_toolbar {
   display: none;
 }
