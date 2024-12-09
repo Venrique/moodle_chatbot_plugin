@@ -20,5 +20,5 @@ $string["PrivacyPolicy"] = "Política de Privacidade";
 $string["TermsofUse"] = "Termos de uso";
 $string["textfooter"] = "Ao acessar este sistema de gerenciamento de aprendizagem, você concorda em cumprir os Termos e Condições de Uso. Isto inclui garantir que este seja um espaço livre de abuso, discriminação e material ofensivo, bem como um site onde a confidencialidade seja respeitada e as opiniões pessoais expressas não sejam compartilhadas externamente.";
 
-$string["Community"] = "Comunidade";
-$string["KnowledgeSharing"] = "Compartilhamento de conhecimento";
+//$string["Community"] = "Comunidade";
+//$string["KnowledgeSharing"] = "Compartilhamento de conhecimento";
