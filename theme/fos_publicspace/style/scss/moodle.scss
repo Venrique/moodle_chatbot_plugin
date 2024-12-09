@@ -1,0 +1,388 @@
+// -------------------------------
+// Custom
+@import "base/mixins";
+@import "base/variables";
+@import "base/typography";
+@import "base/images";
+
+@import "layouts/footer";
+@import "layouts/coursecategory";
+@import "layouts/addentry";
+@import "layouts/singleview";
+@import "layouts/listview";
+@import "layouts/wiki";
+
+@import "components/navBar";
+@import "components/buttons";
+@import "components/table";
+
+@import "components/bootstrap/card";
+
+@import "components/moodle/core";
+@import "components/moodle/variables";
+@import "components/moodle/blocks";
+@import "components/moodle/drawer.scss";
+@import "components/moodle/filemanager";
+@import "components/moodle/advancedsearch";
+
+
+//@import "components/moodle/search";
+
+@import "layouts/layout.scss";
+
+.coursesearchbox {
+  padding      : 0.5rem;
+  border       : 1px solid $primary;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.adress span,
+.contact span,
+.social span {
+  color         : #fff;
+  font-weight   : 800;
+  padding-bottom: 10px;
+  margin-bottom : 20px;
+  display       : block;
+  text-transform: uppercase;
+  font-size     : 16px;
+  letter-spacing: 3px;
+}
+
+.adress li p,
+.contact li a,
+.social li a {
+  color          : #fff;
+  letter-spacing : 2px;
+  text-decoration: none;
+  font-size      : 15px;
+}
+
+.social li {
+  float: left;
+}
+
+.adress,
+.contact,
+.social {
+  list-style: none;
+}
+
+.block_calendar_month {
+  .card-body {
+    background-color: rgba ($white, 0.5);
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  border          : 1px solid $body-bg;
+
+  &:hover {
+    background-color: $body-bg;
+    color           : $primary;
+    border-color    : $primary;
+  }
+}
+
+a {
+  color: $FOS-Caribbean-Green;
+}
+
+a.hover {
+  color: $primary;
+}
+
+.calendartable {
+  color: $primary;
+}
+
+.form-control {
+  border-color: $primary;
+}
+
+.search-icon {
+  border: 1px solid $primary;
+}
+
+.btn-outline-secondary {
+  color           : $body-bg;
+  background-color: $primary;
+  border-color    : $primary;
+}
+
+.pair-key {
+  color: $primary;
+}
+
+table {
+  margin-top: 20px;
+}
+
+.custom-select {
+  border-color: $primary;
+}
+
+.input-group-append {
+  .btn-submit {
+    border: 1px solid $primary;
+  }
+}
+
+.dropdown-menu {
+  .dropdown-item:hover {
+    background-color: $primary;
+  }
+
+  .dropdown-item.active {
+    background-color: $primary;
+  }
+}
+
+//------
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: $primary;
+  border          : 1px solid $primary;
+
+  &:hover {
+    color       : $white;
+    border-color: $black;
+  }
+}
+
+.alert-warning {
+  background-color: $body-bg !important;
+}
+
+.alert-warning,
+.environmenttable .warn {
+  margin-top      : 8px;
+  padding         : 8px;
+  color           : #7d5a29;
+  background-color: #fff;
+  border-color    : #fff;
+}
+
+.drawer-right {
+  background-color: $body-bg;
+  border-left     : 1px solid $primary;
+
+  .card-body {
+    background-color: $body-bg;
+    border          : none;
+  }
+}
+
+.drawer-left {
+  background-color: $body-bg;
+  border-right    : 1px solid $primary;
+}
+
+.courseindex {
+  .courseindex-section {
+    .pageitem {
+      background-color: $primary;
+
+      &:hover {
+        background-color: $body-bg;
+
+        a {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .courseindex-item-content {
+      .pageitem {
+        background-color: $primary;
+
+        &:hover {
+          background-color: $body-bg;
+
+          a {
+            color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  @include font-body("Isidora Sans Medium");
+  background-color: $body-bg;
+  #page-wrapper {
+    display   : inline;
+    min-height: auto;
+    #page {
+      background-color: $body-bg;
+      min-height      : fit-content;
+      margin-bottom   : 0;
+      #page-content {
+        background-color: $body-bg;
+      }
+      .main-inner {
+        background-color: $body-bg;
+        padding         : 0 0.5rem 1.5rem !important;
+        max-width       : 1320px !important;
+        min-height      : 86vh;
+        margin-bottom   : 0;
+        margin-top      : 0;
+
+        .header-maxwidth {
+          max-width : 100%;
+          margin-top: 1.5rem;
+        }
+
+      }
+
+      div.grid-category {
+        padding  : 0 .5rem 1.5rem !important;
+        max-width: 1320px !important;
+        width    : 100%;
+      }
+
+      #region-main {
+        background-color: $body-bg;
+      }
+
+      th.header {
+        position: relative;
+      }
+
+      tr.avg.r0.lastrow.pinned {
+        position: static;
+      }
+    }
+  }
+}
+
+
+.popover.footer {
+  .popover-body {
+    padding: 0;
+
+    .footer-section {
+      a {
+        color          : $FOS-Caribbean-Green;
+        text-decoration: none;
+
+        .icon {
+          color: $FOS-Caribbean-Green;
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.btn-link {
+  color          : $FOS-Caribbean-Green;
+  text-decoration: none;
+
+  .icon {
+    color: $FOS-Caribbean-Green;
+  }
+}
+
+.bnt-custom-exp {
+  margin-bottom: 20px !important;
+}
+
+.btn-link {
+  color: $FOS-Coral !important;
+}
+
+.navbar-brand .logo {
+  display: none !important;
+}
+
+.navbar-brand::after {
+  content          : '';
+  display          : block !important;
+  background-image : url([[pix:theme|navbarlogospace2]]) !important;
+  background-size  : contain !important;
+  background-repeat: no-repeat !important;
+  width            : 44px !important;
+  height           : 31px !important;
+}
+
+
+.dropdown {
+  a {
+    color          : $primary;
+    text-decoration: none;
+  }
+}
+
+/*Grade view table*/
+.path-grade-report-grader .gradeparent {
+  overflow: auto;
+  margin-bottom: 2vh;
+  th.header {
+    position: relative;
+}
+tr.avg.r0.lastrow.pinned {
+  position: static;
+}
+}
+
+table#user-grades{
+  display: inline;
+}
+
+.hasstickyfooter .stickyfooter {
+  position: static;
+  bottom: 0;
+  height: auto;
+  margin-top: 1.5vh;
+}
+
+
+/* add entry button*/
+div#sticky-footer {
+  position: sticky;
+}
+
+/* add field on database activity*/
+a#action-menu-toggle-1 {
+  color: #fff;
+  background-color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: #fff;
+  } 
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+
+/* Glossary activity*/
+
+table.glossarycategoryheader { 
+  th {
+	border: none !important;
+	padding: 0 0;
+}
+}
+
+.glossarypost tbody tr {
+  th {
+  border: none !important;
+  padding: 0;
+  }
+  td {
+    border: none !important;
+    padding: 0;
+}
+}

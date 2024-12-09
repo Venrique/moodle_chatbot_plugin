@@ -1,0 +1,50 @@
+.fos_space2-footer {
+  width: 100%;
+  color: $FOS-Sand;
+  background-color: $FOS-Flint;
+  padding: 30px 20px;
+  font-size: medium;
+
+  .grid-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 8px 0px;
+    grid-auto-flow: row;
+    align-items: center;
+    grid-template-areas:
+        "footer_top"
+        "footer_bottom";
+
+    .footer_top {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        gap: 0px 20px!important;
+        grid-template-areas: "logo_footer menu_footer";
+        justify-self: stretch;
+        align-self: stretch;
+        grid-area: footer_top;
+        
+
+        .logo_footer {
+            grid-area: logo_footer;
+        }
+
+        .menu_footer {
+            grid-area: menu_footer;
+            align-self: center;        
+            
+            a:hover {
+                color: #FFFF;
+              }
+        }
+    }
+
+    .footer_bottom {
+        align-self: stretch;
+        grid-area: footer_bottom;
+    }
+}
+}

@@ -1,0 +1,355 @@
+@mixin font-header-Sans_Black($family) {
+  font-family: "Isidora Sans Black", sans-serif;
+}
+
+@mixin font-body($family) {
+  font-family: "Isidora Sans Medium", sans-serif;
+}
+
+// Mixin para media queries
+@mixin respond-to($breakpoint, $width: null) {
+  @if $breakpoint == "small-phone" {
+    @media (max-width: 479px) {
+      @content;
+    }
+  } @else if $breakpoint == "phone" {
+    @media (min-width: 480px) and (max-width: 683px) {
+      @content;
+    }
+  } @else if $breakpoint == "tablet" {
+    @media (min-width: 684px) and (max-width: 820px) {
+      @content;
+    }
+  } @else if $breakpoint == "other" {
+    @media (min-width: 821px) and (max-width: 1278px) {
+      @content;
+    } /*
+    } @else if $breakpoint == "desktop" {
+      @media (min-width: 1200px) and (max-width: 1279px) {
+        @content;
+      }*/
+  } @else if $breakpoint == "large-desktop" {
+    @media (min-width: 1280px) and (max-width: 1653px) {
+      @content;
+    }
+  } @else if $breakpoint == "custom" and $width != null {
+    @media (min-width: $width) {
+      @content;
+    }
+  } @else {
+    @warn "El breakpoint '#{$breakpoint}' no está definido.";
+  }
+}
+
+// Mixin to apply opacity
+@mixin apply-opacity($color, $opacity) {
+  $opacity-percentage: $opacity * 1%; // Convertir el porcentaje a valor decimal para SCSS
+  background-color: rgba($color, $opacity-percentage);
+}
+
+// Mixin buttons
+@mixin button-styles(
+  $bg-color,
+  $text-color,
+  $border-radius: 4px,
+  $border: 2px solid $Shade02
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: $border;
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: $Shade02;
+    background-color: darken($Neutral01, 10%);
+  }
+}
+
+@mixin button-with-image-and-text(
+  $image,
+  $bg-color,
+  $text-color,
+  $border-radius: 4px,
+  $border: 1px solid $Shade02
+) {
+  display: grid;
+  padding: 10px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: $border;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  align-items: stretch;
+  grid-template-areas: "content";
+
+  .content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 0px 8px;
+    grid-auto-flow: row;
+    grid-template-areas: "icon txt";
+    justify-self: center;
+    align-self: center;
+    grid-area: content;
+    .icon {
+      grid-area: icon;
+      width: 20px;
+      height: 20px;
+      background-image: $image;
+    }
+
+    .txt {
+      grid-area: txt;
+    }
+  }
+
+  &:hover {
+    background-color: darken($Neutral01, 10%);
+  }
+}
+
+@mixin btn-list-map-image-text(
+  $image,
+  $image_hvr,
+  $bg-color,
+  $text-color,
+  $border-radius: 4px,
+  $border: 1px solid $Shade02
+) {
+  display: grid;
+  padding: 10px 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  width: 110px;
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: $border;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  align-items: stretch;
+  position: absolute;
+  left: 16px;
+  bottom: 44px;
+  z-index: 2;
+  grid-template-areas: "content";
+
+  .content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 0px 8px;
+    grid-auto-flow: row;
+    grid-template-areas: "icon txt";
+    justify-self: center;
+    align-self: center;
+    grid-area: content;
+    .icon {
+      grid-area: icon;
+      width: 20px;
+      height: 20px;
+      background-image: $image;
+    }
+
+    .txt {
+      grid-area: txt;
+    }
+  }
+  @include box-shadow();
+
+  @include respond-to("small-phone") {
+    left: calc((100% - 140px) / 2);
+  }
+
+  @include respond-to("phone") {
+    left: calc((100% - 140px) / 2);
+  }
+
+  @include respond-to("tablet") {
+    left: calc((100% - 140px) / 2);
+  }
+
+  @include respond-to("other") {
+    left: calc((425px - 140px) / 2);
+    visibility: hidden;
+  }
+
+  @include respond-to("large-desktop") {
+    left: calc((100% - 45% - 140px) / 2);
+    visibility: hidden;
+  }
+
+  @include respond-to("custom", 1301px) {
+    left: calc((100% - 45% - 140px) / 2);
+    visibility: hidden;
+  }
+
+  &:hover {
+    color: $Shade02;
+    border: 2px solid $Shade02;
+    background-color: darken($Neutral01, 10%);
+
+    .content {
+      .icon {
+        background-image: $image_hvr;
+      }
+    }
+  }
+}
+
+// Mixin para sombras en cajas
+@mixin box-shadow($x: 0, $y: 4px, $blur: 8px, $color: rgba(0, 0, 0, 0.3)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Usando el mixin
+.shadow-light {
+  @include box-shadow();
+}
+
+.shadow-medium {
+  @include box-shadow(0, 8px, 12px);
+}
+
+.shadow-strong {
+  @include box-shadow(0, 12px, 24px, rgba(0, 0, 0, 0.5));
+}
+// limit lines
+@mixin limit-lines($line-count) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Uso del mixin
+.my-text-element {
+  @include limit-lines(3); // Limita a 3 líneas
+}
+
+.another-text-element {
+  @include limit-lines(5); // Limita a 5 líneas
+}
+
+// ------------------------------------------------------------
+
+// Mixin para transiciones
+@mixin transition($properties, $duration: 0.3s, $timing: ease) {
+  transition-property: $properties;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
+
+// -----------------------------------------------------
+// -----------------------------------------------------
+
+// -----------------------------------------------------
+
+// Mixin para texto con efecto de trazo
+@mixin text-stroke($stroke-width: 1px, $stroke-color: black) {
+  -webkit-text-stroke: $stroke-width $stroke-color;
+  text-stroke: $stroke-width $stroke-color;
+}
+
+// Usando el mixin
+.text-with-stroke {
+  @include text-stroke(2px, red);
+  color: white;
+  font-size: 24px;
+}
+
+.another-text-with-stroke {
+  @include text-stroke();
+  color: yellow;
+  font-size: 30px;
+}
+// -----------------------------------------------------
+
+// Mixin para rotación
+@mixin rotate($degrees: 0) {
+  transform: rotate(#{$degrees}deg);
+}
+
+// Usando el mixin
+.rotate-45 {
+  @include rotate(45);
+}
+
+.rotate-90 {
+  @include rotate(90);
+}
+
+.rotate-180 {
+  @include rotate(180);
+}
+// -----------------------------------------------------
+
+@mixin svw_field() {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 4px 4px;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "label"
+    "data-cnt";
+  @include apply-opacity($primary, 10);
+  border-radius: 6px;
+  padding: 8px;
+
+  .label {
+    grid-area: label;
+
+    h6 {
+      font-size: 12px;
+      color: $primary;
+    }
+  }
+  .data-cnt {
+    grid-area: data-cnt;
+    color: $darkprimary;
+  }
+}
+
+// Advanced Search
+
+@mixin col-style {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 10px 0;
+}
+
+@mixin item-style {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+@mixin content-style {
+  width: 100%;
+  border: 1px solid $primary;
+  border-radius: 0;
+  align-content: left;
+  background-color: $body-bg;
+}

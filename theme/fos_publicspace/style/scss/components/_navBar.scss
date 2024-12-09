@@ -1,0 +1,36 @@
+.navbar.fixed-top {
+  padding-top: 0;
+  padding-bottom: 0;
+  box-shadow: none;
+  border-bottom: $FOS-Flint-70 1px solid;
+  background-color: $navbar-bg !important;
+  align-items: stretch;
+  height: 61px;
+  font-size: 1.1rem;
+}
+
+.moremenu {
+  .nav-link {
+    color: $FOS-Flint;
+
+    &.active {
+      border-bottom-color: $primary;
+      &:hover {
+        border-bottom-color: $primary;
+      }
+    }
+    &:hover {
+      border-bottom-color: $primary;
+    }
+  }
+}
+
+.secondary-navigation {
+  background-color: $body-bg;
+  .moremenu {
+    background-color: $body-bg;
+    .nav-tabs {
+      background-color: $body-bg;
+    }
+  }
+}
