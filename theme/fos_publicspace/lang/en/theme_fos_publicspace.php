@@ -3,7 +3,7 @@
 /* settings */
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Our Feminist Alliance';
+$string['pluginname'] = 'Public Space';
 
 $string['showlogintext'] = 'Display login text';
 $string['showlogintext_desc'] = 'Show or hide the additional login page text';
@@ -13,7 +13,7 @@ $string['logintext_desc'] = 'Text to be displayed in the login page as additiona
 $string['available'] = 'Available';
 $string['displaysummary'] = "Display summary";
 
-$string["OurFeministAlliance"] = "Our Feminist Alliance";
+$string["fospublicspace"] = "Public Space";
 
 
 /* Footer */

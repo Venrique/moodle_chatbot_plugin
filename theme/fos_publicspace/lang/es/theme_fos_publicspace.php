@@ -3,7 +3,7 @@
 /* settings */
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Nuestra Alianza Feminista';
+$string['pluginname'] = 'Espacio Público';
 
 $string['showlogintext'] = 'Mostrar texto de inicio de sesión';
 $string['showlogintext_desc'] = 'Mostrar u ocultar el texto adicional de la página de inicio de sesión';
@@ -13,7 +13,7 @@ $string['logintext_desc'] = 'Texto que se mostrará en la página de inicio de s
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Mostrar resumen";
 
-$string["OurFeministAlliance"] = "Nuestra Alianza Feminista";
+$string["fospublicspace"] = "Espacio Público";
 
 /* Footer */
 $string["PrivacyPolicy"] = "política de privacidad";

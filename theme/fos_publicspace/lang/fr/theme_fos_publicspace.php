@@ -3,7 +3,7 @@
 /* settings */
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Notre Alliance Féministe';
+$string['pluginname'] = 'Espace public';
 
 $string['showlogintext'] = 'Afficher le texte de connexion';
 $string['showlogintext_desc'] = 'Afficher ou masquer le texte supplémentaire de la page de connexion';
@@ -13,7 +13,7 @@ $string['logintext_desc'] = 'Texte à afficher sur la page de connexion comme te
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Afficher le résumé";
 
-$string["OurFeministAlliance"] = "Notre Alliance Féministe";
+$string["fospublicspace"] = "Espace public";
 
 /* Footer */
 $string["PrivacyPolicy"] = "Politique de confidentialité";
