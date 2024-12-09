@@ -1,7 +1,7 @@
 <?php
 global $USER, $DB;
 
-if (isloggedin() && !isguestuser()) {
+if (isloggedin()) {
     defined('MOODLE_INTERNAL') || die();
 
     require_once($CFG->libdir . '/behat/lib.php');
