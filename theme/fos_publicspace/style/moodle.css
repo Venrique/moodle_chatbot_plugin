@@ -1658,7 +1658,7 @@ h5 {
   background-color: #5c3873;
   cursor: pointer;
   text-decoration: none;
-  color: #fafffd;
+  color: #f3eff5;
   font-size: 16px;
 }
 .btn_icon-fos .icon-blog,
@@ -1668,7 +1668,7 @@ h5 {
 .btn_icon-fos:hover {
   color: #5c3873;
   border: 1px solid #5c3873;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .btn_icon-fos a {
   color: inherit;
@@ -6030,7 +6030,7 @@ a.ygtvspacer:hover {
 }
 
 a {
-  color: #60ad8f;
+  color: #5c3873;
 }
 
 a.hover {
@@ -6182,22 +6182,22 @@ body #page-wrapper #page tr.avg.r0.lastrow.pinned {
   padding: 0;
 }
 .popover.footer .popover-body .footer-section a {
-  color: #60ad8f;
+  color: #5c3873;
   text-decoration: none;
 }
 .popover.footer .popover-body .footer-section a .icon {
-  color: #60ad8f;
+  color: #5c3873;
 }
 .popover.footer .popover-body .footer-section a:focus {
   text-decoration: none;
 }
 
 .btn-link {
-  color: #60ad8f;
+  color: #5c3873;
   text-decoration: none;
 }
 .btn-link .icon {
-  color: #60ad8f;
+  color: #5c3873;
 }
 
 .bnt-custom-exp {
