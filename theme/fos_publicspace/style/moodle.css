@@ -1658,7 +1658,7 @@ h5 {
   background-color: #5c3873;
   cursor: pointer;
   text-decoration: none;
-  color: #f3eff5;
+  color: #fafffd;
   font-size: 16px;
 }
 .btn_icon-fos .icon-blog,
@@ -1668,7 +1668,7 @@ h5 {
 .btn_icon-fos:hover {
   color: #5c3873;
   border: 1px solid #5c3873;
-  background-color: #f3eff5;
+  background-color: #fafffd;
 }
 .btn_icon-fos a {
   color: inherit;
