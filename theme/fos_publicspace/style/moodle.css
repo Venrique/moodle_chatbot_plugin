@@ -162,6 +162,9 @@ h5 {
   grid-area: menu_footer;
   align-self: center;
 }
+.fos_publicspace-footer .grid-footer .footer_top .menu_footer a {
+  color: #60ad8f;
+}
 .fos_publicspace-footer .grid-footer .footer_top .menu_footer a:hover {
   color: white;
 }

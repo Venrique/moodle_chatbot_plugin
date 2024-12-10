@@ -34,7 +34,10 @@
 
         .menu_footer {
             grid-area: menu_footer;
-            align-self: center;        
+            align-self: center;  
+            a {
+                color: $FOS-Caribbean-Green;
+            }     
             
             a:hover {
                 color: #FFFF;
