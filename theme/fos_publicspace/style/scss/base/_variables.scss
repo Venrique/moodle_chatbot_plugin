@@ -66,7 +66,7 @@ $colors: map-merge(
 
 // FOS variables
 $FOS-Aubergine: #5c3873 !default;
-$navbar-bg: #dbfcef;
+$navbar-bg: #ddd3e1;
 $FOS-Aubergine-bk: #f3eff5 !default;
 $FOS-Aubergine-Linear: var(
   --FOS-Aubergine-Linear,
@@ -205,10 +205,10 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg: $FOS-Caribbean-Green-bk !default;
+$body-bg: $FOS-Aubergine-bk !default;
 //$body-color: $gray-900 !default;
 
-$body-color: $FOS-Caribbean-Green-bk !default;
+$body-color: $FOS-Aubergine-bk !default;
 //$bg: $body-color;
 
 // Links

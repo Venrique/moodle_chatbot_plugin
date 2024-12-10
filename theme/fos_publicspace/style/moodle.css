@@ -361,7 +361,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row1 .col2 {
@@ -419,7 +419,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row2 {
@@ -503,7 +503,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row3 {
@@ -557,7 +557,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row4 {
@@ -611,7 +611,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row5 {
@@ -675,7 +675,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row5 .col2 {
@@ -729,7 +729,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row6 {
@@ -811,7 +811,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row7 {
@@ -886,7 +886,7 @@ h5 {
   height: 100%;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
 }
 .custom_form .item_custom .cnt_row8 {
@@ -1119,7 +1119,7 @@ h5 {
   height: auto;
   border-radius: 0.25rem;
   padding: 4px 8px;
-  background-color: #dbfcef;
+  background-color: #ddd3e1;
   color: #333;
   margin: 0 0 4px;
 }
@@ -1620,7 +1620,7 @@ h5 {
   padding-bottom: 0;
   box-shadow: none;
   border-bottom: var(--fos-flint-70, rgba(56, 61, 71, 0.7)) 1px solid;
-  background-color: #dbfcef !important;
+  background-color: #ddd3e1 !important;
   align-items: stretch;
   height: 61px;
   font-size: 1.1rem;
@@ -1640,13 +1640,13 @@ h5 {
 }
 
 .secondary-navigation {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .secondary-navigation .moremenu {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .secondary-navigation .moremenu .nav-tabs {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 .btn_icon-fos {
@@ -1658,7 +1658,7 @@ h5 {
   background-color: #5c3873;
   cursor: pointer;
   text-decoration: none;
-  color: #fafffd;
+  color: #f3eff5;
   font-size: 16px;
 }
 .btn_icon-fos .icon-blog,
@@ -1668,7 +1668,7 @@ h5 {
 .btn_icon-fos:hover {
   color: #5c3873;
   border: 1px solid #5c3873;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .btn_icon-fos a {
   color: inherit;
@@ -1676,14 +1676,14 @@ h5 {
 }
 
 .generaltable thead tr th {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   border: none;
 }
 .generaltable thead tr td {
   border: none;
 }
 .generaltable tbody {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .generaltable tbody tr th {
   border: none;
@@ -1698,9 +1698,9 @@ h5 {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fafffd;
+  background-color: #f3eff5;
   background-clip: border-box;
-  border: 0.5px solid #fafffd;
+  border: 0.5px solid #f3eff5;
 }
 .card > hr {
   margin-right: 0;
@@ -1725,7 +1725,7 @@ h5 {
   flex: 1 1 auto;
   min-height: 1px;
   color: #5c3873;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 .card-subtitle {
@@ -1739,13 +1739,13 @@ h5 {
 .card-header {
   margin-bottom: 0;
   color: #383d47;
-  background-color: #fafffd !important;
-  border-bottom: 0.5px solid #fafffd;
+  background-color: #f3eff5 !important;
+  border-bottom: 0.5px solid #f3eff5;
 }
 .card-footer {
   color: #383d47;
   background-color: #fff !important;
-  border-top: 0.5px solid #fafffd;
+  border-top: 0.5px solid #f3eff5;
 }
 .card-header-tabs {
   border-bottom: 0;
@@ -1767,7 +1767,7 @@ h5 {
 }
 
 .card-deck {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .card-deck .card {
   background-color: #fff;
@@ -1861,7 +1861,7 @@ h5 {
 /* core.less */
 #region-main {
   overflow-y: visible;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 /*
@@ -3072,7 +3072,7 @@ audio.mediaplugin_html5audio {
   padding: 0.5rem;
 }
 .moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd body {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 .moodle-dialogue-base .moodle-dialogue-fullscreen .moodle-dialogue-content {
@@ -3888,7 +3888,7 @@ h3.sectionname .inplaceeditable.inplaceeditingon .editinstructions {
 }
 #region-flat-nav .nav {
   margin-right: 15px;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 .footer-dark a {
@@ -3899,7 +3899,7 @@ h3.sectionname .inplaceeditable.inplaceeditingon .editinstructions {
   color: #fff;
 }
 .footer-dark a:focus .icon {
-  color: #fafffd;
+  color: #f3eff5;
 }
 
 .btn-footer-popover {
@@ -3922,11 +3922,11 @@ h3.sectionname .inplaceeditable.inplaceeditingon .editinstructions {
   padding: 0;
 }
 .popover.footer .popover-body .footer-section a {
-  color: #fafffd;
+  color: #f3eff5;
   text-decoration: underline;
 }
 .popover.footer .popover-body .footer-section a .icon {
-  color: #fafffd;
+  color: #f3eff5;
 }
 .popover.footer .popover-body .footer-section a:focus {
   text-decoration: none;
@@ -4129,7 +4129,7 @@ input[disabled] {
 
 .matchtext {
   background-color: #c1a4d3;
-  color: #fafffd;
+  color: #f3eff5;
   height: 1.5rem;
 }
 
@@ -4558,7 +4558,7 @@ blockquote {
 
 .block .block-controls .dropdown-toggle {
   /* So that the caret takes the colour of the icon. */
-  color: #fafffd;
+  color: #f3eff5;
 }
 
 [data-region=blocks-column] {
@@ -4687,7 +4687,7 @@ aside[id^=block-region-side-] .block_recentlyaccesseditems .dashboard-card-deck 
   display: none;
 }
 .block_recentlyaccesseditems a.dashboard-card small {
-  color: #fafffd;
+  color: #f3eff5;
 }
 
 .block_myoverview .content {
@@ -5885,7 +5885,7 @@ a.ygtvspacer:hover {
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 #data_adv_form .boxaligncenter tbody tr td .advancesearch .col1 .item2 {
   display: grid;
@@ -5898,7 +5898,7 @@ a.ygtvspacer:hover {
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
-  background-color: #fafffd;
+  background-color: #f3eff5;
   padding: 8px 10px;
 }
 #data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 {
@@ -5920,7 +5920,7 @@ a.ygtvspacer:hover {
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 #data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item2,
 #data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item3 {
@@ -5934,7 +5934,7 @@ a.ygtvspacer:hover {
   border: 1px solid #5c3873;
   border-radius: 0;
   align-content: left;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 #data_adv_form .boxaligncenter tbody tr td .advancesearch .col2 .item5 .template-token .form-inline {
   /*display: flex;
@@ -5955,11 +5955,11 @@ a.ygtvspacer:hover {
 }
 
 .layout.fullscreen {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 #page.drawers .main-inner {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 
 .drawer-toggles .drawer-toggler .btn {
@@ -5969,7 +5969,7 @@ a.ygtvspacer:hover {
   padding-left: 20px;
 }
 .pw-custom {
-  background-color: #fafffd !important;
+  background-color: #f3eff5 !important;
 }
 
 .header-maxwidth {
@@ -6021,10 +6021,10 @@ a.ygtvspacer:hover {
 
 .btn-primary {
   background-color: #5c3873;
-  border: 1px solid #fafffd;
+  border: 1px solid #f3eff5;
 }
 .btn-primary:hover {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   color: #5c3873;
   border-color: #5c3873;
 }
@@ -6050,7 +6050,7 @@ a.hover {
 }
 
 .btn-outline-secondary {
-  color: #fafffd;
+  color: #f3eff5;
   background-color: #5c3873;
   border-color: #5c3873;
 }
@@ -6090,7 +6090,7 @@ table {
 }
 
 .alert-warning {
-  background-color: #fafffd !important;
+  background-color: #f3eff5 !important;
 }
 
 .alert-warning,
@@ -6103,16 +6103,16 @@ table {
 }
 
 .drawer-right {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   border-left: 1px solid #5c3873;
 }
 .drawer-right .card-body {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   border: none;
 }
 
 .drawer-left {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   border-right: 1px solid #5c3873;
 }
 
@@ -6120,7 +6120,7 @@ table {
   background-color: #5c3873;
 }
 .courseindex .courseindex-section .pageitem:hover {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .courseindex .courseindex-section .pageitem:hover a {
   color: #5c3873 !important;
@@ -6129,7 +6129,7 @@ table {
   background-color: #5c3873;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem:hover {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 .courseindex .courseindex-section .courseindex-item-content .pageitem:hover a {
   color: #5c3873 !important;
@@ -6137,22 +6137,22 @@ table {
 
 body {
   font-family: "Isidora Sans Medium", sans-serif;
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 body #page-wrapper {
   display: inline;
   min-height: auto;
 }
 body #page-wrapper #page {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   min-height: fit-content;
   margin-bottom: 0;
 }
 body #page-wrapper #page #page-content {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 body #page-wrapper #page .main-inner {
-  background-color: #fafffd;
+  background-color: #f3eff5;
   padding: 0 0.5rem 1.5rem !important;
   max-width: 1320px !important;
   min-height: 86vh;
@@ -6169,7 +6169,7 @@ body #page-wrapper #page div.grid-category {
   width: 100%;
 }
 body #page-wrapper #page #region-main {
-  background-color: #fafffd;
+  background-color: #f3eff5;
 }
 body #page-wrapper #page th.header {
   position: relative;
