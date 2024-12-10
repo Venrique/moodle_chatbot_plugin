@@ -128,14 +128,14 @@ h5 {
   background-image: url('data:image/svg+xml,<svg width="39" height="38" viewBox="0 0 39 38" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" width="38" height="38" rx="19" fill="white"/><g clip-path="url(%23clip0_325_1122)"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4617 8.5H23.4617V10.5H21.4617V16.5H20.4617V10.5H18.4617V16.5H17.4617V10.5H15.4617V8.5Z" fill="%2360AD8F"/><path d="M10.4616 26.5L17.4616 16.5L18.4616 10.5H20.4616L21.4616 16.5L28.4616 26.5C29.0227 28.2677 28.9146 28.9976 27.4616 29.5H11.4616C10.1663 28.7584 9.99196 28.0854 10.4616 26.5Z" fill="%2360AD8F"/><path d="M14.1389 22.5L18.4618 16.5V10.5H20.4618V16.5L24.4507 22.4214C23.0841 22.563 22.5076 22.0153 21.0546 22.5176C19.6514 22.8851 18.865 22.8428 17.4618 22.5176C16.1665 21.776 15.6027 22.4824 14.1389 22.5Z" fill="white"/></g><defs><clipPath id="clip0_325_1122"><rect width="18.5518" height="21" fill="white" transform="translate(10.2241 8.5)"/></clipPath></defs></svg>');
 }
 
-.fos_space2-footer {
+.fos_publicspace-footer {
   width: 100%;
   color: #f9f2ea;
   background-color: #383d47;
   padding: 30px 20px;
   font-size: medium;
 }
-.fos_space2-footer .grid-footer {
+.fos_publicspace-footer .grid-footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
@@ -145,7 +145,7 @@ h5 {
   align-items: center;
   grid-template-areas: "footer_top" "footer_bottom";
 }
-.fos_space2-footer .grid-footer .footer_top {
+.fos_publicspace-footer .grid-footer .footer_top {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
@@ -155,17 +155,17 @@ h5 {
   align-self: stretch;
   grid-area: footer_top;
 }
-.fos_space2-footer .grid-footer .footer_top .logo_footer {
+.fos_publicspace-footer .grid-footer .footer_top .logo_footer {
   grid-area: logo_footer;
 }
-.fos_space2-footer .grid-footer .footer_top .menu_footer {
+.fos_publicspace-footer .grid-footer .footer_top .menu_footer {
   grid-area: menu_footer;
   align-self: center;
 }
-.fos_space2-footer .grid-footer .footer_top .menu_footer a:hover {
+.fos_publicspace-footer .grid-footer .footer_top .menu_footer a:hover {
   color: white;
 }
-.fos_space2-footer .grid-footer .footer_bottom {
+.fos_publicspace-footer .grid-footer .footer_bottom {
   align-self: stretch;
   grid-area: footer_bottom;
 }

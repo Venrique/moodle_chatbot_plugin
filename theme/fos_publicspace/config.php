@@ -9,7 +9,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$THEME->name = 'fos_space2';
+$THEME->name = 'fos_publicspace';
 
 $THEME->parents = array(
     'boost',
