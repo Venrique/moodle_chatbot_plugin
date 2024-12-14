@@ -27,7 +27,7 @@ $string['slider3text'] = "<span class='slider_clour_text_white'>Juntos, aprovech
 /* Landing page 
    - Categories component
 */
-$string["FosPublicSpace"] = "Espacio Publico";
+$string["FosPublicSpace"] = "Hub de Recursos Abiertos";
 $string["FosFeministaTeam"] = "Equipo Fòs Feminista";
 $string["OurFeministAlliance"] = "Nuestra Alianza Feminista";
 $string["Innovation_SocialEnterpriseLab"] = "Laboratorio de Innovación y Empresa Social";
