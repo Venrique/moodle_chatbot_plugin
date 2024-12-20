@@ -1059,7 +1059,7 @@ function data_get_field(stdClass $field, stdClass $data, ?stdClass $cm=null): da
         return new data_field_base($field);
     }
     require_once($filepath);
-    $newfield = 'datafos_field_'.$field->type;
+    $newfield = 'data_field_'.$field->type;
     $newfield = new $newfield($field, $data, $cm);
     return $newfield;
 }
