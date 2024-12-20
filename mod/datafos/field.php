@@ -122,7 +122,7 @@ switch ($mode) {
         /// Only store this new field if it doesn't already exist.
             if (($fieldinput->name == '') or datafos_fieldname_exists($fieldinput->name, $data->id)) {
 
-                $displaynoticebad = get_string('invalidfieldname', 'data');
+                $displaynoticebad = get_string('invalidfieldname','datafos');
 
             } else {
 
@@ -146,7 +146,7 @@ switch ($mode) {
             /// Update some templates
                 datafos_append_new_field_to_templates($data, $fieldinput->name);
 
-                $displaynoticegood = get_string('fieldadded', 'data');
+                $displaynoticegood = get_string('fieldadded','datafos');
             }
         }
         break;
@@ -159,7 +159,7 @@ switch ($mode) {
 
             if (($fieldinput->name == '') or datafos_fieldname_exists($fieldinput->name, $data->id, $fieldinput->fid)) {
 
-                $displaynoticebad = get_string('invalidfieldname', 'data');
+                $displaynoticebad = get_string('invalidfieldname','datafos');
 
             } else {
             /// Check for arrays and convert to a comma-delimited string
@@ -191,7 +191,7 @@ switch ($mode) {
             /// Update the templates.
                 datafos_replace_field_in_templates($data, $oldfieldname, $field->field->name);
 
-                $displaynoticegood = get_string('fieldupdated', 'data');
+                $displaynoticegood = get_string('fieldupdated','datafos');
             }
         }
         break;
@@ -219,29 +219,29 @@ switch ($mode) {
                         $DB->update_record('datafos', $rec);
                     }
 
-                    $displaynoticegood = get_string('fielddeleted', 'data');
+                    $displaynoticegood = get_string('fielddeleted', 'datafos');
                 }
 
             } else {
                 $titleparts = [
-                    get_string('deletefield', 'data'),
+                    get_string('deletefield', 'datafos'),
                     format_string($data->name),
                     format_string($course->fullname),
                 ];
                 $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
                 datafos_print_header($course,$cm,$data, false);
-                echo $OUTPUT->heading(get_string('deletefield', 'data'), 2, 'mb-4');
+                echo $OUTPUT->heading(get_string('deletefield', 'datafos'), 2, 'mb-4');
 
                 // Print confirmation message.
                 $field = datafos_get_field_from_id($fid, $data);
 
                 if ($field->type === 'unknown') {
-                    $fieldtypename = get_string('unknown', 'data');
+                    $fieldtypename = get_string('unknown', 'datafos');
                 } else {
                     $fieldtypename = $field->name();
                 }
                 echo $OUTPUT->confirm('<strong>' . $fieldtypename . ': ' . $field->field->name . '</strong><br /><br />' .
-                        get_string('confirmdeletefield', 'data'),
+                        get_string('confirmdeletefield', 'datafos'),
                         'field.php?d=' . $data->id . '&mode=delete&fid=' . $fid . '&confirm=1',
                         'field.php?d=' . $data->id,
                         ['type' => single_button::BUTTON_DANGER]);
@@ -277,7 +277,7 @@ switch ($mode) {
             }
             redirect($backurl);
         }
-        $PAGE->navbar->add(get_string('usestandard', 'data'));
+        $PAGE->navbar->add(get_string('usestandard', 'datafos'));
         $fieldactionbar = $actionbar->get_fields_mapping_action_bar();
         datafos_print_header($course, $cm, $data, false, $fieldactionbar);
         $importer = new preset_existing_importer($manager, $fullname);
@@ -312,25 +312,25 @@ $titleparts = [
     format_string($course->fullname),
 ];
 if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
-    array_unshift($titleparts, get_string('newfield', 'data'));
+    array_unshift($titleparts, get_string('newfield', 'datafos'));
     $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
     datafos_print_header($course, $cm, $data, 'fields');
-    echo $OUTPUT->heading(get_string('newfield', 'data'));
+    echo $OUTPUT->heading(get_string('newfield', 'datafos'));
 
     $field = datafos_get_field_new($newtype, $data);
     $field->display_edit_field();
 
 } else if ($mode == 'display' && confirm_sesskey()) { /// Display/edit existing field
-    array_unshift($titleparts, get_string('editfield', 'data'));
+    array_unshift($titleparts, get_string('editfield', 'datafos'));
     $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
     datafos_print_header($course, $cm, $data, 'fields');
-    echo $OUTPUT->heading(get_string('editfield', 'data'));
+    echo $OUTPUT->heading(get_string('editfield', 'datafos'));
 
     $field = datafos_get_field_from_id($fid, $data);
     $field->display_edit_field();
 
 } else {                                              /// Display the main listing of all fields
-    array_unshift($titleparts, get_string('managefields', 'data'));
+    array_unshift($titleparts, get_string('managefields', 'datafos'));
     $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
     $hasfields = $manager->has_fields();
     // Check if it is an empty database with no fields.
@@ -345,17 +345,17 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
     datafos_print_header($course, $cm, $data, 'fields', $fieldactionbar);
 
     echo $OUTPUT->box_start();
-    echo get_string('fieldshelp', 'data');
+    echo get_string('fieldshelp', 'datafos');
     echo $OUTPUT->box_end();
     echo $OUTPUT->box_start('d-flex flex-row-reverse');
     echo $OUTPUT->render($actionbar->get_create_fields(true));
     echo $OUTPUT->box_end();
     $table = new html_table();
     $table->head = [
-        get_string('fieldname', 'data'),
-        get_string('type', 'data'),
-        get_string('required', 'data'),
-        get_string('fielddescription', 'data'),
+        get_string('fieldname', 'datafos'),
+        get_string('type', 'datafos'),
+        get_string('required', 'datafos'),
+        get_string('fielddescription', 'datafos'),
         '&nbsp;',
     ];
     $table->align = ['left', 'left', 'left', 'left'];
@@ -418,7 +418,7 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
         ];
 
         if (!empty($missingfieldtypes)) {
-            echo $OUTPUT->notification(get_string('missingfieldtypes', 'data') . html_writer::alist($missingfieldtypes));
+            echo $OUTPUT->notification(get_string('missingfieldtypes', 'datafos') . html_writer::alist($missingfieldtypes));
         }
     }
     echo html_writer::table($table);
@@ -429,10 +429,10 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
     echo '<input type="hidden" name="d" value="'.$data->id.'" />';
     echo '<input type="hidden" name="mode" value="sort" />';
     echo '<input type="hidden" name="sesskey" value="'.sesskey().'" />';
-    echo '<label for="defaultsort">'.get_string('defaultsortfield', 'data').'</label>';
+    echo '<label for="defaultsort">'.get_string('defaultsortfield','datafos').'</label>';
     echo '<select id="defaultsort" name="defaultsort" class="custom-select">';
     if ($fields = $DB->get_records('data_fields_fos', array('dataid'=>$data->id))) {
-        echo '<optgroup label="'.get_string('fields', 'data').'">';
+        echo '<optgroup label="'.get_string('fields', 'datafos').'">';
         foreach ($fields as $field) {
             if ($data->defaultsort == $field->id) {
                 echo '<option value="'.$field->id.'" selected="selected">'.$field->name.'</option>';
@@ -443,15 +443,15 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
         echo '</optgroup>';
     }
     $options = array();
-    $options[DATAFOS_TIMEADDED]    = get_string('timeadded', 'data');
+    $options[DATAFOS_TIMEADDED]    = get_string('timeadded', 'datafos');
 // TODO: we will need to change defaultsort db to unsinged to make these work in 2.0
-/*        $options[DATAFOS_TIMEMODIFIED] = get_string('timemodified', 'data');
-    $options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'data');
-    $options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'data');
+/*        $options[DATAFOS_TIMEMODIFIED] = get_string('timemodified', 'datafos');
+    $options[DATAFOS_FIRSTNAME]    = get_string('authorfirstname', 'datafos');
+    $options[DATAFOS_LASTNAME]     = get_string('authorlastname', 'datafos');
     if ($data->approval and has_capability('mod/datafos:approve', $context)) {
-        $options[DATAFOS_APPROVED] = get_string('approved', 'data');
+        $options[DATAFOS_APPROVED] = get_string('approved', 'datafos');
     }*/
-    echo '<optgroup label="'.get_string('other', 'data').'">';
+    echo '<optgroup label="'.get_string('other', 'datafos').'">';
     foreach ($options as $key => $name) {
         if ($data->defaultsort == $key) {
             echo '<option value="'.$key.'" selected="selected">'.$name.'</option>';
@@ -462,11 +462,11 @@ if (($mode == 'new') && (!empty($newtype))) { // Adding a new field.
     echo '</optgroup>';
     echo '</select>';
 
-    $options = array(0 => get_string('ascending', 'data'),
-                     1 => get_string('descending', 'data'));
+    $options = array(0 => get_string('ascending', 'datafos'),
+                     1 => get_string('descending', 'datafos'));
     echo html_writer::label(get_string('sortby'), 'menudefaultsortdir', false, array('class' => 'accesshide'));
     echo html_writer::select($options, 'defaultsortdir', $data->defaultsortdir, false, array('class' => 'custom-select'));
-    echo '<input type="submit" class="btn btn-secondary ml-1" value="'.get_string('save', 'data').'" />';
+    echo '<input type="submit" class="btn btn-secondary ml-1" value="'.get_string('save', 'datafos').'" />';
     echo '</div>';
     echo '</form>';
 

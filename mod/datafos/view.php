@@ -235,13 +235,13 @@ $titleparts = [
 ];
 if (!empty(trim($search))) {
     // Indicate search results on page title when searching.
-    array_unshift($titleparts, get_string('searchresults', 'data', s($search)));
+    array_unshift($titleparts, get_string('searchresults', 'datafos', s($search)));
 } else if (!empty($delete) && empty($confirm)) {
     // Displaying the delete confirmation page.
-    array_unshift($titleparts, get_string('deleteentry', 'data'));
+    array_unshift($titleparts, get_string('deleteentry', 'datafos'));
 } else if ($record !== null || $mode == 'single') {
     // Indicate on the page tile if the user is viewing this page on single view mode.
-    array_unshift($titleparts, get_string('singleview', 'data'));
+    array_unshift($titleparts, get_string('single', 'datafos'));
 }
 $PAGE->set_title(implode(moodle_page::TITLE_SEPARATOR, $titleparts));
 $PAGE->set_heading($course->fullname);
@@ -290,7 +290,7 @@ if ($data->intro and empty($page) and empty($record) and $mode != 'single') {
 if ($delete && confirm_sesskey() && (datafos_user_can_manage_entry($delete, $data, $context))) {
     if ($confirm) {
         if (datafos_delete_record($delete, $data, $course->id, $cm->id)) {
-            echo $OUTPUT->notification(get_string('recorddeleted','data'), 'notifysuccess');
+            echo $OUTPUT->notification(get_string('recorddeleted','datafos'), 'notifysuccess');
         }
     } else {   // Print a confirmation page
         $userfieldsapi = \core_user\fields::for_userpic()->excluding('id');
@@ -307,7 +307,7 @@ if ($delete && confirm_sesskey() && (datafos_user_can_manage_entry($delete, $dat
                     get_string('delete'), 'post',
                     single_button::BUTTON_DANGER
                 );
-                echo $OUTPUT->confirm(get_string('confirmdeleterecord','data'),
+                echo $OUTPUT->confirm(get_string('confirmdeleterecord','datafos'),
                         $deletebutton, 'view.php?d='.$data->id);
 
                 $records[] = $deleterecord;
@@ -354,7 +354,7 @@ if ($multidelete && confirm_sesskey() && $canmanageentries) {
         $action = new moodle_url('/mod/datafos/view.php', $submitactions);
         $cancelurl = new moodle_url('/mod/datafos/view.php', array('d' => $data->id));
         $deletebutton = new single_button($action, get_string('delete'), 'post', single_button::BUTTON_DANGER);
-        echo $OUTPUT->confirm(get_string('confirmdeleterecords', 'data'), $deletebutton, $cancelurl);
+        echo $OUTPUT->confirm(get_string('confirmdeleterecords', 'datafos'), $deletebutton, $cancelurl);
         $parser = $manager->get_template('listtemplate');
         echo $parser->parse_entries($validrecords);
         echo $OUTPUT->footer();
@@ -383,7 +383,7 @@ if ($showactivity) {
                 if ($approverecord->dataid == $data->id) {                       // Must be from this database
                     data_approve_entry($approverecord->id, $newapproved);
                     $msgkey = $newapproved ? 'recordapproved' : 'recorddisapproved';
-                    echo $OUTPUT->notification(get_string($msgkey, 'data'), 'notifysuccess');
+                    echo $OUTPUT->notification(get_string($msgkey, 'datafos'), 'notifysuccess');
                 }
             }
         }
@@ -391,14 +391,14 @@ if ($showactivity) {
         $numentries = datafos_numentries($data);
     /// Check the number of entries required against the number of entries already made (doesn't apply to teachers)
         if ($data->entriesleft = datafos_get_entries_left_to_add($data, $numentries, $canmanageentries)) {
-            $strentrieslefttoadd = get_string('entrieslefttoadd', 'data', $data);
+            $strentrieslefttoadd = get_string('entrieslefttoadd', 'datafos', $data);
             echo $OUTPUT->notification($strentrieslefttoadd);
         }
 
     /// Check the number of entries required before to view other participant's entries against the number of entries already made (doesn't apply to teachers)
         $requiredentries_allowed = true;
         if ($data->entrieslefttoview = datafos_get_entries_left_to_view($data, $numentries, $canmanageentries)) {
-            $strentrieslefttoaddtoview = get_string('entrieslefttoaddtoview', 'data', $data);
+            $strentrieslefttoaddtoview = get_string('entrieslefttoaddtoview', 'datafos', $data);
             echo $OUTPUT->notification($strentrieslefttoaddtoview);
             $requiredentries_allowed = false;
         }
@@ -436,11 +436,11 @@ if ($showactivity) {
                 $a->max = $maxcount;
                 $a->reseturl = "view.php?id=$cm->id&amp;mode=$mode&amp;search=&amp;advanced=0";
                 echo $OUTPUT->box_start();
-                echo get_string('foundnorecords', 'data', $a);
+                echo get_string('foundnorecords', 'datafos', $a);
                 echo $OUTPUT->box_end();
             } else {
                 echo $OUTPUT->box_start();
-                echo get_string('norecords', 'data');
+                echo get_string('norecords', 'datafos');
                 echo $OUTPUT->box_end();
             }
 
@@ -455,7 +455,7 @@ if ($showactivity) {
                 $a->max = $maxcount;
                 $a->reseturl = "view.php?id=$cm->id&amp;mode=$mode&amp;search=&amp;advanced=0";
                 echo $OUTPUT->box_start();
-                echo get_string('foundrecords', 'data', $a);
+                echo get_string('foundrecords', 'datafos', $a);
                 echo $OUTPUT->box_end();
             }
 

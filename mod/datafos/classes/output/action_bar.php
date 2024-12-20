@@ -140,8 +140,8 @@ class action_bar {
         $viewsinglelink = new moodle_url('/mod/datafos/view.php', ['d' => $this->id, 'mode' => 'single']);
 
         $menu = [
-            $viewlistlink->out(false) => get_string('listview', 'data'),
-            $viewsinglelink->out(false) => get_string('singleview', 'data'),
+            $viewlistlink->out(false) => get_string('listview', 'mod_datafos'),
+            $viewsinglelink->out(false) => get_string('singleview', 'mod_datafos'),
         ];
 
         $activeurl = $this->currenturl;

@@ -176,7 +176,7 @@ function datafos_get_exportdata($dataid, $fields, $selectedfields, $currentgroup
         }
     }
     if ($tags) {
-        $exportdata[0][] = get_string('tags', 'data');
+        $exportdata[0][] = get_string('tags', 'datafos');
     }
     if ($userdetails) {
         $exportdata[0][] = get_string('user');
@@ -184,11 +184,11 @@ function datafos_get_exportdata($dataid, $fields, $selectedfields, $currentgroup
         $exportdata[0][] = get_string('email');
     }
     if ($time) {
-        $exportdata[0][] = get_string('timeadded', 'data');
-        $exportdata[0][] = get_string('timemodified', 'data');
+        $exportdata[0][] = get_string('timeadded', 'datafos');
+        $exportdata[0][] = get_string('timemodified', 'datafos');
     }
     if ($approval) {
-        $exportdata[0][] = get_string('approved', 'data');
+        $exportdata[0][] = get_string('approved', 'datafos');
     }
 
     $datarecords = $DB->get_records('data_records_fos', array('dataid'=>$dataid));

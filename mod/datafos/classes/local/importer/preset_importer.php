@@ -280,7 +280,7 @@ abstract class preset_importer {
             unset($fieldclass);
         }
         if (!empty($missingfieldtypes)) {
-            echo $OUTPUT->notification(get_string('missingfieldtypeimport', 'data') . html_writer::alist($missingfieldtypes));
+            echo $OUTPUT->notification(get_string('missingfieldtypeimport', 'datafos') . html_writer::alist($missingfieldtypes));
         }
 
         // Get rid of all old unused datafos.

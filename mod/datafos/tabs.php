@@ -34,27 +34,27 @@
 
     $row = array();
 
-    $row[] = new tabobject('list', new moodle_url('/mod/datafos/view.php', array('d' => $data->id)), get_string('listview','data'));
+    $row[] = new tabobject('list', new moodle_url('/mod/datafos/view.php', array('d' => $data->id)), get_string('list','datafos'));
 
     if (isset($record)) {
-        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'rid' => $record->id)), get_string('singleview','data'));
+        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'rid' => $record->id)), get_string('single','datafos'));
     } else {
-        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'single')), get_string('singleview','data'));
+        $row[] = new tabobject('single', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'single')), get_string('single','datafos'));
     }
 
     // Add an advanced search tab.
-    $row[] = new tabobject('asearch', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'asearch')), get_string('search', 'data'));
+    $row[] = new tabobject('asearch', new moodle_url('/mod/datafos/view.php', array('d' => $data->id, 'mode' => 'asearch')), get_string('search', 'datafos'));
 
     if (isloggedin()) { // just a perf shortcut
         if (datafos_user_can_add_entry($data, $currentgroup, $groupmode, $context)) { // took out participation list here!
-            $addstring = empty($editentry) ? get_string('add', 'data') : get_string('editentry', 'data');
+            $addstring = empty($editentry) ? get_string('add', 'datafos') : get_string('editentry', 'datafos');
             $row[] = new tabobject('add', new moodle_url('/mod/datafos/edit.php', array('d' => $data->id)), $addstring);
         }
         if (has_capability(DATAFOS_CAP_EXPORT, $context)) {
             // The capability required to Export database records is centrally defined in 'lib.php'
             // and should be weaker than those required to edit Templates, Fields and Presets.
             $row[] = new tabobject('export', new moodle_url('/mod/datafos/export.php', array('d' => $data->id)),
-                         get_string('export', 'data'));
+                         get_string('export', 'datafos'));
         }
         if (has_capability('mod/datafos:managetemplates', $context)) {
             if ($currenttab == 'list') {
@@ -68,12 +68,12 @@
             }
 
             $templatestab = new tabobject('templates', new moodle_url('/mod/datafos/templates.php', array('d' => $data->id, 'mode' => $defaultemplate)),
-                         get_string('templates','data'));
+                         get_string('templates','datafos'));
             $row[] = $templatestab;
             $row[] = new tabobject('fields', new moodle_url('/mod/datafos/field.php', array('d' => $data->id)),
-                         get_string('fields','data'));
+                         get_string('fields','datafos'));
             $row[] = new tabobject('presets', new moodle_url('/mod/datafos/preset.php', array('d' => $data->id)),
-                         get_string('presets', 'data'));
+                         get_string('presets', 'datafos'));
         }
     }
 
@@ -83,7 +83,7 @@
 
         $currenttab ='';
         foreach ($templatelist as $template) {
-            $templatestab->subtree[] = new tabobject($template, new moodle_url('/mod/datafos/templates.php', array('d' => $data->id, 'mode' => $template)), get_string($template, 'data'));
+            $templatestab->subtree[] = new tabobject($template, new moodle_url('/mod/datafos/templates.php', array('d' => $data->id, 'mode' => $template)), get_string($template, 'datafos'));
             if ($template == $mode) {
                 $currenttab = $template;
             }

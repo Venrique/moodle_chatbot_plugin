@@ -27,20 +27,20 @@ class mod_datafos_mod_form extends moodleform_mod {
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
     
-        $this->standard_intro_elements(get_string('intro', 'data'));
+        $this->standard_intro_elements(get_string('intro', 'datafos'));
     
         // ----------------------------------------------------------------------
-        $mform->addElement('header', 'entrieshdr', get_string('entries', 'data'));
+        $mform->addElement('header', 'entrieshdr', get_string('entries', 'datafos'));
     
-        $mform->addElement('selectyesno', 'approval', get_string('requireapproval', 'data'));
+        $mform->addElement('selectyesno', 'approval', get_string('requireapproval', 'datafos'));
         $mform->addHelpButton('approval', 'requireapproval', 'datafos');
     
-        $mform->addElement('selectyesno', 'manageapproved', get_string('manageapproved', 'data'));
+        $mform->addElement('selectyesno', 'manageapproved', get_string('manageapproved', 'datafos'));
         $mform->addHelpButton('manageapproved', 'manageapproved', 'datafos');
         $mform->setDefault('manageapproved', 1);
         $mform->hideIf('manageapproved', 'approval', 'eq', 0);
     
-        $mform->addElement('selectyesno', 'comments', get_string('allowcomments', 'data'));
+        $mform->addElement('selectyesno', 'comments', get_string('allowcomments', 'datafos'));
         if (empty($CFG->usecomments)) {
             $mform->hardFreeze('comments');
             $mform->setConstant('comments', 0);
@@ -52,37 +52,37 @@ class mod_datafos_mod_form extends moodleform_mod {
         if (!empty($this->current->requiredentries)) {
             $group = array();
             $group[] = $mform->createElement('select', 'requiredentries',
-                    get_string('requiredentries', 'data'), $countoptions);
-            $mform->addGroup($group, 'requiredentriesgroup', get_string('requiredentries', 'data'), array(''), false);
+                    get_string('requiredentries', 'datafos'), $countoptions);
+            $mform->addGroup($group, 'requiredentriesgroup', get_string('requiredentries', 'datafos'), array(''), false);
             $mform->addHelpButton('requiredentriesgroup', 'requiredentries', 'datafos');
-            $mform->addElement('html', $OUTPUT->notification(get_string('requiredentrieswarning', 'data')));
+            $mform->addElement('html', $OUTPUT->notification(get_string('requiredentrieswarning', 'datafos')));
         }
     
-        $mform->addElement('select', 'requiredentriestoview', get_string('requiredentriestoview', 'data'), $countoptions);
+        $mform->addElement('select', 'requiredentriestoview', get_string('requiredentriestoview', 'datafos'), $countoptions);
         $mform->addHelpButton('requiredentriestoview', 'requiredentriestoview', 'datafos');
     
-        $mform->addElement('select', 'maxentries', get_string('maxentries', 'data'), $countoptions);
+        $mform->addElement('select', 'maxentries', get_string('maxentries', 'datafos'), $countoptions);
         $mform->addHelpButton('maxentries', 'maxentries', 'datafos');
     
         // ----------------------------------------------------------------------
         $mform->addElement('header', 'availabilityhdr', get_string('availability'));
     
-        $mform->addElement('date_time_selector', 'timeavailablefrom', get_string('availablefromdate', 'data'),
+        $mform->addElement('date_time_selector', 'timeavailablefrom', get_string('availablefromdate', 'datafos'),
                            array('optional' => true));
     
-        $mform->addElement('date_time_selector', 'timeavailableto', get_string('availabletodate', 'data'),
+        $mform->addElement('date_time_selector', 'timeavailableto', get_string('availabletodate', 'datafos'),
                            array('optional' => true));
     
-        $mform->addElement('date_time_selector', 'timeviewfrom', get_string('viewfromdate', 'data'),
+        $mform->addElement('date_time_selector', 'timeviewfrom', get_string('viewfromdate', 'datafos'),
                            array('optional' => true));
     
-        $mform->addElement('date_time_selector', 'timeviewto', get_string('viewtodate', 'data'),
+        $mform->addElement('date_time_selector', 'timeviewto', get_string('viewtodate', 'datafos'),
                            array('optional' => true));
     
         // ----------------------------------------------------------------------
         if ($CFG->enablerssfeeds && $CFG->data_enablerssfeeds) {
             $mform->addElement('header', 'rsshdr', get_string('rss'));
-            $mform->addElement('select', 'rssarticles', get_string('numberrssarticles', 'data'), $countoptions);
+            $mform->addElement('select', 'rssarticles', get_string('numberrssarticles', 'datafos'), $countoptions);
         }
     
         $this->standard_grading_coursemodule_elements();
@@ -107,11 +107,11 @@ class mod_datafos_mod_form extends moodleform_mod {
         // Check open and close times are consistent.
         if ($data['timeavailablefrom'] && $data['timeavailableto'] &&
                 $data['timeavailableto'] < $data['timeavailablefrom']) {
-            $errors['timeavailableto'] = get_string('availabletodatevalidation', 'data');
+            $errors['timeavailableto'] = get_string('availabletodatevalidation', 'datafos');
         }
         if ($data['timeviewfrom'] && $data['timeviewto'] &&
                 $data['timeviewto'] < $data['timeviewfrom']) {
-            $errors['timeviewto'] = get_string('viewtodatevalidation', 'data');
+            $errors['timeviewto'] = get_string('viewtodatevalidation', 'datafos');
         }
 
         return $errors;
@@ -132,13 +132,13 @@ class mod_datafos_mod_form extends moodleform_mod {
             'checkbox',
             $completionentriesenabledel,
             '',
-            get_string('completionentriescount', 'data')
+            get_string('completionentriescount', 'datafos')
         );
         $completionentriesel = 'completionentries' . $suffix;
         $group[] = $mform->createElement(
             'text',
             $completionentriesel,
-            get_string('completionentriescount', 'data'),
+            get_string('completionentriescount', 'datafos'),
             ['size' => '1']
         );
 

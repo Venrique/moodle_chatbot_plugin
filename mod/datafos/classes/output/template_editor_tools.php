@@ -77,7 +77,7 @@ class template_editor_tools implements templatable, renderable {
      * @return array|null array of tags.
      */
     protected function get_field_tags(string $templatename): array {
-        $name = get_string('fields', 'data');
+        $name = get_string('fields', 'datafos');
         if ($templatename == 'csstemplate' || $templatename == 'jstemplate') {
             return $this->get_optgroup_data($name, []);
         }
@@ -90,7 +90,7 @@ class template_editor_tools implements templatable, renderable {
             $fieldname = $field->get_name();
             $taglist["[[$fieldname]]"] = $fieldname;
         }
-        $taglist['##otherfields##'] = get_string('otherfields', 'data');
+        $taglist['##otherfields##'] = get_string('otherfields', 'datafos');
         return $this->get_optgroup_data($name, $taglist);
     }
 
@@ -101,7 +101,7 @@ class template_editor_tools implements templatable, renderable {
      * @return array|null array of tags.
      */
     protected function get_field_info_tags(string $templatename): array {
-        $name = get_string('fieldsinformationtags', 'data');
+        $name = get_string('fieldsinformationtags', 'datafos');
         $taglist = [];
         $fields = $this->manager->get_fields();
         foreach ($fields as $field) {
@@ -130,19 +130,19 @@ class template_editor_tools implements templatable, renderable {
             return $this->get_optgroup_data($name, []);
         }
         $taglist = [
-            '##actionsmenu##' => get_string('actionsmenu', 'data'),
-            '##edit##' => get_string('edit', 'data'),
-            '##delete##' => get_string('delete', 'data'),
-            '##approve##' => get_string('approve', 'data'),
-            '##disapprove##' => get_string('disapprove', 'data'),
+            '##actionsmenu##' => get_string('actionsmenu', 'datafos'),
+            '##edit##' => get_string('edit', 'datafos'),
+            '##delete##' => get_string('delete', 'datafos'),
+            '##approve##' => get_string('approve', 'datafos'),
+            '##disapprove##' => get_string('disapprove', 'datafos'),
         ];
         if ($templatename != 'rsstemplate') {
-            $taglist['##export##'] = get_string('export', 'data');
+            $taglist['##export##'] = get_string('export', 'datafos');
         }
         if ($templatename != 'singletemplate') {
-            $taglist['##more##'] = get_string('more', 'data');
-            $taglist['##moreurl##'] = get_string('moreurl', 'data');
-            $taglist['##delcheck##'] = get_string('delcheck', 'data');
+            $taglist['##more##'] = get_string('more', 'datafos');
+            $taglist['##moreurl##'] = get_string('moreurl', 'datafos');
+            $taglist['##delcheck##'] = get_string('delcheck', 'datafos');
         }
         return $this->get_optgroup_data($name, $taglist);
     }
@@ -154,7 +154,7 @@ class template_editor_tools implements templatable, renderable {
      * @return array associative array of tags => tag name
      */
     protected function get_other_tags(string $templatename): array {
-        $name = get_string('other', 'data');
+        $name = get_string('other', 'datafos');
         $taglist = [];
         if ($templatename == 'asearchtemplate') {
             $taglist['##firstname##'] = get_string('firstname');
@@ -167,18 +167,18 @@ class template_editor_tools implements templatable, renderable {
         if ($templatename == 'addtemplate') {
             return $this->get_optgroup_data($name, $taglist);
         }
-        $taglist['##timeadded##'] = get_string('timeadded', 'data');
-        $taglist['##timemodified##'] = get_string('timemodified', 'data');
+        $taglist['##timeadded##'] = get_string('timeadded', 'datafos');
+        $taglist['##timemodified##'] = get_string('timemodified', 'datafos');
         $taglist['##user##'] = get_string('user');
         $taglist['##userpicture##'] = get_string('userpic');
-        $taglist['##approvalstatus##'] = get_string('approvalstatus', 'data');
-        $taglist['##id##'] = get_string('id', 'data');
+        $taglist['##approvalstatus##'] = get_string('approvalstatus', 'datafos');
+        $taglist['##id##'] = get_string('id', 'datafos');
 
         if ($templatename == 'singletemplate') {
             return $this->get_optgroup_data($name, $taglist);
         }
 
-        $taglist['##comments##'] = get_string('comments', 'data');
+        $taglist['##comments##'] = get_string('comments', 'datafos');
 
         return $this->get_optgroup_data($name, $taglist);
     }

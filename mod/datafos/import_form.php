@@ -14,14 +14,14 @@ class mod_datafos_import_form extends moodleform {
         $dataid = $this->_customdata['dataid'];
         $backtourl = $this->_customdata['backtourl'];
 
-        $mform->addElement('filepicker', 'recordsfile', get_string('csvfile', 'data'),
+        $mform->addElement('filepicker', 'recordsfile', get_string('csvfile', 'datafos'),
             null, ['accepted_types' => ['application/zip', 'text/csv']]);
 
         $delimiters = csv_import_reader::get_delimiter_list();
-        $mform->addElement('select', 'fielddelimiter', get_string('fielddelimiter', 'data'), $delimiters);
+        $mform->addElement('select', 'fielddelimiter', get_string('fielddelimiter', 'datafos'), $delimiters);
         $mform->setDefault('fielddelimiter', 'comma');
 
-        $mform->addElement('text', 'fieldenclosure', get_string('fieldenclosure', 'data'));
+        $mform->addElement('text', 'fieldenclosure', get_string('fieldenclosure', 'datafos'));
         $mform->setType('fieldenclosure', PARAM_CLEANHTML);
 
         $choices = core_text::get_encodings();

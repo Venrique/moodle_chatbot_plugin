@@ -80,7 +80,7 @@ class datafos_field_latlong extends datafos_field_base {
         $str .= '<fieldset><legend><span class="accesshide">'.$this->field->name.'</span></legend>';
         $str .= '<table class="form-inline"><tr><td align="right">';
         $classes = 'mod-datafos-input form-control-static';
-        $str .= '<label for="field_'.$this->field->id.'_0" class="' . $classes . '">' . get_string('latitude', 'data');
+        $str .= '<label for="field_'.$this->field->id.'_0" class="' . $classes . '">' . get_string('latitude', 'datafos');
         if ($this->field->required) {
             $str .= $OUTPUT->pix_icon('req', get_string('requiredelement', 'form'));
         }
@@ -91,7 +91,7 @@ class datafos_field_latlong extends datafos_field_base {
         $str .= s($lat).'" size="10" />°N</td></tr>';
         $classes = 'mod-datafos-input form-control-static';
         $str .= '<tr><td align="right"><label for="field_'.$this->field->id.'_1" class="' . $classes . '">';
-        $str .= get_string('longitude', 'data');
+        $str .= get_string('longitude', 'datafos');
         if ($this->field->required) {
             $str .= $OUTPUT->pix_icon('req', get_string('requiredelement', 'form'));
         }
@@ -128,9 +128,9 @@ class datafos_field_latlong extends datafos_field_base {
         $latlongsrs->close();
 
         $classes = array('class' => 'accesshide');
-        $return = html_writer::label(get_string('latlong', 'data'), 'menuf_'.$this->field->id, false, $classes);
+        $return = html_writer::label(get_string('latlong', 'datafos'), 'menuf_'.$this->field->id, false, $classes);
         $classes = array('class' => 'custom-select');
-        $return .= html_writer::select($options, 'f_'.$this->field->id, $value, array('' => get_string('menuchoose', 'data')),
+        $return .= html_writer::select($options, 'f_'.$this->field->id, $value, array('' => get_string('menuchoose', 'datafos')),
             $classes);
        return $return;
     }
@@ -322,7 +322,7 @@ class datafos_field_latlong extends datafos_field_base {
             return false;
         }
         // If we get here then only one field has been filled in.
-        return get_string('latlongboth', 'data');
+        return get_string('latlongboth', 'datafos');
     }
 
     /**

@@ -75,16 +75,16 @@ class datafos_field_menu extends datafos_field_base {
                 if ($this->field->name === "Category"){
                     switch ($option) {
                         case "General tool":
-                            $options[$option] = get_string('generaltoolcategory', 'data');
+                            $options[$option] = get_string('generaltoolcategory', 'datafos');
                             break;
                         case "Quality of care tool":
-                            $options[$option] = get_string('qualityofcaretoolcategory', 'data');
+                            $options[$option] = get_string('qualityofcaretoolcategory', 'datafos');
                             break;
                         case "Research":
-                            $options[$option] = get_string('researchcategory', 'data');
+                            $options[$option] = get_string('researchcategory', 'datafos');
                             break;
                         case "Narrative":
-                            $options[$option] = get_string('narrativecategory', 'data');
+                            $options[$option] = get_string('narrativecategory', 'datafos');
                             break;
                     }
                 }else{
@@ -102,7 +102,7 @@ class datafos_field_menu extends datafos_field_base {
             $str .= html_writer::div($image, 'inline-req');
         }
         $str .= '</label>';
-        $str .= html_writer::select($options, 'field_'.$this->field->id, $content, array('' => get_string('menuchoose', 'data')),
+        $str .= html_writer::select($options, 'field_'.$this->field->id, $content, array('' => get_string('menuchoose', 'datafos')),
                                     array('id' => 'field_'.$this->field->id, 'class' => 'mod-datafos-input custom-select'));
 
         $str .= '</div>';
@@ -138,16 +138,16 @@ class datafos_field_menu extends datafos_field_base {
             if ($this->field->name === "Category"){
                 switch ($option) {
                     case "General tool":
-                        $options[$option] = get_string('generaltoolcategory', 'data');
+                        $options[$option] = get_string('generaltoolcategory', 'datafos');
                         break;
                     case "Quality of care tool":
-                        $options[$option] = get_string('qualityofcaretoolcategory', 'data');
+                        $options[$option] = get_string('qualityofcaretoolcategory', 'datafos');
                         break;
                     case "Research":
-                        $options[$option] = get_string('researchcategory', 'data');
+                        $options[$option] = get_string('researchcategory', 'datafos');
                         break;
                     case "Narrative":
-                        $options[$option] = get_string('narrativecategory', 'data');
+                        $options[$option] = get_string('narrativecategory', 'datafos');
                         break;
                 }
             }else{
@@ -161,7 +161,7 @@ class datafos_field_menu extends datafos_field_base {
 
         $return = html_writer::label(get_string('fieldtypelabel', "datafield_" . $this->type),
             'menuf_' . $this->field->id, false, array('class' => 'accesshide'));
-        $return .= html_writer::select($options, 'f_'.$this->field->id, $content, array('' => get_string('menuchoose', 'data')),
+        $return .= html_writer::select($options, 'f_'.$this->field->id, $content, array('' => get_string('menuchoose', 'datafos')),
                 array('class' => 'custom-select'));
         return $return;
     }
