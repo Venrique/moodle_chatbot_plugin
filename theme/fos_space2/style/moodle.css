@@ -6273,23 +6273,18 @@ a#action-menu-toggle-1:focus {
 }
 
 /* Glossary activity*/
-.entrybox th {
-  border: none !important;
-}
-
-table.entrylowersection {
+table.glossarycategoryheader th {
   border: none !important;
   padding: 0 0;
 }
 
-.entrylowersection td {
+.glossarypost tbody tr th {
   border: none !important;
-  margin: 0 0;
-  padding: 0 0;
+  padding: 0;
 }
-
-.glossarypost.dictionary td {
+.glossarypost tbody tr td {
   border: none !important;
+  padding: 0;
 }
 
 /*# sourceMappingURL=moodle.css.map */

@@ -13,7 +13,7 @@ $string['logintext_desc'] = 'Texto que se mostrará en la página de inicio de s
 $string['available'] = 'Disponible';
 $string['displaysummary'] = "Mostrar resumen";
 
-$string["CenterforEvidence-BasedAdvocacy"] = "Centro de defensa basada en evidencia";
+$string["CenterforEvidence-BasedAdvocacy"] = "Centro de Incidencia Basada en Evidencia";
 
 /* Footer */
 $string["PrivacyPolicy"] = "política de privacidad";

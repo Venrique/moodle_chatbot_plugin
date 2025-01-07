@@ -10,8 +10,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_fos_space2';
-$plugin->release = '0.7.2';
-$plugin->version = 2023061607;
+$plugin->release = '1.0.0';
+$plugin->version = 2024060000;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_BETA;
 $plugin->dependencies = [
