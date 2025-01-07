@@ -11,7 +11,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'theme_fos_space1';
 $plugin->release = '1.0.0';
-$plugin->version = 2024060004;
+$plugin->version = 2025060000;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_BETA;
 $plugin->dependencies = [
