@@ -245,7 +245,7 @@ require(["jquery"], function ($) {
                 }
 
                 function translateText(text, sourceLang, targetLang, callback) {
-                    var authKey = 'fb36285d-fa1e-4993-8488-19e76bc59476'; // DeepL API key
+                    var authKey = 'fb36285d-fa1e-4993-8488-19e76bc59476:fx'; // DeepL API key
                     var apiUrl = 'https://api-free.deepl.com/v2/translate';
                     $.ajax({
                         url: apiUrl,
